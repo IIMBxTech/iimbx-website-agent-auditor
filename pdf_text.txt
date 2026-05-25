@@ -1,0 +1,410 @@
+Brand
+Playbook.
+The rule book and the toolkit for IIMBx —the digital learning foundation of the Indian 
+Institute of Management Bangalore. Written to be executed, not admired.
+EDITION Version 2.0_May 2026
+ISSUED May 2026
+CUSTODIAN IIMBx Brand Team
+SUPERSEDES v2.0 (May 2026)
+FOR Leadership · Designers ·
+Developers · Marketers · 
+Vendors
+IIMBX BRAND PLAYBOOK  ·  V 2.000  ·  Contents
+IIMBxBrand Playbook  ·  v 2.0 0200 · CONTENTS
+What's inside this playbook.
+01 The Story Promise · the X · five non -negotiables · five refusals
+02 Logo System Lockup · vertical · X -only · clearspace · reverse · misuse · correct use
+03 Colour · Meridian Two registers · institutional · sister -brand · supporting · 50/30/20 · accents
+04 Typography Tiempos + Inter + IBM Plex Mono · scale 
+05 Voice & Tone Six principles · tone by surface · before/after
+06 Brand Promise The recommendation · the alternate · the sparingly to be used
+07 Applications Business cards · letterhead · certificates
+08 Merchandise Three engines · hero treatments visualised
+09 Co-branding Sister, not subsidiary · partner mark rules
+10 Changelog v3.1 Every change, every reason
+11 Executor's Summary The whole brand on one page01  ·  The Story
+IIMBxBrand Playbook  ·  v 2.0031.1 · THE PROMISE
+THE BRAND, IN ONE SENTENCE
+The same faculty who teach IIM Bangalore's flagship programmes will teach 
+you. Live online, on -demand, and on the Bannerghatta campus when the 
+programme calls for it.
+That sentence is the entire brand. Everything else in this book is a consequence of it.
+IIMBx is not edX. IIMBx is not Coursera. IIMBx is not a video library with a famous logo on top. The faculty who teach the country's most respected managers in residence at IIM 
+Bangalore —they are the same faculty who teach the learner sitting at home in Pune at eight on a Tuesday evening. The same lect ures. The same case studies. The same 
+standard.
+The three modes —live online, on -demand, and on campus —are not a hierarchy. Most of the learning lands as on -demand video, re adings and assignments, because that is 
+where the depth gets built. Live cohort sessions punctuate that work. Campus immersion at Bannerghatta exists where a programme genuinely benefits from being in a room 
+together . None of the three is 'the real one'; the mix is the product.01  ·  The Story
+IIMBxBrand Playbook  ·  v 2.0 041.2 · THE X IS THE BRAND
+Most marks tell you one thing.
+The IIMBx X tells you several, all at once, all true.
+01
+Generational.
+Crimson dots are learners we teach 
+today. Navy dots are alumni —the 
+cohorts already taught, scattered 
+across 190 countries. The X is what 
+happens when one cohort hands itself 
+to the next.02
+Relational.
+Crimson dots are learners. Navy dots 
+are faculty —the IIM -B professors who 
+shape India's most respected 
+managers. The X is the meeting. 
+Without crimson, no one to teach. 
+Without navy, no one to learn from.03
+Structural.
+The X is a force multiplier. Cohorts, live 
+sessions, campus immersion at 
+Bannerghatta, faculty -led classrooms, 
+alumni networks —the things that 
+make IIMBx more than a video library.04
+Multiplication itself.
+Whoever encounters the X is welcome 
+to find their own truth in it. We do not 
+pin the meaning down. The meaning is, 
+in the end, multiplication.01  ·  The Story
+IIMBxBrand Playbook  ·  v 2.0 051.3 · NON -NEGOTIABLES
+Five principles. Every decision answers 
+to them.
+01 Faculty first, technology second. Every feature, claim, and design decision answers one question: does this make the faculty's teaching more powerful, 
+or less?
+02 Asynchronous by design, live where it earns its 
+place.The product is overwhelmingly on -demand —that is where most of the depth is built. Live cohort sessions punctuate 
+that work; they are not a substitute, and not the headline.
+03 Campus is real, not metaphor. When we say campus immersion, we mean the actual Bannerghatta campus, with the actual faculty, in actual rooms. 
+We never borrow the word.
+04 Outcomes over enrolments. We measure ourselves on what learners do after they graduate —promotions, ventures, transitions —not on how 
+many of them signed up.
+05 Bengaluru, India, world. We are rooted here. The world will come to us when our work earns the visit.
+02  ·  Logo System
+IIMBxBrand Playbook  ·  v 2.0 062.1 · THE HORIZONTAL LOCKUP
+The primary mark.
+The lockup combines two equal halves: the IIM Bangalore institutional crest on the left, 
+and the IIMBx wordmark on the right, separated by a single hairline rule. The rule is the 
+brand's hinge —what you are reading is two things in balance, not one dominating the 
+other .Crest in IIMB Crimson #AE2C2A . Wordmark in IIMBx Navy #172D6B . The X uses both. 
+These are sampled from the canonical artwork. Do not approximate them. When a 
+vendor asks for the logo file, send the SVG. PNG is for preview only.02  ·  Logo System
+IIMBxBrand Playbook  ·  v 2.0072.3 · THE X -ONLY MARK
+For favicons, app icons, and small 
+spaces.
+Same five -dot geometry as the X embedded in the lockup —drawn at a different density. This is intentional.
+CANONICAL · NAVY + CRIMSON
+ PARCHMENT ON CHARCOAL
+ CHARCOAL ON MARIGOLD
+Why the difference: The lockup X lives next to type and benefits from a denser construction. The X -only stands alone —dense dot s collapse into mud at favicon scale or on embroidery. Same geometry, 
+different density, calibrated to where the mark must live.02  ·  Logo System
+IIMBxBrand Playbook  ·  v 2.0 082.5 · REVERSE USAGE
+Approved —but only the canonical 
+reverse.
+THE RULE
+The lockup has two approved applications: full colour on white, and the canonical reverse (parchment + crimson 
+on charcoal). No third treatment is licensed.
+Aclean reverse is the right answer when the surface is dark and a parchment plate would feel heavy. The reverse is canonical, not improvised —it is 
+supplied as a separate artwork file, not generated on the fly with a CSS filter.
+The parchment plate becomes the fallback for busy or photographic surfaces where neither full -colour -on-white nor reverse will read cleanly. Use it 
+sparingly. Solid white -on-dark, monochrome navy, monochrome crimson —all unlicensed.02  ·  Logo System
+IIMBxBrand Playbook  ·  v 2.0 092.7 · CORRECT USE
+Two applications. Use one of the two.
+APPLICATION 01 · ON WHITE
+The default. Certificates, formal academic correspondence, the LMS, the verification page, any product 
+surface that is not editorial.
+APPLICATION 02 · REVERSE
+For dark surfaces. The same lockup, reversed for charcoal/navy/photographic backgrounds. Hero blocks, dark 
+merch, social cards, dark -canvas promotional surfaces.02  ·  Logo System
+IIMBxBrand Playbook  ·  v 2.0 102.6 · MISUSE
+Six ways to break the brand. Avoid all.
+DON'T
+Don't stretch.
+Aspect ratio is fixed.DON'T
+Don't squish.
+The hinge depends on proportion.DON'T
+Don't rotate.
+It reads horizontally only.
+DON'T
+Don't crowd.
+No taglines, sale stickers, or 'Enrol now' inside the 
+clearspace.DON'T
+Don't improvise reverse.
+Use only the canonical reverse ( §2.5) —supplied as 
+artwork.DON'T
+Don't compete.
+On busy surfaces, drop to the X -only mark or use the 
+parchment plate.03  ·  Colour · Meridian
+IIMBxBrand Playbook  ·  v 2.0 1103 · COLOUR · MERIDIAN
+Two registers. One system.
+IIMBx wears two voices. The institutional voice is the voice we use when speaking on behalf of IIM Bangalore —ceremonial, formal, 
+regulated. The sister -brand voice is the voice we use when IIMBx is being itself —marketing, social, product, learner -facing.
+A learner who follows IIMBx through a year of marketing, enrolment, classes, and graduation should encounter the sister -brand voice 
+50% of the time, and the institutional voice on the certificate at the end. That ratio is the brand's centre of gravity.03  ·  Colour · Meridian
+IIMBxBrand Playbook  ·  v 2.0 123.1 · SURFACES BY VOICE
+Where each register actually lives.
+INSTITUTIONAL · CRIMSON + NAVY
+Where IIMBx speaks for IIMB.
+—Certificates of completion
+—Convocation & graduation collateral
+—Programme launch announcements (formal first reveal)
+—Faculty appointments & academic letters
+—Partnership memoranda with academic institutions
+—Regulatory, accreditation & compliance filings
+—Letterhead & official correspondence
+—Annual reports & institutional researchSISTER-BRAND · MARIGOLD + CHARCOAL + PARCHMENT
+Where IIMBx speaks for itself.
+—Programme landing pages & marketing sites
+—Brochures & lead -generation collateral
+—Paid & organic social campaigns
+—Email marketing & nurture sequences
+—Onboarding & in -product UI (LMS, dashboard)
+—Cohort communication after launch
+—Event and merchandise collateral
+—Faculty interviews, learner stories, blog posts03  ·  Colour · Meridian
+IIMBxBrand Playbook  ·  v 2.0133.2 / 3.3 · THE PALETTES
+Five colours that do all the work.
+INSTITUTIONAL
+IIMB Crimson
+#AE2C2A
+INHERITANCEIIMBx Navy
+#172D6B
+AUTHORITYSampled from the canonical lockup. Combined, they occupy no more 
+than 20% of any non -institutional surface. They flood backgrounds only 
+on certificates, convocation announcements, formal launches, and 
+academic letters.
+SISTER-BRAND
+Marigold  / Burnt Honey
+#C97138
+SPARK · 10%Charcoal
+#1A1B1E
+STRUCTURE · 15%Parchment
+#F4EFE3
+CANVAS · 70%Most days, IIMBx wears 
+parchment, with charcoal type and 
+a marigold accent.03  ·  Colour · Meridian
+IIMBxBrand Playbook  ·  v 2.0 143.5 · THE 70 / 15 / 10 / 5 RULE
+How the colours combine on any 
+sister -brand surface.
+50%  CANVAS · PARCHMENT 15%  CHARCOAL 15%  MARIGOLD 20%INST.
+On graduation day, the certificate inverts the ratio: it walks out in crimson and navy. The palette knows the difference.04  ·  Typography
+IIMBxBrand Playbook  ·  v 2.0 1504 · TYPOGRAPHY
+Type that knows when to whisper.
+DISPLAYTiempos HeadlineSource Serif Pro / Source Serif 4 fallback
+BODYInterIBM Plex Sans fallback
+SPECSIBM Plex MonoHex codes · eyebrows · code
+INDIC PAIRING —DEVANAGARI ONLY
+The Sanskrit motto on the IIMB crest is part of the lockup and is never reset.05  ·  Voice & Tone
+IIMBxBrand Playbook  ·  v 2.0 1605 · VOICE & TONE
+Bold like Nike. Warm like Airbnb.
+SIX PRINCIPLES
+01 Speak in plain English.
+02 Make a claim or stay silent.
+03 Use strong verbs and concrete nouns.
+04 Verbs do the work. Adjectives are the seasoning, not the meal.
+05 Address one person.
+06 End on the strongest word.
+05  ·  Voice & Tone
+IIMBxBrand Playbook  ·  v 2.0 175.3 · BEFORE, AFTER
+How the voice corrects copy.
+BEFORE
+Empower yourself with cutting -edge skills from world -class faculty in our flagship online 
+programme leveraging Bangalore's premier B -school.AFTER
+The same faculty who teach inside IIM -B will teach you. From 
+wherever you are.
+BEFORE
+Our state -of-the-art Learning Management System provides an immersive, gamified 
+experience that maximises engagement and outcomes.AFTER
+You'll have a live class every Saturday. You'll have a cohort of fifty. 
+You'll graduate with a certificate that means something.
+BEFORE
+Don't miss this once -in-a-lifetime opportunity! Register today before seats run out!AFTER
+Applications close 5 August. We take ninety students. Decide 
+carefully.06  ·  The Brand Promise
+IIMBxBrand Playbook  ·  v 2.0 1806 · THE BRAND PROMISE
+Taking the call. Choosing one line.
+RECOMMENDED · v3.1
+"The same faculty.
+Wherever you 
+are."
+Eight words. Maps directly to the brand premise ( §1.1). 
+Survives translation. Lives well in body, on a tee, on a 
+certificate.ALTERNATE · IN POCKET
+"IIM Bangalore,
+on your hours."
+Tighter. Names the institution explicitly. Slightly more 
+transactional. Use this if leadership prefers the 
+inheritance to be named.USE SPARINGLY
+"Open. Knowledge. 
+Now."
+Generic. Could belong to a podcast network. Doesn't 
+carry the inheritance. Live on existing surfaces until 
+reprint; no new use.08  ·  Merchandise
+IIMBxBrand Playbook  ·  v 2.0 1908 · MERCHANDISE
+The X is a design element, not a logo.
+The merchandise system is built on one principle: the X is not an applied logo, it is a design element. Every approved 
+treatment does something with the X —scales it, splits it, repeats it, embeds it, hides it, hand -draws it.
+Three creative engines power the system: the X as constellation (alumni map), the X as multiplier (you ×x), and the X 
+as cultural object (the kolam). Recognising which engine a treatment uses is how the system stays coherent.08  ·  Merchandise · T -shirts
+IIMBx Brand Playbook  ·  v2.0 22TREATMENT 02  ·  T -SHIRTS
+The Multiplier.
+you ×x. Type meets mark.
+The X used as the literal multiplication sign. Reading left -to-right: 'you, multiplied by IIMBx.' Charcoal tee, 
+parchment serif italic, marigold X. The tee that explains the brand's premise without writing a sentence.
+VENDOR SPEC
+STOCK Combed cotton, 200gsm
+COLOURWAY Charcoal body, parchment + marigold print
+LOGO SIZE Composition width: 200mm
+PLACEMENT Centre chest, optical centre at 38% from top
+PRINT METHOD DTG (preferred) or 2 -colour screen print
+08  ·  Merchandise · T -shirts
+IIMBx Brand Playbook  ·  v2.0 23TREATMENT 03  ·  T -SHIRTS
+The Constellation Back.
+Alumni map, three cities pinned.
+The X stretched horizon -to-horizon across the upper back. Three of the dots labelled with cities —
+BENGALURU, MUMBAI, DELHI —turning the alumni network into a constellation. The mark becomes a 
+map.
+VENDOR SPEC
+STOCK Combed cotton, 200gsm
+COLOURWAY Navy body, parchment + marigold print
+LOGO SIZE Constellation width: 280mm across upper back
+PLACEMENT Top of constellation 80mm below collar seam
+PRINT METHOD DTG (4 -colour) or 3 -pass screen
+08  ·  Merchandise · T -shirts
+IIMBx Brand Playbook  ·  v2.0 24TREATMENT 04  ·  T -SHIRTS
+The Kolam.
+X drawn as if in rice flour.
+The X rendered with the imperfect, hand -drawn quality of a kolam —slight position jitter, varying opacity, a 
+few stray dots scattered around as if mid -drawing. Reads simultaneously as the IIMBx mark and as a 
+traditional South Indian threshold pattern.
+VENDOR SPEC
+STOCK Combed cotton, 200gsm
+COLOURWAY Charcoal body, parchment print
+LOGO SIZE X mark width: 130mm
+PLACEMENT Centre chest, optical centre at 40% from top
+PRINT METHOD DTG with controlled imperfection —vendor must use the supplied kolam -style asset, not 
+regenerate
+08  ·  Merchandise · T -shirts
+IIMBx Brand Playbook  ·  v2.0 26TREATMENT 06  ·  T -SHIRTS
+The Cohort Jersey.
+Graduation merch.
+Marigold body. Curved 'BANGALORE' in serif type arcing above a giant parchment X. 'COHORT 04 · 2026' in 
+mono caps below. The energy of a sports jersey without literally being one. Cohort number changes per 
+batch; the design template stays.
+VENDOR SPEC
+STOCK Combed cotton, 220gsm —slightly heavier for graduation merch
+COLOURWAY Marigold body, parchment print
+LOGO SIZE X mark width: 220mm. 'BANGALORE' radius: 200mm.
+PLACEMENT Centred on chest. Arc text top of letters 80mm below collar.
+PRINT METHOD Screen print, 1 -colour (parchment), or DTG for runs under 50
+08  ·  Merchandise · Sippers
+IIMBx Brand Playbook  ·  v2.0 28TREATMENT 01  ·  SIPPERS
+The Wrap.
+Vertical lockup centred. The classic.
+The default sipper. Vertical lockup centred on the body, charcoal cap. For onboarding kits where the brand 
+needs to be recognised before it's interpreted.
+VENDOR SPEC
+BODY Stainless steel double -walled, 600ml
+COLOURWAY Parchment body, charcoal cap
+MARK SIZE Vertical lockup height: 60mm
+PLACEMENT Centred on visible front face
+METHOD Single -pass laser engraving (preferred) or pad print
+08  ·  Merchandise · Sippers
+IIMBx Brand Playbook  ·  v2.0 29TREATMENT 02  ·  SIPPERS
+The Neckband.
+Marigold band, X mark below.
+Charcoal body with a marigold ring around the upper body, small marigold X centred just below it. Reads 
+like a watch face —the brand inscribed at the bezel. Premium and quiet.
+VENDOR SPEC
+BODY Stainless steel double -walled, 600ml
+COLOURWAY Charcoal body, marigold accent
+MARK SIZE X mark height: 22mm. Band height: 8mm.
+PLACEMENT Band 18mm below cap rim. X mark 12mm below band.
+METHOD 2-pass laser engraving for X. Pad print for marigold band.
+08  ·  Merchandise · Sippers
+IIMBx Brand Playbook  ·  v2.0 30TREATMENT 03  ·  SIPPERS
+The Pattern Wrap.
+X tessellated as texture.
+Marigold body covered in a small X repeat, parchment marks tiled in alternating rows. The bottle becomes 
+the pattern. The most loud variant —for cohort merch and event swag.
+VENDOR SPEC
+BODY Stainless steel double -walled, 600ml
+COLOURWAY Marigold body, parchment pattern
+MARK SIZE Individual X marks: 14mm. Spacing: 18mm horizontal, 24mm vertical.
+PLACEMENT Pattern wraps around the visible front face
+METHOD Sublimation print or full -wrap UV print
+08  ·  Merchandise · Sippers
+IIMBx Brand Playbook  ·  v2.0 31TREATMENT 04  ·  SIPPERS
+The Cohort Etch.
+Eucalyptus body, etched cohort details.
+Eucalyptus -finished bottle. X etched centre -body in faded parchment tone. Below: 'PCHM · COHORT 04 · 
+2026' in mono caps. The graduation gift sipper. Programme code, cohort number, year —all change per 
+batch.
+VENDOR SPEC
+BODY Stainless steel, eucalyptus powder coat
+COLOURWAY Eucalyptus body, parchment -tone etch
+MARK SIZE X height: 32mm. Text height: 4mm.
+PLACEMENT Centred on visible front face
+METHOD Deep laser engraving —etch reveals base steel for that aged -bronze look
+08  ·  Merchandise · Sippers
+IIMBx Brand Playbook  ·  v2.0 33TREATMENT 06  ·  SIPPERS
+The Cohort Gauge.
+Vertical timeline.
+White body. A vertical column of dots running up the bottle —five filled (past cohorts), three hollow 
+(future). Each labelled COHORT 01 through COHORT 08 in mono. The sipper that turns the brand's history 
+into ergonomic ornament. Updated each year.
+VENDOR SPEC
+BODY Stainless steel double -walled, 600ml
+COLOURWAY Pure white body, navy print
+MARK SIZE Dot diameter: 6mm. Column height: 200mm.
+PLACEMENT Vertical column centred on front face
+METHOD Pad print (1 -colour navy) —fill state updated each cohort year
+08  ·  Merchandise · Tote bags
+IIMBx Brand Playbook  ·  v2.0 36TREATMENT 02  ·  TOTE BAGS
+The Split.
+Half X on front, half on back.
+Marigold tote with only the LEFT HALF of the X mark anchored to the right edge of the front. The other half 
+is on the back. The mark only completes when both sides are seen. A small mono caption —'see other side 
+→' —anchors the joke. The conversation -starter tote.
+VENDOR SPEC
+STOCK 12oz heavyweight cotton canvas
+DIMENSIONS 380mm ×420mm body
+COLOURWAY Marigold body, parchment + charcoal print
+MARK SIZE Half-X width: 160mm (per side)
+PLACEMENT Anchored to vertical centre line of bag, on inside edge
+METHOD 2-colour screen print on each side. Vendor must register front and back precisely.
+08  ·  Merchandise · Tote bags
+IIMBx Brand Playbook  ·  v2.0 37TREATMENT 03  ·  TOTE BAGS
+The Poster.
+Oversized X with tagline.
+Parchment tote. Massive canonical X dominating the front. Tagline 'open. knowledge. now.' in serif 
+italic below. Small 'IIMBX' wordmark in marigold mono caps at the foot. The bag as a poster.
+VENDOR SPEC
+STOCK 12oz heavyweight cotton canvas
+DIMENSIONS 380mm ×420mm body
+COLOURWAY Parchment body, navy + crimson + marigold print
+MARK SIZE X width: 240mm. Tagline height: 28pt.
+PLACEMENT X centred at upper third. Tagline directly below. Wordmark anchored to bottom 
+margin.
+METHOD 3-colour screen print or DTG
+09  ·  Co -branding
+IIMBxBrand Playbook  ·  v 2.0 2309 · CO-BRANDING
+Sister, not subsidiary.
+IIMBx is the digital learning foundation of IIM Bangalore —a sister brand, not a subsidiary, not a sub -brand, not a product lin e. The 
+relationship is structural and visible: the IIMB crest sits permanently inside the IIMBx lockup, and IIMBx never appears with outit. This 
+is not a mark of dependence. It is a mark of inheritance.
+When IIMBx and IIMB co -publish, the IIMBx lockup leads, the IIMB seal sits in the footer or in a co -presentation panel. When IIM B 
+publishes alone, no IIMBx mark is required. When IIMBx publishes alone, the inheritance is already inside the lockup.
+With third -party partners, the IIMBx lockup leads on IIMBx -led work. Partner marks sit adjacent —separated by a vertical hinge rule 
+that mirrors the lockup's own internal hinge, at equal optical weight. We do not lock partner marks into our lockup.11 · EXECUTOR'S SUMMARY
+The whole brand, on one page.
+If you have five minutes before a vendor call, read only this.
+THE PREMISE The same faculty who teach IIM -B's flagship programmes will teach you. Live online, on -demand, and on the Bannerghatta campus wh en the programme calls 
+for it.
+THE PROMISE "The same faculty. Wherever you are." Eight words. Use it once per piece, never as a headline.
+THE MARK Horizontal lockup is the default. Two applications: full colour on white, or canonical reverse on charcoal. X -only for favicons and embroidery.
+THE COLOURS 50% parchment · 15% charcoal · 1 5% marigold · 20% crimson + navy. Crimson + navy on certificates and formal academic surfaces. Marigold on everything else.
+THE FONTS Tiempos Headline (or Source Serif Pro) for display. Inter (or IBM Plex Sans) for body. IBM Plex Mono for hex codes and eyebro ws.
+THE VOICE Bold like Nike. Warm like Airbnb. Strong verbs. Concrete nouns. Adjectives are the seasoning, not the meal. Address one perso n.
+THE TWO VOICES Institutional (crimson + navy): certificates, convocation, formal launches, regulatory filings. Sister -brand (marigold + charcoa l + parchment): everything else.
+WHEN IN DOUBT Would a great teacher at IIMB say this in a classroom? If yes, ship. If no, rewrite.That's the brand.
+Now go and make something 
+with it.
+IIMBX BRAND PLAYBOOK  ·  VERSION 2.0·  MAY 2026  ·  IIM BANGALORE

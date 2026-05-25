@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IIMBx · Professional Certificate in AI for Managers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --crimson:#AE2C2A;
+    --navy:#172D6B;
+    --marigold:#C97138;
+    --char:#1A1B1E;
+    --paper:#F4EFE3;        /* parchment */
+    --paper-2:#FBF7EC;
+    --stone:#4A4A4A;
+    --steel:#5A5560;
+    --line:rgba(26,27,30,.10);
+  }
+  html,body{background:var(--paper);color:var(--char);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--marigold);color:var(--paper)}
+
+  .display{font-family:'Source Serif 4',Georgia,serif;font-weight:600;letter-spacing:-.022em;line-height:.95;color:var(--char)}
+  .display em{font-style:italic;font-weight:500;color:var(--marigold)}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--marigold);font-weight:500}
+  
+  .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+  section{padding:120px 0;position:relative}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(244,239,227,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav__inner{display:flex;justify-content:space-between;align-items:center;padding:14px 40px;max-width:1280px;margin:0 auto;gap:30px}
+  .nav__brand{display:flex;align-items:center;gap:18px}
+  .nav__brand .mark{font-family:'Source Serif 4',serif;font-weight:700;font-size:24px;color:var(--navy)}
+  .nav__brand .mark span{color:var(--crimson)}
+  .nav__brand .ctx{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);padding-left:18px;border-left:1px solid var(--line);line-height:1.4}
+  .nav__brand .ctx b{display:block;color:var(--char);font-weight:600;font-family:'Source Serif 4',serif;font-size:14px;letter-spacing:.01em;text-transform:none;margin-top:3px}
+  .nav__cta{display:inline-block;background:var(--char);color:var(--paper);padding:11px 20px;border-radius:999px;font-size:13px;font-weight:500;transition:background .2s}
+  .nav__cta:hover{background:var(--marigold)}
+
+  /* hero */
+  .hero{padding:80px 0;border-bottom:1px solid var(--line)}
+  .hero__inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(48px,6vw,84px);margin-top:24px;margin-bottom:24px}
+  .hero p.lede{font-size:20px;line-height:1.5;color:var(--stone);max-width:48ch}
+  
+  .hero__meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--char);background:var(--paper-2)}
+  .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--marigold)}
+
+  /* stats/key dates */
+  .stats{background:var(--char);color:var(--paper);padding:60px 0}
+  .stats .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .stat .n{font-family:'Source Serif 4',serif;font-size:48px;font-weight:500;line-height:1;color:var(--paper)}
+  .stat .n em{color:var(--marigold);font-style:italic}
+  .stat .l{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,227,.55);margin-top:14px}
+
+  /* content block */
+  .sec-head{margin-bottom:60px;max-width:800px}
+  .sec-head h2{font-size:clamp(36px,5vw,56px);font-family:'Source Serif 4',serif;font-weight:600;letter-spacing:-.02em;line-height:1;color:var(--char)}
+  .sec-head h2 em{font-style:italic;color:var(--marigold);font-weight:500}
+  .sec-head p{margin-top:24px;font-size:18px;line-height:1.6;color:var(--stone)}
+
+  /* modules grid */
+  .modules{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;border-top:1px solid var(--line);padding-top:60px}
+  .mod{padding:32px;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;transition:border-color .2s}
+  .mod:hover{border-color:var(--marigold)}
+  .mod .n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--marigold);margin-bottom:12px}
+  .mod h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:24px;line-height:1.2;color:var(--char);margin-bottom:12px}
+  .mod p{font-size:15px;line-height:1.5;color:var(--stone)}
+
+  /* final CTA */
+  .final{background:var(--char);color:var(--paper);padding:120px 0;text-align:center}
+  .final h2{font-family:'Source Serif 4',serif;font-size:clamp(40px,5vw,72px);font-weight:600;line-height:1;color:var(--paper)}
+  .final h2 em{font-style:italic;color:var(--marigold)}
+  .final .btn{display:inline-block;margin-top:40px;background:var(--marigold);color:var(--paper);padding:18px 32px;border-radius:999px;font-size:15px;font-weight:600}
+  .final .btn:hover{background:#b0612d}
+
+  @media (max-width:900px){
+    .hero__inner{grid-template-columns:1fr}
+    .stats .grid{grid-template-columns:1fr}
+    .modules{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__brand">
+      <div class="mark">IIMB<span>x</span></div>
+      <span class="ctx">Programme<b>AI for Managers</b></span>
+    </a>
+    <a href="#apply" class="nav__cta">Apply Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__inner">
+      <div>
+        <div class="eyebrow">Professional Certificate</div>
+        <h1 class="display">Bridge the gap between <em>data science</em> and <em>business strategy.</em></h1>
+        <p class="lede">A 10-month, fully online program designed to equip professionals with the knowledge and skills required to understand, apply, and lead AI initiatives in their organizations.</p>
+        <div class="hero__meta">
+          <span class="chip"><span class="dot"></span> 10 Months Online</span>
+          <span class="chip"><span class="dot"></span> 8 Modules</span>
+          <span class="chip"><span class="dot"></span> IIMB Certification</span>
+        </div>
+      </div>
+      <div>
+        <img src="https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-4.jpg" alt="IIMB Faculty" style="border-radius:8px;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1);opacity:0.8" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat"><div class="n">30 <em>Aug</em></div><div class="l">Registrations Open</div></div>
+      <div class="stat"><div class="n">15 <em>Dec</em></div><div class="l">Registration Close</div></div>
+      <div class="stat"><div class="n">20 <em>Dec</em></div><div class="l">Programme Inauguration</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head">
+    <h2>From foundational concepts to <em>advanced applications.</em></h2>
+    <p>Unlike technical AI courses, this programme is specifically curated for managers and decision-makers. You will not only learn the underlying concepts of AI, Machine Learning, Deep Learning, and Generative AI, but also develop the ability to evaluate opportunities, assess risks, and design business solutions.</p>
+  </div>
+  
+  <div class="modules">
+    <div class="mod">
+      <div class="n">Module 01</div>
+      <h3>Foundation of Data Science</h3>
+      <p>Speak data with confidence.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 02</div>
+      <h3>Data Visualization and Story Telling</h3>
+      <p>Turn numbers into boardroom influence.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 03</div>
+      <h3>Predictive Analysis</h3>
+      <p>Forecast outcomes that guide strategy.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 04</div>
+      <h3>Machine Learning with Business Applications</h3>
+      <p>See algorithms in action on real business problems.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 05</div>
+      <h3>Machine Learning using Python</h3>
+      <p>Practical skills to engage with technical teams.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 06</div>
+      <h3>Artificial Neural Network and Deep Learning</h3>
+      <p>Understand the power behind modern AI.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 07</div>
+      <h3>Reinforcement Learning</h3>
+      <p>Lead in dynamic, uncertain environments.</p>
+    </div>
+    <div class="mod">
+      <div class="n">Module 08</div>
+      <h3>Generative AI</h3>
+      <p>Harness the innovation of ChatGPT, LLMs & beyond.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="apply">
+  <div class="wrap">
+    <h2>The same faculty.<br/><em>Wherever you are.</em></h2>
+    <a href="#" class="btn">Start Your Application</a>
+  </div>
+</section>
+
+</body>
+</html>

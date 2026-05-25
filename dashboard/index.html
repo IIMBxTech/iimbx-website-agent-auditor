@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIMBx Audit Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">IIMBx Audit Dashboard</div>
+      <div class="status">Automated Crawler: <span class="badge active">Active (Next run: 4 days)</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="intro">
+      <h1>Programme Landing Pages</h1>
+      <p>Single source of truth for UX, Brand, and Content audits. Click a programme to view detailed comparisons and wireframes.</p>
+    </div>
+
+    <div class="grid" id="programme-grid">
+      <!-- Cards injected by JS -->
+    </div>
+  </main>
+
+  <!-- Modal for full report -->
+  <div class="modal" id="audit-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-modal">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="data/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
