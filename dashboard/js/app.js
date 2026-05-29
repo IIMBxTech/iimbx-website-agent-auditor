@@ -1,201 +1,494 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const data = window.AUDIT_DATA || [];
+  
   const grid = document.getElementById('programme-grid');
+  const sidebarNav = document.getElementById('sidebar-nav');
+  
   const modal = document.getElementById('audit-modal');
+  const modalClose = document.getElementById('close-modal');
+  const modalBack = document.getElementById('modal-back');
+  const modalHeader = document.getElementById('modal-header-content');
+  const modalTabs = document.getElementById('modal-tabs');
   const modalBody = document.getElementById('modal-body');
-  const closeBtn = document.getElementById('close-modal');
-
-  // Load data from global window object (avoids CORS issues on file:// protocol)
-  if (window.AUDIT_DATA) {
-    window.AUDIT_DATA.forEach(data => {
-      renderCard(data, grid);
-    });
-  } else {
-    console.error('No audit data found in window.AUDIT_DATA');
-  }
-
-  function getScoreClass(score) {
-    if (score >= 90) return 'high';
-    if (score >= 70) return 'med';
-    return 'low';
-  }
-
-  function renderCard(data, container) {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <h2>${data.programmeName}</h2>
-      <div class="card-meta">File: ${data.file} | Last Audited: ${new Date(data.auditDate).toLocaleDateString()}</div>
-      <div class="scores">
-        <div class="score">
-          <span class="score-label">Brand</span>
-          <span class="score-val ${getScoreClass(data.scores.brand)}">${data.scores.brand}%</span>
+  
+  const wfViewer = document.getElementById('wf-viewer');
+  const wfClose = document.getElementById('wf-close');
+  const wfBack = document.getElementById('wf-back');
+  const wfTitle = document.getElementById('wf-title');
+  const wfSourceTabs = document.getElementById('wf-source-tabs');
+  const wfActions = document.getElementById('wf-actions');
+  const wfPaneLeft = document.getElementById('wf-pane-left');
+  const wfPaneMiddle = document.getElementById('wf-pane-middle');
+  const wfPaneRight = document.getElementById('wf-pane-right');
+  const wfLabelLeft = document.getElementById('wf-label-left');
+  const wfLabelMiddle = document.getElementById('wf-label-middle');
+  const wfLabelRight = document.getElementById('wf-label-right');
+  
+  let currentProgramme = null;
+  let currentWfLeft = 'oldSite';
+  let currentWfMiddle = 'marketingHtml';
+  let currentWfRight = 'proposedV1';
+  let currentViewMode = 'ascii';
+  
+  // Render Grid
+  function renderGrid() {
+    grid.innerHTML = '';
+    sidebarNav.innerHTML = '';
+    
+    data.forEach(prog => {
+      // Sidebar item
+      const sItem = document.createElement('div');
+      sItem.className = 'sidebar-item';
+      sItem.innerHTML = `
+        <div class="sidebar-item-content">
+          <span class="dot"></span>${prog.shortName}
         </div>
-        <div class="score">
-          <span class="score-label">Content</span>
-          <span class="score-val ${getScoreClass(data.scores.content)}">${data.scores.content}%</span>
-        </div>
-        <div class="score">
-          <span class="score-label">UX</span>
-          <span class="score-val ${getScoreClass(data.scores.ux)}">${data.scores.ux}%</span>
-        </div>
-      </div>
-      <div style="font-size: 11px; color: #888; margin-top: -12px; margin-bottom: 20px; font-style: italic;">
-        % indicates readiness for launch (100 = Perfect, <90 = Needs Review).
-      </div>
-      <div style="font-size: 13px; color: #444;">${data.summary}</div>
-    `;
-    card.addEventListener('click', () => openModal(data));
-    container.appendChild(card);
-  }
-
-  function openModal(data) {
-    let gapsHtml = '';
-    data.contentGaps.forEach(g => {
-      gapsHtml += `
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #eee;">${g.section}</td>
-          <td style="padding: 8px; border-bottom: 1px solid #eee;">${g.oldContent}</td>
-          <td style="padding: 8px; border-bottom: 1px solid #eee;">${g.newContent}</td>
-          <td style="padding: 8px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
-            ${g.verdict}
-            ${g.explanation ? `<span class="info-trigger" style="margin-left: 6px;">i<span class="tooltip" style="bottom: 120%; width: 220px; z-index: 1000;"><strong>Swarm Context:</strong><br>${g.explanation}</span></span>` : ''}
-          </td>
-        </tr>
-      `;
-    });
-
-    let wireframesHtml = '';
-    data.wireframes.forEach(w => {
-      wireframesHtml += `
-        <div class="section-diff">
-          <div class="panel">
-            <h4>
-              <span>Old Live Website</span>
-              <span class="info-trigger">i
-                <span class="tooltip">
-                  <strong>Old Live Site</strong><br>
-                  • <strong>Source:</strong> Crawled from the active live IIMBx website.<br>
-                  • <strong>Idea:</strong> Original institutional site design.
-                </span>
-              </span>
-            </h4>
-            <pre>${w.oldLive || '(Not Captured)'}</pre>
-          </div>
-          <div class="panel">
-            <h4>
-              <span>Current Layout (HTML Prototype)</span>
-              <span class="info-trigger">i
-                <span class="tooltip">
-                  <strong>Current HTML Prototype</strong><br>
-                  • <strong>Source:</strong> HTML file supplied by the design/marketing team.<br>
-                  • <strong>Idea:</strong> Design agency / marketing team's layout proposal.
-                </span>
-              </span>
-            </h4>
-            <pre>${w.current}</pre>
-          </div>
-          <div class="panel">
-            <h4>
-              <span>Proposed UX (Swarm Intelligence)</span>
-              <span class="info-trigger">i
-                <span class="tooltip">
-                  <strong>Swarm Optimized Layout</strong><br>
-                  • <strong>Source:</strong> Generated by the Swarm AI (Agents 09 & 10).<br>
-                  • <strong>Idea:</strong> Applied UX patterns (tabs, accordions) to hit target scroll depth.
-                </span>
-              </span>
-            </h4>
-            <pre>${w.proposed}</pre>
-          </div>
+        <div class="sidebar-item-actions">
+          <button class="action-btn audit-btn">Audit Details</button>
+          <button class="action-btn wf-btn">Check Wireframes</button>
         </div>
       `;
-    });
-
-    let brandHtml = '';
-    if (data.brandChecks) {
-      data.brandChecks.forEach(b => {
-        brandHtml += `
-          <tr>
-            <td style="padding: 8px; border-bottom: 1px solid #eee;">${b.rule}</td>
-            <td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace;">${b.expected}</td>
-            <td style="padding: 8px; border-bottom: 1px solid #eee; font-family: monospace;">${b.actual}</td>
-            <td style="padding: 8px; border-bottom: 1px solid #eee;">${b.status}</td>
-          </tr>
-        `;
-      });
-    }
-
-    modalBody.innerHTML = `
-      <h2>${data.programmeName} Audit Report</h2>
-      <div style="background: #fbf8f1; padding: 16px; border: 1px solid #eee; border-left: 4px solid var(--accent); border-radius: 6px; margin: 20px 0;">
-        <p style="margin: 0 0 8px 0; font-size: 14px; line-height: 1.5;">
-          <strong>What is this page?</strong> The link below opens <code>${data.file}</code>. This is the <strong>HTML Prototype</strong> proposed by the marketing team.
-        </p>
-        <p style="margin: 0 0 16px 0; font-size: 14px; line-height: 1.5;">
-          <strong>Brand Status:</strong> This prototype scored <strong>${data.scores.brand}%</strong> for brand compliance. ${data.scores.brand === 100 ? 'It perfectly follows the May 2026 Brand Playbook (correct colors, typography, and voice).' : 'It contains brand violations (e.g. banned colors or fonts) that need fixing.'}
-        </p>
-        <a href="../${data.file}" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--text); color: #fff; padding: 8px 16px; border-radius: 4px; font-weight: 500; font-size: 13px; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='var(--accent)'" onmouseout="this.style.background='var(--text)'">
-          Open HTML Prototype in Browser &rarr;
-        </a>
-      </div>
       
-      <h3 style="margin-top:30px; border-bottom: 2px solid #eee; padding-bottom: 8px;">Brand Guideline Compliance</h3>
-      <table style="width:100%; border-collapse: collapse; text-align: left; font-size: 14px;">
-        <thead>
-          <tr>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Rule</th>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Required by Playbook</th>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Found in Prototype</th>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${brandHtml}
-        </tbody>
-      </table>
-
-      <h3 style="margin-top:30px; border-bottom: 2px solid #eee; padding-bottom: 8px;">Content Gaps</h3>
-      <table style="width:100%; border-collapse: collapse; text-align: left; font-size: 14px;">
-        <thead>
-          <tr>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Section</th>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Old Live Site</th>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">New HTML Prototype</th>
-            <th style="padding: 8px; border-bottom: 2px solid #ccc;">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${gapsHtml}
-        </tbody>
-      </table>
-
-      <h3 style="margin-top:40px; border-bottom: 2px solid #eee; padding-bottom: 8px;">UX & Layout Optimization</h3>
-      <p style="font-size: 15px; display: flex; align-items: center;">
-        Scroll Depth: <strong>${data.scrollDepth.current} scrolls</strong> (HTML Prototype) &rarr; Target: <strong>${data.scrollDepth.target} scrolls</strong> (Swarm Optimized)
-        <span class="info-trigger" style="margin-left: 8px;">i
-          <span class="tooltip" style="bottom: 150%;">
-            <strong>Scroll Depth Calculation</strong><br>
-            • <strong>Prototype:</strong> Calculated from the sections in the provided HTML file.<br>
-            • <strong>Target:</strong> Swarm's ideal 4-6 viewport target after applying UI optimization patterns (e.g. tabs).
-          </span>
-        </span>
-      </p>
-      ${wireframesHtml}
-
-      <h3 style="margin-top:40px; border-bottom: 2px solid #eee; padding-bottom: 8px;">Action Items</h3>
-      <ul style="line-height: 1.6;">
-        ${data.actionItems.map(item => `<li><strong>[${item.priority}]</strong> ${item.task}</li>`).join('')}
-      </ul>
-      <p style="margin-top: 20px; font-style: italic; color: #666;">Want to apply these fixes? Go to Antigravity and say: "Run the Builder agent for ELP"</p>
-    `;
-    modal.classList.add('active');
+      const auditBtn = sItem.querySelector('.audit-btn');
+      const wfBtn = sItem.querySelector('.wf-btn');
+      
+      auditBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openModal(prog);
+      });
+      
+      wfBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openWfViewer(prog);
+      });
+      
+      sItem.addEventListener('click', () => openModal(prog));
+      sidebarNav.appendChild(sItem);
+      
+      // Card
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="title">${prog.programmeName}</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">${prog.file}</div>
+        <div>Brand: ${prog.scores.brand}% | Content: ${prog.scores.content}% | UX: ${prog.scores.ux}%</div>
+        <div class="scores">
+          <div class="score-bar"><div class="score-fill" style="width:${prog.scores.brand}%; background:var(--success)"></div></div>
+          <div class="score-bar"><div class="score-fill" style="width:${prog.scores.content}%; background:var(--warning)"></div></div>
+          <div class="score-bar"><div class="score-fill" style="width:${prog.scores.ux}%; background:var(--accent)"></div></div>
+        </div>
+      `;
+      card.addEventListener('click', () => openModal(prog));
+      grid.appendChild(card);
+    });
   }
-
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
+  
+  // History State Management
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.view === 'wf') {
+      modal.style.display = 'flex';
+      wfViewer.style.display = 'flex';
+    } else if (e.state && e.state.view === 'modal') {
+      modal.style.display = 'flex';
+      wfViewer.style.display = 'none';
+    } else {
+      modal.style.display = 'none';
+      wfViewer.style.display = 'none';
+    }
   });
 
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('active');
+  // ESC key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (wfViewer.style.display === 'flex') {
+        history.back();
+      } else if (modal.style.display === 'flex') {
+        history.back();
+      }
+    }
+  });
+
+  // Open Modal
+  function openModal(prog) {
+    currentProgramme = prog;
+    modal.style.display = 'flex';
+    history.pushState({ view: 'modal' }, '', '#audit');
+    modalHeader.innerHTML = `<h2>${prog.programmeName}</h2><p>Audit Results for ${prog.file}</p>`;
+    
+    // Setup Tabs
+    modalTabs.innerHTML = `
+      <div class="modal-tab active" data-tab="summary">Summary</div>
+      <div class="modal-tab" data-tab="gaps">Gap Analysis</div>
+      <div class="modal-tab" data-tab="brand">Brand Compliance</div>
+      <div class="modal-tab" data-tab="wireframes">Wireframes</div>
+    `;
+    
+    document.querySelectorAll('.modal-tab').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
+        renderTabContent(e.target.dataset.tab, prog);
+      });
+    });
+    
+    renderTabContent('summary', prog);
+  }
+  
+  // Render Tab Content
+  function renderTabContent(tab, prog) {
+    let html = '';
+    if (tab === 'summary') {
+      html = `
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div>
+            <p><strong>Summary:</strong> ${prog.summary}</p>
+            <p><strong>Old Site:</strong> ${prog.oldSiteUrl !== '—' ? `<a href="${prog.oldSiteUrl}" target="_blank">${prog.oldSiteUrl}</a>` : '—'}</p>
+            <p><strong>v1 Staging:</strong> ${prog.v1StagingUrl !== '—' ? `<a href="${prog.v1StagingUrl}" target="_blank">${prog.v1StagingUrl}</a>` : '—'}</p>
+            <p><strong>Audit Date:</strong> ${prog.auditDate}</p>
+          </div>
+          <button id="summary-open-wf-viewer" style="background: var(--accent); color: white; padding: 10px 20px; border: none; border-radius: var(--radius); cursor: pointer; font-family: 'Inter', sans-serif; white-space: nowrap; margin-left: 20px;">Compare Wireframes</button>
+        </div>
+        <h3>Action Items</h3>
+        <ul>
+          ${prog.actionItems.map(a => `<li><b>${a.priority.toUpperCase()}</b>: ${a.task}</li>`).join('')}
+        </ul>
+      `;
+    } else if (tab === 'gaps') {
+      html = `
+        <table style="width: 100%; text-align: left; border-collapse: collapse;">
+          <tr style="background: var(--bg-dark); color: var(--text-light);">
+            <th style="padding: 10px; border: 1px solid var(--border);">Section</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">Old Site</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">Marketing HTML</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">v1 Staging</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">Severity</th>
+          </tr>
+          ${prog.contentGaps.map(g => `
+            <tr>
+              <td style="padding: 10px; border: 1px solid var(--border); font-weight: bold;">${g.section}</td>
+              <td style="padding: 10px; border: 1px solid var(--border);">${g.oldSite.detail}</td>
+              <td style="padding: 10px; border: 1px solid var(--border); ${!g.marketingHtml.present ? 'color: red; font-weight: bold;' : ''}">${g.marketingHtml.detail}</td>
+              <td style="padding: 10px; border: 1px solid var(--border);">${g.v1Staging.detail}</td>
+              <td style="padding: 10px; border: 1px solid var(--border); color: ${g.severity === 'critical' ? 'red' : (g.severity === 'warning' ? 'orange' : 'green')}">${g.severity.toUpperCase()}</td>
+            </tr>
+          `).join('')}
+        </table>
+      `;
+    } else if (tab === 'brand') {
+      html = `
+        <table style="width: 100%; text-align: left; border-collapse: collapse;">
+          <tr style="background: var(--bg-dark); color: var(--text-light);">
+            <th style="padding: 10px; border: 1px solid var(--border);">Rule</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">Expected</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">Actual</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">Status</th>
+          </tr>
+          ${prog.brandChecks.map(b => `
+            <tr>
+              <td style="padding: 10px; border: 1px solid var(--border);">${b.rule}</td>
+              <td style="padding: 10px; border: 1px solid var(--border);">${b.expected}</td>
+              <td style="padding: 10px; border: 1px solid var(--border);">${b.actual}</td>
+              <td style="padding: 10px; border: 1px solid var(--border); color: ${b.status === 'pass' ? 'green' : (b.status === 'warn' ? 'orange' : 'red')}">${b.status.toUpperCase()}</td>
+            </tr>
+          `).join('')}
+        </table>
+      `;
+    } else if (tab === 'wireframes') {
+      html = `
+        <p>Click below to compare wireframes side by side and download them.</p>
+        <button id="open-wf-viewer" style="background: var(--accent); color: white; padding: 10px 20px; border: none; border-radius: var(--radius); cursor: pointer; font-family: 'Inter', sans-serif;">Compare Wireframes</button>
+        <h3 style="margin-top: 20px;">UX Suggestions</h3>
+        <ul>
+          ${prog.wireframes.suggestions.map(s => `<li><b>${s.title}</b>: ${s.description} (Effort: ${s.effort}, Impact: ${s.impact})</li>`).join('')}
+        </ul>
+      `;
+    }
+    modalBody.innerHTML = html;
+    
+    if (tab === 'wireframes') {
+      document.getElementById('open-wf-viewer').addEventListener('click', () => {
+        openWfViewer(prog);
+      });
+    }
+    if (tab === 'summary') {
+      const btn = document.getElementById('summary-open-wf-viewer');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          openWfViewer(prog);
+        });
+      }
+    }
+  }
+  
+  modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+    history.replaceState(null, '', '#');
+  });
+  if (modalBack) {
+    modalBack.addEventListener('click', () => {
+      modal.style.display = 'none';
+      history.replaceState(null, '', '#');
+    });
+  }
+  
+  // Wireframe Viewer
+  function openWfViewer(prog) {
+    currentProgramme = prog;
+    wfViewer.style.display = 'flex';
+    history.pushState({ view: 'wf' }, '', '#wireframes');
+    wfTitle.textContent = `${prog.shortName} Wireframe Comparison`;
+    
+    // Set up source tabs
+    const sources = [
+      { id: 'oldSite', label: 'Old Website' },
+      { id: 'marketingHtml', label: 'Marketing HTML' },
+      { id: 'v1Staging', label: 'v1 Staging' },
+      { id: 'proposedV1', label: 'Proposed Layout v1' },
+      { id: 'proposedV2', label: 'Proposed Layout v2' },
+      { id: 'proposedV3', label: 'Proposed Layout v3' }
+    ];
+    
+    function renderActions() {
+      wfActions.innerHTML = `
+        <div style="background: var(--bg-darker); padding: 4px; border-radius: 6px; display: inline-flex; margin-right: 16px; border: 1px solid var(--border);">
+          <button id="view-ascii" style="background: ${currentViewMode === 'ascii' ? 'var(--accent)' : 'transparent'}; color: ${currentViewMode === 'ascii' ? 'white' : 'var(--text-light)'}; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500;">ASCII Mode</button>
+          <button id="view-html" style="background: ${currentViewMode === 'html' ? 'var(--accent)' : 'transparent'}; color: ${currentViewMode === 'html' ? 'white' : 'var(--text-light)'}; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500;">HTML Code</button>
+        </div>
+        <button id="preview-html" style="background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-right: 12px; font-weight: 500; font-size: 14px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onmouseover="this.style.filter='brightness(1.1)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.filter='none'; this.style.transform='none'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          Preview HTML
+        </button>
+        ${currentViewMode === 'ascii' ? `
+        <button id="dl-txt" style="background: #2D3748; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-right: 12px; font-weight: 500; font-size: 14px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#4A5568'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#2D3748'; this.style.transform='none'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Export TXT
+        </button>
+        <button id="dl-png" style="background: #2D3748; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 14px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#4A5568'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#2D3748'; this.style.transform='none'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          Export PNG
+        </button>
+        ` : `
+        <button id="dl-html" style="background: #2D3748; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 14px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#4A5568'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#2D3748'; this.style.transform='none'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download HTML Codes
+        </button>
+        `}
+      `;
+
+      document.getElementById('view-ascii').addEventListener('click', () => {
+        currentViewMode = 'ascii';
+        renderActions();
+        updateWfViews();
+      });
+      document.getElementById('view-html').addEventListener('click', () => {
+        currentViewMode = 'html';
+        renderActions();
+        updateWfViews();
+      });
+      
+      document.getElementById('preview-html').addEventListener('click', () => {
+        let version = 'v1';
+        if (currentWfRight === 'proposedV2') version = 'v2';
+        if (currentWfRight === 'proposedV3') version = 'v3';
+        const fileUrl = `../prototypes/${prog.id}_${version}.html`;
+        window.open(fileUrl, '_blank');
+      });
+
+      if (currentViewMode === 'ascii') {
+        document.getElementById('dl-txt').addEventListener('click', () => {
+          const parts = [];
+          if (currentWfLeft !== 'none') parts.push(`=== LEFT: ${currentWfLeft} ===\n${prog.wireframes.ascii[currentWfLeft]}`);
+          if (currentWfMiddle !== 'none') parts.push(`=== MIDDLE: ${currentWfMiddle} ===\n${prog.wireframes.ascii[currentWfMiddle]}`);
+          if (currentWfRight !== 'none') parts.push(`=== RIGHT: ${currentWfRight} ===\n${prog.wireframes.ascii[currentWfRight]}`);
+          const content = parts.join('\n\n');
+          const blob = new Blob([content], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${prog.shortName}_wireframes.txt`;
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+        
+        document.getElementById('dl-png').addEventListener('click', () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          const width = 1200;
+          const height = 800;
+          canvas.width = width;
+          canvas.height = height;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, width, height);
+          ctx.font = '14px monospace';
+          ctx.fillStyle = '#000000';
+          
+          const activePanes = [];
+          if (currentWfLeft !== 'none') activePanes.push(currentWfLeft);
+          if (currentWfMiddle !== 'none') activePanes.push(currentWfMiddle);
+          if (currentWfRight !== 'none') activePanes.push(currentWfRight);
+          
+          const paneWidth = activePanes.length > 0 ? width / activePanes.length : width;
+          
+          activePanes.forEach((paneId, index) => {
+            const xOffset = index * paneWidth + 20;
+            const lines = prog.wireframes.ascii[paneId] ? prog.wireframes.ascii[paneId].split('\n') : [];
+            ctx.fillText(`--- ${paneId} ---`, xOffset, 30);
+            lines.forEach((line, i) => {
+              ctx.fillText(line, xOffset, 60 + i * 16);
+            });
+          });
+          
+          const a = document.createElement('a');
+          a.href = canvas.toDataURL('image/png');
+          a.download = `${prog.shortName}_wireframes.png`;
+          a.click();
+        });
+      } else {
+        document.getElementById('dl-html').addEventListener('click', () => {
+          // Download all active panes as HTML files
+          const activePanes = [];
+          if (currentWfLeft !== 'none') activePanes.push(currentWfLeft);
+          if (currentWfMiddle !== 'none') activePanes.push(currentWfMiddle);
+          if (currentWfRight !== 'none') activePanes.push(currentWfRight);
+          
+          activePanes.forEach(paneId => {
+            const htmlContent = prog.wireframes.html[paneId] || 'No HTML available';
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${prog.shortName}_${paneId}.html`;
+            a.click();
+            URL.revokeObjectURL(url);
+          });
+        });
+      }
+    }
+    
+    renderActions();
+    updateWfViews();
+  }
+  
+  function updateWfViews() {
+    const friendlyLabels = {
+      none: 'None',
+      oldSite: 'Old Website',
+      marketingHtml: 'Marketing HTML',
+      v1Staging: 'v1 Staging',
+      proposedV1: 'Proposed Layout v1',
+      proposedV2: 'Proposed Layout v2',
+      proposedV3: 'Proposed Layout v3'
+    };
+    
+    const colLeft = document.getElementById('wf-col-left');
+    colLeft.style.display = 'flex';
+    if (currentWfLeft === 'none') {
+      wfLabelLeft.textContent = `Left: ${friendlyLabels['none']}`;
+      wfPaneLeft.textContent = '';
+    } else {
+      wfLabelLeft.textContent = `Left: ${friendlyLabels[currentWfLeft]}`;
+      wfPaneLeft.textContent = currentProgramme.wireframes[currentViewMode][currentWfLeft] || '';
+    }
+    
+    const colMiddle = document.getElementById('wf-col-middle');
+    if (colMiddle) {
+      colMiddle.style.display = 'flex';
+      if (currentWfMiddle === 'none') {
+        wfLabelMiddle.textContent = `Middle: ${friendlyLabels['none']}`;
+        wfPaneMiddle.textContent = '';
+      } else {
+        wfLabelMiddle.textContent = `Middle: ${friendlyLabels[currentWfMiddle]}`;
+        wfPaneMiddle.textContent = currentProgramme.wireframes[currentViewMode][currentWfMiddle] || '';
+      }
+    }
+    
+    const colRight = document.getElementById('wf-col-right');
+    colRight.style.display = 'flex';
+    if (currentWfRight === 'none') {
+      wfLabelRight.textContent = `Proposed Layout: ${friendlyLabels['none']}`;
+      wfPaneRight.textContent = '';
+    } else {
+      wfLabelRight.textContent = `Proposed Layout: ${friendlyLabels[currentWfRight]}`;
+      wfPaneRight.textContent = currentProgramme.wireframes[currentViewMode][currentWfRight] || '';
+    }
+    
+    const previewBtn = document.getElementById('preview-html');
+    if (previewBtn) {
+      let v = 'v1';
+      if (currentWfRight === 'proposedV2') v = 'v2';
+      if (currentWfRight === 'proposedV3') v = 'v3';
+      previewBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Preview Prototype HTML ${v.toUpperCase()}`;
+    }
+
+    // add dropdowns to change sources
+    wfSourceTabs.innerHTML = `
+      <select id="sel-left" style="margin-right: 10px; padding: 4px; border-radius: 4px;">
+        <option value="none" ${currentWfLeft === 'none' ? 'selected' : ''}>None</option>
+        <option value="oldSite" ${currentWfLeft === 'oldSite' ? 'selected' : ''}>Old Site</option>
+        <option value="marketingHtml" ${currentWfLeft === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
+        <option value="v1Staging" ${currentWfLeft === 'v1Staging' ? 'selected' : ''}>v1 Staging</option>
+        <option value="proposedV1" ${currentWfLeft === 'proposedV1' ? 'selected' : ''}>Proposed v1</option>
+        <option value="proposedV2" ${currentWfLeft === 'proposedV2' ? 'selected' : ''}>Proposed v2</option>
+        <option value="proposedV3" ${currentWfLeft === 'proposedV3' ? 'selected' : ''}>Proposed v3</option>
+      </select>
+      <select id="sel-middle" style="margin-right: 10px; padding: 4px; border-radius: 4px;">
+        <option value="none" ${currentWfMiddle === 'none' ? 'selected' : ''}>None</option>
+        <option value="oldSite" ${currentWfMiddle === 'oldSite' ? 'selected' : ''}>Old Site</option>
+        <option value="marketingHtml" ${currentWfMiddle === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
+        <option value="v1Staging" ${currentWfMiddle === 'v1Staging' ? 'selected' : ''}>v1 Staging</option>
+        <option value="proposedV1" ${currentWfMiddle === 'proposedV1' ? 'selected' : ''}>Proposed v1</option>
+        <option value="proposedV2" ${currentWfMiddle === 'proposedV2' ? 'selected' : ''}>Proposed v2</option>
+        <option value="proposedV3" ${currentWfMiddle === 'proposedV3' ? 'selected' : ''}>Proposed v3</option>
+      </select>
+      <select id="sel-right" style="padding: 4px; border-radius: 4px;">
+        <option value="none" ${currentWfRight === 'none' ? 'selected' : ''}>None</option>
+        <option value="oldSite" ${currentWfRight === 'oldSite' ? 'selected' : ''}>Old Site</option>
+        <option value="marketingHtml" ${currentWfRight === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
+        <option value="v1Staging" ${currentWfRight === 'v1Staging' ? 'selected' : ''}>v1 Staging</option>
+        <option value="proposedV1" ${currentWfRight === 'proposedV1' ? 'selected' : ''}>Proposed v1</option>
+        <option value="proposedV2" ${currentWfRight === 'proposedV2' ? 'selected' : ''}>Proposed v2</option>
+        <option value="proposedV3" ${currentWfRight === 'proposedV3' ? 'selected' : ''}>Proposed v3</option>
+      </select>
+    `;
+    
+    document.getElementById('sel-left').addEventListener('change', (e) => {
+      currentWfLeft = e.target.value;
+      updateWfViews();
+    });
+    document.getElementById('sel-middle').addEventListener('change', (e) => {
+      currentWfMiddle = e.target.value;
+      updateWfViews();
+    });
+    document.getElementById('sel-right').addEventListener('change', (e) => {
+      currentWfRight = e.target.value;
+      updateWfViews();
+    });
+  }
+  
+  wfClose.addEventListener('click', () => {
+    wfViewer.style.display = 'none';
+    history.replaceState({ view: 'modal' }, '', '#audit');
+  });
+  if (wfBack) {
+    wfBack.addEventListener('click', () => {
+      wfViewer.style.display = 'none';
+      history.replaceState({ view: 'modal' }, '', '#audit');
+    });
+  }
+  
+  // init
+  renderGrid();
+  
+  // Sidebar toggle
+  document.getElementById('sidebar-toggle').addEventListener('click', () => {
+    const sidebar = document.getElementById('sidebar');
+    const main = document.getElementById('main-content');
+    if (sidebar.style.display === 'none') {
+      sidebar.style.display = 'flex';
+      main.style.marginLeft = '260px';
+    } else {
+      sidebar.style.display = 'none';
+      main.style.marginLeft = '0';
+    }
   });
 });

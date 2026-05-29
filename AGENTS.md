@@ -570,9 +570,29 @@ The agent should recognise these as update intents:
 | May 2026 | v2.4 | Added `IIMBx_Comparative_Audit_Skill.md` to §2 file table · Replaced simple "Compare" handler in §5 with full comparative audit pipeline referencing the new skill file · Skill uses Mermaid/ASCII wireframes (no image generation) | Enables a structured, repeatable workflow for comparing all HTML prototypes against brand guidelines and old website content, with scroll-depth analysis and visual wireframe proposals for UX optimization |
 | May 2026 | v3.0 | **Major upgrade:** Evolved from monolithic agent to **20-agent swarm architecture**. Created `skills/` directory with 21 skill files (00–20) across 5 layers. Created `dashboard/` with interactive Netlify-ready audit dashboard. Updated §1 identity to Swarm Coordinator. Updated §2 with complete file registry. Updated §5 audit/fix handlers to reference swarm dispatch protocol. Deleted orphan root-level skill files. Expanded Agent 03 (Guidelines Extractor) from 1.8KB to 4.5KB with complete output structures. | Scalable, modular, multi-agent architecture for continuous IIMBx landing page auditing with live dashboard for PMs and designers |
 
----
-
 *Swarm instructions v3.0 — IIMBx Brand Team — May 2026*
 *Maintained in: `c:\Users\harsh\OneDrive\Desktop\Compare\AGENTS.md`*
 *Swarm skills in: `c:\Users\harsh\OneDrive\Desktop\Compare\skills\`*
 *Dashboard in: `c:\Users\harsh\OneDrive\Desktop\Compare\dashboard\`*
+
+## §11 · Developer Handoff & Environment Setup
+
+If you are a new developer or manager taking over this folder, you MUST read **SETUP.md** and **MANAGER_LOG.md** immediately.
+- **SETUP.md** details the required MCPs (Exa, Stitch) and the mandatory model constraint (**Gemini 3.1 Pro** only).
+- **MANAGER_LOG.md** contains the active session log, visual progress charts, and tracks all rule overrides.
+- The Manager Agent actively monitors requests against `MANAGER_LOG.md` and will block and warn you if an instruction violates an established rule, requiring explicit confirmation before proceeding.
+
+## §12 · Session Start Protocol & Identity Check
+
+At the very beginning of **every new session**, the Coordinator Agent MUST perform an identity check:
+
+1. **Ask for Name:** Ask the user for their name before processing any commands.
+2. **If the user is Harsh Makhija (Co-developer):**
+   - Acknowledge him warmly as the co-developer of this code.
+   - Silently check if the Exa and Stitch MCPs are running in the background.
+   - If they are up, proceed normally without lecturing.
+3. **If the user is a New Developer:**
+   - Check if their MCPs (Exa, Stitch) are active.
+   - If MCPs are missing, instruct them to install/enable them.
+   - Give them a brief overview of the workspace (the Swarm structure, the 3-step content precedence: Old Site -> Staging -> Marketing, and the MANAGER_LOG.md rules).
+   - **Crucial Rule:** We give this brief to a specific person **only once**. Record their name in `MANAGER_LOG.md` under 'Onboarded Developers' so you don't brief them again in future sessions.

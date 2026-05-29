@@ -26,15 +26,15 @@
     --navy:#172D6B;
     --accent:var(--marigold);
   }
-  html,body{background:var(--char);color:var(--paper);font-family:'Inter','IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  html,body{background:var(--paper);color:var(--char);font-family:'Inter','IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   body{overflow-x:hidden}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  ::selection{background:var(--crimson);color:var(--paper)}
-  .display{font-family:'Source Serif 4','Source Serif Pro',Georgia,serif;font-weight:600;letter-spacing:-.022em;line-height:.95;color:var(--paper)}
+  ::selection{background:var(--crimson);color:var(--char)}
+  .display{font-family:'Source Serif 4','Source Serif Pro',Georgia,serif;font-weight:600;letter-spacing:-.022em;line-height:.95;color:var(--char)}
   .display em{font-style:italic;font-weight:500;color:var(--marigold)}
   .eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--marigold);font-weight:500}
-  .body{font-size:16px;line-height:1.62;color:var(--paper)}
+  .body{font-size:16px;line-height:1.62;color:var(--char)}
   .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
   section{padding:120px 0;position:relative}
   hr.rule{border:0;border-top:1px solid var(--line-d);margin:0}
@@ -43,18 +43,18 @@
   .nav__brand{display:flex;align-items:center;gap:18px}
   .nav__brand img{height:44px;width:auto;display:block;filter:invert(1) brightness(2)}
   .nav__brand .ctx{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);padding-left:18px;border-left:1px solid var(--line-d);line-height:1.4}
-  .nav__brand .ctx b{display:block;color:var(--paper);font-weight:600;font-family:'Source Serif 4',serif;font-size:14px;letter-spacing:.01em;text-transform:none;margin-top:3px}
+  .nav__brand .ctx b{display:block;color:var(--char);font-weight:600;font-family:'Source Serif 4',serif;font-size:14px;letter-spacing:.01em;text-transform:none;margin-top:3px}
   .nav__links{display:flex;gap:30px;font-size:13px;color:var(--stone)}
-  .nav__links a:hover{color:var(--paper)}
+  .nav__links a:hover{color:var(--char)}
   .nav__cta{display:inline-block;background:var(--marigold);color:var(--char);padding:11px 20px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.02em;transition:transform .2s ease,background .2s ease}
   .nav__cta:hover{transform:translateY(-1px);background:var(--paper)}
   .hero{padding:0;border-bottom:1px solid var(--line-d)}
   .hero__inner{display:grid;grid-template-columns:1.15fr .85fr;min-height:82vh}
   .hero__left{padding:80px 60px 80px 0;display:flex;flex-direction:column;justify-content:space-between}
   .hero h1{font-size:clamp(50px,7vw,92px);margin-top:30px}
-  .hero p.lede{margin-top:32px;max-width:46ch;font-size:21px;line-height:1.45;color:rgba(244,239,227,.8)}
+  .hero p.lede{margin-top:32px;max-width:46ch;font-size:21px;line-height:1.45;color:rgba(26,27,30,.8)}
   .hero__meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-  .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid rgba(244,239,227,.2);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);background:transparent}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid rgba(244,239,227,.2);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--char);background:transparent}
   .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--marigold)}
   .hero__right{background:var(--paper);color:var(--char);padding:80px 56px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
   .hero__right::after{content:"";position:absolute;width:560px;height:560px;background:radial-gradient(closest-side,var(--marigold) 0%,transparent 70%);right:-200px;bottom:-200px;opacity:.15;pointer-events:none}
@@ -75,22 +75,22 @@
   .stat .n em{color:var(--marigold);font-style:italic}
   .stat .l{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,27,30,.55);margin-top:14px}
   .sec-head{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:end;margin-bottom:60px}
-  .sec-head h2{font-size:clamp(38px,5vw,68px);font-family:'Source Serif 4',serif;font-weight:600;letter-spacing:-.02em;line-height:1;color:var(--paper)}
+  .sec-head h2{font-size:clamp(38px,5vw,68px);font-family:'Source Serif 4',serif;font-weight:600;letter-spacing:-.02em;line-height:1;color:var(--char)}
   .sec-head h2 em{font-style:italic;color:var(--marigold);font-weight:500}
-  .sec-head p{max-width:54ch;font-size:18px;line-height:1.55;color:rgba(244,239,227,.8)}
+  .sec-head p{max-width:54ch;font-size:18px;line-height:1.55;color:rgba(26,27,30,.8)}
   .objs{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line-d)}
   .obj{padding:38px 0;border-bottom:1px solid var(--line-d);display:grid;grid-template-columns:54px 1fr;gap:24px}
   .obj:nth-child(odd){padding-right:40px;border-right:1px solid var(--line-d)}
   .obj:nth-child(even){padding-left:40px}
   .obj .n{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--marigold);padding-top:5px}
-  .obj h3{font-family:'Source Serif 4',serif;font-weight:500;font-size:22px;line-height:1.18;color:var(--paper);margin-bottom:8px}
-  .obj p{font-size:15px;line-height:1.55;color:rgba(244,239,227,.7)}
+  .obj h3{font-family:'Source Serif 4',serif;font-weight:500;font-size:22px;line-height:1.18;color:var(--char);margin-bottom:8px}
+  .obj p{font-size:15px;line-height:1.55;color:rgba(26,27,30,.7)}
   .courses{margin-top:48px;border-top:1px solid var(--line-d)}
   .crow{display:grid;grid-template-columns:50px 1.6fr 1.6fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line-d);align-items:baseline;transition:background .25s ease}
-  .crow:hover{background:rgba(244,239,227,.05)}
+  .crow:hover{background:rgba(26,27,30,.05)}
   .cnum{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--marigold);padding-left:10px}
-  .cname{font-family:'Source Serif 4',serif;font-size:20px;font-weight:500;color:var(--paper);line-height:1.2}
-  .cfaculty{font-size:14px;color:rgba(244,239,227,.7);font-style:italic;line-height:1.4}
+  .cname{font-family:'Source Serif 4',serif;font-size:20px;font-weight:500;color:var(--char);line-height:1.2}
+  .cfaculty{font-size:14px;color:rgba(26,27,30,.7);font-style:italic;line-height:1.4}
   .spot{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;background:var(--paper);color:var(--char);padding:72px;border-radius:8px;position:relative;overflow:hidden}
   .spot::after{content:"AI";position:absolute;top:30px;right:60px;font-family:'Source Serif 4',serif;font-size:200px;font-style:italic;color:rgba(201,113,56,.06);font-weight:600;line-height:.8;pointer-events:none}
   .spot__img{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#f4efe3;position:relative;z-index:1;box-shadow:0 30px 70px -30px rgba(0,0,0,.15)}
@@ -105,17 +105,17 @@
   .fac__img{aspect-ratio:1/1.18;border-radius:4px;overflow:hidden;background:var(--line-d);position:relative}
   .fac__img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.05) contrast(1.04);transition:filter .35s ease,transform .6s ease}
   .fac:hover .fac__img img{filter:grayscale(0) contrast(1.06);transform:scale(1.025)}
-  .fac__name{font-family:'Source Serif 4',serif;font-size:18px;font-weight:600;color:var(--paper);line-height:1.2}
+  .fac__name{font-family:'Source Serif 4',serif;font-size:18px;font-weight:600;color:var(--char);line-height:1.2}
   .fac__role{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--marigold)}
-  .fac__course{font-size:13px;color:rgba(244,239,227,.6);line-height:1.5}
-  .capstone{background:rgba(244,239,227,.03);padding:120px 0;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+  .fac__course{font-size:13px;color:rgba(26,27,30,.6);line-height:1.5}
+  .capstone{background:rgba(26,27,30,.03);padding:120px 0;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
   .cap__inner{display:grid;grid-template-columns:.6fr 1.4fr;gap:80px;align-items:start}
   .cap__tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--marigold)}
-  .cap h2{font-family:'Source Serif 4',serif;font-size:clamp(40px,5.2vw,72px);font-weight:600;line-height:.98;letter-spacing:-.02em;color:var(--paper);margin-top:18px}
+  .cap h2{font-family:'Source Serif 4',serif;font-size:clamp(40px,5.2vw,72px);font-weight:600;line-height:.98;letter-spacing:-.02em;color:var(--char);margin-top:18px}
   .cap h2 em{font-style:italic;color:var(--marigold);font-weight:500}
-  .cap__body p{font-size:18px;line-height:1.6;color:rgba(244,239,227,.8);max-width:62ch}
+  .cap__body p{font-size:18px;line-height:1.6;color:rgba(26,27,30,.8);max-width:62ch}
   .cap__body p + p{margin-top:18px}
-  .arch{padding:36px 32px;background:rgba(244,239,227,.03);border:1px solid var(--line-d);border-radius:8px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,border-color .25s}
+  .arch{padding:36px 32px;background:rgba(26,27,30,.03);border:1px solid var(--line-d);border-radius:8px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,border-color .25s}
   .arch:hover{transform:translateY(-3px);border-color:var(--marigold)}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px}
   .who{background:var(--paper);color:var(--char);padding:60px;border-radius:8px}
@@ -126,34 +126,34 @@
   .who li::before{content:"";width:18px;height:1px;background:var(--marigold);margin-top:11px;align-self:start}
   .who li b{color:var(--char);font-weight:600}
   .elig{padding:60px;border:1px solid var(--line-d);border-radius:8px;background:transparent}
-  .elig h3{font-family:'Source Serif 4',serif;font-size:32px;font-weight:500;color:var(--paper);margin-bottom:30px;line-height:1.1}
+  .elig h3{font-family:'Source Serif 4',serif;font-size:32px;font-weight:500;color:var(--char);margin-bottom:30px;line-height:1.1}
   .elig h3 em{color:var(--marigold);font-style:italic}
   .elig ul{list-style:none;display:flex;flex-direction:column;gap:18px}
-  .elig li{display:grid;grid-template-columns:30px 1fr;gap:14px;font-size:15px;line-height:1.55;color:var(--paper)}
+  .elig li{display:grid;grid-template-columns:30px 1fr;gap:14px;font-size:15px;line-height:1.55;color:var(--char)}
   .elig li::before{content:"";width:18px;height:1px;background:var(--marigold);margin-top:11px;align-self:start}
   .timeline{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line-d);border-radius:6px;overflow:hidden}
-  .tl{padding:30px 26px;background:rgba(244,239,227,.03);border-right:1px solid var(--line-d);position:relative}
+  .tl{padding:30px 26px;background:rgba(26,27,30,.03);border-right:1px solid var(--line-d);position:relative}
   .tl:last-child{border-right:0}
   .tl .m{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--marigold);text-transform:uppercase}
-  .tl .h{font-family:'Source Serif 4',serif;font-size:20px;font-weight:600;color:var(--paper);margin-top:10px;line-height:1.2}
-  .tl .d{font-size:13px;color:rgba(244,239,227,.6);margin-top:8px;line-height:1.5}
-  .tl::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;color:var(--marigold);background:var(--char);padding:0 4px;font-size:14px}
+  .tl .h{font-family:'Source Serif 4',serif;font-size:20px;font-weight:600;color:var(--char);margin-top:10px;line-height:1.2}
+  .tl .d{font-size:13px;color:rgba(26,27,30,.6);margin-top:8px;line-height:1.5}
+  .tl::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;color:var(--marigold);background:var(--paper);padding:0 4px;font-size:14px}
   .tl:last-child::after{display:none}
   .fee-wrap{margin-top:30px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
-  .fee-table{background:rgba(244,239,227,.03);border:1px solid var(--line-d);border-radius:8px;overflow:hidden}
+  .fee-table{background:rgba(26,27,30,.03);border:1px solid var(--line-d);border-radius:8px;overflow:hidden}
   .fee-row{display:grid;grid-template-columns:1fr auto;gap:20px;padding:20px 28px;border-bottom:1px solid var(--line-d);align-items:baseline}
   .fee-row:last-child{border-bottom:0;background:var(--paper);color:var(--char)}
   .fee-row:last-child .label,.fee-row:last-child .v{color:var(--char)}
   .fee-row:last-child .v{color:var(--marigold)}
-  .label{font-size:14px;color:rgba(244,239,227,.7);font-weight:500}
-  .v{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:var(--paper)}
-  .fee-note{font-size:13px;color:rgba(244,239,227,.6);margin-top:18px;font-style:italic}
+  .label{font-size:14px;color:rgba(26,27,30,.7);font-weight:500}
+  .v{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:var(--char)}
+  .fee-note{font-size:13px;color:rgba(26,27,30,.6);margin-top:18px;font-style:italic}
   .fee-aside{padding:28px;border:1px solid var(--line-d);border-radius:8px;background:transparent}
   .fee-aside .e{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--marigold);text-transform:uppercase}
-  .fee-aside .h{font-family:'Source Serif 4',serif;font-size:24px;font-weight:600;color:var(--paper);margin-top:10px;line-height:1.2}
-  .fee-aside .d{font-size:14px;color:rgba(244,239,227,.6);margin-top:10px;line-height:1.6}
+  .fee-aside .h{font-family:'Source Serif 4',serif;font-size:24px;font-weight:600;color:var(--char);margin-top:10px;line-height:1.2}
+  .fee-aside .d{font-size:14px;color:rgba(26,27,30,.6);margin-top:10px;line-height:1.6}
   .fee-aside ul{margin-top:14px;display:flex;flex-direction:column;gap:8px;padding-left:18px}
-  .fee-aside li{font-size:13px;color:var(--paper);line-height:1.5}
+  .fee-aside li{font-size:13px;color:var(--char);line-height:1.5}
   .final{background:var(--paper);color:var(--char);padding:140px 0;position:relative;overflow:hidden}
   .final::before{content:"";position:absolute;width:760px;height:760px;background:radial-gradient(closest-side,var(--marigold) 0%,transparent 70%);left:-220px;top:-220px;opacity:0.12;pointer-events:none}
   .final::after{content:"";position:absolute;width:580px;height:580px;background:radial-gradient(closest-side,var(--navy) 0%,transparent 70%);right:-200px;bottom:-200px;opacity:.08;pointer-events:none}
@@ -164,7 +164,7 @@
   .final__ctas{display:flex;flex-direction:column;gap:16px}
   .btn{display:inline-flex;align-items:center;justify-content:space-between;padding:22px 28px;border-radius:999px;font-size:15px;font-weight:500;letter-spacing:.01em;transition:transform .2s ease,background .2s ease}
   .btn:hover{transform:translateY(-2px)}
-  .btn--primary{background:var(--char);color:#FFFFFF}
+  .btn--primary{background:var(--paper);color:#FFFFFF}
   .btn--primary:hover{background:var(--marigold);color:#FFFFFF}
   .btn--ghost{background:transparent;color:var(--char);border:1px solid rgba(26,27,30,.3)}
   .btn .arrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em}
@@ -172,7 +172,7 @@
   .info .b{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,27,30,.5)}
   .info .t{font-family:'Source Serif 4',serif;font-size:22px;font-weight:500;color:var(--char);margin-top:10px;line-height:1.2}
   .info .s{font-size:14px;color:rgba(26,27,30,.7);margin-top:6px}
-  .foot{padding:36px 0;border-top:1px solid var(--line-d);background:var(--char)}
+  .foot{padding:36px 0;border-top:1px solid var(--line-d);background:var(--paper)}
   .foot__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
   .foot__brand img{height:34px;width:auto;display:block;opacity:.85;filter:invert(1) brightness(2)}
   .foot__legal{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:rgba(244,239,227,.5);text-transform:uppercase}
@@ -230,12 +230,63 @@
   @media (prefers-reduced-motion:reduce){
     .reveal,.reveal-fast,.hero-rise{opacity:1!important;transform:none!important;animation:none!important}
   }
+
+  /* V2 SPLIT PANE */
+  .split-pane { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; margin-top: 48px; border-top: 1px solid var(--line-d); padding-top: 40px; }
+  .sp-sidebar { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid var(--line-d); padding-right: 40px; }
+  .sp-tab { display: flex; align-items: baseline; gap: 16px; padding: 18px 24px; background: transparent; border: none; border-radius: 8px; text-align: left; cursor: pointer; transition: all .2s ease; font-family: 'Source Serif 4', serif; font-size: 18px; color: rgba(26,27,30,.6); font-weight: 500; }
+  .sp-tab .n { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--marigold); }
+  .sp-tab:hover { background: rgba(26,27,30,.03); color: var(--char); }
+  .sp-tab.active { background: var(--char); color: var(--paper); }
+  .sp-tab.active .n { color: var(--paper); opacity: 0.8; }
+  .sp-content { padding: 20px 0; }
+  .sp-panel { display: none; animation: fadeIn .4s ease; }
+  .sp-panel.active { display: block; }
+  .sp-panel .quote { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 500; color: var(--char); font-style: italic; line-height: 1.2; margin-bottom: 24px; }
+  .sp-panel p { font-size: 16px; line-height: 1.6; color: rgba(26,27,30,.8); max-width: 52ch; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  
+  /* V2 FACULTY */
+  .fac-grid.v2 { grid-template-columns: 1fr; gap: 30px; }
+  .fac.v2 { display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: center; padding: 30px; border: 1px solid var(--line-d); border-radius: 12px; background: rgba(26,27,30,.02); transition: transform .3s ease; }
+  .fac.v2:hover { transform: translateY(-4px); background: var(--paper); box-shadow: 0 12px 40px -12px rgba(0,0,0,.08); }
+  .fac.v2 .fac__img { border-radius: 8px; }
+  .fac.v2 .fac__name { font-size: 26px; }
+  .fac.v2 .fac__role { font-size: 12px; margin-top: 8px; margin-bottom: 14px; }
+  .fac.v2 .fac__course { font-size: 16px; color: rgba(26,27,30,.8); }
+
+  /* V2 AUDIENCE */
+  .two-col.v2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; align-items: center; margin-top: 40px; }
+  .who.v2 { padding: 80px 60px; background: var(--char); color: var(--paper); border-radius: 16px 0 0 16px; }
+  .who.v2 h3 { color: var(--paper); font-size: 42px; margin-bottom: 30px; font-family: 'Source Serif 4', serif; font-weight: 500; line-height: 1.1; }
+  .who.v2 h3 em { color: var(--marigold); font-style: italic; }
+  .who.v2 ul { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+  .who.v2 li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; color: rgba(244,239,227,.8); font-size: 17px; line-height: 1.55; }
+  .who.v2 li::before { content: ""; width: 18px; height: 1px; background: var(--marigold); margin-top: 11px; align-self: start; }
+  .who.v2 li b { color: var(--paper); font-weight: 600; }
+  .elig.v2 { padding: 80px 60px; border: 1px solid var(--line-d); border-left: none; border-radius: 0 16px 16px 0; background: var(--paper); box-shadow: -20px 20px 60px rgba(0,0,0,.04); position: relative; z-index: 2; margin-left: -30px; }
+  .elig.v2 h3 { font-size: 38px; color: var(--char); margin-bottom: 30px; font-family: 'Source Serif 4', serif; font-weight: 500; line-height: 1.1; }
+  .elig.v2 h3 em { color: var(--marigold); font-style: italic; }
+  .elig.v2 ul { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+  .elig.v2 li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; font-size: 17px; line-height: 1.55; color: var(--char); }
+  .elig.v2 li::before { content: ""; width: 18px; height: 1px; background: var(--marigold); margin-top: 11px; align-self: start; }
+  .elig.v2 .bottom-box { margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(26,27,30,.15); }
+
+  @media (max-width: 900px) { 
+    .split-pane { grid-template-columns: 1fr; } 
+    .sp-sidebar { border-right: none; border-bottom: 1px solid var(--line-d); padding-right: 0; padding-bottom: 30px; } 
+    .fac.v2 { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
+    .fac.v2 .fac__img { max-width: 160px; }
+    .two-col.v2 { grid-template-columns: 1fr; } 
+    .who.v2 { border-radius: 16px 16px 0 0; padding: 40px; } 
+    .elig.v2 { border: 1px solid var(--line-d); border-radius: 0 0 16px 16px; margin-left: 0; margin-top: -20px; padding: 40px; } 
+  }
 </style>
 </head>
 <body>
 <!-- PROTOTYPE BANNER PCAIM -->
 <div style="background:#1A1B1E;color:#F4EFE3;text-align:center;padding:13px 20px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.35);">
-  🚧 PCAIM · Prototype — Professional Certificate in AI for Managers&nbsp;|&nbsp;<span style="color:#C97138;">Dark Theme</span>
+  🚧 PCAIM · Prototype — Professional Certificate in AI for Managers&nbsp;|&nbsp;<span style="color:#C97138;">Light Theme (Split Pane Layout)</span>
 </div>
 
 <header class="nav">
@@ -335,46 +386,50 @@
     <p>A structured approach to integrating AI into strategic roles, from data science foundations to reinforcement learning and generative AI.</p>
   </div>
   
-  <div class="courses">
-    <div class="crow">
-      <div class="cnum">01</div>
-      <div class="cname">Foundation of Data Science</div>
-      <div class="cfaculty">"Speak data with confidence."</div>
+  <div class="split-pane">
+    <div class="sp-sidebar">
+      <button class="sp-tab active" data-target="m1"><span class="n">01</span> Foundation of Data Science</button>
+      <button class="sp-tab" data-target="m2"><span class="n">02</span> Data Visualization and Story Telling</button>
+      <button class="sp-tab" data-target="m3"><span class="n">03</span> Predictive Analysis</button>
+      <button class="sp-tab" data-target="m4"><span class="n">04</span> Machine Learning with Business Applications</button>
+      <button class="sp-tab" data-target="m5"><span class="n">05</span> Machine Learning using Python</button>
+      <button class="sp-tab" data-target="m6"><span class="n">06</span> Artificial Neural Network and Deep Learning</button>
+      <button class="sp-tab" data-target="m7"><span class="n">07</span> Reinforcement Learning</button>
+      <button class="sp-tab" data-target="m8"><span class="n">08</span> Generative AI</button>
     </div>
-    <div class="crow">
-      <div class="cnum">02</div>
-      <div class="cname">Data Visualization and Story Telling</div>
-      <div class="cfaculty">"Turn numbers into boardroom influence."</div>
-    </div>
-    <div class="crow">
-      <div class="cnum">03</div>
-      <div class="cname">Predictive Analysis</div>
-      <div class="cfaculty">"Forecast outcomes that guide strategy."</div>
-    </div>
-    <div class="crow">
-      <div class="cnum">04</div>
-      <div class="cname">Machine Learning with Business Applications</div>
-      <div class="cfaculty">"See algorithms in action on real business problems."</div>
-    </div>
-    <div class="crow">
-      <div class="cnum">05</div>
-      <div class="cname">Machine Learning using Python</div>
-      <div class="cfaculty">"Practical skills to engage with technical teams."</div>
-    </div>
-    <div class="crow">
-      <div class="cnum">06</div>
-      <div class="cname">Artificial Neural Network and Deep Learning</div>
-      <div class="cfaculty">"Understand the power behind modern AI."</div>
-    </div>
-    <div class="crow">
-      <div class="cnum">07</div>
-      <div class="cname">Reinforcement Learning</div>
-      <div class="cfaculty">"Lead in dynamic, uncertain environments."</div>
-    </div>
-    <div class="crow">
-      <div class="cnum">08</div>
-      <div class="cname">Generative AI</div>
-      <div class="cfaculty">"Harness the innovation of ChatGPT, LLMs &amp; beyond."</div>
+    <div class="sp-content">
+      <div class="sp-panel active" id="m1">
+        <div class="quote">"Speak data with confidence."</div>
+        <p>Build strong analytical foundations and understand the core principles of data science applicable to business decision making.</p>
+      </div>
+      <div class="sp-panel" id="m2">
+        <div class="quote">"Turn numbers into boardroom influence."</div>
+        <p>Learn to create impactful dashboards and communicate complex data insights effectively to stakeholders.</p>
+      </div>
+      <div class="sp-panel" id="m3">
+        <div class="quote">"Forecast outcomes that guide strategy."</div>
+        <p>Leverage statistical models and machine learning techniques to forecast future trends and outcomes.</p>
+      </div>
+      <div class="sp-panel" id="m4">
+        <div class="quote">"See algorithms in action on real business problems."</div>
+        <p>Apply classification, regression, and clustering algorithms to solve real-world business challenges.</p>
+      </div>
+      <div class="sp-panel" id="m5">
+        <div class="quote">"Practical skills to engage with technical teams."</div>
+        <p>Hands-on coding with Python to build, train, and evaluate machine learning models.</p>
+      </div>
+      <div class="sp-panel" id="m6">
+        <div class="quote">"Understand the power behind modern AI."</div>
+        <p>Dive into neural network architectures, CNNs, and RNNs to understand deep learning applications.</p>
+      </div>
+      <div class="sp-panel" id="m7">
+        <div class="quote">"Lead in dynamic, uncertain environments."</div>
+        <p>Explore decision-making algorithms that learn through trial and error in complex environments.</p>
+      </div>
+      <div class="sp-panel" id="m8">
+        <div class="quote">"Harness the innovation of ChatGPT, LLMs &amp; beyond."</div>
+        <p>Understand transformers, large language models, and the responsible adoption of Generative AI.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -394,24 +449,30 @@
     </div>
   </div>
 
-  <div class="fac-grid" style="grid-template-columns: repeat(3, 1fr);">
-    <div class="fac">
+  <div class="fac-grid v2">
+    <div class="fac v2">
       <div class="fac__img"><img src="./images/faculty/sharada.jpg" alt="Prof. Sharada Sringeswara" onerror="this.src='./images/faculty/placeholder.jpg'" /></div>
-      <div class="fac__name">Prof. Sharada Sringeswara</div>
-      <div class="fac__role">Faculty</div>
-      <div class="fac__course">Information Systems</div>
+      <div>
+        <div class="fac__name">Prof. Sharada Sringeswara</div>
+        <div class="fac__role">Faculty</div>
+        <div class="fac__course">Information Systems</div>
+      </div>
     </div>
-    <div class="fac">
+    <div class="fac v2">
       <div class="fac__img"><img src="./images/faculty/manaranjan.jpg" alt="Prof. Manaranjan Pradhan" onerror="this.src='./images/faculty/placeholder.jpg'" /></div>
-      <div class="fac__name">Prof. Manaranjan Pradhan</div>
-      <div class="fac__role">Python &amp; MLOps</div>
-      <div class="fac__course">Practical skills to engage with technical teams.</div>
+      <div>
+        <div class="fac__name">Prof. Manaranjan Pradhan</div>
+        <div class="fac__role">Python &amp; MLOps</div>
+        <div class="fac__course">Practical skills to engage with technical teams.</div>
+      </div>
     </div>
-    <div class="fac">
+    <div class="fac v2">
       <div class="fac__img"><img src="./images/faculty/naveen.webp" alt="Prof. Naveen Kumar Bhansali" onerror="this.src='./images/faculty/placeholder.jpg'" /></div>
-      <div class="fac__name">Prof. Naveen Kumar Bhansali</div>
-      <div class="fac__role">Deep Learning</div>
-      <div class="fac__course">Understand the power behind modern AI.</div>
+      <div>
+        <div class="fac__name">Prof. Naveen Kumar Bhansali</div>
+        <div class="fac__role">Deep Learning</div>
+        <div class="fac__course">Understand the power behind modern AI.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -422,8 +483,8 @@
     <h2>Built for managers <em>steering AI initiatives.</em></h2>
     <p>If you are looking to integrate AI into your strategic role, PCAIM closes the gap between business leadership and technical implementation.</p>
   </div>
-  <div class="two-col">
-    <div class="who">
+  <div class="two-col v2">
+    <div class="who v2">
       <h3>Target <em>Audience:</em></h3>
       <ul>
         <li><span><b>Mid-career and senior managers</b> integrating AI into strategic roles.</span></li>
@@ -431,16 +492,16 @@
         <li><span><b>Entrepreneurs</b> leveraging AI for innovation and scalability.</span></li>
       </ul>
     </div>
-    <div class="elig">
+    <div class="elig v2">
       <h3>You should apply <em>if</em> you have:</h3>
       <ul>
         <li><span><b>Minimum 3 years</b> of professional experience.</span></li>
         <li><span><b>A graduate degree</b> in any discipline.</span></li>
         <li><span><b>A desire to leverage</b> data visualization, predictive analytics, and machine learning effectively.</span></li>
       </ul>
-      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(244,239,227,.2);">
-        <h4 style="font-family:'Source Serif 4',serif;font-size:18px;color:var(--paper);margin-bottom:12px;">Grading &amp; Credential</h4>
-        <p style="font-size:14px;color:rgba(244,239,227,.8);line-height:1.5;">End-of-week assessments + final exam. Minimum 60% required per course. Graduates receive a Professional Certificate from IIM Bangalore and Affiliate Alumni status.</p>
+      <div class="bottom-box">
+        <h4 style="font-family:'Source Serif 4',serif;font-size:18px;color:var(--char);margin-bottom:12px;">Grading &amp; Credential</h4>
+        <p style="font-size:14px;color:rgba(26,27,30,.8);line-height:1.5;">End-of-week assessments + final exam. Minimum 60% required per course. Graduates receive a Professional Certificate from IIM Bangalore and Affiliate Alumni status.</p>
       </div>
     </div>
   </div>
@@ -490,5 +551,16 @@
   </div>
 </footer>
 <script src="js/app.js"></script>
+<script>
+  document.querySelectorAll('.sp-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.sp-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sp-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>

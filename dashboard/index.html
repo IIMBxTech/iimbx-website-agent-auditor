@@ -4,33 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IIMBx Audit Dashboard</title>
+  <meta name="description" content="IIMBx Audit Dashboard — 3-way comparison of old website, marketing HTML, and v1 staging wireframes">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo">IIMBx Audit Dashboard</div>
-      <div class="status">Automated Crawler: <span class="badge active">Active (Next run: 4 days)</span></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">IIMBx</div>
+      <div class="sidebar-subtitle">Audit Dashboard</div>
     </div>
-  </header>
-
-  <main class="container">
-    <div class="intro">
-      <h1>Programme Landing Pages</h1>
-      <p>Single source of truth for UX, Brand, and Content audits. Click a programme to view detailed comparisons and wireframes.</p>
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    <div class="sidebar-footer">
+      <div class="crawler-status"><span class="status-dot"></span><span>Crawler Active</span></div>
+      <div class="sidebar-version">v3.0 · May 2026</div>
     </div>
-
-    <div class="grid" id="programme-grid">
-      <!-- Cards injected by JS -->
+  </aside>
+  <main class="main" id="main-content">
+    <header class="topbar">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+      <div class="topbar-title">
+        <h1>Programme Audit Overview</h1>
+        <p class="topbar-desc">3-way comparison: Old Website · Marketing HTML · v1 Staging</p>
+      </div>
+    </header>
+    <div class="content-area" id="content-area">
+      <div class="card-grid" id="programme-grid"></div>
     </div>
   </main>
 
-  <!-- Modal for full report -->
-  <div class="modal" id="audit-modal">
-    <div class="modal-content">
-      <button class="modal-close" id="close-modal">×</button>
-      <div id="modal-body"></div>
+  <!-- Modal for detailed audit -->
+  <div class="modal-overlay" id="audit-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="close-modal" aria-label="Close">×</button>
+      <div class="modal-header">
+        <button class="modal-back" id="modal-back" aria-label="Back">← Back to Dashboard</button>
+        <div id="modal-header-content"></div>
+      </div>
+      <div class="modal-tabs" id="modal-tabs"></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Wireframe viewer -->
+  <div class="wf-viewer" id="wf-viewer">
+    <div class="wf-viewer-toolbar" id="wf-toolbar">
+      <button class="wf-viewer-back" id="wf-back" aria-label="Back">← Back</button>
+      <div class="wf-viewer-title" id="wf-title"></div>
+      <div class="wf-viewer-tabs" id="wf-source-tabs"></div>
+      <div class="wf-viewer-actions" id="wf-actions"></div>
+      <button class="wf-viewer-close" id="wf-close" aria-label="Close">×</button>
+    </div>
+    <div class="wf-viewer-body" id="wf-body">
+      <div class="wf-col" id="wf-col-left"><div class="wf-col-label" id="wf-label-left"></div><pre class="wf-pane" id="wf-pane-left"></pre></div>
+      <div class="wf-col" id="wf-col-middle"><div class="wf-col-label" id="wf-label-middle"></div><pre class="wf-pane" id="wf-pane-middle"></pre></div>
+      <div class="wf-col" id="wf-col-right"><div class="wf-col-label" id="wf-label-right"></div><pre class="wf-pane" id="wf-pane-right"></pre></div>
     </div>
   </div>
 

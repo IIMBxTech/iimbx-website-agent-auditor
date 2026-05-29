@@ -32,6 +32,12 @@ Perform a final pass over the HTML file to clean up formatting, ensure accessibi
 - **CSS Cleanup:** Remove any leftover debug borders (`border: 1px solid red`) if they exist.
 - **Script Placement:** Ensure all `<script>` tags added by Agent 19 are placed immediately before the closing `</body>` tag, not in the `<head>` (to prevent render-blocking).
 
-### Step 5 — Output
+### Step 5 — Code Lightness & Optimization
+- **Payload Reduction:** Check for and remove heavily nested `<divs>` where a single container with Flexbox/Grid would suffice.
+- **Redundant Classes:** Strip out unused or redundant CSS classes and inline styles that don't contribute to the final render.
+- **Image Optimization Hooks:** Ensure `loading="lazy"` is applied to images below the fold to improve page load lightness.
+- **Coordination Check:** Before committing these lightness optimizations, you MUST coordinate with the **Coordinator Agent (00)**. Present a summary of the stripped code to confirm no structural elements (like specific layout wrappers for React/Stitch components) were accidentally removed.
+
+### Step 6 — Output
 Return a final success message to the Coordinator detailing what was checked:
-> "Code quality verified. HTML is valid (1 H1 tag), accessible (alt text confirmed), and scripts are positioned correctly."
+> "Code quality verified. HTML is valid (1 H1 tag), accessible (alt text confirmed), scripts are positioned correctly, and code lightness optimizations have been applied and approved."
