@@ -34,7 +34,8 @@ window.AUDIT_DATA = [
         v1_variant_2: "[Hero: Stitch Interactive] -> [Overview] -> [Outcomes Grid] -> [Curriculum]",
         v1_variant_3: "[Hero: Stitch Reimagine] -> [Overview] -> [Outcomes] -> [Curriculum]",
         v1Staging: "",
-        proposed: "[Hero: ADM] -> [Overview + Audience + Instructor] -> [Grid: Outcomes] -> [Accordion: Modules]"
+        proposed: "[Hero: ADM] -> [Overview + Audience + Instructor] -> [Grid: Outcomes] -> [Accordion: Modules]",
+        v1_variant_4: "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
       },
       suggestions: [
         {

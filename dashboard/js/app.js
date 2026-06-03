@@ -294,7 +294,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentWfRight === 'proposedV3') version = 'v3';
         if (currentWfRight.startsWith('v1_variant_')) version = currentWfRight;
         if (currentWfRight.startsWith('v2_variant_')) version = currentWfRight;
-        const fileUrl = `../prototypes/${prog.id}_${version}.html`;
+        
+        let fileUrl = `../prototypes/${prog.id}_${version}.html`;
+        if (currentWfRight === 'v1_variant_4') {
+            if (prog.id === 'elp') {
+                fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
+            } else {
+                fileUrl = `../prototypes/${prog.id}_stitch_v4.html`;
+            }
+        } else if (currentWfRight === 'v2_variant_4') {
+            fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+        }
+        
         window.open(fileUrl, '_blank');
       });
 
@@ -436,6 +447,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentWfRight === 'v2_variant_1') v = 'V2 Prototype 1';
       if (currentWfRight === 'v2_variant_2') v = 'V2 Prototype 2';
       if (currentWfRight === 'v2_variant_3') v = 'V2 Prototype 3';
+      if (currentWfRight === 'v1_variant_4') v = 'V1 Prototype 4 (Stitch)';
+      if (currentWfRight === 'v2_variant_4') v = 'V2 Prototype 4 (Stitch)';
       previewBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Preview: ${v}`;
     }
 
