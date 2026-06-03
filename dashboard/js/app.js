@@ -288,26 +288,43 @@ document.addEventListener('DOMContentLoaded', () => {
         updateWfViews();
       });
       
+      
       document.getElementById('preview-html').addEventListener('click', () => {
-        let version = 'v1';
-        if (currentWfRight === 'proposedV2') version = 'v2';
-        if (currentWfRight === 'proposedV3') version = 'v3';
-        if (currentWfRight.startsWith('v1_variant_')) version = currentWfRight;
-        if (currentWfRight.startsWith('v2_variant_')) version = currentWfRight;
-        
-        let fileUrl = `../prototypes/${prog.id}_${version}.html`;
-        if (currentWfRight === 'v1_variant_4') {
-            if (prog.id === 'elp') {
-                fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
-            } else {
-                fileUrl = `../prototypes/${prog.id}_stitch_v4.html`;
-            }
-        } else if (currentWfRight === 'v2_variant_4') {
-            fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+        let fileUrl = '';
+        if (prog.id === 'adm') {
+            if (currentWfRight === 'v1_variant_1') fileUrl = '../prototypes/adm_v1_variant_1.html';
+            else if (currentWfRight === 'v1_variant_2') fileUrl = '../prototypes/adm_v1_variant_2.html';
+            else if (currentWfRight === 'v1_variant_3') fileUrl = '../prototypes/adm_v1_variant_3.html';
+            else if (currentWfRight === 'stitch_variant_1') fileUrl = '../prototypes/adm_stitch_variant_1.html';
+            else if (currentWfRight === 'stitch_variant_2') fileUrl = '../prototypes/adm_stitch_variant_2.html';
+            else if (currentWfRight === 'stitch_variant_3') fileUrl = '../prototypes/adm_stitch_variant_3.html';
+            else if (currentWfRight === 'v1_variant_4') fileUrl = '../prototypes/adm_stitch_v4.html';
+        } else if (prog.id === 'elp') {
+            if (currentWfRight === 'proposedV1') fileUrl = '../prototypes/elp_v1.html';
+            else if (currentWfRight === 'proposedV2') fileUrl = '../prototypes/elp_v2.html';
+            else if (currentWfRight === 'proposedV3') fileUrl = '../prototypes/elp_v3.html';
+            else if (currentWfRight === 'v1_variant_1') fileUrl = '../prototypes/elp_v1_variant_1.html';
+            else if (currentWfRight === 'v1_variant_2') fileUrl = '../prototypes/elp_v1_variant_2.html';
+            else if (currentWfRight === 'v1_variant_3') fileUrl = '../prototypes/elp_v1_variant_3.html';
+            else if (currentWfRight === 'v1_variant_4') fileUrl = '../prototypes/elp_v1_stitch_v4.html';
+            else if (currentWfRight === 'v2_variant_1') fileUrl = '../prototypes/elp_v2_variant_1.html';
+            else if (currentWfRight === 'v2_variant_2') fileUrl = '../prototypes/elp_v2_variant_2.html';
+            else if (currentWfRight === 'v2_variant_3') fileUrl = '../prototypes/elp_v2_variant_3.html';
+            else if (currentWfRight === 'v2_variant_4') fileUrl = '../prototypes/elp_v2_stitch_v4.html';
+        } else {
+            if (currentWfRight === 'proposedV1') fileUrl = `../prototypes/${prog.id}_v1.html`;
+            else if (currentWfRight === 'proposedV2') fileUrl = `../prototypes/${prog.id}_v2.html`;
+            else if (currentWfRight === 'proposedV3') fileUrl = `../prototypes/${prog.id}_v3.html`;
+            else if (currentWfRight === 'v1_variant_4') fileUrl = `../prototypes/${prog.id}_stitch_v4.html`;
         }
         
-        window.open(fileUrl, '_blank');
+        if (fileUrl) {
+            window.open(fileUrl, '_blank');
+        } else {
+            alert('No preview available for this layout option.');
+        }
       });
+
 
       if (currentViewMode === 'ascii') {
         document.getElementById('dl-txt').addEventListener('click', () => {
@@ -384,26 +401,30 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWfViews();
   }
   
+  
   function updateWfViews() {
     const friendlyLabels = {
       none: 'None',
       oldSite: 'Old Website',
       marketingHtml: 'Marketing HTML',
-      v1Staging: 'V2 Staging (Original)',
+      v1Staging: currentProgramme.id === 'elp' ? 'V2 Staging (Original)' : 'V1 Staging',
       proposedV1: 'Proposed Layout v1',
       proposedV2: 'Proposed Layout v2',
       proposedV3: 'Proposed Layout v3',
       v1_variant_1: 'V1 Prototype 1 (Baseline)',
       v1_variant_2: 'V1 Prototype 2 (Dark Mode)',
       v1_variant_3: 'V1 Prototype 3 (Compact)',
-      v1_variant_4: 'V1 Prototype 4 (Stitch)',
+      stitch_variant_1: 'Stitch Prototype 1',
+      stitch_variant_2: 'Stitch Prototype 2',
+      stitch_variant_3: 'Stitch Prototype 3',
+      v1_variant_4: 'Stitch Prototype 4',
       v2Staging: 'V2 Staging URL',
       v2_variant_1: 'V2 Prototype 1 (Baseline)',
       v2_variant_2: 'V2 Prototype 2 (Navy Custom)',
       v2_variant_3: 'V2 Prototype 3 (Compact)',
       v2_variant_4: 'V2 Prototype 4 (Stitch)'
     };
-    
+
     const colLeft = document.getElementById('wf-col-left');
     colLeft.style.display = 'flex';
     if (currentWfLeft === 'none') {
@@ -411,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
       wfPaneLeft.textContent = '';
     } else {
       wfLabelLeft.textContent = `Left: ${friendlyLabels[currentWfLeft]}`;
-      wfPaneLeft.textContent = currentProgramme.wireframes[currentViewMode][currentWfLeft] || '';
+      wfPaneLeft.textContent = currentProgramme.wireframes[currentViewMode][currentWfLeft] || 'No wireframe available for this view';
     }
     
     const colMiddle = document.getElementById('wf-col-middle');
@@ -422,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wfPaneMiddle.textContent = '';
       } else {
         wfLabelMiddle.textContent = `Middle: ${friendlyLabels[currentWfMiddle]}`;
-        wfPaneMiddle.textContent = currentProgramme.wireframes[currentViewMode][currentWfMiddle] || '';
+        wfPaneMiddle.textContent = currentProgramme.wireframes[currentViewMode][currentWfMiddle] || 'No wireframe available for this view';
       }
     }
     
@@ -433,93 +454,93 @@ document.addEventListener('DOMContentLoaded', () => {
       wfPaneRight.textContent = '';
     } else {
       wfLabelRight.textContent = `Proposed Layout: ${friendlyLabels[currentWfRight]}`;
-      wfPaneRight.textContent = currentProgramme.wireframes[currentViewMode][currentWfRight] || '';
+      wfPaneRight.textContent = currentProgramme.wireframes[currentViewMode][currentWfRight] || 'No wireframe available for this view';
     }
     
     const previewBtn = document.getElementById('preview-html');
     if (previewBtn) {
-      let v = 'V1';
-      if (currentWfRight === 'proposedV2') v = 'V2';
-      if (currentWfRight === 'proposedV3') v = 'V3';
-      if (currentWfRight === 'v1_variant_1') v = 'V1 Prototype 1';
-      if (currentWfRight === 'v1_variant_2') v = 'V1 Prototype 2';
-      if (currentWfRight === 'v1_variant_3') v = 'V1 Prototype 3';
-      if (currentWfRight === 'v2_variant_1') v = 'V2 Prototype 1';
-      if (currentWfRight === 'v2_variant_2') v = 'V2 Prototype 2';
-      if (currentWfRight === 'v2_variant_3') v = 'V2 Prototype 3';
-      if (currentWfRight === 'v1_variant_4') v = 'V1 Prototype 4 (Stitch)';
-      if (currentWfRight === 'v2_variant_4') v = 'V2 Prototype 4 (Stitch)';
+      let v = friendlyLabels[currentWfRight] || 'V1';
       previewBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Preview: ${v}`;
     }
 
-    // add dropdowns to change sources
-    wfSourceTabs.innerHTML = `
-      <div style="display: flex; gap: 8px; align-items: center;">
-      <select id="sel-left" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
-        <option value="none" ${currentWfLeft === 'none' ? 'selected' : ''}>None</option>
-        <option value="oldSite" ${currentWfLeft === 'oldSite' ? 'selected' : ''}>Old Site</option>
-        <option value="marketingHtml" ${currentWfLeft === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
-        <option value="v1_variant_1" ${currentWfLeft === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
-        <option value="v1_variant_2" ${currentWfLeft === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
-        <option value="v1_variant_3" ${currentWfLeft === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
-        <option value="v1_variant_4" ${currentWfLeft === 'v1_variant_4' ? 'selected' : ''}>V1 Prototype 4 (Stitch)</option>
-        ${currentProgramme.id === 'elp' ? `
-        <option value="v2Staging" ${currentWfLeft === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
-        <option value="v2_variant_1" ${currentWfLeft === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
-        <option value="v2_variant_2" ${currentWfLeft === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
-        <option value="v2_variant_3" ${currentWfLeft === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
-        <option value="v2_variant_4" ${currentWfLeft === 'v2_variant_4' ? 'selected' : ''}>V2 Prototype 4 (Stitch)</option>
-        ` : ''}
-      </select>
-      <select id="sel-middle" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
-        <option value="none" ${currentWfMiddle === 'none' ? 'selected' : ''}>None</option>
-        <option value="oldSite" ${currentWfMiddle === 'oldSite' ? 'selected' : ''}>Old Site</option>
-        <option value="marketingHtml" ${currentWfMiddle === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
-        <option value="v1_variant_1" ${currentWfMiddle === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
-        <option value="v1_variant_2" ${currentWfMiddle === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
-        <option value="v1_variant_3" ${currentWfMiddle === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
-        <option value="v1_variant_4" ${currentWfMiddle === 'v1_variant_4' ? 'selected' : ''}>V1 Prototype 4 (Stitch)</option>
-        ${currentProgramme.id === 'elp' ? `
-        <option value="v2Staging" ${currentWfMiddle === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
-        <option value="v2_variant_1" ${currentWfMiddle === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
-        <option value="v2_variant_2" ${currentWfMiddle === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
-        <option value="v2_variant_3" ${currentWfMiddle === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
-        <option value="v2_variant_4" ${currentWfMiddle === 'v2_variant_4' ? 'selected' : ''}>V2 Prototype 4 (Stitch)</option>
-        ` : ''}
-      </select>
-      <select id="sel-right" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
-        <option value="none" ${currentWfRight === 'none' ? 'selected' : ''}>None</option>
-        <option value="oldSite" ${currentWfRight === 'oldSite' ? 'selected' : ''}>Old Site</option>
-        <option value="marketingHtml" ${currentWfRight === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
-        <option value="v1_variant_1" ${currentWfRight === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
-        <option value="v1_variant_2" ${currentWfRight === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
-        <option value="v1_variant_3" ${currentWfRight === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
-        <option value="v1_variant_4" ${currentWfRight === 'v1_variant_4' ? 'selected' : ''}>V1 Prototype 4 (Stitch)</option>
-        ${currentProgramme.id === 'elp' ? `
-        <option value="v2Staging" ${currentWfRight === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
-        <option value="v2_variant_1" ${currentWfRight === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
-        <option value="v2_variant_2" ${currentWfRight === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
-        <option value="v2_variant_3" ${currentWfRight === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
-        <option value="v2_variant_4" ${currentWfRight === 'v2_variant_4' ? 'selected' : ''}>V2 Prototype 4 (Stitch)</option>
-        ` : ''}
-      </select>
-      </div>
-`;
+    // Build options dynamically based on prog.id
+    let options = `
+      <option value="none">None</option>
+      <option value="oldSite">Old Site</option>
+      <option value="marketingHtml">Marketing HTML</option>
+      <option value="v1Staging">${currentProgramme.id === 'elp' ? 'V2 Staging' : 'V1 Staging'}</option>
+    `;
+
+    if (currentProgramme.id === 'adm') {
+        options += `
+          <option value="v1_variant_1">V1 Prototype 1 (Baseline)</option>
+          <option value="v1_variant_2">V1 Prototype 2 (Dark Mode)</option>
+          <option value="v1_variant_3">V1 Prototype 3 (Compact)</option>
+          <option value="stitch_variant_1">Stitch Prototype 1</option>
+          <option value="stitch_variant_2">Stitch Prototype 2</option>
+          <option value="stitch_variant_3">Stitch Prototype 3</option>
+          <option value="v1_variant_4">Stitch Prototype 4</option>
+        `;
+    } else if (currentProgramme.id === 'elp') {
+        options += `
+          <option value="proposedV1">Proposed Layout v1</option>
+          <option value="proposedV2">Proposed Layout v2</option>
+          <option value="proposedV3">Proposed Layout v3</option>
+          <option value="v1_variant_1">V1 Prototype 1 (Baseline)</option>
+          <option value="v1_variant_2">V1 Prototype 2 (Dark Mode)</option>
+          <option value="v1_variant_3">V1 Prototype 3 (Compact)</option>
+          <option value="v1_variant_4">V1 Prototype 4 (Stitch)</option>
+          <option value="v2_variant_1">V2 Prototype 1 (Baseline)</option>
+          <option value="v2_variant_2">V2 Prototype 2 (Navy Custom)</option>
+          <option value="v2_variant_3">V2 Prototype 3 (Compact)</option>
+          <option value="v2_variant_4">V2 Prototype 4 (Stitch)</option>
+        `;
+    } else {
+        // NAM, PCAIM, PCHM
+        options += `
+          <option value="proposedV1">Proposed Layout v1</option>
+          <option value="proposedV2">Proposed Layout v2</option>
+          <option value="proposedV3">Proposed Layout v3</option>
+          <option value="v1_variant_4">Stitch Prototype 4</option>
+        `;
+    }
+
+    // Replace the select options
+    const setSelectOptions = (id, currentVal) => {
+        const sel = document.getElementById(id);
+        if (!sel) return;
+        sel.innerHTML = options;
+        sel.value = currentVal;
+        // if the currentVal is not in the options (e.g. switching programmes), fallback to 'none'
+        if (sel.value !== currentVal) {
+            sel.value = 'none';
+        }
+    };
+
+    // Ensure we don't duplicate the selects, just update them if they exist
+    if (!document.getElementById('sel-left')) {
+        wfSourceTabs.innerHTML = `
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <select id="sel-left" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;"></select>
+            <select id="sel-middle" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;"></select>
+            <select id="sel-right" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;"></select>
+          </div>
+        `;
+        document.getElementById('sel-left').addEventListener('change', (e) => { currentWfLeft = e.target.value; updateWfViews(); });
+        document.getElementById('sel-middle').addEventListener('change', (e) => { currentWfMiddle = e.target.value; updateWfViews(); });
+        document.getElementById('sel-right').addEventListener('change', (e) => { currentWfRight = e.target.value; updateWfViews(); });
+    }
+
+    setSelectOptions('sel-left', currentWfLeft);
+    setSelectOptions('sel-middle', currentWfMiddle);
+    setSelectOptions('sel-right', currentWfRight);
     
-    document.getElementById('sel-left').addEventListener('change', (e) => {
-      currentWfLeft = e.target.value;
-      updateWfViews();
-    });
-    document.getElementById('sel-middle').addEventListener('change', (e) => {
-      currentWfMiddle = e.target.value;
-      updateWfViews();
-    });
-    document.getElementById('sel-right').addEventListener('change', (e) => {
-      currentWfRight = e.target.value;
-      updateWfViews();
-    });
+    // Also update our state variables in case they were invalidated by the switch
+    currentWfLeft = document.getElementById('sel-left').value;
+    currentWfMiddle = document.getElementById('sel-middle').value;
+    currentWfRight = document.getElementById('sel-right').value;
   }
-  
+
   wfClose.addEventListener('click', () => {
     wfViewer.style.display = 'none';
     history.replaceState({ view: 'modal' }, '', '#audit');
