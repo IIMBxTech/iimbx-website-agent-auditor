@@ -1,0 +1,398 @@
+
+<div style="text-align:center; padding: 12px; font-weight:bold; color: #F4EFE3; background: #1A1B1E; border-bottom: 3px solid #C97138; font-size: 14px; position: sticky; top: 0; z-index: 9999; letter-spacing: 1px; text-transform: uppercase; font-family: Inter, sans-serif;">
+    ✨ Stitch MCP used to create this prototype ✨
+</div>
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accounting for Decision Making</title>
+<script src="https://placehold.co/1200x800/1A1B1E/C97138?text=Image+Placeholder"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;600&amp;family=Source+Serif+4:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-high": "#ede8dc",
+                "on-secondary-container": "#324684",
+                "on-primary-fixed": "#321200",
+                "on-tertiary": "#ffffff",
+                "surface-container": "#f2ede2",
+                "parchment-deep": "#E8E2D2",
+                "surface-bright": "#fef9ed",
+                "on-secondary-fixed-variant": "#2f4382",
+                "inverse-primary": "#ffb68c",
+                "error-container": "#ffdad6",
+                "on-primary-container": "#fffbff",
+                "tertiary-fixed-dim": "#c7c6ca",
+                "surface-dim": "#dedace",
+                "parchment": "#F4EFE3",
+                "on-tertiary-fixed": "#1a1b1e",
+                "on-tertiary-container": "#fefcff",
+                "secondary-fixed-dim": "#b5c4ff",
+                "primary-container": "#b15e27",
+                "surface-tint": "#954912",
+                "on-primary-fixed-variant": "#753400",
+                "surface-container-low": "#f8f3e7",
+                "outline-variant": "#dac2b5",
+                "background": "#fef9ed",
+                "secondary-fixed": "#dce1ff",
+                "secondary-container": "#a3b6fd",
+                "surface": "#fef9ed",
+                "primary": "#92470f",
+                "primary-fixed": "#ffdbc9",
+                "primary-fixed-dim": "#ffb68c",
+                "tertiary": "#5b5c5f",
+                "marigold": "#C97138",
+                "tertiary-fixed": "#e3e2e6",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed-variant": "#46474a",
+                "surface-variant": "#e7e2d6",
+                "on-error": "#ffffff",
+                "tertiary-container": "#747478",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff",
+                "charcoal-muted": "#36383D",
+                "on-surface-variant": "#54433a",
+                "inverse-surface": "#323029",
+                "on-surface": "#1d1c15",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#485b9b",
+                "on-secondary-fixed": "#00164e",
+                "navy": "#172D6B",
+                "inverse-on-surface": "#f5f0e4",
+                "outline": "#877368",
+                "surface-container-highest": "#e7e2d6",
+                "on-background": "#1d1c15",
+                "on-error-container": "#93000a",
+                "charcoal": "#1A1B1E"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "max-width": "1280px",
+                "margin-mobile": "20px",
+                "unit": "8px"
+        },
+        "fontFamily": {
+                "headline-xl": [
+                        "Source Serif 4"
+                ],
+                "headline-md": [
+                        "Source Serif 4"
+                ],
+                "display-lg-mobile": [
+                        "Source Serif 4"
+                ],
+                "cta": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Source Serif 4"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-bold": [
+                        "Inter"
+                ],
+                "eyebrow-mono": [
+                        "IBM Plex Mono"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "cta": [
+                        "16px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-bold": [
+                        "14px",
+                        {
+                                "lineHeight": "1",
+                                "fontWeight": "600"
+                        }
+                ],
+                "eyebrow-mono": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+
+<style>
+/* CSS Overrides to fix empty space and image bugs */
+.py-64 { padding-top: 32px !important; padding-bottom: 32px !important; }
+.py-32 { padding-top: 16px !important; padding-bottom: 16px !important; }
+.gap-64 { gap: 32px !important; }
+.gap-32 { gap: 16px !important; }
+.my-64 { margin-top: 32px !important; margin-bottom: 32px !important; }
+.mt-64 { margin-top: 32px !important; }
+.mb-64 { margin-bottom: 32px !important; }
+
+/* Fallback for broken images to show a solid block */
+img {
+    background-color: #1A1B1E;
+    color: #F4EFE3;
+    display: block;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+}
+img::after {
+    content: "Image Placeholder";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #1A1B1E;
+    border: 1px solid #C97138;
+}
+</style>
+
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-marigold selection:text-white pb-16 md:pb-0">
+<!-- Top Navigation (Desktop Only) -->
+<nav class="hidden md:flex w-full top-0 sticky z-40 bg-parchment border-b border-charcoal/10 transition-all duration-200 flat no shadows">
+<div class="flex justify-between items-center max-w-max-width mx-auto px-margin-desktop h-20 w-full">
+<div class="font-headline-md text-headline-md text-charcoal tracking-tight">Accounting for Decision Making</div>
+<div class="flex gap-8 items-center">
+<a class="text-marigold border-b-2 border-marigold pb-1 font-body-md text-body-md hover:text-marigold transition-colors" href="#">Curriculum</a>
+<a class="text-charcoal-muted font-body-md text-body-md hover:text-marigold transition-colors" href="#">Faculty</a>
+<a class="text-charcoal-muted font-body-md text-body-md hover:text-marigold transition-colors" href="#">Admissions</a>
+<a class="text-charcoal-muted font-body-md text-body-md hover:text-marigold transition-colors" href="#">Alumni</a>
+<button class="bg-marigold text-on-primary font-cta text-cta px-6 py-3 rounded hover:opacity-90 transition-opacity">Enquire</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop pt-12 md:pt-24 pb-12 flex flex-col md:flex-row gap-gutter items-start md:items-center">
+<div class="w-full md:w-1/2 z-10">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-charcoal mb-6">Accounting for <br/><span class="text-marigold">Decision Making</span></h1>
+<p class="font-body-lg text-body-lg text-charcoal-muted max-w-md mb-8">Master the financial literacy required to drive strategic organizational outcomes. Move beyond the ledger and lead with confidence.</p>
+</div>
+<div class="w-full md:w-1/2 h-[400px] md:h-[600px] relative overflow-hidden rounded bg-parchment-deep">
+<img alt="Professional Boardroom" class="object-cover w-full h-full object-center hover:scale-105 transition-transform duration-700" src="https://placehold.co/1200x800/1A1B1E/C97138?text=Image+Placeholder"/>
+<div class="absolute inset-0 border border-charcoal/10 rounded pointer-events-none"></div>
+</div>
+</header>
+<!-- Overview Grid -->
+<section class="w-full max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit md:gap-gutter">
+<!-- Card 1 -->
+<div class="bg-parchment-deep p-6 md:p-8 rounded border border-charcoal-muted/10 group hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all">
+<span class="material-symbols-outlined text-marigold text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Financial Statement Analysis</h3>
+<p class="font-body-md text-body-md text-charcoal-muted">Decode complex financial documents to uncover the true health and trajectory of any enterprise.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-parchment-deep p-6 md:p-8 rounded border border-charcoal-muted/10 group hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all">
+<span class="material-symbols-outlined text-marigold text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Strategic Costing</h3>
+<p class="font-body-md text-body-md text-charcoal-muted">Implement advanced costing models to optimize operations and accurately price products for the market.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-parchment-deep p-6 md:p-8 rounded border border-charcoal-muted/10 group hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all">
+<span class="material-symbols-outlined text-marigold text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3">Advanced Budgeting</h3>
+<p class="font-body-md text-body-md text-charcoal-muted">Develop dynamic forecasts that adapt to volatile markets and secure stakeholder confidence.</p>
+</div>
+</div>
+</section>
+<!-- Outcomes & Curriculum Split -->
+<section class="w-full max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16 flex flex-col md:flex-row gap-margin-desktop">
+<!-- Outcomes -->
+<div class="w-full md:w-1/3">
+<h2 class="font-headline-xl text-headline-xl text-charcoal mb-8 border-b border-charcoal/10 pb-4">Key Outcomes</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-marigold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-bold text-label-bold text-charcoal">Executive Literacy</h4>
+<p class="font-body-md text-body-md text-charcoal-muted mt-1">Fluency in the language of finance.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-marigold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-bold text-label-bold text-charcoal">Risk Mitigation</h4>
+<p class="font-body-md text-body-md text-charcoal-muted mt-1">Identify early warning signs in corporate reporting.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-marigold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-bold text-label-bold text-charcoal">Value Creation</h4>
+<p class="font-body-md text-body-md text-charcoal-muted mt-1">Align financial resources with corporate strategy.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Curriculum Timeline -->
+<div class="w-full md:w-2/3">
+<h2 class="font-headline-xl text-headline-xl text-charcoal mb-8">Curriculum Sequence</h2>
+<div class="flex flex-col gap-unit">
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">01</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">The Framework of Financial Accounting</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 1</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">02</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Analyzing the Income Statement</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 2</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">03</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">The Balance Sheet Deep Dive</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 3</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">04</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Cash Flow Dynamics</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 4</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">05</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Cost Behavior and Systems</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 5</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">06</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Decision Making with Relevant Costs</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 6</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">07</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Operational Budgeting</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 7</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between border-b border-charcoal/10 py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">08</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Performance Evaluation</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 8</span>
+</div>
+<!-- Module Item -->
+<div class="flex items-center justify-between py-4 hover:bg-parchment-deep transition-colors px-2 rounded-sm cursor-default group">
+<div class="flex items-center gap-6">
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold w-8">09</span>
+<span class="font-label-bold text-label-bold text-charcoal group-hover:text-marigold transition-colors">Strategic Financial Leadership (Capstone)</span>
+</div>
+<span class="font-eyebrow-mono text-eyebrow-mono text-charcoal-muted">Week 9</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-charcoal text-parchment flex flex-col md:flex-row justify-between items-center max-w-max-width mx-auto px-margin-desktop py-12 pb-32 md:pb-12 flat no shadows mt-12">
+<div class="font-headline-md text-headline-md text-parchment mb-6 md:mb-0">Executive Education Program</div>
+<div class="flex flex-col md:flex-row items-center gap-6 font-body-md text-body-md">
+<span class="text-parchment-deep opacity-80">© 2024 Executive Education Program. All rights reserved.</span>
+<div class="flex gap-4">
+<a class="text-parchment-deep opacity-80 hover:text-marigold transition-colors" href="#">Privacy Policy</a>
+<a class="text-parchment-deep opacity-80 hover:text-marigold transition-colors" href="#">Terms of Service</a>
+<a class="text-parchment-deep opacity-80 hover:text-marigold transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Nav Bar (Mobile CTA / Sticky Apply) -->
+<div class="fixed bottom-0 w-full z-50 h-16 bg-navy shadow-lg md:hidden">
+<button class="flex items-center justify-center w-full h-full text-white uppercase tracking-widest font-cta text-cta bg-navy hover:opacity-90 active:scale-95 transition-transform">
+<span class="material-symbols-outlined mr-2">edit_note</span>
+            Apply Now
+        </button>
+</div>
+</body></html>
