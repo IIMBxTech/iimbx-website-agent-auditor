@@ -71,12 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="title">${prog.programmeName}</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">${prog.file}</div>
+        ${prog.file === 'Not provided' ? '<div style="font-size: 0.9rem; font-style: italic; color: var(--text-muted);">No audit data (prototypes only)</div>' : `
         <div>Brand: ${prog.scores.brand}% | Content: ${prog.scores.content}% | UX: ${prog.scores.ux}%</div>
         <div class="scores">
           <div class="score-bar"><div class="score-fill" style="width:${prog.scores.brand}%; background:var(--success)"></div></div>
           <div class="score-bar"><div class="score-fill" style="width:${prog.scores.content}%; background:var(--warning)"></div></div>
           <div class="score-bar"><div class="score-fill" style="width:${prog.scores.ux}%; background:var(--accent)"></div></div>
         </div>
+        `}
       `;
       card.addEventListener('click', () => openModal(prog));
       grid.appendChild(card);
@@ -445,10 +447,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <option value="v1_variant_1" ${currentWfLeft === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
         <option value="v1_variant_2" ${currentWfLeft === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
         <option value="v1_variant_3" ${currentWfLeft === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
+        ${currentProgramme.id === 'elp' ? `
         <option value="v2Staging" ${currentWfLeft === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
         <option value="v2_variant_1" ${currentWfLeft === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
         <option value="v2_variant_2" ${currentWfLeft === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
         <option value="v2_variant_3" ${currentWfLeft === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
+        ` : ''}
       </select>
       <select id="sel-middle" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
         <option value="none" ${currentWfMiddle === 'none' ? 'selected' : ''}>None</option>
@@ -457,10 +461,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <option value="v1_variant_1" ${currentWfMiddle === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
         <option value="v1_variant_2" ${currentWfMiddle === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
         <option value="v1_variant_3" ${currentWfMiddle === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
+        ${currentProgramme.id === 'elp' ? `
         <option value="v2Staging" ${currentWfMiddle === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
         <option value="v2_variant_1" ${currentWfMiddle === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
         <option value="v2_variant_2" ${currentWfMiddle === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
         <option value="v2_variant_3" ${currentWfMiddle === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
+        ` : ''}
       </select>
       <select id="sel-right" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
         <option value="none" ${currentWfRight === 'none' ? 'selected' : ''}>None</option>
@@ -469,10 +475,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <option value="v1_variant_1" ${currentWfRight === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
         <option value="v1_variant_2" ${currentWfRight === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
         <option value="v1_variant_3" ${currentWfRight === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
+        ${currentProgramme.id === 'elp' ? `
         <option value="v2Staging" ${currentWfRight === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
         <option value="v2_variant_1" ${currentWfRight === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
         <option value="v2_variant_2" ${currentWfRight === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
         <option value="v2_variant_3" ${currentWfRight === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
+        ` : ''}
       </select>
       </div>
 `;

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accounting for Decision Making - IIMBx</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .parallax-bg {
+                will-change: transform;
+            }
+            .btn-glow {
+                transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background-color 0.3s ease;
+            }
+            .btn-glow:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(201, 113, 56, 0.5);
+            }
+            .glass-card {
+                position: relative;
+                overflow: hidden;
+            }
+            .glass-shimmer {
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+                border-radius: 50%;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.4s ease;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+            }
+            .glass-card:hover .glass-shimmer {
+                opacity: 1;
+            }
+            .glass-card > * {
+                position: relative;
+                z-index: 1;
+            }
+            .curriculum-item {
+                position: relative;
+                overflow: hidden;
+            }
+            .curriculum-item::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: #C97138;
+                transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            .curriculum-item:hover::after {
+                width: 100%;
+            }
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#747478",
+                      "on-secondary-container": "#324684",
+                      "on-error-container": "#93000a",
+                      "charcoal": "#1A1B1E",
+                      "surface-variant": "#e7e2d6",
+                      "secondary": "#485b9b",
+                      "on-secondary-fixed": "#00164e",
+                      "on-secondary": "#ffffff",
+                      "marigold": "#C97138",
+                      "inverse-on-surface": "#f5f0e4",
+                      "primary-container": "#b15e27",
+                      "tertiary-fixed": "#e3e2e6",
+                      "navy": "#172D6B",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1d1c15",
+                      "inverse-surface": "#323029",
+                      "primary": "#92470f",
+                      "on-tertiary-fixed-variant": "#46474a",
+                      "on-primary-fixed-variant": "#753400",
+                      "surface": "#fef9ed",
+                      "tertiary-fixed-dim": "#c7c6ca",
+                      "tertiary": "#5b5c5f",
+                      "surface-tint": "#954912",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#ffb68c",
+                      "background": "#fef9ed",
+                      "surface-container-highest": "#e7e2d6",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#fffbff",
+                      "surface-container-low": "#f8f3e7",
+                      "parchment-deep": "#E8E2D2",
+                      "surface-container": "#f2ede2",
+                      "outline": "#877368",
+                      "surface-container-high": "#ede8dc",
+                      "outline-variant": "#dac2b5",
+                      "primary-fixed": "#ffdbc9",
+                      "on-tertiary-fixed": "#1a1b1e",
+                      "secondary-fixed-dim": "#b5c4ff",
+                      "on-secondary-fixed-variant": "#2f4382",
+                      "on-primary-fixed": "#321200",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1d1c15",
+                      "inverse-primary": "#ffb68c",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#dce1ff",
+                      "secondary-container": "#a3b6fd",
+                      "charcoal-muted": "#36383D",
+                      "on-surface-variant": "#54433a",
+                      "on-tertiary-container": "#fefcff",
+                      "surface-dim": "#dedace",
+                      "surface-bright": "#fef9ed",
+                      "parchment": "#F4EFE3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "max-width": "1280px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Source Serif 4"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Source Serif 4"
+                      ],
+                      "display-lg-mobile": [
+                              "Source Serif 4"
+                      ],
+                      "eyebrow-mono": [
+                              "IBM Plex Mono"
+                      ],
+                      "cta": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Source Serif 4"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "eyebrow-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "cta": [
+                              "16px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-parchment text-charcoal font-body-md antialiased selection:bg-marigold selection:text-charcoal">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-charcoal/80 backdrop-blur-md shadow-sm border-b border-charcoal/10 dark:border-parchment/10">
+<div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-navy dark:text-primary-fixed">
+                IIMBx
+            </div>
+<ul class="hidden md:flex space-x-8">
+<li>
+<a class="font-cta text-cta text-primary border-b-2 border-marigold pb-1 active:scale-95 transition-transform" href="#curriculum">Curriculum</a>
+</li>
+<li>
+<a class="font-cta text-cta text-on-surface dark:text-on-secondary-fixed-dim hover:text-marigold transition-colors duration-200 active:scale-95 transition-transform" href="#faculty">Faculty</a>
+</li>
+<li>
+<a class="font-cta text-cta text-on-surface dark:text-on-secondary-fixed-dim hover:text-marigold transition-colors duration-200 active:scale-95 transition-transform" href="#accreditation">Accreditation</a>
+</li>
+<li>
+<a class="font-cta text-cta text-on-surface dark:text-on-secondary-fixed-dim hover:text-marigold transition-colors duration-200 active:scale-95 transition-transform" href="#reviews">Reviews</a>
+</li>
+</ul>
+<button class="hidden md:inline-flex items-center justify-center bg-navy text-on-tertiary font-cta text-cta px-6 py-3 rounded hover:bg-navy/90 btn-glow">
+                Enroll Now
+            </button>
+<!-- Mobile Menu Trigger (Visual Only for layout) -->
+<button class="md:hidden text-charcoal">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 bg-charcoal">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay parallax-bg scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxF0Gogs6qWg85dAnIUlPL0TuU3FnrTmMn1QbrsiZ2nBM_Uq3Cu8uoLiRABBg88x6A6tHAjJgNieVcH2znAeHOQRI9jLFT-u2nsCmOApOud6rPinH3lcRXPUy7fRMsqQWKfEF4oQhiYylUq1QJBfEPly4uzrG9oIA9CV8zNkS-3SBLC2YmfiSRCXWRPNlThrs7BYsrlz2JYqnTpjbzveOcML_kfuLCoKia_2rjbaq9YQ4SCaYRqc4np2BrwPx_j7UwWBOcXuUIAg'); transform-origin: top center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="inline-block font-eyebrow-mono text-eyebrow-mono text-marigold mb-6 tracking-widest uppercase">9-Week Premium Programme</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-bright mb-6 max-w-4xl mx-auto drop-shadow-lg">
+                    Accounting for Decision Making
+                </h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto mb-10 opacity-90">
+                    Master financial literacy with Prof. M S Narasimhan. Equip yourself with the analytical tools to drive strategic business growth.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto bg-marigold text-charcoal font-cta text-cta px-8 py-4 rounded shadow-[0_20px_40px_rgba(26,27,30,0.2)] hover:bg-marigold/90 btn-glow">
+                        Enroll Now
+                    </button>
+<button class="w-full sm:w-auto bg-transparent border border-surface-variant text-surface-bright font-cta text-cta px-8 py-4 rounded hover:bg-surface-variant/10 transition-all duration-300">
+                        Download Brochure
+                    </button>
+</div>
+</div>
+</section>
+<!-- Overview Section (Glassmorphic Parchment Cards) -->
+<section class="py-24 bg-parchment relative">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop reveal">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<div class="md:w-1/3 sticky top-32">
+<h2 class="font-headline-xl text-headline-xl text-charcoal mb-4">Programme Overview</h2>
+<div class="w-16 h-1 bg-marigold mb-6"></div>
+<p class="font-body-md text-body-md text-tertiary mb-8">
+                            Designed specifically for managers and executives looking to transition from operational roles into strategic leadership by demystifying financial data.
+                        </p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="glass-card bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group">
+<div class="glass-shimmer"></div>
+<span class="material-symbols-outlined text-marigold text-4xl mb-4 group-hover:scale-110 transition-transform">query_stats</span>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3 text-2xl">Financial Statement Analysis</h3>
+<p class="font-body-md text-body-md text-tertiary">Decode complex balance sheets and income statements to understand the true health of any organization.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-card bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group md:mt-12">
+<div class="glass-shimmer"></div>
+<span class="material-symbols-outlined text-marigold text-4xl mb-4 group-hover:scale-110 transition-transform">account_balance_wallet</span>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3 text-2xl">Strategic Costing</h3>
+<p class="font-body-md text-body-md text-tertiary">Implement Activity Based Costing to identify true profit drivers and eliminate hidden inefficiencies.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-card bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group sm:col-span-2">
+<div class="glass-shimmer"></div>
+<span class="material-symbols-outlined text-marigold text-4xl mb-4 group-hover:scale-110 transition-transform">pie_chart</span>
+<h3 class="font-headline-md text-headline-md text-charcoal mb-3 text-2xl">Advanced Budgeting</h3>
+<p class="font-body-md text-body-md text-tertiary max-w-2xl">Master Capital Budgeting decisions and Variance Analysis to allocate resources effectively and measure performance against strategic goals.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Outcomes Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center reveal">
+<span class="font-eyebrow-mono text-eyebrow-mono text-secondary mb-2 block uppercase tracking-wider">Key Takeaways</span>
+<h2 class="font-headline-xl text-headline-xl text-charcoal mb-16">Programme Outcomes</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+<div class="glass-card p-6 border-l-2 border-surface-variant hover:border-marigold transition-colors duration-300 bg-surface shadow-sm hover:shadow-md">
+<div class="glass-shimmer"></div>
+<h4 class="font-label-bold text-label-bold text-charcoal mb-2 text-lg">Enhanced Financial Clarity</h4>
+<p class="font-body-md text-body-md text-tertiary text-sm">Read and interpret financial reports with confidence, moving beyond basic metrics to uncover underlying business realities.</p>
+</div>
+<div class="glass-card p-6 border-l-2 border-surface-variant hover:border-marigold transition-colors duration-300 bg-surface shadow-sm hover:shadow-md">
+<div class="glass-shimmer"></div>
+<h4 class="font-label-bold text-label-bold text-charcoal mb-2 text-lg">Strategic Resource Allocation</h4>
+<p class="font-body-md text-body-md text-tertiary text-sm">Make informed decisions on capital investments using rigorous evaluation techniques and risk assessment frameworks.</p>
+</div>
+<div class="glass-card p-6 border-l-2 border-surface-variant hover:border-marigold transition-colors duration-300 bg-surface shadow-sm hover:shadow-md">
+<div class="glass-shimmer"></div>
+<h4 class="font-label-bold text-label-bold text-charcoal mb-2 text-lg">Performance Measurement</h4>
+<p class="font-body-md text-body-md text-tertiary text-sm">Design and utilize robust budgeting systems that accurately track variances and drive operational accountability.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Curriculum Section -->
+<section class="py-24 bg-parchment" id="curriculum">
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop reveal">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-charcoal mb-4">Curriculum Framework</h2>
+<p class="font-body-md text-body-md text-tertiary">A rigorous 9-module journey designed for incremental mastery.</p>
+</div>
+<div class="space-y-4">
+<!-- Module Items -->
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">01</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Introduction to Financial Statements</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">02</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Balance Sheet &amp; Income Statement Analysis</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">03</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Cash Flow Statements</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">04</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Cost Concepts &amp; Classification</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">05</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Activity Based Costing</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">06</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">CVP Analysis for Decision Making</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">07</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Budgeting &amp; Variance Analysis</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">08</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Capital Budgeting Decisions</div>
+</div>
+<div class="curriculum-item flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">09</div>
+<div class="font-headline-md text-headline-md text-charcoal text-xl">Strategic Cost Management</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-transparent border-2 border-charcoal text-charcoal font-cta text-cta px-8 py-4 rounded hover:bg-charcoal hover:text-parchment transition-all duration-300">
+                        Download Full Syllabus
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-margin-desktop bg-charcoal dark:bg-charcoal-muted grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-desktop">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="font-display-lg text-headline-md text-parchment mb-4">
+                IIMBx
+            </div>
+<p class="font-body-md text-body-md text-parchment/70 opacity-80 text-sm">
+                © 2024 IIMBx. All rights reserved. Accounting for Decision Making.
+            </p>
+</div>
+<div class="md:col-span-3 flex flex-col sm:flex-row gap-8 justify-end">
+<div class="flex flex-col gap-4">
+<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/70 hover:text-parchment transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/70 hover:text-parchment transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/70 hover:text-parchment transition-opacity opacity-80 hover:opacity-100" href="#">Contact Us</a>
+<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/70 hover:text-parchment transition-opacity opacity-80 hover:opacity-100" href="#">Accreditation</a>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Intersection Observer for Reveal
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
+        } else {
+            // Instantly show elements if reduced motion is preferred
+            document.querySelectorAll('.reveal').forEach(el => {
+                el.classList.add('active');
+            });
+        }
+
+        // Parallax Effect
+        const parallaxBg = document.querySelector('.parallax-bg');
+        if (parallaxBg && !prefersReducedMotion) {
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                // Move background at a slower rate than the scroll
+                parallaxBg.style.transform = `translateY(${scrollY * 0.25}px)`;
+            }, { passive: true });
+        }
+
+        // Glass Card Shimmer Effect
+        if (!prefersReducedMotion) {
+            const glassCards = document.querySelectorAll('.glass-card');
+            glassCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const shimmer = card.querySelector('.glass-shimmer');
+                    if (shimmer) {
+                        shimmer.style.left = `${x}px`;
+                        shimmer.style.top = `${y}px`;
+                    }
+                });
+            });
+        }
+    });
+</script>
+</body></html>
