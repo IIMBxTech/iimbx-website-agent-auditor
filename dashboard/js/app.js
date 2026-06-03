@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>
             <p><strong>Summary:</strong> ${prog.summary}</p>
             <p><strong>Old Site:</strong> ${prog.oldSiteUrl !== '—' ? `<a href="${prog.oldSiteUrl}" target="_blank">${prog.oldSiteUrl}</a>` : '—'}</p>
-            <p><strong>v1 Staging:</strong> ${prog.v1StagingUrl !== '—' ? `<a href="${prog.v1StagingUrl}" target="_blank">${prog.v1StagingUrl}</a>` : '—'}</p>
+            <p><strong>${prog.id === 'elp' ? 'v2' : 'v1'} Staging:</strong> ${prog.v1StagingUrl !== '—' ? `<a href="${prog.v1StagingUrl}" target="_blank">${prog.v1StagingUrl}</a>` : '—'}</p>
             <p><strong>Audit Date:</strong> ${prog.auditDate}</p>
           </div>
           <button id="summary-open-wf-viewer" style="background: var(--accent); color: white; padding: 10px 20px; border: none; border-radius: var(--radius); cursor: pointer; font-family: 'Inter', sans-serif; white-space: nowrap; margin-left: 20px;">Compare Wireframes</button>
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <th style="padding: 10px; border: 1px solid var(--border);">Section</th>
             <th style="padding: 10px; border: 1px solid var(--border);">Old Site</th>
             <th style="padding: 10px; border: 1px solid var(--border);">Marketing HTML</th>
-            <th style="padding: 10px; border: 1px solid var(--border);">v1 Staging</th>
+            <th style="padding: 10px; border: 1px solid var(--border);">${prog.id === 'elp' ? 'v2' : 'v1'} Staging</th>
             <th style="padding: 10px; border: 1px solid var(--border);">Severity</th>
           </tr>
           ${prog.contentGaps.map(g => `
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sources = [
       { id: 'oldSite', label: 'Old Website' },
       { id: 'marketingHtml', label: 'Marketing HTML' },
-      { id: 'v1Staging', label: 'v1 Staging' },
+      { id: 'v1Staging', label: currentProgramme.id === 'elp' ? 'v2 Staging' : 'v1 Staging' },
       { id: 'proposedV1', label: 'Proposed Layout v1' },
       { id: 'proposedV2', label: 'Proposed Layout v2' },
       { id: 'proposedV3', label: 'Proposed Layout v3' }
@@ -290,6 +290,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let version = 'v1';
         if (currentWfRight === 'proposedV2') version = 'v2';
         if (currentWfRight === 'proposedV3') version = 'v3';
+        if (currentWfRight.startsWith('v1_variant_')) version = currentWfRight;
+        if (currentWfRight.startsWith('v2_variant_')) version = currentWfRight;
         const fileUrl = `../prototypes/${prog.id}_${version}.html`;
         window.open(fileUrl, '_blank');
       });
@@ -374,10 +376,17 @@ document.addEventListener('DOMContentLoaded', () => {
       none: 'None',
       oldSite: 'Old Website',
       marketingHtml: 'Marketing HTML',
-      v1Staging: 'v1 Staging',
+      v1Staging: 'V2 Staging (Original)',
       proposedV1: 'Proposed Layout v1',
       proposedV2: 'Proposed Layout v2',
-      proposedV3: 'Proposed Layout v3'
+      proposedV3: 'Proposed Layout v3',
+      v1_variant_1: 'V1 Prototype 1 (Baseline)',
+      v1_variant_2: 'V1 Prototype 2 (Dark Mode)',
+      v1_variant_3: 'V1 Prototype 3 (Compact)',
+      v2Staging: 'V2 Staging URL',
+      v2_variant_1: 'V2 Prototype 1 (Baseline)',
+      v2_variant_2: 'V2 Prototype 2 (Navy Custom)',
+      v2_variant_3: 'V2 Prototype 3 (Compact)'
     };
     
     const colLeft = document.getElementById('wf-col-left');
@@ -414,42 +423,59 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const previewBtn = document.getElementById('preview-html');
     if (previewBtn) {
-      let v = 'v1';
-      if (currentWfRight === 'proposedV2') v = 'v2';
-      if (currentWfRight === 'proposedV3') v = 'v3';
-      previewBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Preview Prototype HTML ${v.toUpperCase()}`;
+      let v = 'V1';
+      if (currentWfRight === 'proposedV2') v = 'V2';
+      if (currentWfRight === 'proposedV3') v = 'V3';
+      if (currentWfRight === 'v1_variant_1') v = 'V1 Prototype 1';
+      if (currentWfRight === 'v1_variant_2') v = 'V1 Prototype 2';
+      if (currentWfRight === 'v1_variant_3') v = 'V1 Prototype 3';
+      if (currentWfRight === 'v2_variant_1') v = 'V2 Prototype 1';
+      if (currentWfRight === 'v2_variant_2') v = 'V2 Prototype 2';
+      if (currentWfRight === 'v2_variant_3') v = 'V2 Prototype 3';
+      previewBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Preview: ${v}`;
     }
 
     // add dropdowns to change sources
     wfSourceTabs.innerHTML = `
-      <select id="sel-left" style="margin-right: 10px; padding: 4px; border-radius: 4px;">
+      <div style="display: flex; gap: 8px; align-items: center;">
+      <select id="sel-left" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
         <option value="none" ${currentWfLeft === 'none' ? 'selected' : ''}>None</option>
         <option value="oldSite" ${currentWfLeft === 'oldSite' ? 'selected' : ''}>Old Site</option>
         <option value="marketingHtml" ${currentWfLeft === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
-        <option value="v1Staging" ${currentWfLeft === 'v1Staging' ? 'selected' : ''}>v1 Staging</option>
-        <option value="proposedV1" ${currentWfLeft === 'proposedV1' ? 'selected' : ''}>Proposed v1</option>
-        <option value="proposedV2" ${currentWfLeft === 'proposedV2' ? 'selected' : ''}>Proposed v2</option>
-        <option value="proposedV3" ${currentWfLeft === 'proposedV3' ? 'selected' : ''}>Proposed v3</option>
+        <option value="v1_variant_1" ${currentWfLeft === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
+        <option value="v1_variant_2" ${currentWfLeft === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
+        <option value="v1_variant_3" ${currentWfLeft === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
+        <option value="v2Staging" ${currentWfLeft === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
+        <option value="v2_variant_1" ${currentWfLeft === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
+        <option value="v2_variant_2" ${currentWfLeft === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
+        <option value="v2_variant_3" ${currentWfLeft === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
       </select>
-      <select id="sel-middle" style="margin-right: 10px; padding: 4px; border-radius: 4px;">
+      <select id="sel-middle" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
         <option value="none" ${currentWfMiddle === 'none' ? 'selected' : ''}>None</option>
         <option value="oldSite" ${currentWfMiddle === 'oldSite' ? 'selected' : ''}>Old Site</option>
         <option value="marketingHtml" ${currentWfMiddle === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
-        <option value="v1Staging" ${currentWfMiddle === 'v1Staging' ? 'selected' : ''}>v1 Staging</option>
-        <option value="proposedV1" ${currentWfMiddle === 'proposedV1' ? 'selected' : ''}>Proposed v1</option>
-        <option value="proposedV2" ${currentWfMiddle === 'proposedV2' ? 'selected' : ''}>Proposed v2</option>
-        <option value="proposedV3" ${currentWfMiddle === 'proposedV3' ? 'selected' : ''}>Proposed v3</option>
+        <option value="v1_variant_1" ${currentWfMiddle === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
+        <option value="v1_variant_2" ${currentWfMiddle === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
+        <option value="v1_variant_3" ${currentWfMiddle === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
+        <option value="v2Staging" ${currentWfMiddle === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
+        <option value="v2_variant_1" ${currentWfMiddle === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
+        <option value="v2_variant_2" ${currentWfMiddle === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
+        <option value="v2_variant_3" ${currentWfMiddle === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
       </select>
-      <select id="sel-right" style="padding: 4px; border-radius: 4px;">
+      <select id="sel-right" style="padding: 6px 10px; border-radius: 6px; border: none; background: #2D3748; color: white; max-width: 200px; outline: none; cursor: pointer; font-size: 13px;">
         <option value="none" ${currentWfRight === 'none' ? 'selected' : ''}>None</option>
         <option value="oldSite" ${currentWfRight === 'oldSite' ? 'selected' : ''}>Old Site</option>
         <option value="marketingHtml" ${currentWfRight === 'marketingHtml' ? 'selected' : ''}>Marketing HTML</option>
-        <option value="v1Staging" ${currentWfRight === 'v1Staging' ? 'selected' : ''}>v1 Staging</option>
-        <option value="proposedV1" ${currentWfRight === 'proposedV1' ? 'selected' : ''}>Proposed v1</option>
-        <option value="proposedV2" ${currentWfRight === 'proposedV2' ? 'selected' : ''}>Proposed v2</option>
-        <option value="proposedV3" ${currentWfRight === 'proposedV3' ? 'selected' : ''}>Proposed v3</option>
+        <option value="v1_variant_1" ${currentWfRight === 'v1_variant_1' ? 'selected' : ''}>V1 Prototype 1 (Baseline)</option>
+        <option value="v1_variant_2" ${currentWfRight === 'v1_variant_2' ? 'selected' : ''}>V1 Prototype 2 (Dark Mode)</option>
+        <option value="v1_variant_3" ${currentWfRight === 'v1_variant_3' ? 'selected' : ''}>V1 Prototype 3 (Compact)</option>
+        <option value="v2Staging" ${currentWfRight === 'v2Staging' ? 'selected' : ''}>V2 Staging</option>
+        <option value="v2_variant_1" ${currentWfRight === 'v2_variant_1' ? 'selected' : ''}>V2 Prototype 1 (Baseline)</option>
+        <option value="v2_variant_2" ${currentWfRight === 'v2_variant_2' ? 'selected' : ''}>V2 Prototype 2 (Navy Custom)</option>
+        <option value="v2_variant_3" ${currentWfRight === 'v2_variant_3' ? 'selected' : ''}>V2 Prototype 3 (Compact)</option>
       </select>
-    `;
+      </div>
+`;
     
     document.getElementById('sel-left').addEventListener('change', (e) => {
       currentWfLeft = e.target.value;

@@ -9,47 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root {
-    --crimson: #AE2C2A;    /* Primary Action Color */
-    --navy: #0B1535;       /* Deep Header/Section Backgrounds */
-    --navy-deep: #070E22;  /* Darker Navy Accents */
-    --char: #1A1B1E;       /* Text & Dark UI elements */
-    --paper: #F4EFE3;      /* Off-white "Academic Paper" Background */
-    --paper-2: #FBF7EC;    /* Lighter Paper Background */
-    --stone: #4A4A4A;      /* Secondary Text */
-    --line: rgba(26,27,30,.10); /* Subtle Borders */
-    --line-d: rgba(244,239,227,.16);
-    --marigold: #C97138;   /* fallback for previous elements */
-    --accent: var(--crimson);
-  }
-  
-  .btn {
-    font-family: 'Inter', sans-serif;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform .2s ease, background .2s ease, color .2s ease;
-  }
-  .btn-primary {
-    background-color: var(--crimson);
-    color: white;
-    border: 1px solid var(--crimson);
-  }
-  .btn-primary:hover {
-    transform: translateY(-1px);
-    background-color: var(--navy);
-    border-color: var(--navy);
-  }
-  .btn-outline {
-    background-color: transparent;
-    color: var(--char);
-    border: 1px solid var(--line);
-  }
-  .btn-outline:hover {
-    transform: translateY(-1px);
-    background-color: var(--paper-2);
+  :root{
+    --crimson:#AE2C2A;
+    --crimson-d:#7E1F1E;
+    --marigold:#C97138;
+    --char:#1A1B1E;
+    --ink:#1A1B1E;
+    --paper:#F4EFE3;        /* parchment */
+    --paper-2:#FBF8F1;
+    --stone:#5B5F66;
+    --steel:#5B5F66;
+    --pebble:#9B9591;
+    --sand:#DCD3BC;
+    --line:rgba(26,27,30,.10);
+    --line-d:rgba(244,239,227,.16);
+    --accent:var(--marigold);
   }
   html,body{background:var(--paper);color:var(--char);font-family:'Inter','IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   body{overflow-x:hidden}
@@ -125,26 +99,18 @@
   .obj h3{font-family:'Source Serif 4',serif;font-weight:500;font-size:22px;line-height:1.18;color:var(--char);margin-bottom:8px}
   .obj p{font-size:15px;line-height:1.55;color:var(--stone)}
 
-  /* themes v2 grid */
-  .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow: 0 10px 30px rgba(11,21,53,.04)}
-  .theme{background:var(--paper-2);padding:48px 40px;display:flex;flex-direction:column;gap:14px;min-height:340px;transition:background .25s ease,color .25s ease;cursor:default;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .theme:nth-child(3n){border-right:none}
-  .theme:nth-child(n+4){border-bottom:none}
-  .theme:hover{background:var(--crimson);color:var(--paper)}
+  /* themes */
+  .themes{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .theme{background:var(--paper-2);padding:36px 26px;display:flex;flex-direction:column;gap:14px;min-height:280px;transition:background .25s ease,color .25s ease;cursor:default}
+  .theme:hover{background:var(--navy);color:var(--paper)}
   .theme:hover .t__num,.theme:hover .t__name,.theme:hover .t__list li{color:var(--paper)}
-  .theme:hover .t__list li::marker{color:var(--paper)}
-  .theme:hover .t__count{color:rgba(255,255,255,.7)}
-  .t__num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--crimson);text-transform:uppercase;transition:color .25s;font-weight:600}
-  .t__name{font-family:'Source Serif 4',serif;font-weight:600;font-size:26px;line-height:1.2;color:var(--char);transition:color .25s}
-  .t__list{list-style:disc;padding-left:18px;display:flex;flex-direction:column;gap:10px;margin-top:auto}
-  .t__list li{font-size:15px;line-height:1.45;color:var(--stone);transition:color .25s;font-weight:500}
-  .t__count{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--crimson);text-transform:uppercase;transition:color .25s}
-  
-  .theme.capstone-block { background: var(--navy-deep); color: white; border: none; }
-  .theme.capstone-block:hover { background: var(--navy); }
-  .theme.capstone-block .t__num { color: rgba(255,255,255,.5); }
-  .theme.capstone-block .t__name { color: white; }
-  .theme.capstone-block .t__list li { color: rgba(255,255,255,.8); }
+  .theme:hover .t__list li::marker{color:var(--marigold)}
+  .theme:hover .t__count{color:var(--marigold)}
+  .t__num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--marigold);text-transform:uppercase;transition:color .25s}
+  .t__name{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;line-height:1.18;color:var(--char);transition:color .25s}
+  .t__list{list-style:disc;padding-left:18px;display:flex;flex-direction:column;gap:6px;margin-top:auto}
+  .t__list li{font-size:13px;line-height:1.45;color:var(--stone);transition:color .25s}
+  .t__count{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--marigold);text-transform:uppercase;transition:color .25s}
 
   /* curriculum table (11 courses) */
   .courses{margin-top:48px;border-top:1px solid var(--line)}
@@ -330,53 +296,7 @@
   @media (prefers-reduced-motion:reduce){
     .reveal,.reveal-fast,.hero-rise{opacity:1!important;transform:none!important;animation:none!important}
   }
-
-  /* V2 Sections CSS */
-  .anchor-card { display: flex; background: var(--navy-deep); border-radius: 8px; overflow: hidden; margin-bottom: 48px; }
-  .anchor-card__img { width: 35%; flex-shrink: 0; }
-  .anchor-card__img img { width: 100%; height: 100%; object-fit: cover; }
-  .anchor-card__content { padding: 48px; color: white; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
-  .anchor-card__bgtext { position: absolute; top: -10px; right: 20px; font-size: 140px; font-family: 'Source Serif 4', serif; font-style: italic; color: rgba(255,255,255,0.03); line-height: 1; user-select: none; z-index: 1; }
-  .anchor-card__content > * { position: relative; z-index: 2; }
-  .anchor-card__kicker { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.15em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 24px; font-weight: 600; }
-  .anchor-card__quote { font-family: 'Source Serif 4', serif; font-style: italic; font-weight: 600; font-size: 20px; line-height: 1.45; margin-bottom: 32px; max-width: 90%; }
-  .anchor-card__name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 6px; }
-  .anchor-card__role { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
-
-  .fac-grid-v2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px 20px; }
-  .fac-v2 { display: flex; flex-direction: column; }
-  .fac-v2__img { width: 100%; aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 12px; overflow: hidden; background: #EAE5D9; }
-  .fac-v2__img img { width: 100%; height: 100%; object-fit: cover; }
-  .fac-v2__name { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: var(--char); margin-bottom: 4px; }
-  .fac-v2__role { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.15em; color: var(--stone); text-transform: uppercase; }
-
-  .who-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
-  .who-card-dark { background: var(--navy-deep); color: white; padding: 48px 40px; border-radius: 8px; }
-  .who-card-light { background: var(--paper-2); border: 1px solid var(--line); padding: 48px 40px; border-radius: 8px; }
-  .who-title { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 500; margin-bottom: 32px; color: inherit; }
-  .who-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px; }
-  .who-list li { position: relative; padding-left: 20px; font-size: 14px; line-height: 1.6; }
-  .who-list li::before { content: "—"; position: absolute; left: 0; color: var(--crimson); font-weight: bold; }
-
-  .fees-split { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; padding-top: 40px; padding-bottom: 60px; }
-  .fees-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 500; color: var(--char); }
-  .fees-table { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--paper-2); }
-  .fees-row { display: flex; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--line); font-size: 13px; }
-  .fees-row.total { background: var(--navy-deep); color: white; border-bottom: none; font-weight: 600; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.05em; font-size: 12px; }
-  .fees-row.total .fees-val { font-family: 'Inter', sans-serif; font-size: 18px; letter-spacing: 0; }
-  .fees-label { font-weight: 500; color: inherit; }
-  .fees-val { font-family: 'Inter', sans-serif; font-weight: 600; color: inherit; font-size: 15px; }
-
-  .final-v2 { background: var(--navy-deep); color: white; padding: 100px 0; text-align: center; margin-top: 60px; }
-  .final-v2 h2 { font-family: 'Source Serif 4', serif; font-size: 42px; font-weight: 500; margin-bottom: 40px; line-height: 1.25; }
-  .final-v2 .btn-row { display: flex; justify-content: center; gap: 16px; margin-bottom: 60px; }
-  .final-v2 .btn { font-size: 14px; padding: 0 24px; height: 48px; }
-  .foot-contact-row { display: flex; justify-content: space-between; max-width: 800px; margin: 0 auto; text-align: left; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
-  .foot-contact-item { display: flex; flex-direction: column; gap: 6px; }
-  .foot-contact-item .label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
-  .foot-contact-item .val { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; color: white; }
 </style>
-
 </head>
 <body>
 
@@ -400,41 +320,49 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" id="programme" style="background: linear-gradient(180deg, var(--paper) 0%, #FFFFFF 100%);">
-  <div class="wrap"><div class="hero__inner" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; min-height: 80vh; align-items: center;">
-    
-    <div class="hero__left" style="padding: 80px 0 80px 0; display: flex; flex-direction: column; justify-content: center;">
-      <div style="margin-bottom: 24px;">
-        <span class="badge" style="display:inline-block; padding: 6px 12px; background: var(--paper-2); color: var(--navy); border: 1px solid var(--line); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">OPEN FOR AUG 2026</span>
+<section class="hero" id="programme">
+  <div class="wrap"><div class="hero__inner">
+    <div class="hero__left">
+      <div>
+        <div class="eyebrow hero-rise">Emerging Leaders Programme 2.0 · Cohort Aug 2026</div>
+        <h1 class="display hero-rise hero-rise-1">
+          You made the jump<br/>to manager.<br/>
+          Now <em>lead like one.</em>
+        </h1>
+        <p class="lede hero-rise hero-rise-2">Seven months. Five themes. Eleven faculty-led courses. One Action Learning Project on a problem from your own desk. Built for first-time managers and emerging leaders ready to trade individual contribution for genuine influence.</p>
+        <div class="hero__meta hero-rise hero-rise-3">
+          <span class="chip"><span class="dot"></span> 3–8 yrs experience</span>
+          <span class="chip"><span class="dot"></span> 5 themes · 11 courses</span>
+          <span class="chip"><span class="dot"></span> Capstone ALP included</span>
+          <span class="chip"><span class="dot"></span> GenAI for Managers · embedded</span>
+        </div>
+        <div class="hero-rise hero-rise-3" style="margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#apply" class="nav__cta" style="padding: 16px 32px; font-size: 15px; background: var(--marigold); border-radius: 999px;">Apply Now →</a>
+          <a href="mailto:elpadmissions@iimb.ac.in" class="btn btn--ghost" style="padding: 16px 32px; font-size: 15px; border: 1px solid var(--line); color: var(--char); border-radius: 999px;">Talk to Admissions</a>
+        </div>
       </div>
-      <h1 class="display hero-rise hero-rise-1" style="font-size: clamp(50px, 6vw, 92px); margin-bottom: 24px;">
-        Emerging Leaders<br><span style="color: var(--navy); font-style: italic;">(ELP)</span>
-      </h1>
-      <p class="lede hero-rise hero-rise-2" style="font-size: 22px; color: var(--stone); margin-bottom: 40px; max-width: 450px; font-family: 'Inter', sans-serif;">
-        This isn’t a refresher course. It’s a re-wiring.
-      </p>
-      <div class="cta-row hero-rise hero-rise-3" style="display: flex; gap: 16px;">
-        <a href="#" class="btn btn-primary">Download Brochure</a>
-        <a href="#apply" class="btn btn-outline">Apply Now</a>
+      <div style="margin-top:50px"><span class="eyebrow">Inaugural session · August 2026 · IIM Bangalore</span></div>
+    </div>
+
+    <div class="hero__right">
+      <div class="hero__plate">
+        <div class="nameplate">// programme.signal</div>
+        <h3>"The skills that got you promoted aren't the ones that will <em>keep you leading.</em>"</h3>
+      </div>
+
+      <div class="hero__themes">
+        <div class="ht"><div class="n">T1</div><div class="l">Leadership</div></div>
+        <div class="ht"><div class="n">T2</div><div class="l">Financial Acumen</div></div>
+        <div class="ht"><div class="n">T3</div><div class="l">Value through Customers</div></div>
+        <div class="ht"><div class="n">T4</div><div class="l">Strategy &amp; Innovation</div></div>
+        <div class="ht"><div class="n">T5</div><div class="l">Data &amp; GenAI</div></div>
+      </div>
+
+      <div>
+        <p class="hero__quote">Faculty-led depth from IIM Bangalore. SME guest sessions. Three on-campus immersions plus a valedictory. A capstone that ships, not a certificate that gathers dust.</p>
+        <div class="hero__quote-l">— ELP 2.0 · Cohort Aug 2026</div>
       </div>
     </div>
-    
-    <div class="hero__right" style="background: var(--navy); padding: 80px 60px; color: white; display: flex; flex-direction: column; justify-content: center; position: relative; border-radius: 12px; box-shadow: 0 20px 40px rgba(11,21,53,.2);">
-       <h3 style="font-family: 'Source Serif 4', serif; font-size: 36px; font-style: italic; color: white; margin-bottom: 32px; font-weight: 500;">
-         “The same faculty. Wherever you are.”
-       </h3>
-       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-          <div>
-            <div style="font-family: 'Source Serif 4', serif; font-size: 48px; font-weight: 600; color: white; line-height: 1;">7<span style="color: var(--crimson); font-size: 24px; vertical-align: super; margin-left: 4px;">months</span></div>
-            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-top: 8px;">Duration</div>
-          </div>
-          <div>
-            <div style="font-family: 'Source Serif 4', serif; font-size: 48px; font-weight: 600; color: white; line-height: 1;">11</div>
-            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-top: 8px;">Core Modules</div>
-          </div>
-       </div>
-    </div>
-    
   </div></div>
 </section>
 
@@ -570,111 +498,169 @@
 </div>
 
 <!-- FACULTY SPOTLIGHT -->
-
-<section class="wrap" id="faculty" style="padding-bottom: 40px;">
-  <div class="sec-head" style="margin-bottom: 40px;">
-    <h2 style="font-size: 36px; font-weight: 500;">Faculty. <em style="color: var(--crimson);">IIM Bangalore.</em></h2>
-  </div>
-
-  <div class="anchor-card">
-    <div class="anchor-card__img">
-      <img src="./images/faculty/shainesh.jpg" alt="Prof. Shainesh G" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-4.jpg'" />
+<section class="wrap" id="faculty">
+  <div class="eyebrow" style="margin-bottom:32px">Faculty · IIM Bangalore</div>
+  <div class="spot">
+    <div class="spot__img reveal">
+      <img src="./images/faculty/shainesh.jpg" alt="Prof. Shainesh G" />
     </div>
-    <div class="anchor-card__content">
-      <div class="anchor-card__bgtext">ELP</div>
-      <div class="anchor-card__kicker">PROGRAMME AND CAPSTONE ANCHOR</div>
-      <p class="anchor-card__quote">"Emerging leaders don't need more theory. They need permission to apply what they already half-know, under faculty mentorship, with peers who'll tell them the truth, on a problem that actually matters to their organisation. That's what ELP is engineered to do."</p>
-      <div class="anchor-card__name">Prof. Shainesh G</div>
-      <div class="anchor-card__role">MARKETING - CAPSTONE ORIENTATION - IIM BANGALORE</div>
+    <div class="spot__content">
+      <div class="spot__eyebrow">Programme &amp; Capstone Anchor</div>
+      <p class="spot__quote reveal reveal-delay-1">"Emerging leaders don't need more theory. They need permission to apply what they already half-know — under faculty mentorship, with peers who'll tell them the truth, on a problem that actually matters to their organisation. That's what ELP 2.0 is engineered to do."</p>
+      <div class="spot__name reveal reveal-delay-2">Prof. Shainesh G</div>
+      <div class="spot__role">Marketing · Capstone Orientation · IIM Bangalore</div>
     </div>
   </div>
 
-  <div class="fac-grid-v2">
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/vasanthi.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof.jpg'"/></div><div class="fac-v2__name">Vasanthi Srinivasan</div><div class="fac-v2__role">ORGANIZATIONAL BEHAVIOR & HR</div></div>
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/malavika.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-1.jpg'"/></div><div class="fac-v2__name">Malavika R Haritha</div><div class="fac-v2__role">MANAGEMENT COMMUNICATION</div></div>
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/padmini.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-2.jpg'"/></div><div class="fac-v2__name">Padmini Srinivasan</div><div class="fac-v2__role">FINANCE & ACCOUNTING</div></div>
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/thampy.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-3.jpg'"/></div><div class="fac-v2__name">Ashok Thampy</div><div class="fac-v2__role">FINANCE & ACCOUNTING</div></div>
-    
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/pavan.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-4.jpg'"/></div><div class="fac-v2__name">Pavan Soni</div><div class="fac-v2__role">INNOVATION & DESIGN THINKING</div></div>
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/rsrinivasan.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof.jpg'"/></div><div class="fac-v2__name">R Srinivasan</div><div class="fac-v2__role">STRATEGY</div></div>
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/soudeep.jpg" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-1.jpg'"/></div><div class="fac-v2__name">Soudeep Deb</div><div class="fac-v2__role">DECISION SCIENCES</div></div>
-    <div class="fac-v2"><div class="fac-v2__img"><img src="./images/faculty/naveen.webp" onerror="this.src='https://iimbx.iimb.ac.in/wp-content/uploads/2023/06/prof-2.jpg'"/></div><div class="fac-v2__name">Naveen Bhansali</div><div class="fac-v2__role">AI & DIGITAL STRATEGY</div></div>
+  <div class="fac-grid">
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/vasanthi.jpg" alt="Prof. Vasanthi Srinivasan" /></div><div class="fac__name">Vasanthi Srinivasan</div><div class="fac__role">PM for Impact</div><div class="fac__course">Leading projects, leading people. 8 modules across the programme.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/malavika.jpg" alt="Malavika R Haritha" /></div><div class="fac__name">Malavika R Haritha</div><div class="fac__role">Communication for Leaders</div><div class="fac__course">From writing memos to commanding a room. 6 hrs.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/padmini.jpg" alt="Prof. Padmini Srinivasan" /></div><div class="fac__name">Padmini Srinivasan</div><div class="fac__role">Valuation &amp; Sustainable Value</div><div class="fac__course">Read companies the way investors do. 5 modules.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/thampy.jpg" alt="Prof. Ashok Thampy" /></div><div class="fac__name">Ashok Thampy</div><div class="fac__role">Corporate Finance</div><div class="fac__course">Capital allocation as a leadership discipline.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/pavan.jpg" alt="Dr. Pavan Soni" /></div><div class="fac__name">Pavan Soni</div><div class="fac__role">Innovation at Leadership Level</div><div class="fac__course">Frameworks for the leader who must invent, not execute. 6 hrs.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/rsrinivasan.jpg" alt="Prof. R Srinivasan" /></div><div class="fac__name">R Srinivasan</div><div class="fac__role">Advanced Corporate Strategy</div><div class="fac__course">Strategy at the altitude your role now demands.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/soudeep.jpg" alt="Prof. Soudeep Deb" /></div><div class="fac__name">Soudeep Deb</div><div class="fac__role">Data-Driven Decisions</div><div class="fac__course">Use data like a leader, not a dashboard consumer. 6 hrs.</div></div>
+    <div class="fac"><div class="fac__img"><img src="./images/faculty/naveen.webp" alt="Naveen Bhansali" /></div><div class="fac__name">Naveen Bhansali</div><div class="fac__role">Generative AI for Managers</div><div class="fac__course">GenAI as a managerial tool, not a hype cycle. 6 hrs hands-on.</div></div>
   </div>
 </section>
 
-<section class="wrap" style="padding-top:0; padding-bottom: 40px;">
-  <div class="sec-head">
-    <h2 style="font-size: 32px; font-weight: 500;">Built for managers <em style="color: var(--crimson);">about to step up.</em></h2>
-    <p style="font-size: 14px; max-width: 500px; margin-top: 12px; color: var(--stone);">If you were promoted in the last two years, or are about to be, ELP closes the gap between the work that got you here and the leadership the next chair demands.</p>
+<!-- WHO -->
+<section class="wrap" style="padding-top:0">
+  <div class="sec-head reveal-fast">
+    <h2>Built for managers <em>about to step up.</em></h2>
+    <p>If you were promoted in the last two years — or are about to be — ELP closes the gap between the work that got you here and the leadership the next chair demands.</p>
   </div>
-
-  <div class="who-split">
-    <div class="who-card-dark">
-      <h3 class="who-title">Ideal <em style="color: rgba(255,255,255,0.7);">for:</em></h3>
-      <ul class="who-list">
-        <li><strong>First-time managers</strong> who've inherited a team and are learning leadership on the job, often without scaffolding.</li>
-        <li><strong>Emerging leaders (3 to 8 yrs)</strong> in product, operations, technology, marketing or finance being groomed for cross-functional ownership.</li>
-        <li><strong>Founders and senior ICs</strong> moving into general-management roles who need rigorous breadth across leadership, finance, customers, strategy and AI.</li>
+  <div class="two-col">
+    <div class="who">
+      <h3>Ideal <em>for:</em></h3>
+      <ul>
+        <li><span><b>First-time managers</b> who've inherited a team and are learning leadership on the job, often without scaffolding.</span></li>
+        <li><span><b>Emerging leaders (3–8 yrs)</b> in product, operations, technology, marketing or finance — being groomed for cross-functional ownership.</span></li>
+        <li><span><b>Founders &amp; senior ICs</b> moving into general-management roles who need rigorous breadth across leadership, finance, customers, strategy and AI.</span></li>
       </ul>
     </div>
-    <div class="who-card-light">
-      <h3 class="who-title">You should apply <em style="color: var(--crimson);">if</em> you have:</h3>
-      <ul class="who-list">
-        <li>3 to 8 years of professional experience, with at least one year managing people or owning a cross-functional outcome.</li>
-        <li>A graduate degree in any discipline, including engineering, management, science, design, or relevant fields.</li>
-        <li>A real problem at your current organisation that you'd like to make the focus of your Action Learning Project.</li>
+    <div class="elig">
+      <h3>You should apply <em>if</em> you have:</h3>
+      <ul>
+        <li><span><b>3–8 years</b> of professional experience, with at least one year managing people or owning a cross-functional outcome.</span></li>
+        <li><span><b>A graduate degree</b> in any discipline — engineering, management, science, design, or relevant fields.</span></li>
+        <li><span><b>A real problem</b> at your current organisation that you'd like to make the focus of your Action Learning Project.</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="wrap" style="padding-top: 0; padding-bottom: 0;">
-  <div class="fees-split">
-    <h2 class="fees-title">Programme <em style="color: var(--crimson);">Fees</em></h2>
-    <div class="fees-table">
-      <div class="fees-row">
-        <div class="fees-label">Programme fee</div>
-        <div class="fees-val">₹ 2,45,000</div>
-      </div>
-      <div class="fees-row">
-        <div class="fees-label">GST (18%)</div>
-        <div class="fees-val">As applicable</div>
-      </div>
-      <div class="fees-row total">
-        <div class="fees-label">TOTAL (INCL. GST)</div>
-        <div class="fees-val">₹ 2,80,000+</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="final-v2">
+<!-- TESTIMONIALS -->
+<section class="origin" id="testimonials" style="padding: 90px 0;">
   <div class="wrap">
-    <h2>Eight months between the manager you are <em style="color: var(--crimson);">and<br/>the leader you'll be.</em></h2>
-    
-    <div class="btn-row">
-      <a href="#" class="btn btn-primary" style="background: var(--crimson); border-color: var(--crimson);">Apply now</a>
-      <a href="#" class="btn btn-outline" style="border-color: rgba(255,255,255,0.2); color: white;">Download brochure</a>
-      <a href="#" class="btn btn-outline" style="border-color: rgba(255,255,255,0.2); color: white;">FAQs</a>
+    <div class="sec-head reveal-fast" style="margin-bottom: 40px;">
+      <h2>Voice of the <em>cohort.</em></h2>
+      <p>Hear from managers who transformed their leadership and career trajectory through the Emerging Leaders Programme.</p>
     </div>
+    <div class="arche" style="grid-template-columns: repeat(2, 1fr); gap: 40px; display: grid;">
+      <div class="arch reveal" style="background: var(--paper); border: 1px solid var(--line); padding: 36px 32px; border-radius: 8px; display: flex; flex-direction: column; gap: 14px;">
+        <p style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 18px; line-height: 1.5; color: var(--char);">"ELP completely changed how I approach cross-functional conflicts. T1 (PM for Impact) with Prof. Vasanthi gave me the influence skills to drive consensus across engineering and product without formal authority."</p>
+        <div style="margin-top: auto; border-top: 1px solid var(--line); padding-top: 15px;">
+          <strong style="font-family: 'Source Serif 4', serif; font-size: 16px; color: var(--char);">Neha Shah</strong>
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--marigold); margin-top: 4px; text-transform: uppercase;">Lead Product Manager · FinTech Scaleup (Batch 3)</p>
+        </div>
+      </div>
+      <div class="arch reveal reveal-delay-1" style="background: var(--paper); border: 1px solid var(--line); padding: 36px 32px; border-radius: 8px; display: flex; flex-direction: column; gap: 14px;">
+        <p style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 18px; line-height: 1.5; color: var(--char);">"The Action Learning Project allowed me to design a new supply chain forecasting tool for our firm. We applied the data-driven framework from Prof. Soudeep, which reduced our inventory holding costs by 15%."</p>
+        <div style="margin-top: auto; border-top: 1px solid var(--line); padding-top: 15px;">
+          <strong style="font-family: 'Source Serif 4', serif; font-size: 16px; color: var(--char);">Aditya Sen</strong>
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--marigold); margin-top: 4px; text-transform: uppercase;">Operations Director · Logistics Corp (Batch 3)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="foot-contact-row">
-      <div class="foot-contact-item">
-        <div class="label">CONTACT US</div>
-        <div class="val">ELP Admissions Desk</div>
+<!-- TIMELINE -->
+<section class="wrap" id="timeline">
+  <div class="sec-head reveal-fast">
+    <h2>The seven-month <em>arc.</em></h2>
+    <p>A blended programme — predominantly online faculty-led sessions and self-paced content, anchored by three in-campus immersions and a valedictory session at IIM Bangalore.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl"><div class="m">Month 1–3</div><div class="h">Themes 1 &amp; 2</div><div class="d">Leadership essentials and financial acumen. ALP problem scoped.</div></div>
+    <div class="tl"><div class="m">Month 3–5</div><div class="h">Themes 3 &amp; 4</div><div class="d">Customer value, strategy and innovation. First on-campus immersion.</div></div>
+    <div class="tl"><div class="m">Month 5–6</div><div class="h">Theme 5 + Capstone</div><div class="d">Data-driven decisions and GenAI. ALP build and stress test.</div></div>
+    <div class="tl"><div class="m">Month 7</div><div class="h">Defend &amp; Graduate</div><div class="d">Final on-campus immersion and valedictory. Capstone presentation.</div></div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="wrap" id="faqs" style="padding-top: 80px; padding-bottom: 80px;">
+  <div class="sec-head reveal-fast" style="margin-bottom: 40px;">
+    <h2>Frequently Asked <em>Questions.</em></h2>
+    <p>Answers to common questions about the Emerging Leaders Programme 2.0.</p>
+  </div>
+  <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+    <div style="background: var(--paper-2); padding: 24px; border-radius: 8px; border: 1px solid var(--line);">
+      <h4 style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: var(--char);">What is the difference between ELP and NAM?</h4>
+      <p style="font-size: 14.5px; color: var(--stone); margin-top: 10px; line-height: 1.5;">ELP (Emerging Leaders Programme) is a longer, 7-month cohort program that covers core management disciplines (finance, strategy, customer metrics) in deeper academic detail with multiple on-campus sessions. NAM is a 6-month corporate-nomination program focused on practical leadership capabilities (coaching, change leadership) designed for cohort-based corporate learning pathways.</p>
+    </div>
+    <div style="background: var(--paper-2); padding: 24px; border-radius: 8px; border: 1px solid var(--line);">
+      <h4 style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: var(--char);">Are there on-campus sessions at IIM Bangalore?</h4>
+      <p style="font-size: 14.5px; color: var(--stone); margin-top: 10px; line-height: 1.5;">Yes, ELP 2.0 includes three mandatory on-campus immersion sessions, including a final valedictory in Month 7, where you will present your Action Learning Project directly to faculty and sponsors.</p>
+    </div>
+    <div style="background: var(--paper-2); padding: 24px; border-radius: 8px; border: 1px solid var(--line);">
+      <h4 style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: var(--char);">What are the program fees and installment schedules?</h4>
+      <p style="font-size: 14.5px; color: var(--stone); margin-top: 10px; line-height: 1.5;">The program fee is ₹ 2,45,000 + GST. You can pay in standard installments: ₹ 10,000 as a registration fee, with the remaining fee payable in two equal installments before the first on-campus immersion.</p>
+    </div>
+    <div style="background: var(--paper-2); padding: 24px; border-radius: 8px; border: 1px solid var(--line);">
+      <h4 style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: var(--char);">What certificate is awarded?</h4>
+      <p style="font-size: 14.5px; color: var(--stone); margin-top: 10px; line-height: 1.5;">Participants who successfully complete all course requirements and defend their Capstone project will be awarded the Professional Certificate in Emerging Leadership by IIM Bangalore / IIMBx.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="wrap" id="fees" style="padding-top:80px">
+  <div class="sec-head reveal-fast">
+    <h2>Fees and <em>key dates.</em></h2>
+    <p>Programme fee covers all faculty-led sessions, on-campus immersions, capstone mentorship and the IIMBx Certificate of Completion. EMI and corporate-sponsored options are available.</p>
+  </div>
+  <div class="fee-wrap">
+    <div class="fee-table">
+      <div class="fee-row"><div class="label">Programme fee</div><div class="v">₹ 2,45,000</div></div>
+      <div class="fee-row"><div class="label">Registration fee</div><div class="v">₹ 10,000</div></div>
+      <div class="fee-row"><div class="label">Convenience fee (2%) + GST (18%)</div><div class="v">As applicable</div></div>
+      <div class="fee-row"><div class="label">Total (approximate)</div><div class="v">₹ 2,80,000+</div></div>
+    </div>
+    <div class="fee-aside">
+      <div class="e">Key dates · Cohort Aug 2026</div>
+      <div class="h">Applications open · April 2026</div>
+      <div class="d">Rolling admissions. Cohort fills early. We recommend applying within the first six weeks.</div>
+      <ul>
+        <li>Application deadline · <b>July 2026</b></li>
+        <li>Inaugural session · <b>August 2026</b></li>
+        <li>Programme completion · <b>March 2027</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fee-note">*Fees subject to revision. EMI and sponsored options available. The Programme Fee includes registration cost; convenience fee and GST are over and above.</div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="apply">
+  <div class="wrap">
+    <div class="final__inner">
+      <div>
+        <h2>Seven months between<br/>the manager you are<br/><em>and the leader you'll be.</em></h2>
+        <p>ELP 2.0 doesn't reward the loudest voice in the room. It builds the leader the room turns to. Apply for the August 2026 cohort and bring a problem worth solving.</p>
       </div>
-      <div class="foot-contact-item">
-        <div class="label">EMAIL</div>
-        <div class="val">elpadmissions@iimb.ac.in</div>
+      <div class="final__ctas">
+        <a class="btn btn--primary" href="https://iimbxadmissions.iimb.ac.in/registration-form" data-testid="cta-apply-now" style="background: var(--marigold); color: #FFFFFF;">Apply Now <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="mailto:elpadmissions@iimb.ac.in" data-testid="cta-talk-admissions">Talk to admissions <span class="arrow">→</span></a>
       </div>
-      <div class="foot-contact-item">
-        <div class="label">WORKING HOURS</div>
-        <div class="val">Mon - Fri, 9 am - 6 pm IST</div>
-      </div>
-      <div class="foot-contact-item">
-        <div class="label">PHONE</div>
-        <div class="val">+91 80 2699 3017</div>
-      </div>
+    </div>
+    <div class="info">
+      <div><div class="b">Inauguration</div><div class="t">August 2026</div><div class="s">7-month cohort</div></div>
+      <div><div class="b">Format</div><div class="t">Blended</div><div class="s">Online + 3 on-campus + valedictory</div></div>
+      <div><div class="b">Certificate</div><div class="t">IIM Bangalore</div><div class="s">IIMBx Certificate of Completion</div></div>
+      <div><div class="b">Admissions desk</div><div class="t">elpadmissions@iimb.ac.in</div><div class="s">+91 80 2699 3017</div></div>
     </div>
   </div>
 </section>
@@ -688,5 +674,9 @@
   </div>
 </footer>
 
+
+<div style="position: fixed; bottom: 20px; right: 20px; background: #000; color: #fff; padding: 10px 15px; border-radius: 8px; font-family: monospace; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+  V1 Stage Prototype - Variant 1
+</div>
 </body>
 </html>

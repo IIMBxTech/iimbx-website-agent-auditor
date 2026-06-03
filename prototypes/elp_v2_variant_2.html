@@ -44,7 +44,7 @@
   }
   .btn-outline {
     background-color: transparent;
-    color: var(--char);
+    color: white;
     border: 1px solid var(--line);
   }
   .btn-outline:hover {
@@ -86,7 +86,7 @@
   .hero h1{font-size:clamp(50px,7vw,108px);margin-top:30px}
   .hero p.lede{margin-top:32px;max-width:46ch;font-size:21px;line-height:1.45;color:var(--stone)}
   .hero__meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-  .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--paper-2)}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:rgba(255,255,255,0.05)}
   .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--marigold)}
 
   .hero__right{background:var(--char);color:var(--paper);padding:80px 56px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
@@ -127,7 +127,7 @@
 
   /* themes v2 grid */
   .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow: 0 10px 30px rgba(11,21,53,.04)}
-  .theme{background:var(--paper-2);padding:48px 40px;display:flex;flex-direction:column;gap:14px;min-height:340px;transition:background .25s ease,color .25s ease;cursor:default;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .theme{background:rgba(255,255,255,0.05);padding:48px 40px;display:flex;flex-direction:column;gap:14px;min-height:340px;transition:background .25s ease,color .25s ease;cursor:default;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
   .theme:nth-child(3n){border-right:none}
   .theme:nth-child(n+4){border-bottom:none}
   .theme:hover{background:var(--crimson);color:var(--paper)}
@@ -149,7 +149,7 @@
   /* curriculum table (11 courses) */
   .courses{margin-top:48px;border-top:1px solid var(--line)}
   .crow{display:grid;grid-template-columns:50px 1.6fr 1fr 140px;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
-  .crow:hover{background:var(--paper-2)}
+  .crow:hover{background:rgba(255,255,255,0.05)}
   .cnum{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--marigold);padding-left:10px}
   .cname{font-family:'Source Serif 4',serif;font-size:20px;font-weight:500;color:var(--char);line-height:1.2}
   .cname .new{display:inline-block;margin-left:10px;padding:2px 8px;background:var(--navy);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;border-radius:999px;vertical-align:middle}
@@ -171,7 +171,7 @@
   /* faculty grid — photo + duotone tint on hover */
   .fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
   .fac{display:flex;flex-direction:column;gap:14px}
-  .fac__img{aspect-ratio:1/1.18;border-radius:4px;overflow:hidden;background:var(--paper-2);position:relative}
+  .fac__img{aspect-ratio:1/1.18;border-radius:4px;overflow:hidden;background:rgba(255,255,255,0.05);position:relative}
   .fac__img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.05) contrast(1.04);transition:filter .35s ease,transform .6s ease}
   .fac:hover .fac__img img{filter:grayscale(0) contrast(1.06);transform:scale(1.025)}
   .fac__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(23,45,107,.0) 100%);pointer-events:none;transition:background .3s}
@@ -181,7 +181,7 @@
   .fac__course{font-size:13px;color:var(--steel);line-height:1.5}
 
   /* capstone band */
-  .capstone{background:var(--paper-2);padding:120px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .capstone{background:rgba(255,255,255,0.05);padding:120px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .cap__inner{display:grid;grid-template-columns:.6fr 1.4fr;gap:80px;align-items:start}
   .cap__tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--navy)}
   .cap h2{font-family:'Source Serif 4',serif;font-size:clamp(40px,5.2vw,72px);font-weight:600;line-height:.98;letter-spacing:-.02em;color:var(--char);margin-top:18px}
@@ -196,7 +196,7 @@
 
   /* archetypes */
   .arche{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-  .arch{padding:36px 32px;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,border-color .25s}
+  .arch{padding:36px 32px;background:rgba(255,255,255,0.05);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,border-color .25s}
   .arch:hover{transform:translateY(-3px);border-color:var(--navy)}
 
   /* who/elig */
@@ -209,7 +209,7 @@
   .who li::before{content:"";width:18px;height:1px;background:var(--marigold);margin-top:11px;align-self:start}
   .who li b{color:var(--paper);font-weight:600}
 
-  .elig{padding:60px;border:1px solid var(--line);border-radius:8px;background:var(--paper-2)}
+  .elig{padding:60px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,0.05)}
   .elig h3{font-family:'Source Serif 4',serif;font-size:32px;font-weight:500;color:var(--char);margin-bottom:30px;line-height:1.1}
   .elig h3 em{color:var(--navy);font-style:italic}
   .elig ul{list-style:none;display:flex;flex-direction:column;gap:18px}
@@ -218,17 +218,17 @@
 
   /* timeline */
   .timeline{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .tl{padding:30px 26px;background:var(--paper-2);border-right:1px solid var(--line);position:relative}
+  .tl{padding:30px 26px;background:rgba(255,255,255,0.05);border-right:1px solid var(--line);position:relative}
   .tl:last-child{border-right:0}
   .tl .m{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--marigold);text-transform:uppercase}
   .tl .h{font-family:'Source Serif 4',serif;font-size:20px;font-weight:600;color:var(--char);margin-top:10px;line-height:1.2}
   .tl .d{font-size:13px;color:var(--steel);margin-top:8px;line-height:1.5}
-  .tl::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;color:var(--marigold);background:var(--paper-2);padding:0 4px;font-size:14px}
+  .tl::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;color:var(--marigold);background:rgba(255,255,255,0.05);padding:0 4px;font-size:14px}
   .tl:last-child::after{display:none}
 
   /* fees */
   .fee-wrap{margin-top:30px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
-  .fee-table{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .fee-table{background:rgba(255,255,255,0.05);border:1px solid var(--line);border-radius:8px;overflow:hidden}
   .fee-row{display:grid;grid-template-columns:1fr auto;gap:20px;padding:20px 28px;border-bottom:1px solid var(--line);align-items:baseline}
   .fee-row:last-child{border-bottom:0;background:var(--char);color:var(--paper)}
   .fee-row:last-child .label,.fee-row:last-child .v{color:var(--paper)}
@@ -347,20 +347,20 @@
   .fac-v2 { display: flex; flex-direction: column; }
   .fac-v2__img { width: 100%; aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 12px; overflow: hidden; background: #EAE5D9; }
   .fac-v2__img img { width: 100%; height: 100%; object-fit: cover; }
-  .fac-v2__name { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: var(--char); margin-bottom: 4px; }
-  .fac-v2__role { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.15em; color: var(--stone); text-transform: uppercase; }
+  .fac-v2__name { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: white; margin-bottom: 4px; }
+  .fac-v2__role { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.15em; color: rgba(255,255,255,0.7); text-transform: uppercase; }
 
   .who-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
   .who-card-dark { background: var(--navy-deep); color: white; padding: 48px 40px; border-radius: 8px; }
-  .who-card-light { background: var(--paper-2); border: 1px solid var(--line); padding: 48px 40px; border-radius: 8px; }
+  .who-card-light { background: rgba(255,255,255,0.05); border: 1px solid var(--line); padding: 48px 40px; border-radius: 8px; }
   .who-title { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 500; margin-bottom: 32px; color: inherit; }
   .who-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px; }
   .who-list li { position: relative; padding-left: 20px; font-size: 14px; line-height: 1.6; }
   .who-list li::before { content: "—"; position: absolute; left: 0; color: var(--crimson); font-weight: bold; }
 
   .fees-split { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; padding-top: 40px; padding-bottom: 60px; }
-  .fees-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 500; color: var(--char); }
-  .fees-table { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--paper-2); }
+  .fees-title { font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 500; color: white; }
+  .fees-table { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.05); }
   .fees-row { display: flex; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--line); font-size: 13px; }
   .fees-row.total { background: var(--navy-deep); color: white; border-bottom: none; font-weight: 600; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.05em; font-size: 12px; }
   .fees-row.total .fees-val { font-family: 'Inter', sans-serif; font-size: 18px; letter-spacing: 0; }
@@ -405,12 +405,12 @@
     
     <div class="hero__left" style="padding: 80px 0 80px 0; display: flex; flex-direction: column; justify-content: center;">
       <div style="margin-bottom: 24px;">
-        <span class="badge" style="display:inline-block; padding: 6px 12px; background: var(--paper-2); color: var(--navy); border: 1px solid var(--line); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">OPEN FOR AUG 2026</span>
+        <span class="badge" style="display:inline-block; padding: 6px 12px; background: rgba(255,255,255,0.05); color: var(--navy); border: 1px solid var(--line); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">OPEN FOR AUG 2026</span>
       </div>
       <h1 class="display hero-rise hero-rise-1" style="font-size: clamp(50px, 6vw, 92px); margin-bottom: 24px;">
         Emerging Leaders<br><span style="color: var(--navy); font-style: italic;">(ELP)</span>
       </h1>
-      <p class="lede hero-rise hero-rise-2" style="font-size: 22px; color: var(--stone); margin-bottom: 40px; max-width: 450px; font-family: 'Inter', sans-serif;">
+      <p class="lede hero-rise hero-rise-2" style="font-size: 22px; color: rgba(255,255,255,0.7); margin-bottom: 40px; max-width: 450px; font-family: 'Inter', sans-serif;">
         This isn’t a refresher course. It’s a re-wiring.
       </p>
       <div class="cta-row hero-rise hero-rise-3" style="display: flex; gap: 16px;">
@@ -565,7 +565,7 @@
 </section>
 
 <!-- BRAND PROMISE BAND -->
-<div class="reveal-fast" style="text-align: center; padding: 48px 20px; background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-style: italic; color: var(--navy); font-weight: 500;">
+<div class="reveal-fast" style="text-align: center; padding: 48px 20px; background: rgba(255,255,255,0.05); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-style: italic; color: var(--navy); font-weight: 500;">
   "The same faculty. Wherever you are."
 </div>
 
@@ -573,7 +573,7 @@
 
 <section class="wrap" id="faculty" style="padding-bottom: 40px;">
   <div class="sec-head" style="margin-bottom: 40px;">
-    <h2 style="font-size: 36px; font-weight: 500;">Faculty. <em style="color: var(--crimson);">IIM Bangalore.</em></h2>
+    <h2 style="font-size: 36px; font-weight: 500; color: white;">Faculty. <em style="color: var(--crimson);">IIM Bangalore.</em></h2>
   </div>
 
   <div class="anchor-card">
@@ -605,7 +605,7 @@
 <section class="wrap" style="padding-top:0; padding-bottom: 40px;">
   <div class="sec-head">
     <h2 style="font-size: 32px; font-weight: 500;">Built for managers <em style="color: var(--crimson);">about to step up.</em></h2>
-    <p style="font-size: 14px; max-width: 500px; margin-top: 12px; color: var(--stone);">If you were promoted in the last two years, or are about to be, ELP closes the gap between the work that got you here and the leadership the next chair demands.</p>
+    <p style="font-size: 14px; max-width: 500px; margin-top: 12px; color: rgba(255,255,255,0.7);">If you were promoted in the last two years, or are about to be, ELP closes the gap between the work that got you here and the leadership the next chair demands.</p>
   </div>
 
   <div class="who-split">
@@ -617,7 +617,7 @@
         <li><strong>Founders and senior ICs</strong> moving into general-management roles who need rigorous breadth across leadership, finance, customers, strategy and AI.</li>
       </ul>
     </div>
-    <div class="who-card-light">
+    <div class="who-card-light" style="color: white; border-color: rgba(255,255,255,0.1)">
       <h3 class="who-title">You should apply <em style="color: var(--crimson);">if</em> you have:</h3>
       <ul class="who-list">
         <li>3 to 8 years of professional experience, with at least one year managing people or owning a cross-functional outcome.</li>
@@ -688,5 +688,9 @@
   </div>
 </footer>
 
+
+<div style="position: fixed; bottom: 20px; right: 20px; background: #000; color: #fff; padding: 10px 15px; border-radius: 8px; font-family: monospace; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+  V2 Stage Prototype - Variant 2
+</div>
 </body>
 </html>
