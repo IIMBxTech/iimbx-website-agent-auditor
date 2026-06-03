@@ -384,14 +384,45 @@ document.addEventListener('DOMContentLoaded', () => {
           if (currentWfRight !== 'none') activePanes.push(currentWfRight);
           
           activePanes.forEach(paneId => {
-            const htmlContent = prog.wireframes.html[paneId] || 'No HTML available';
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
+            let fileUrl = '';
+            if (prog.id === 'adm') {
+                if (paneId === 'v1_variant_1') fileUrl = `../prototypes/adm_v1_variant_1.html`;
+                else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_v1_variant_2.html`;
+                else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/adm_v1_variant_3.html`;
+                else if (paneId === 'stitch_variant_1') fileUrl = `../prototypes/adm_stitch_variant_1.html`;
+                else if (paneId === 'stitch_variant_2') fileUrl = `../prototypes/adm_stitch_variant_2.html`;
+                else if (paneId === 'stitch_variant_3') fileUrl = `../prototypes/adm_stitch_variant_3.html`;
+                else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_stitch_v4.html`;
+            } else if (prog.id === 'elp') {
+                if (paneId === 'proposedV1') fileUrl = `../prototypes/elp_v1.html`;
+                else if (paneId === 'proposedV2') fileUrl = `../prototypes/elp_v2.html`;
+                else if (paneId === 'proposedV3') fileUrl = `../prototypes/elp_v3.html`;
+                else if (paneId === 'v1_variant_1') fileUrl = `../prototypes/elp_v1_variant_1.html`;
+                else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/elp_v1_variant_2.html`;
+                else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/elp_v1_variant_3.html`;
+                else if (paneId === 'v2_variant_1') fileUrl = `../prototypes/elp_v2_variant_1.html`;
+                else if (paneId === 'v2_variant_2') fileUrl = `../prototypes/elp_v2_variant_2.html`;
+                else if (paneId === 'v2_variant_3') fileUrl = `../prototypes/elp_v2_variant_3.html`;
+                else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
+                else if (paneId === 'v2_variant_4') fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+            } else {
+                if (paneId === 'proposedV1') fileUrl = `../prototypes/${prog.id}_v1.html`;
+                else if (paneId === 'proposedV2') fileUrl = `../prototypes/${prog.id}_v2.html`;
+                else if (paneId === 'proposedV3') fileUrl = `../prototypes/${prog.id}_v3.html`;
+                else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/${prog.id}_stitch_v4.html`;
+            }
+
+            if (!fileUrl) {
+                // Ignore external live sites for physical file download
+                return;
+            }
+
             const a = document.createElement('a');
-            a.href = url;
-            a.download = `${prog.shortName}_${paneId}.html`;
+            a.href = fileUrl;
+            a.download = fileUrl.split('/').pop();
+            document.body.appendChild(a);
             a.click();
-            URL.revokeObjectURL(url);
+            document.body.removeChild(a);
           });
         });
       }
@@ -402,6 +433,62 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   
+  function fetchHtmlSource(progId, paneId, targetElement) {
+    targetElement.textContent = "Loading HTML source...";
+    let fileUrl = '';
+    
+    // Specifically handle marketingHtml mapping to the physical file found at the root
+    if (paneId === 'marketingHtml') {
+        if (progId === 'adm') fileUrl = '../adm_old_site_reference_agent_gen.html';
+        else if (progId === 'pcaim') fileUrl = '../AI_For_Managers_agent_gen.html';
+        else if (progId === 'pchm') fileUrl = '../pchm_v1_marketing_html.html';
+        else if (progId === 'nam') fileUrl = '../nam_v1_marketing_html.html';
+        else if (progId === 'elp') fileUrl = '../elp_v1_marketing_html.html';
+    } else if (progId === 'adm') {
+        if (paneId === 'v1_variant_1') fileUrl = `../prototypes/adm_v1_variant_1.html`;
+        else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_v1_variant_2.html`;
+        else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/adm_v1_variant_3.html`;
+        else if (paneId === 'stitch_variant_1') fileUrl = `../prototypes/adm_stitch_variant_1.html`;
+        else if (paneId === 'stitch_variant_2') fileUrl = `../prototypes/adm_stitch_variant_2.html`;
+        else if (paneId === 'stitch_variant_3') fileUrl = `../prototypes/adm_stitch_variant_3.html`;
+        else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_stitch_v4.html`;
+    } else if (progId === 'elp') {
+        if (paneId === 'proposedV1') fileUrl = `../prototypes/elp_v1.html`;
+        else if (paneId === 'proposedV2') fileUrl = `../prototypes/elp_v2.html`;
+        else if (paneId === 'proposedV3') fileUrl = `../prototypes/elp_v3.html`;
+        else if (paneId === 'v1_variant_1') fileUrl = `../prototypes/elp_v1_variant_1.html`;
+        else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/elp_v1_variant_2.html`;
+        else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/elp_v1_variant_3.html`;
+        else if (paneId === 'v2_variant_1') fileUrl = `../prototypes/elp_v2_variant_1.html`;
+        else if (paneId === 'v2_variant_2') fileUrl = `../prototypes/elp_v2_variant_2.html`;
+        else if (paneId === 'v2_variant_3') fileUrl = `../prototypes/elp_v2_variant_3.html`;
+        else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
+        else if (paneId === 'v2_variant_4') fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+    } else {
+        if (paneId === 'proposedV1') fileUrl = `../prototypes/${progId}_v1.html`;
+        else if (paneId === 'proposedV2') fileUrl = `../prototypes/${progId}_v2.html`;
+        else if (paneId === 'proposedV3') fileUrl = `../prototypes/${progId}_v3.html`;
+        else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/${progId}_stitch_v4.html`;
+    }
+
+    if (!fileUrl) {
+        targetElement.textContent = "HTML not available for external URLs. Please check the actual site.";
+        return;
+    }
+
+    fetch(fileUrl)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(text => {
+            targetElement.textContent = text;
+        })
+        .catch(err => {
+            targetElement.textContent = "Failed to load HTML source: " + err.message;
+        });
+  }
+
   function updateWfViews() {
     const friendlyLabels = {
       none: 'None',
@@ -432,7 +519,11 @@ document.addEventListener('DOMContentLoaded', () => {
       wfPaneLeft.textContent = '';
     } else {
       wfLabelLeft.textContent = `Left: ${friendlyLabels[currentWfLeft]}`;
-      wfPaneLeft.textContent = currentProgramme.wireframes[currentViewMode][currentWfLeft] || 'No wireframe available for this view';
+            if (currentViewMode === 'html') {
+        fetchHtmlSource(currentProgramme.id, currentWfLeft, wfPaneLeft);
+      } else {
+        wfPaneLeft.textContent = currentProgramme.wireframes[currentViewMode][currentWfLeft] || 'No wireframe available for this view';
+      }
     }
     
     const colMiddle = document.getElementById('wf-col-middle');
@@ -443,7 +534,11 @@ document.addEventListener('DOMContentLoaded', () => {
         wfPaneMiddle.textContent = '';
       } else {
         wfLabelMiddle.textContent = `Middle: ${friendlyLabels[currentWfMiddle]}`;
-        wfPaneMiddle.textContent = currentProgramme.wireframes[currentViewMode][currentWfMiddle] || 'No wireframe available for this view';
+                if (currentViewMode === 'html') {
+          fetchHtmlSource(currentProgramme.id, currentWfMiddle, wfPaneMiddle);
+        } else {
+          wfPaneMiddle.textContent = currentProgramme.wireframes[currentViewMode][currentWfMiddle] || 'No wireframe available for this view';
+        }
       }
     }
     
@@ -454,7 +549,11 @@ document.addEventListener('DOMContentLoaded', () => {
       wfPaneRight.textContent = '';
     } else {
       wfLabelRight.textContent = `Proposed Layout: ${friendlyLabels[currentWfRight]}`;
-      wfPaneRight.textContent = currentProgramme.wireframes[currentViewMode][currentWfRight] || 'No wireframe available for this view';
+            if (currentViewMode === 'html') {
+        fetchHtmlSource(currentProgramme.id, currentWfRight, wfPaneRight);
+      } else {
+        wfPaneRight.textContent = currentProgramme.wireframes[currentViewMode][currentWfRight] || 'No wireframe available for this view';
+      }
     }
     
     const previewBtn = document.getElementById('preview-html');
