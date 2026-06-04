@@ -295,9 +295,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentWfRight === 'v1_variant_1') fileUrl = '../prototypes/adm_v1_variant_1.html';
             else if (currentWfRight === 'v1_variant_2') fileUrl = '../prototypes/adm_v1_variant_2.html';
             else if (currentWfRight === 'v1_variant_3') fileUrl = '../prototypes/adm_v1_variant_3.html';
-            else if (currentWfRight === 'stitch_variant_1') fileUrl = '../prototypes/adm_stitch_variant_1.html';
-            else if (currentWfRight === 'stitch_variant_2') fileUrl = '../prototypes/adm_stitch_variant_2.html';
-            else if (currentWfRight === 'stitch_variant_3') fileUrl = '../prototypes/adm_stitch_variant_3.html';
             else if (currentWfRight === 'v1_variant_4') fileUrl = '../prototypes/adm_stitch_v4.html';
         } else if (prog.id === 'elp') {
             if (currentWfRight === 'proposedV1') fileUrl = '../prototypes/elp_v1.html';
@@ -389,9 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (paneId === 'v1_variant_1') fileUrl = `../prototypes/adm_v1_variant_1.html`;
                 else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_v1_variant_2.html`;
                 else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/adm_v1_variant_3.html`;
-                else if (paneId === 'stitch_variant_1') fileUrl = `../prototypes/adm_stitch_variant_1.html`;
-                else if (paneId === 'stitch_variant_2') fileUrl = `../prototypes/adm_stitch_variant_2.html`;
-                else if (paneId === 'stitch_variant_3') fileUrl = `../prototypes/adm_stitch_variant_3.html`;
                 else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_stitch_v4.html`;
             } else if (prog.id === 'elp') {
                 if (paneId === 'proposedV1') fileUrl = `../prototypes/elp_v1.html`;
@@ -448,9 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (paneId === 'v1_variant_1') fileUrl = `../prototypes/adm_v1_variant_1.html`;
         else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_v1_variant_2.html`;
         else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/adm_v1_variant_3.html`;
-        else if (paneId === 'stitch_variant_1') fileUrl = `../prototypes/adm_stitch_variant_1.html`;
-        else if (paneId === 'stitch_variant_2') fileUrl = `../prototypes/adm_stitch_variant_2.html`;
-        else if (paneId === 'stitch_variant_3') fileUrl = `../prototypes/adm_stitch_variant_3.html`;
         else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_stitch_v4.html`;
     } else if (progId === 'elp') {
         if (paneId === 'proposedV1') fileUrl = `../prototypes/elp_v1.html`;
@@ -501,9 +492,6 @@ document.addEventListener('DOMContentLoaded', () => {
       v1_variant_1: 'V1 Prototype 1 (Baseline)',
       v1_variant_2: 'V1 Prototype 2 (Dark Mode)',
       v1_variant_3: 'V1 Prototype 3 (Compact)',
-      stitch_variant_1: 'Stitch Prototype 1',
-      stitch_variant_2: 'Stitch Prototype 2',
-      stitch_variant_3: 'Stitch Prototype 3',
       v1_variant_4: 'Stitch Prototype 4',
       v2Staging: 'V2 Staging URL',
       v2_variant_1: 'V2 Prototype 1 (Baseline)',
@@ -575,9 +563,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <option value="v1_variant_1">V1 Prototype 1 (Baseline)</option>
           <option value="v1_variant_2">V1 Prototype 2 (Dark Mode)</option>
           <option value="v1_variant_3">V1 Prototype 3 (Compact)</option>
-          <option value="stitch_variant_1">Stitch Prototype 1</option>
-          <option value="stitch_variant_2">Stitch Prototype 2</option>
-          <option value="stitch_variant_3">Stitch Prototype 3</option>
           <option value="v1_variant_4">Stitch Prototype 4</option>
         `;
     } else if (currentProgramme.id === 'elp') {

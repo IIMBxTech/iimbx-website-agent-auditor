@@ -35,10 +35,7 @@ window.AUDIT_DATA = [
         "v1_variant_3": "[Hero: Stitch Reimagine] -> [Overview] -> [Outcomes] -> [Curriculum]",
         "v1Staging": "",
         "proposed": "[Hero: ADM] -> [Overview + Audience + Instructor] -> [Grid: Outcomes] -> [Accordion: Modules]",
-        "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]",
-        "stitch_variant_1": "[Hero: Stitch] -> [Overview] -> [Compact UI]",
-        "stitch_variant_2": "[Hero: Stitch Dark] -> [Overview] -> [Compact UI]",
-        "stitch_variant_3": "[Hero: Stitch Alternate] -> [Overview] -> [Compact UI]"
+        "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
       },
       "suggestions": [
         {
