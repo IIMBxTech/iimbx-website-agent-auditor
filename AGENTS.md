@@ -1,5 +1,5 @@
 # IIMBx Audit Swarm — Workspace Instructions
-**Version:** 3.0 | **Maintained by:** IIMBx Brand Team | **Last updated:** May 2026
+**Version:** 3.1 | **Maintained by:** IIMBx Brand Team | **Last updated:** June 2026
 
 When you open this workspace, read this file **completely before responding to any request**. It is your memory, your reference library, and your rules of engagement.
 
@@ -374,18 +374,20 @@ Whenever building from a description, the agent should proactively suggest impro
 - Content gaps (e.g., "The hero doesn't mention the credential type — I'll add a chip for that")
 - Accessibility improvements (e.g., "Adding `aria-expanded` to these accordion toggles")
 
-### New HTML File Dropped into Workspace
+### New HTML File or URL Provided
 
-When a new `.html` file appears in the workspace (or the user says *"I added a new file"* or *"check this HTML"*), the agent runs a **triage workflow** automatically:
+When a new `.html` file appears in the workspace, or the user provides a new URL (or says *"I added a new file"*, *"check this HTML"*), the agent MUST run a **strict triage workflow**:
 
-**Step 1 — Identify the programme.**
-1. Read the HTML file using `view_file`.
-2. Scan the `<title>`, `<h1>`, hero text, and meta tags to determine which IIMBx programme it belongs to.
-3. Match against §4 of this file. If it matches a known programme (PCAIM, PCHM, ELP, NAM), proceed with that programme's reference data.
-4. If it doesn't match any known programme:
-   - Search `mcp_exa_web_search_exa` with the programme name found in the HTML
-   - Fetch reference content from the live site
-   - Ask the user: *"This looks like a page for [programme name]. I don't have it in my reference library yet. Should I add it to §4 and proceed?"*
+**Step 1 — Stop and Ask the User (Mandatory).**
+Before reading the file, searching the web, or running any audits, you MUST ask the user:
+1. *"Which programme is this data for?"*
+2. *"Is this a staging URL for a new page, or is it the old website link?"*
+
+**Do NOT proceed with any web searches, file reading, or triage until the user answers these questions.**
+
+**Step 1b — Identify the programme.**
+1. Once the user confirms the programme, match it against §4 of this file. If it matches a known programme, proceed with that programme's reference data.
+2. If it doesn't match any known programme, ask the user if you should add it to §4 and fetch reference content.
 
 **Step 2 — Quick health check.** Run a rapid scan (not a full audit) and report:
 
@@ -569,6 +571,7 @@ The agent should recognise these as update intents:
 | May 2026 | v2.3 | Expanded §1 identity (added Builder + Advisor roles) · Added "New HTML file dropped" auto-triage handler to §5 · Added "General conversation / Advisory" handler to §5 | Agent is now a complete end-to-end tool: drop any HTML in, get a health check, ask for fixes or new sections in plain English, and the agent writes and applies brand-compliant code |
 | May 2026 | v2.4 | Added `IIMBx_Comparative_Audit_Skill.md` to §2 file table · Replaced simple "Compare" handler in §5 with full comparative audit pipeline referencing the new skill file · Skill uses Mermaid/ASCII wireframes (no image generation) | Enables a structured, repeatable workflow for comparing all HTML prototypes against brand guidelines and old website content, with scroll-depth analysis and visual wireframe proposals for UX optimization |
 | May 2026 | v3.0 | **Major upgrade:** Evolved from monolithic agent to **20-agent swarm architecture**. Created `skills/` directory with 21 skill files (00–20) across 5 layers. Created `dashboard/` with interactive Netlify-ready audit dashboard. Updated §1 identity to Swarm Coordinator. Updated §2 with complete file registry. Updated §5 audit/fix handlers to reference swarm dispatch protocol. Deleted orphan root-level skill files. Expanded Agent 03 (Guidelines Extractor) from 1.8KB to 4.5KB with complete output structures. | Scalable, modular, multi-agent architecture for continuous IIMBx landing page auditing with live dashboard for PMs and designers |
+| June 2026 | v3.1 | Updated `New HTML File` handler to include URLs and enforce a strict pause-and-ask workflow before fetching data. | Prevent agent from blindly fetching unverified URLs and guessing programme context without user input |
 
 *Swarm instructions v3.0 — IIMBx Brand Team — May 2026*
 *Maintained in: `c:\Users\harsh\OneDrive\Desktop\Compare\AGENTS.md`*

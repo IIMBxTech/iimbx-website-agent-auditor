@@ -880,11 +880,11 @@ window.AUDIT_DATA = [
     "v1StagingUrl": "—",
     "auditDate": "2026-06-04",
     "scores": {
-      "brand": 100,
-      "content": 100,
-      "ux": 100
+      "brand": 0,
+      "content": 0,
+      "ux": 0
     },
-    "summary": "Contact page built from scratch matching brand guidelines. Includes physical address, phone numbers, email address, and a Google Maps embed.",
+    "summary": "Pending audit. Only the old website URL was provided; waiting on new HTML prototype to evaluate brand compliance and content gaps.",
     "contentGaps": [],
     "brandChecks": [
       {
@@ -906,7 +906,7 @@ window.AUDIT_DATA = [
     },
     "wireframes": {
       "ascii": {
-        "oldSite": "none",
+        "oldSite": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Contact Us                          │\n├─── CONTACT INFO ────────────────────┤\n│ Email: info@iimbx.iimb.ac.in        │\n│ Phone: +91 8105228066               │\n│ Address: IIMBx, Bannerghatta Rd     │\n├─── MAP ─────────────────────────────┤\n│ VISIT US / Map                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
         "marketingHtml": "none",
         "v1Staging": "none",
         "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Get in Touch                        │\n├─── CONTENT ─────────────────────────┤\n│ Address | Phone | Email             │\n├─── MAP ─────────────────────────────┤\n│ Google Maps Embed                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
