@@ -308,6 +308,11 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (currentWfRight === 'v2_variant_2') fileUrl = '../prototypes/elp_v2_variant_2.html';
             else if (currentWfRight === 'v2_variant_3') fileUrl = '../prototypes/elp_v2_variant_3.html';
             else if (currentWfRight === 'v2_variant_4') fileUrl = '../prototypes/elp_v2_stitch_v4.html';
+        } else if (prog.id === 'contact') {
+            if (currentWfRight === 'proposedV1') fileUrl = '../prototypes/contact_v1.html';
+            else if (currentWfRight === 'proposedV2') fileUrl = '../prototypes/contact_v2.html';
+            else if (currentWfRight === 'proposedV3') fileUrl = '../prototypes/contact_v3.html';
+            else if (currentWfRight === 'v2_variant_4') fileUrl = '../prototypes/contact_v2_stitch.html';
         } else {
             if (currentWfRight === 'proposedV1') fileUrl = `../prototypes/${prog.id}_v1.html`;
             else if (currentWfRight === 'proposedV2') fileUrl = `../prototypes/${prog.id}_v2.html`;
@@ -399,6 +404,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (paneId === 'v2_variant_3') fileUrl = `../prototypes/elp_v2_variant_3.html`;
                 else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
                 else if (paneId === 'v2_variant_4') fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+            } else if (prog.id === 'contact') {
+                if (paneId === 'proposedV1') fileUrl = '../prototypes/contact_v1.html';
+                else if (paneId === 'proposedV2') fileUrl = '../prototypes/contact_v2.html';
+                else if (paneId === 'proposedV3') fileUrl = '../prototypes/contact_v3.html';
+                else if (paneId === 'v2_variant_4') fileUrl = '../prototypes/contact_v2_stitch.html';
             } else {
                 if (paneId === 'proposedV1') fileUrl = `../prototypes/${prog.id}_v1.html`;
                 else if (paneId === 'proposedV2') fileUrl = `../prototypes/${prog.id}_v2.html`;
@@ -455,6 +465,11 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (paneId === 'v2_variant_3') fileUrl = `../prototypes/elp_v2_variant_3.html`;
         else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
         else if (paneId === 'v2_variant_4') fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+    } else if (progId === 'contact') {
+        if (paneId === 'proposedV1') fileUrl = '../prototypes/contact_v1.html';
+        else if (paneId === 'proposedV2') fileUrl = '../prototypes/contact_v2.html';
+        else if (paneId === 'proposedV3') fileUrl = '../prototypes/contact_v3.html';
+        else if (paneId === 'v2_variant_4') fileUrl = '../prototypes/contact_v2_stitch.html';
     } else {
         if (paneId === 'proposedV1') fileUrl = `../prototypes/${progId}_v1.html`;
         else if (paneId === 'proposedV2') fileUrl = `../prototypes/${progId}_v2.html`;
@@ -578,6 +593,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <option value="v2_variant_2">V2 Prototype 2 (Navy Custom)</option>
           <option value="v2_variant_3">V2 Prototype 3 (Compact)</option>
           <option value="v2_variant_4">V2 Prototype 4 (Stitch)</option>
+        `;
+    } else if (currentProgramme.id === 'contact') {
+        options += `
+          <option value="proposedV1">Proposed Layout v1</option>
+          <option value="proposedV2">Proposed Layout v2 (Split)</option>
+          <option value="proposedV3">Proposed Layout v3 (Dark)</option>
+          <option value="v2_variant_4">Stitch Prototype v2 (Tailwind)</option>
         `;
     } else {
         // NAM, PCAIM, PCHM

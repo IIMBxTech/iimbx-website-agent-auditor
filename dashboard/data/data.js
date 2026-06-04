@@ -870,5 +870,53 @@ window.AUDIT_DATA = [
         "devNotes": "Reference from v1 staging"
       }
     ]
+  },
+  {
+    "id": "contact",
+    "programmeName": "Contact Us",
+    "shortName": "Contact",
+    "file": "Contact.html",
+    "oldSiteUrl": "https://iimbx.iimb.ac.in/contact/",
+    "v1StagingUrl": "—",
+    "auditDate": "2026-06-04",
+    "scores": {
+      "brand": 100,
+      "content": 100,
+      "ux": 100
+    },
+    "summary": "Contact page built from scratch matching brand guidelines. Includes physical address, phone numbers, email address, and a Google Maps embed.",
+    "contentGaps": [],
+    "brandChecks": [
+      {
+        "rule": "Color Palette",
+        "expected": "70/15/15",
+        "actual": "Pass",
+        "status": "pass"
+      },
+      {
+        "rule": "Typography",
+        "expected": "Source Serif/Inter/Plex",
+        "actual": "Pass",
+        "status": "pass"
+      }
+    ],
+    "scrollDepth": {
+      "current": 1,
+      "target": 1
+    },
+    "wireframes": {
+      "ascii": {
+        "oldSite": "none",
+        "marketingHtml": "none",
+        "v1Staging": "none",
+        "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Get in Touch                        │\n├─── CONTENT ─────────────────────────┤\n│ Address | Phone | Email             │\n├─── MAP ─────────────────────────────┤\n│ Google Maps Embed                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
+        "proposedV2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Get in Touch                        │\n├─── SPLIT SECTION ───────────────────┤\n│ CONTENT (LEFT)  |  MAP (RIGHT)      │\n│ Address, Phone  |  Google Maps      │\n│ Email           |                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
+        "proposedV3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (DARK MODE) ────────────────┤\n│ Get in Touch                        │\n├─── CONTENT ─────────────────────────┤\n│ Address | Phone | Email             │\n├─── MAP ─────────────────────────────┤\n│ Google Maps Embed                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
+        "v2_variant_4": "┌─── NAVBAR ──────────────────────────┐\n│ Academia Logo | Links | Apply       │\n├─── SPLIT SECTION (STITCH) ──────────┤\n│ GET IN TOUCH    |                   │\n│ (Icon) Email    |  MAP (RIGHT)      │\n│ (Icon) Phone    |  IIMB Campus      │\n│ (Icon) Campus   |                   │\n├─── FOOTER ──────────────────────────┤\n│ Academia | Resources | Legal        │\n└─────────────────────────────────────┘"
+      },
+      "suggestions": [],
+      "html": {}
+    },
+    "actionItems": []
   }
 ];
