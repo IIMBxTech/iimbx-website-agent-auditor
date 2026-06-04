@@ -1,4 +1,4 @@
-<div style="text-align:center; padding: 12px; font-weight:bold; color: #F4EFE3; background: #1A1B1E; border-bottom: 3px solid #C97138; font-size: 14px; position: sticky; top: 0; z-index: 9999; letter-spacing: 1px; text-transform: uppercase; font-family: Inter, sans-serif;">
+html_content = """<div style="text-align:center; padding: 12px; font-weight:bold; color: #F4EFE3; background: #1A1B1E; border-bottom: 3px solid #C97138; font-size: 14px; position: sticky; top: 0; z-index: 9999; letter-spacing: 1px; text-transform: uppercase; font-family: Inter, sans-serif;">
     ✨ Stitch MCP used to create this prototype (ELP V2 Optimized) ✨
 </div>
 <!DOCTYPE html>
@@ -483,4 +483,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Source Serif 4', serif; }
     </div>
 </footer>
 
-</body></html>
+</body></html>"""
+
+with open(r'C:\Users\harsh\OneDrive\Desktop\Compare\prototypes\elp_v2_stitch_v4.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
