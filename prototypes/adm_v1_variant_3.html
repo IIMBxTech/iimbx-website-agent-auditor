@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Accounting for Decision Making - IIMBx</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Accounting for Decision Making - IIMBx</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -25,443 +25,308 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+            .stagger-1 { transition-delay: 100ms; }
+            .stagger-2 { transition-delay: 200ms; }
+            .stagger-3 { transition-delay: 300ms; }
+            .stagger-4 { transition-delay: 400ms; }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 239, 227, 0.05);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(201, 113, 56, 0.5); /* marigold */
+            transform: translateY(-4px);
         }
     </style>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Config -->
-<script id="tailwind-config">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
             extend: {
               "colors": {
-                      "secondary-fixed-dim": "#b5c4ff",
-                      "surface-variant": "#e7e2d6",
-                      "inverse-primary": "#ffb68c",
-                      "tertiary": "#5b5c5f",
-                      "on-background": "#1d1c15",
-                      "tertiary-fixed": "#e3e2e6",
-                      "on-secondary": "#ffffff",
-                      "secondary": "#485b9b",
                       "charcoal": "#1A1B1E",
-                      "surface": "#fef9ed",
-                      "primary-container": "#b15e27",
-                      "on-tertiary-container": "#fefcff",
-                      "parchment-deep": "#E8E2D2",
-                      "surface-container-high": "#ede8dc",
-                      "on-secondary-container": "#324684",
-                      "on-primary-container": "#fffbff",
                       "parchment": "#F4EFE3",
-                      "on-tertiary-fixed-variant": "#46474a",
-                      "secondary-fixed": "#dce1ff",
                       "marigold": "#C97138",
-                      "primary-fixed-dim": "#ffb68c",
-                      "tertiary-fixed-dim": "#c7c6ca",
-                      "surface-container-low": "#f8f3e7",
-                      "tertiary-container": "#747478",
-                      "on-tertiary-fixed": "#1a1b1e",
-                      "on-surface": "#1d1c15",
-                      "on-primary-fixed-variant": "#753400",
-                      "surface-container-lowest": "#ffffff",
-                      "on-tertiary": "#ffffff",
-                      "on-primary": "#ffffff",
-                      "outline": "#877368",
-                      "error-container": "#ffdad6",
-                      "surface-container": "#f2ede2",
-                      "primary": "#92470f",
-                      "secondary-container": "#a3b6fd",
-                      "surface-tint": "#954912",
-                      "error": "#ba1a1a",
-                      "surface-dim": "#dedace",
-                      "on-error-container": "#93000a",
-                      "on-surface-variant": "#54433a",
-                      "charcoal-muted": "#36383D",
-                      "surface-container-highest": "#e7e2d6",
-                      "on-secondary-fixed": "#00164e",
-                      "surface-bright": "#fef9ed",
-                      "on-error": "#ffffff",
-                      "outline-variant": "#dac2b5",
-                      "background": "#fef9ed",
-                      "on-secondary-fixed-variant": "#2f4382",
-                      "primary-fixed": "#ffdbc9",
-                      "inverse-on-surface": "#f5f0e4",
-                      "navy": "#172D6B",
-                      "inverse-surface": "#323029",
-                      "on-primary-fixed": "#321200"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
+                      "navy": "#172D6B"
               },
               "spacing": {
-                      "unit": "8px",
                       "margin-desktop": "64px",
                       "gutter": "24px",
-                      "margin-mobile": "20px",
+                      "margin-mobile": "24px",
                       "max-width": "1280px"
               },
               "fontFamily": {
-                      "display-lg-mobile": [
-                              "Source Serif 4"
-                      ],
-                      "display-lg": [
-                              "Source Serif 4"
-                      ],
-                      "eyebrow-mono": [
-                              "IBM Plex Mono"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "label-bold": [
-                              "Inter"
-                      ],
-                      "headline-md": [
-                              "Source Serif 4"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "cta": [
-                              "Inter"
-                      ],
-                      "headline-xl": [
-                              "Source Serif 4"
-                      ]
-              },
-              "fontSize": {
-                      "display-lg-mobile": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "display-lg": [
-                              "64px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "eyebrow-mono": [
-                              "12px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-bold": [
-                              "14px",
-                              {
-                                      "lineHeight": "1",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "cta": [
-                              "16px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.01em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-xl": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "600"
-                              }
-                      ]
+                      "display": ["Source Serif 4", "serif"],
+                      "sans": ["Inter", "sans-serif"],
+                      "mono": ["IBM Plex Mono", "monospace"]
               }
-            },
-          },
+            }
+          }
         }
     </script>
 </head>
-<body class="bg-parchment text-charcoal font-body-md antialiased selection:bg-marigold selection:text-charcoal">
+<body class="bg-parchment text-charcoal font-sans antialiased selection:bg-marigold selection:text-charcoal">
+    
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-parchment/80 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
-<div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
-<div class="font-display-lg text-3xl font-bold text-navy">
-                IIMBx
-            </div>
-<ul class="hidden md:flex space-x-10">
-<li>
-<a class="font-cta text-cta text-charcoal hover:text-marigold transition-colors duration-200" href="#curriculum">Curriculum</a>
-</li>
-<li>
-<a class="font-cta text-cta text-charcoal/70 hover:text-marigold transition-colors duration-200" href="#faculty">Faculty</a>
-</li>
-<li>
-<a class="font-cta text-cta text-charcoal/70 hover:text-marigold transition-colors duration-200" href="#accreditation">Accreditation</a>
-</li>
-<li>
-<a class="font-cta text-cta text-charcoal/70 hover:text-marigold transition-colors duration-200" href="#reviews">Reviews</a>
-</li>
-</ul>
-<button class="hidden md:inline-flex items-center justify-center bg-charcoal text-parchment font-cta text-cta px-8 py-3 rounded-none hover:bg-marigold hover:text-charcoal transition-colors duration-300">
-                Enroll Now
-            </button>
-<!-- Mobile Menu Trigger -->
-<button class="md:hidden text-charcoal">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
+<nav class="fixed top-0 w-full z-50 bg-parchment/90 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
+    <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+        <div class="font-display text-3xl font-bold text-navy tracking-tight">
+            IIMBx
+        </div>
+        <ul class="hidden md:flex space-x-10">
+            <li><a class="text-base font-semibold text-charcoal hover:text-marigold transition-colors duration-200" href="#curriculum">Curriculum</a></li>
+            <li><a class="text-base font-semibold text-charcoal/70 hover:text-marigold transition-colors duration-200" href="#faculty">Faculty</a></li>
+            <li><a class="text-base font-semibold text-charcoal/70 hover:text-marigold transition-colors duration-200" href="#accreditation">Accreditation</a></li>
+            <li><a class="text-base font-semibold text-charcoal/70 hover:text-marigold transition-colors duration-200" href="#reviews">Reviews</a></li>
+        </ul>
+        <button class="hidden md:inline-flex items-center justify-center bg-charcoal text-parchment text-base font-semibold px-8 py-3 hover:bg-marigold hover:text-charcoal transition-colors duration-300">
+            Enroll Now
+        </button>
+        <!-- Mobile Menu Trigger -->
+        <button class="md:hidden text-charcoal">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </div>
 </nav>
-<!-- Main Content Canvas -->
-<main class="">
-<!-- Hero Section -->
-<section class="relative min-h-screen pt-32 pb-24 bg-parchment overflow-hidden flex items-center">
-<!-- Asymmetrical image placement -->
-<div class="absolute right-0 top-0 w-2/3 h-full z-0 pointer-events-none hidden lg:block">
-<div class="w-full h-full bg-charcoal transform origin-top-right -skew-x-12 translate-x-32 shadow-2xl">
-<img alt="Boardroom" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida/AP1WRLstWPDbxQHBTCDl_lHMToVsZ12dlhy66x8CAovQ-2DX7L00lLhg09dN27Wt93-8Qy8u12Fa0gGpJpXzZs7yjCiW_Fdzr414BhWPjPMjX-1vweuALikn6f0LVzvXRvWOCmLVzXXnn7DkgsNRYg6idjJG8qwo-Mf5xE-ioVSSNVy83dW70x5oW7hhT2OzK4ivser0xJxWls_0Hl03L73o8b7T0SEuCmbC6OTBrZ4nnWTW7mZ4NBeGRndnkA"/>
-</div>
-</div>
-<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full reveal">
-<div class="lg:w-3/5">
-<span class="inline-block font-eyebrow-mono text-eyebrow-mono text-parchment mb-6 tracking-widest uppercase bg-charcoal px-4 py-2">9-Week Premium Programme</span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-[88px] leading-[1.05] text-charcoal mb-8 mix-blend-multiply drop-shadow-sm">
-                        Accounting <br/><span class="text-marigold italic">for Decision</span> <br/>Making
-                    </h1>
-<p class="font-body-lg text-body-lg text-charcoal max-w-xl mb-12 border-l-4 border-navy pl-6 py-2 bg-parchment/70 backdrop-blur-sm">
-                        Master financial literacy with Prof. M S Narasimhan. Equip yourself with the analytical tools to drive strategic business growth.
-                    </p>
-<div class="flex flex-col sm:flex-row items-center gap-8">
-<button class="w-full sm:w-auto bg-navy text-parchment font-cta text-cta px-10 py-5 rounded-none shadow-xl hover:bg-marigold hover:text-charcoal hover:-translate-y-1 transition-all duration-300">
-                            Enroll Now
-                        </button>
-<button class="w-full sm:w-auto bg-transparent border-b-2 border-charcoal text-charcoal font-cta text-cta px-2 py-2 hover:border-marigold hover:text-marigold transition-all duration-300">
-                            Download Brochure
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Overview Section -->
-<section class="py-32 bg-charcoal relative overflow-hidden text-parchment">
-<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 reveal">
-<div class="flex flex-col lg:flex-row gap-20">
-<div class="lg:w-1/3 relative">
-<div class="sticky top-32">
-<h2 class="font-display-lg text-6xl text-parchment mb-8 leading-tight">
-                                The<br/><span class="text-marigold italic">Overview</span>
-</h2>
-<p class="font-body-md text-body-md text-parchment/70 border-l border-parchment/20 pl-6">
-                                Designed specifically for managers and executives looking to transition from operational roles into strategic leadership by demystifying financial data.
-                            </p>
-</div>
-</div>
-<div class="lg:w-2/3 flex flex-col gap-16 mt-12 lg:mt-0">
-<!-- Card 1 -->
-<div class="bg-navy p-12 lg:ml-24 relative hover:-translate-y-2 transition-transform duration-500 shadow-2xl">
-<span class="material-symbols-outlined text-marigold text-5xl mb-6 block">query_stats</span>
-<h3 class="font-headline-xl text-4xl text-parchment mb-4">Financial Statement Analysis</h3>
-<p class="font-body-md text-body-md text-parchment/80">Decode complex balance sheets and income statements to understand the true health of any organization.</p>
-</div>
-<!-- Card 2 -->
-<div class="bg-marigold p-12 lg:mr-24 relative hover:-translate-y-2 transition-transform duration-500 text-charcoal shadow-2xl">
-<span class="material-symbols-outlined text-charcoal text-5xl mb-6 block">account_balance_wallet</span>
-<h3 class="font-headline-xl text-4xl text-charcoal mb-4">Strategic Costing</h3>
-<p class="font-body-md text-body-md text-charcoal/80">Implement Activity Based Costing to identify true profit drivers and eliminate hidden inefficiencies.</p>
-</div>
-<!-- Card 3 -->
-<div class="bg-parchment p-12 lg:ml-12 relative hover:-translate-y-2 transition-transform duration-500 text-charcoal shadow-2xl">
-<span class="material-symbols-outlined text-navy text-5xl mb-6 block">pie_chart</span>
-<h3 class="font-headline-xl text-4xl text-navy mb-4">Advanced Budgeting</h3>
-<p class="font-body-md text-body-md text-charcoal/80">Master Capital Budgeting decisions and Variance Analysis to allocate resources effectively and measure performance against strategic goals.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Outcomes Section -->
-<section class="py-32 bg-parchment relative overflow-hidden">
-<div class="absolute left-0 top-0 w-1/3 h-full bg-surface-variant/40 pointer-events-none -skew-x-12 transform origin-bottom-left -translate-x-16"></div>
-<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 reveal">
-<div class="text-right mb-24 lg:w-3/4 ml-auto">
-<span class="font-eyebrow-mono text-eyebrow-mono text-navy mb-4 block uppercase tracking-widest">Key Takeaways</span>
-<h2 class="font-display-lg text-6xl md:text-7xl text-charcoal leading-tight">Programme<br/><span class="italic text-marigold">Outcomes</span></h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-<div class="border-t-4 border-marigold pt-8 group hover:-mt-4 transition-all duration-300">
-<div class="text-8xl font-display-lg text-charcoal/5 mb-6 group-hover:text-marigold/20 transition-colors duration-500">01</div>
-<h4 class="font-headline-md text-2xl text-charcoal mb-4">Enhanced Financial Clarity</h4>
-<p class="font-body-md text-body-md text-charcoal/70">Read and interpret financial reports with confidence, moving beyond basic metrics to uncover underlying business realities.</p>
-</div>
-<div class="border-t-4 border-navy pt-8 md:mt-16 group hover:md:mt-12 transition-all duration-300">
-<div class="text-8xl font-display-lg text-charcoal/5 mb-6 group-hover:text-navy/20 transition-colors duration-500">02</div>
-<h4 class="font-headline-md text-2xl text-charcoal mb-4">Strategic Resource Allocation</h4>
-<p class="font-body-md text-body-md text-charcoal/70">Make informed decisions on capital investments using rigorous evaluation techniques and risk assessment frameworks.</p>
-</div>
-<div class="border-t-4 border-charcoal pt-8 md:mt-32 group hover:md:mt-28 transition-all duration-300">
-<div class="text-8xl font-display-lg text-charcoal/5 mb-6 group-hover:text-charcoal/20 transition-colors duration-500">03</div>
-<h4 class="font-headline-md text-2xl text-charcoal mb-4">Performance Measurement</h4>
-<p class="font-body-md text-body-md text-charcoal/70">Design and utilize robust budgeting systems that accurately track variances and drive operational accountability.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Curriculum Section -->
-<section class="py-32 bg-navy text-parchment relative overflow-hidden" id="curriculum">
-<div class="absolute right-0 top-1/2 -translate-y-1/2 text-[15vw] font-display-lg text-parchment/5 pointer-events-none leading-none z-0 whitespace-nowrap overflow-hidden">
-                Syllabus
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] pt-32 pb-24 bg-parchment overflow-hidden flex items-center">
+        <!-- Asymmetrical image placement -->
+        <div class="absolute right-0 top-0 w-2/3 h-full z-0 pointer-events-none hidden lg:block">
+            <div class="w-full h-full bg-charcoal transform origin-top-right -skew-x-12 translate-x-32 shadow-2xl">
+                <img alt="Boardroom" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida/AP1WRLstWPDbxQHBTCDl_lHMToVsZ12dlhy66x8CAovQ-2DX7L00lLhg09dN27Wt93-8Qy8u12Fa0gGpJpXzZs7yjCiW_Fdzr414BhWPjPMjX-1vweuALikn6f0LVzvXRvWOCmLVzXXnn7DkgsNRYg6idjJG8qwo-Mf5xE-ioVSSNVy83dW70x5oW7hhT2OzK4ivser0xJxWls_0Hl03L73o8b7T0SEuCmbC6OTBrZ4nnWTW7mZ4NBeGRndnkA"/>
             </div>
-<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 reveal">
-<div class="lg:w-3/4">
-<h2 class="font-display-lg text-5xl md:text-7xl text-marigold mb-8 leading-tight">Curriculum<br/><span class="text-parchment italic">Framework</span></h2>
-<p class="font-body-lg text-body-lg text-parchment/70 mb-20 max-w-lg">A rigorous 9-module journey designed for incremental mastery, structured to transform your strategic capability.</p>
-<div class="space-y-0 border-l-2 border-parchment/10 ml-4 md:ml-8">
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 01</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Introduction to Financial Statements</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 02</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Balance Sheet &amp; Income Statement Analysis</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 03</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Cash Flow Statements</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 04</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Cost Concepts &amp; Classification</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 05</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Activity Based Costing</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 06</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">CVP Analysis for Decision Making</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 07</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Budgeting &amp; Variance Analysis</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 08</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Capital Budgeting Decisions</h3>
-</div>
-</div>
-<div class="relative pl-12 py-8 group hover:bg-parchment/5 transition-colors duration-300">
-<div class="absolute -left-[11px] top-1/2 -translate-y-1/2 w-5 h-5 bg-navy border-2 border-marigold rounded-full group-hover:bg-marigold transition-colors"></div>
-<div class="flex flex-col md:flex-row md:items-baseline gap-4">
-<span class="font-eyebrow-mono text-marigold text-lg md:w-32 shrink-0">Module 09</span>
-<h3 class="font-headline-xl text-2xl md:text-3xl text-parchment group-hover:translate-x-2 transition-transform duration-300">Strategic Cost Management</h3>
-</div>
-</div>
-</div>
-<div class="mt-20 ml-4 md:ml-8">
-<button class="bg-marigold text-charcoal font-cta text-cta px-10 py-5 rounded-none shadow-lg hover:bg-parchment hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
-                            Download Full Syllabus
-                            <span class="material-symbols-outlined text-lg">download</span>
-</button>
-</div>
-</div>
-</div>
-</section>
+        </div>
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full reveal">
+            <div class="lg:w-[65%]">
+                <span class="inline-block font-mono text-sm font-semibold text-parchment mb-6 tracking-[0.15em] uppercase bg-charcoal px-4 py-2 shadow-sm">9-Week Premium Programme</span>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-charcoal mb-8 mix-blend-multiply drop-shadow-sm">
+                    Accounting <br/><span class="text-marigold italic pr-4">for Decision</span> <br/>Making
+                </h1>
+                <p class="text-lg md:text-xl text-charcoal/80 max-w-xl mb-12 border-l-[3px] border-marigold pl-6 py-2 bg-parchment/60 backdrop-blur-md leading-relaxed">
+                    Master financial literacy with Prof. M S Narasimhan. Equip yourself with the analytical tools to drive strategic business growth.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <button class="w-full sm:w-auto bg-charcoal text-parchment text-base font-semibold px-10 py-4 shadow-xl hover:bg-marigold hover:text-charcoal hover:-translate-y-1 transition-all duration-300">
+                        Enroll Now
+                    </button>
+                    <button class="w-full sm:w-auto bg-transparent border-b-2 border-charcoal/30 text-charcoal text-base font-semibold px-2 py-2 hover:border-marigold hover:text-marigold transition-all duration-300 flex items-center gap-2">
+                        Download Brochure
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-32 bg-charcoal relative overflow-hidden text-parchment">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <div class="lg:w-1/3 relative reveal">
+                    <div class="sticky top-32">
+                        <h2 class="font-display text-5xl md:text-6xl text-parchment mb-8 leading-tight tracking-tight">
+                            The<br/><span class="text-marigold italic pr-2">Overview</span>
+                        </h2>
+                        <p class="text-lg text-parchment/70 leading-relaxed border-l border-parchment/20 pl-6">
+                            Designed specifically for managers and executives looking to transition from operational roles into strategic leadership by demystifying financial data.
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:w-2/3 flex flex-col gap-8 mt-12 lg:mt-0">
+                    <!-- Card 1 -->
+                    <div class="glass-card p-10 lg:ml-12 reveal stagger-1 transition-all duration-500">
+                        <span class="material-symbols-outlined text-marigold text-4xl mb-6 block">query_stats</span>
+                        <h3 class="font-display text-3xl text-parchment mb-4">Financial Statement Analysis</h3>
+                        <p class="text-parchment/70 leading-relaxed">Decode complex balance sheets and income statements to understand the true health of any organization.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-marigold p-10 lg:mr-12 text-charcoal reveal stagger-2 hover:-translate-y-2 transition-transform duration-500 shadow-xl">
+                        <span class="material-symbols-outlined text-charcoal/80 text-4xl mb-6 block">account_balance_wallet</span>
+                        <h3 class="font-display text-3xl text-charcoal mb-4">Strategic Costing</h3>
+                        <p class="text-charcoal/80 leading-relaxed">Implement Activity Based Costing to identify true profit drivers and eliminate hidden inefficiencies.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-parchment p-10 lg:ml-24 text-charcoal reveal stagger-3 hover:-translate-y-2 transition-transform duration-500 shadow-xl">
+                        <span class="material-symbols-outlined text-charcoal/80 text-4xl mb-6 block">pie_chart</span>
+                        <h3 class="font-display text-3xl text-charcoal mb-4">Advanced Budgeting</h3>
+                        <p class="text-charcoal/80 leading-relaxed">Master Capital Budgeting decisions and Variance Analysis to allocate resources effectively and measure performance against strategic goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section class="py-24 bg-parchment relative overflow-hidden">
+        <div class="absolute left-0 top-0 w-1/3 h-full bg-black/[0.02] pointer-events-none -skew-x-12 transform origin-bottom-left -translate-x-16"></div>
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+            <div class="mb-16 reveal">
+                <span class="font-mono text-sm font-semibold text-charcoal mb-4 block uppercase tracking-[0.15em]">Key Takeaways</span>
+                <h2 class="font-display text-5xl md:text-7xl tracking-tight text-charcoal leading-tight">Programme<br/><span class="italic text-marigold pr-4">Outcomes</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                <div class="border-t-[3px] border-marigold pt-8 group hover:-translate-y-2 transition-transform duration-500 reveal stagger-1">
+                    <div class="text-9xl font-display text-charcoal/5 mb-2 leading-none group-hover:text-marigold/20 transition-colors duration-500">01</div>
+                    <h4 class="font-display text-2xl text-charcoal mb-4">Enhanced Financial Clarity</h4>
+                    <p class="text-base text-charcoal/70 leading-relaxed">Read and interpret financial reports with confidence, moving beyond basic metrics to uncover underlying business realities.</p>
+                </div>
+                <div class="border-t-[3px] border-charcoal pt-8 group hover:-translate-y-2 transition-transform duration-500 reveal stagger-2">
+                    <div class="text-9xl font-display text-charcoal/5 mb-2 leading-none group-hover:text-charcoal/20 transition-colors duration-500">02</div>
+                    <h4 class="font-display text-2xl text-charcoal mb-4">Strategic Resource Allocation</h4>
+                    <p class="text-base text-charcoal/70 leading-relaxed">Make informed decisions on capital investments using rigorous evaluation techniques and risk assessment frameworks.</p>
+                </div>
+                <div class="border-t-[3px] border-charcoal pt-8 group hover:-translate-y-2 transition-transform duration-500 reveal stagger-3">
+                    <div class="text-9xl font-display text-charcoal/5 mb-2 leading-none group-hover:text-charcoal/20 transition-colors duration-500">03</div>
+                    <h4 class="font-display text-2xl text-charcoal mb-4">Performance Measurement</h4>
+                    <p class="text-base text-charcoal/70 leading-relaxed">Design and utilize robust budgeting systems that accurately track variances and drive operational accountability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="py-32 bg-charcoal text-parchment relative overflow-hidden" id="curriculum">
+        <!-- Subtle background watermark -->
+        <div class="absolute right-[-5%] top-1/2 -translate-y-1/2 text-9xl font-display text-parchment/5 pointer-events-none leading-none z-0 whitespace-nowrap overflow-hidden select-none">
+            Syllabus
+        </div>
+        
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+            <div class="mb-20 reveal">
+                <span class="font-mono text-sm font-semibold text-marigold mb-4 block uppercase tracking-[0.15em]">9-Part Framework</span>
+                <h2 class="font-display text-5xl md:text-7xl text-parchment tracking-tight leading-tight">Curriculum<br/><span class="text-marigold italic pr-4">Structure</span></h2>
+                <p class="text-lg text-parchment/70 mt-6 max-w-xl">A rigorous 9-module journey designed for incremental mastery, structured to transform your strategic capability.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal stagger-1">
+                <!-- Module 1 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 01</span>
+                    <h3 class="font-display text-2xl text-parchment">Introduction to Financial Statements</h3>
+                </div>
+                <!-- Module 2 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 02</span>
+                    <h3 class="font-display text-2xl text-parchment">Balance Sheet &amp; Income Statement Analysis</h3>
+                </div>
+                <!-- Module 3 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 03</span>
+                    <h3 class="font-display text-2xl text-parchment">Cash Flow Statements</h3>
+                </div>
+                <!-- Module 4 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 04</span>
+                    <h3 class="font-display text-2xl text-parchment">Cost Concepts &amp; Classification</h3>
+                </div>
+                <!-- Module 5 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 05</span>
+                    <h3 class="font-display text-2xl text-parchment">Activity Based Costing</h3>
+                </div>
+                <!-- Module 6 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 06</span>
+                    <h3 class="font-display text-2xl text-parchment">CVP Analysis for Decision Making</h3>
+                </div>
+                <!-- Module 7 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 07</span>
+                    <h3 class="font-display text-2xl text-parchment">Budgeting &amp; Variance Analysis</h3>
+                </div>
+                <!-- Module 8 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 08</span>
+                    <h3 class="font-display text-2xl text-parchment">Capital Budgeting Decisions</h3>
+                </div>
+                <!-- Module 9 -->
+                <div class="glass-card p-8 group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-marigold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 09</span>
+                    <h3 class="font-display text-2xl text-parchment">Strategic Cost Management</h3>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center reveal stagger-2">
+                <button class="bg-marigold text-charcoal text-base font-semibold px-10 py-4 shadow-lg hover:bg-parchment hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-3">
+                    Download Full Syllabus
+                    <span class="material-symbols-outlined text-lg">download</span>
+                </button>
+            </div>
+        </div>
+    </section>
 </main>
+
 <!-- Footer -->
-<footer class="w-full py-16 bg-charcoal grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop border-t border-parchment/10">
-<div class="md:col-span-1 mb-8 md:mb-0">
-<div class="font-display-lg text-3xl text-parchment mb-4">
+<footer class="w-full bg-charcoal border-t border-parchment/10 text-parchment/70">
+    <div class="py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="md:col-span-1 mb-8 md:mb-0">
+            <div class="font-display text-3xl text-parchment font-bold mb-4 tracking-tight">
                 IIMBx
             </div>
-<p class="font-body-md text-body-md text-parchment/50 text-sm">
+            <p class="text-sm leading-relaxed">
                 © 2024 IIMBx. All rights reserved. <br/>Accounting for Decision Making.
             </p>
-</div>
-<div class="md:col-span-3 flex flex-col sm:flex-row gap-8 justify-end">
-<div class="flex flex-col gap-4">
-<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/50 hover:text-marigold transition-colors" href="#">Privacy Policy</a>
-<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/50 hover:text-marigold transition-colors" href="#">Terms of Service</a>
-</div>
-<div class="flex flex-col gap-4">
-<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/50 hover:text-marigold transition-colors" href="#">Contact Us</a>
-<a class="font-eyebrow-mono text-eyebrow-mono text-parchment/50 hover:text-marigold transition-colors" href="#">Accreditation</a>
-</div>
-</div>
+        </div>
+        <div class="md:col-span-3 flex flex-col sm:flex-row gap-12 md:justify-end">
+            <div class="flex flex-col gap-4">
+                <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Privacy Policy</a>
+                <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Terms of Service</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Contact Us</a>
+                <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Accreditation</a>
+            </div>
+        </div>
+    </div>
 </footer>
+
 <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.addEventListener("DOMContentLoaded", () => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            // Intersection Observer for Reveal
-            if (!prefersReducedMotion) {
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.1
-                };
-                const revealObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
+        // Intersection Observer for Reveal
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-                document.querySelectorAll('.reveal').forEach(el => {
-                    revealObserver.observe(el);
-                });
-            } else {
-                document.querySelectorAll('.reveal').forEach(el => {
-                    el.classList.add('active');
-                });
-            }
-        });
-    </script>
-</body></html>
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => {
+                el.classList.add('active');
+            });
+        }
+    });
+</script>
+</body>
+</html>

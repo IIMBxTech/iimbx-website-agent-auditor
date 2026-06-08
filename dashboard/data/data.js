@@ -6,19 +6,43 @@ window.AUDIT_DATA = [
     "file": "Not provided",
     "oldSiteUrl": "https://iimbx.iimb.ac.in/catalog/accounting-for-decision-making/",
     "v1StagingUrl": "",
-    "auditDate": "2026-06-03",
+    "auditDate": "2026-06-08",
     "scores": {
       "brand": 100,
       "content": 100,
       "ux": 100
     },
-    "summary": "Generated reference material and prototypes based on old site data. No direct comparison as staging site doesn't exist yet.",
+    "summary": "5 brand-compliant prototypes generated using 2 different AI models: Gemini 3.1 Pro (3 designs) and Gemini 3.5 Flash (2 designs). Each model produced Stitch MCP screens and rules-based HTML files.",
     "contentGaps": [],
     "brandChecks": [
       {
         "rule": "70/15/15 Color Ratio",
         "expected": "70% Parchment, 15% Charcoal, 15% Marigold",
-        "actual": "Compliant in Baseline",
+        "actual": "Compliant in all 5 designs",
+        "status": "pass"
+      },
+      {
+        "rule": "Typography",
+        "expected": "Source Serif 4 / Inter / IBM Plex Mono",
+        "actual": "Compliant in all 5 designs",
+        "status": "pass"
+      },
+      {
+        "rule": "Brand Promise",
+        "expected": "Present exactly once per page",
+        "actual": "Present once in all 5 designs",
+        "status": "pass"
+      },
+      {
+        "rule": "Banned Colors",
+        "expected": "No green, teal, apricot, purple",
+        "actual": "None found",
+        "status": "pass"
+      },
+      {
+        "rule": "Banned Phrases",
+        "expected": "No cutting-edge, world-class, immersive etc.",
+        "actual": "None found",
         "status": "pass"
       }
     ],
@@ -29,21 +53,50 @@ window.AUDIT_DATA = [
     "wireframes": {
       "ascii": {
         "oldSite": "[Hero] -> [Overview] -> [Modules]",
-        "marketingHtml": "Not Applicable for ADM",
-        "v1_variant_1": "[Hero: Stitch Generated] -> [Overview] -> [Grid] -> [Curriculum]",
-        "v1_variant_2": "[Hero: Stitch Interactive] -> [Overview] -> [Outcomes Grid] -> [Curriculum]",
-        "v1_variant_3": "[Hero: Stitch Reimagine] -> [Overview] -> [Outcomes] -> [Curriculum]",
+        "marketingHtml": "Not Applicable — no staging site for ADM",
+        "v1_variant_1": "DESIGN 1 · Gemini 3.1 Pro · Stitch MCP\n[Sticky Nav: IIMBx | Apply Now]\n[Hero: Title + Brand Promise + 3 Metrics + CTA | Dark Charcoal Quote Panel]\n[Syllabus: 9-Week Card Grid with Marigold left-border]\n[Faculty: Dark Charcoal Band — Prof. M S Narasimhan]\n[Footer]",
+        "v1_variant_2": "DESIGN 2 · Gemini 3.1 Pro · Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Split — Title/Metrics/CTA left | Dark Abstract Panel right]\n[Syllabus: 3-col card grid, hover lift effect]\n[Faculty: Charcoal band with centered content]\n[Footer]",
+        "v1_variant_3": "DESIGN 3 · Gemini 3.5 Flash · Stitch MCP\n[Sticky Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Mono Meta | Charcoal Stat Panel]\n[Overview: Tinted block with programme summary]\n[Syllabus: Clean white cards with hover shadow]\n[Faculty: 2-column split on dark charcoal]\n[Audience: Card grid with hover Marigold border]\n[Footer]",
         "v1Staging": "",
-        "proposed": "[Hero: ADM] -> [Overview + Audience + Instructor] -> [Grid: Outcomes] -> [Accordion: Modules]",
-        "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
+        "proposed": "DESIGN 4 · Gemini 3.5 Flash · Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Compact Mono Meta | Dark Quote Block]\n[Overview Section: Light tint band]\n[Syllabus: Minimalist white cards, hover shadow]\n[Faculty: Dark charcoal 2-column split]\n[Footer]",
+        "v1_variant_4": "DESIGN 4 · Gemini 3.5 Flash · Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Compact Mono Meta | Dark Quote Block]\n[Overview Section: Light tint band]\n[Syllabus: Minimalist white cards, hover shadow]\n[Faculty: Dark charcoal 2-column split]\n[Footer]",
+        "v1_variant_5": "DESIGN 5 · Gemini 3.1 Pro (Refined) · Rules-Based HTML\n[Sticky Nav: IIMBx | Apply Now — follows on scroll]\n[Hero: Large Serif Title + Italicised Brand Promise + 3 Mono Metrics | Charcoal Pull-Quote Panel + CTA]\n[Accordion Syllabus: 9 weeks, one open at a time, aria-expanded]\n[Faculty: Full-width dark charcoal 2-col split]\n[Who This Is For: 3-card audience grid, Marigold hover border]\n[Footer: Charcoal + Brand Promise]"
       },
       "suggestions": [
         {
-          "title": "Prototype Generation",
-          "description": "Created 3 prototype variants based on existing data",
-          "effort": "Low",
+          "title": "Design 1 — Gemini 3.1 Pro (Stitch MCP)",
+          "description": "Card-grid syllabus layout with charcoal quote hero panel. Generated via Stitch MCP using GEMINI_3_1_PRO model.",
+          "effort": "Done",
           "impact": "High",
-          "devNotes": "Agent generated reference and variants"
+          "devNotes": "Stitch Project ID: 17423467441698499097"
+        },
+        {
+          "title": "Design 2 — Gemini 3.1 Pro (Rules-Based HTML)",
+          "description": "Split hero with abstract data panel. 3-col syllabus card grid. Manually authored by agent under 3.1 Pro.",
+          "effort": "Done",
+          "impact": "High",
+          "devNotes": "File: accounting_for_decision_making_pro.html"
+        },
+        {
+          "title": "Design 3 — Gemini 3.5 Flash (Stitch MCP)",
+          "description": "Clean editorial layout with overview tint band and audience section. Generated via Stitch MCP using GEMINI_3_FLASH model.",
+          "effort": "Done",
+          "impact": "High",
+          "devNotes": "Exceptional case approved by user — one-time override."
+        },
+        {
+          "title": "Design 4 — Gemini 3.5 Flash (Rules-Based HTML)",
+          "description": "Minimalist white card syllabus, 2-col faculty split on dark charcoal. Authored under 3.5 Flash.",
+          "effort": "Done",
+          "impact": "High",
+          "devNotes": "File: accounting_for_decision_making_flash.html"
+        },
+        {
+          "title": "Design 5 — Gemini 3.1 Pro (Refined HTML)",
+          "description": "Editorial direction: journal meets BI dashboard. Sticky nav, accordion syllabus with aria-expanded, pull-quote hero, audience card grid with hover Marigold border. Hand-refined by Gemini 3.1 Pro.",
+          "effort": "Done",
+          "impact": "High",
+          "devNotes": "File: adm_v1_variant_5.html"
         }
       ]
     },
@@ -51,8 +104,8 @@ window.AUDIT_DATA = [
     "actionItems": [
       {
         "priority": "low",
-        "task": "Review generated prototypes",
-        "devNotes": "Check adm_v1_variant_1, adm_v1_variant_2, adm_v1_variant_3"
+        "task": "Review all 5 generated prototypes and select preferred layout for final production",
+        "devNotes": "Designs: Pro (Stitch), Pro (HTML), Flash (Stitch), Flash (HTML), Pro Refined (HTML)"
       }
     ]
   },

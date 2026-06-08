@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounting for Decision Making - IIMBx</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* IIMBx Brand Identity May 2026 */
+      --parchment: #F4EFE3;
+      --charcoal: #1A1B1E;
+      --marigold: #C97138;
+      
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--parchment);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      color: var(--marigold);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    /* Layout & Utilities */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navbar */
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(26, 27, 30, 0.1);
+    }
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: var(--marigold);
+      color: #FFF;
+      padding: 0.875rem 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      font-size: 0.95rem;
+    }
+    .btn:hover {
+      background-color: #B25D25;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .brand-promise {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .meta-item {
+      font-family: var(--font-mono);
+    }
+    .meta-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .meta-label {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .hero-graphic {
+      background-color: var(--charcoal);
+      color: var(--parchment);
+      height: 380px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .hero-graphic h3 {
+      color: var(--parchment);
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Overview Section */
+    .overview {
+      padding: 5rem 0;
+      background: rgba(26,27,30,0.02);
+    }
+    .overview-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .overview p {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Syllabus */
+    .syllabus {
+      padding: 6rem 0;
+    }
+    .syllabus-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .syllabus-header h2 {
+      font-size: 2.5rem;
+    }
+    .syllabus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .syllabus-card {
+      background: #FFF;
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(26, 27, 30, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .syllabus-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    }
+    .week-label {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--marigold);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .syllabus-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Faculty */
+    .faculty {
+      padding: 6rem 0;
+      background-color: var(--charcoal);
+      color: var(--parchment);
+    }
+    .faculty-flex {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .faculty h2 {
+      color: var(--parchment);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .faculty-name {
+      font-size: 2.2rem;
+      color: var(--marigold);
+      margin-bottom: 0.5rem;
+    }
+    .faculty-title {
+      font-family: var(--font-mono);
+      opacity: 0.8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(26, 27, 30, 0.1);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .faculty-flex {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-flex">
+      <div class="logo">IIMBx</div>
+      <a href="#apply" class="btn" style="padding: 0.6rem 1.5rem;">Apply Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Online Course</span>
+          <h1>Accounting for Decision Making</h1>
+          <p class="brand-promise">The same faculty. Wherever you are.</p>
+          
+          <div class="hero-meta">
+            <div class="meta-item">
+              <div class="meta-value">6 Weeks</div>
+              <div class="meta-label">Duration</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-value">3-4 hrs</div>
+              <div class="meta-label">Weekly Effort</div>
+            </div>
+          </div>
+          
+          <a href="#apply" class="btn">Apply Now</a>
+        </div>
+        <div class="hero-graphic">
+          <h3>Equip yourself with the tools to read, understand, and analyze financial performance.</h3>
+          <p class="brand-promise" style="margin-bottom: 0;">Learn to make strategic, data-driven decisions for your organization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="container overview-content">
+        <span class="eyebrow">Program Overview</span>
+        <p>A strong understanding of accounting information is vital for managers to communicate effectively with finance teams, bankers, suppliers, and tax authorities, enabling them to make wise and informed business choices.</p>
+        <p>This course teaches the mechanics of financial statements, product costing, budgeting, and variance analysis—transforming you into a confident leader in the workplace.</p>
+      </div>
+    </section>
+
+    <section class="syllabus">
+      <div class="container">
+        <div class="syllabus-header">
+          <span class="eyebrow">Curriculum</span>
+          <h2>Course Syllabus</h2>
+        </div>
+        <div class="syllabus-grid">
+          <div class="syllabus-card">
+            <div class="week-label">Week 1</div>
+            <h3>Mechanics of Financial Accounting</h3>
+            <p>Fundamental terms, recording transactions, and financial statements regulations.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 2</div>
+            <h3>Reading Financial Statements</h3>
+            <p>Understand the Balance Sheet, Income Statement, and Cash Flow Statement.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 3</div>
+            <h3>Financial Statement Analysis</h3>
+            <p>Assessing financial health, risk, asset management, and benchmarking.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 4</div>
+            <h3>Product Costing</h3>
+            <p>Job costing, process costing, indirect cost allocation, and activity-based costing.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 5</div>
+            <h3>Cost Analysis for Decision Making</h3>
+            <p>Break-even analysis, marginal costing, pricing, and make-or-buy decisions.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 6</div>
+            <h3>Budgeting and Variance Analysis</h3>
+            <p>Master budgets, strategic planning, standard setting, and overhead variances.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 7</div>
+            <h3>Financial Markets</h3>
+            <p>Financial systems, direct capital flow, agency cost, and the finance function.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 8</div>
+            <h3>Capital Budgeting</h3>
+            <p>Time value of money, cash flow estimation, and project budgeting techniques.</p>
+          </div>
+          <div class="syllabus-card">
+            <div class="week-label">Week 9</div>
+            <h3>Working Capital Management</h3>
+            <p>Managing payables, receivables, inventory, and short-term planning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faculty">
+      <div class="container faculty-flex">
+        <div>
+          <span class="eyebrow" style="color: var(--parchment)">Instructors</span>
+          <h2>Learn from the experts</h2>
+        </div>
+        <div>
+          <h3 class="faculty-name">Prof. M S Narasimhan</h3>
+          <p class="faculty-title">Finance and Accounting, IIM Bangalore</p>
+          <p>Over two decades of experience teaching corporate finance, financial accounting, and statement analysis to executive cohorts and PG students.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 IIMBx. The same faculty. Wherever you are.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

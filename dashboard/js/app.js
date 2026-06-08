@@ -293,9 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let fileUrl = '';
         if (prog.id === 'adm') {
             if (currentWfRight === 'v1_variant_1') fileUrl = '../prototypes/adm_v1_variant_1.html';
-            else if (currentWfRight === 'v1_variant_2') fileUrl = '../prototypes/adm_v1_variant_2.html';
+            else if (currentWfRight === 'v1_variant_2') fileUrl = '../prototypes/adm_gemini31pro.html';
             else if (currentWfRight === 'v1_variant_3') fileUrl = '../prototypes/adm_v1_variant_3.html';
-            else if (currentWfRight === 'v1_variant_4') fileUrl = '../prototypes/adm_stitch_v4.html';
+            else if (currentWfRight === 'v1_variant_4') fileUrl = '../prototypes/adm_gemini35flash.html';
+            else if (currentWfRight === 'v1_variant_5') fileUrl = '../prototypes/adm_v1_variant_5.html';
         } else if (prog.id === 'elp') {
             if (currentWfRight === 'proposedV1') fileUrl = '../prototypes/elp_v1.html';
             else if (currentWfRight === 'proposedV2') fileUrl = '../prototypes/elp_v2.html';
@@ -389,9 +390,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let fileUrl = '';
             if (prog.id === 'adm') {
                 if (paneId === 'v1_variant_1') fileUrl = `../prototypes/adm_v1_variant_1.html`;
-                else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_v1_variant_2.html`;
+                else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_gemini31pro.html`;
                 else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/adm_v1_variant_3.html`;
-                else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_stitch_v4.html`;
+                else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_gemini35flash.html`;
+                else if (paneId === 'v1_variant_5') fileUrl = `../prototypes/adm_v1_variant_5.html`;
             } else if (prog.id === 'elp') {
                 if (paneId === 'proposedV1') fileUrl = `../prototypes/elp_v1.html`;
                 else if (paneId === 'proposedV2') fileUrl = `../prototypes/elp_v2.html`;
@@ -450,9 +452,10 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (progId === 'elp') fileUrl = '../elp_v1_marketing_html.html';
     } else if (progId === 'adm') {
         if (paneId === 'v1_variant_1') fileUrl = `../prototypes/adm_v1_variant_1.html`;
-        else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_v1_variant_2.html`;
+        else if (paneId === 'v1_variant_2') fileUrl = `../prototypes/adm_gemini31pro.html`;
         else if (paneId === 'v1_variant_3') fileUrl = `../prototypes/adm_v1_variant_3.html`;
-        else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_stitch_v4.html`;
+        else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/adm_gemini35flash.html`;
+        else if (paneId === 'v1_variant_5') fileUrl = `../prototypes/adm_v1_variant_5.html`;
     } else if (progId === 'elp') {
         if (paneId === 'proposedV1') fileUrl = `../prototypes/elp_v1.html`;
         else if (paneId === 'proposedV2') fileUrl = `../prototypes/elp_v2.html`;
@@ -504,10 +507,11 @@ document.addEventListener('DOMContentLoaded', () => {
       proposedV1: 'Proposed Layout v1',
       proposedV2: 'Proposed Layout v2',
       proposedV3: 'Proposed Layout v3',
-      v1_variant_1: 'V1 Prototype 1 (Baseline)',
-      v1_variant_2: 'V1 Prototype 2 (Dark Mode)',
-      v1_variant_3: 'V1 Prototype 3 (Compact)',
-      v1_variant_4: 'Stitch Prototype 4',
+      v1_variant_1: 'Design 1 — Gemini 3.1 Pro (Stitch)',
+      v1_variant_2: 'Design 2 — Gemini 3.1 Pro (HTML)',
+      v1_variant_3: 'Design 3 — Gemini 3.5 Flash (Stitch)',
+      v1_variant_4: 'Design 4 — Gemini 3.5 Flash (HTML)',
+      v1_variant_5: 'Design 5 — Gemini 3.1 Pro (Refined)',
       v2Staging: 'V2 Staging URL',
       v2_variant_1: 'V2 Prototype 1 (Baseline)',
       v2_variant_2: 'V2 Prototype 2 (Navy Custom)',
@@ -575,10 +579,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentProgramme.id === 'adm') {
         options += `
-          <option value="v1_variant_1">V1 Prototype 1 (Baseline)</option>
-          <option value="v1_variant_2">V1 Prototype 2 (Dark Mode)</option>
-          <option value="v1_variant_3">V1 Prototype 3 (Compact)</option>
-          <option value="v1_variant_4">Stitch Prototype 4</option>
+          <option value="v1_variant_1">Design 1 — Gemini 3.1 Pro (Stitch MCP)</option>
+          <option value="v1_variant_2">Design 2 — Gemini 3.1 Pro (Rules HTML)</option>
+          <option value="v1_variant_3">Design 3 — Gemini 3.5 Flash (Stitch MCP)</option>
+          <option value="v1_variant_4">Design 4 — Gemini 3.5 Flash (Rules HTML)</option>
+          <option value="v1_variant_5">Design 5 — Gemini 3.1 Pro (Refined HTML)</option>
         `;
     } else if (currentProgramme.id === 'elp') {
         options += `

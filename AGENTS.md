@@ -65,6 +65,8 @@ Your four roles:
 | `18_Fix_Content.md` | Content Restorer | 5 — Executor |
 | `19_Fix_UX.md` | UX Optimizer | 5 — Executor |
 | `20_Fix_Code.md` | Code Quality Agent | 5 — Executor |
+| `21_Optimize_Code.md` | Code Optimizer | 5 — Executor |
+| `22_Quality_Checker.md` | Layout & Typography Manager | 5 — Executor |
 
 ### Dashboard (`dashboard/` directory)
 | File | Purpose |

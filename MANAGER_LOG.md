@@ -35,3 +35,5 @@ journey
 
 - **[May 29, 2026 - 17:00 IST]** - Introduced `SETUP.md` and `MANAGER_LOG.md`. Formalized the Manager Agent role to prevent context loss across developer handoffs. Enforced Gemini 3.1 Pro model constraints and code lightness checks.
 - **[May 29, 2026 - 15:00 IST]** - Successfully deployed HTML preview/download toggle to the dashboard wireframe viewer.
+- **[Jun 08, 2026 - 16:27 IST]** - EXCEPTIONAL CASE: Gemini 3.5 Flash used for Phase 2 of Accounting for Decision Making prototype generation (2 designs). Approved by user. One-time override only.
+- **[Jun 08, 2026 - 16:29 IST]** - EXCEPTIONAL CASE: Claude Sonnet 4.6 (Thinking) authorized for ONE design only on Accounting for Decision Making. Stitch MCP + rules-based HTML used together as a single deliverable. Approved by user. One-time override only.
