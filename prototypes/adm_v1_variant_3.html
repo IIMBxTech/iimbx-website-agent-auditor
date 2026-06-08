@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -7,9 +7,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet"/>
     <!-- Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -39,7 +39,7 @@
         }
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(201, 113, 56, 0.5); /* marigold */
+            border-color: rgba(201, 113, 56, 0.5);
             transform: translateY(-4px);
         }
     </style>
@@ -99,18 +99,20 @@
 <main>
     <!-- Hero Section -->
     <section class="relative min-h-[90vh] pt-32 pb-24 bg-parchment overflow-hidden flex items-center">
-        <!-- Asymmetrical image placement -->
+        <!-- Asymmetrical dark panel — decorative only, sits behind content -->
         <div class="absolute right-0 top-0 w-2/3 h-full z-0 pointer-events-none hidden lg:block">
             <div class="w-full h-full bg-charcoal transform origin-top-right -skew-x-12 translate-x-32 shadow-2xl">
                 <img alt="Boardroom" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida/AP1WRLstWPDbxQHBTCDl_lHMToVsZ12dlhy66x8CAovQ-2DX7L00lLhg09dN27Wt93-8Qy8u12Fa0gGpJpXzZs7yjCiW_Fdzr414BhWPjPMjX-1vweuALikn6f0LVzvXRvWOCmLVzXXnn7DkgsNRYg6idjJG8qwo-Mf5xE-ioVSSNVy83dW70x5oW7hhT2OzK4ivser0xJxWls_0Hl03L73o8b7T0SEuCmbC6OTBrZ4nnWTW7mZ4NBeGRndnkA"/>
             </div>
+        </div>
+        <!-- Hero Content — z-10 so it renders above the dark panel -->
         <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full reveal">
-            <div class="lg:w-[65%]">
+            <div class="lg:w-[55%]">
                 <span class="inline-block font-mono text-sm font-semibold text-parchment mb-6 tracking-[0.15em] uppercase bg-charcoal px-4 py-2 shadow-sm">9-Week Premium Programme</span>
-                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-charcoal mb-8 mix-blend-multiply drop-shadow-sm">
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-charcoal mb-8 drop-shadow-sm">
                     Accounting <br/><span class="text-marigold italic pr-4">for Decision</span> <br/>Making
                 </h1>
-                <p class="text-lg md:text-xl text-charcoal/80 max-w-xl mb-12 border-l-[3px] border-marigold pl-6 py-2 bg-parchment/60 backdrop-blur-md leading-relaxed">
+                <p class="text-lg md:text-xl text-charcoal/80 max-w-xl mb-12 border-l-[3px] border-marigold pl-6 py-2 bg-parchment/80 backdrop-blur-md leading-relaxed">
                     Master financial literacy with Prof. M S Narasimhan. Equip yourself with the analytical tools to drive strategic business growth.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center gap-6">
@@ -122,6 +124,7 @@
                         <span class="material-symbols-outlined text-lg">arrow_forward</span>
                     </button>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -129,7 +132,8 @@
     <section class="py-32 bg-charcoal relative overflow-hidden text-parchment">
         <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
             <div class="flex flex-col lg:flex-row gap-20">
-                <div class="lg:w-1/3 relative reveal">
+                <!-- Sticky heading -->
+                <div class="lg:w-1/3 reveal">
                     <div class="sticky top-32">
                         <h2 class="font-display text-5xl md:text-6xl text-parchment mb-8 leading-tight tracking-tight">
                             The<br/><span class="text-marigold italic pr-2">Overview</span>
@@ -138,6 +142,8 @@
                             Designed specifically for managers and executives looking to transition from operational roles into strategic leadership by demystifying financial data.
                         </p>
                     </div>
+                </div>
+                <!-- Cards -->
                 <div class="lg:w-2/3 flex flex-col gap-8 mt-12 lg:mt-0">
                     <!-- Card 1 -->
                     <div class="glass-card p-10 lg:ml-12 reveal stagger-1 transition-all duration-500">
@@ -157,7 +163,9 @@
                         <h3 class="font-display text-3xl text-charcoal mb-4">Advanced Budgeting</h3>
                         <p class="text-charcoal/80 leading-relaxed">Master Capital Budgeting decisions and Variance Analysis to allocate resources effectively and measure performance against strategic goals.</p>
                     </div>
+                </div>
             </div>
+        </div>
     </section>
 
     <!-- Outcomes Section -->
@@ -184,6 +192,7 @@
                     <h4 class="font-display text-2xl text-charcoal mb-4">Performance Measurement</h4>
                     <p class="text-base text-charcoal/70 leading-relaxed">Design and utilize robust budgeting systems that accurately track variances and drive operational accountability.</p>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -256,6 +265,7 @@
                     <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 09</span>
                     <h3 class="font-display text-2xl text-parchment">Strategic Cost Management</h3>
                 </div>
+            </div>
             
             <div class="mt-8 text-center reveal stagger-2">
                 <button class="bg-marigold text-charcoal text-base font-semibold px-10 py-4 shadow-lg hover:bg-parchment hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-3">
@@ -263,6 +273,7 @@
                     <span class="material-symbols-outlined text-lg">download</span>
                 </button>
             </div>
+        </div>
     </section>
 </main>
 
@@ -274,7 +285,7 @@
                 IIMBx
             </div>
             <p class="text-sm leading-relaxed">
-                Â© 2024 IIMBx. All rights reserved. <br/>Accounting for Decision Making.
+                &copy; 2024 IIMBx. All rights reserved. <br/>Accounting for Decision Making.
             </p>
         </div>
         <div class="md:col-span-3 flex flex-col sm:flex-row gap-12 md:justify-end">
@@ -286,6 +297,7 @@
                 <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Contact Us</a>
                 <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Accreditation</a>
             </div>
+        </div>
     </div>
 </footer>
 
@@ -293,7 +305,6 @@
     document.addEventListener("DOMContentLoaded", () => {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Intersection Observer for Reveal
         if (!prefersReducedMotion) {
             const observerOptions = {
                 root: null,
