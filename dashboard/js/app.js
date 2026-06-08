@@ -70,17 +70,48 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'card';
       card.innerHTML = `
         <div class="title">${prog.programmeName}</div>
-        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">${prog.file}</div>
-        ${prog.file === 'Not provided' ? '<div style="font-size: 0.9rem; font-style: italic; color: var(--text-muted);">No audit data (prototypes only)</div>' : `
-        <div>Brand: ${prog.scores.brand}% | Content: ${prog.scores.content}% | UX: ${prog.scores.ux}%</div>
-        <div class="scores">
-          <div class="score-bar"><div class="score-fill" style="width:${prog.scores.brand}%; background:var(--success)"></div></div>
-          <div class="score-bar"><div class="score-fill" style="width:${prog.scores.content}%; background:var(--warning)"></div></div>
-          <div class="score-bar"><div class="score-fill" style="width:${prog.scores.ux}%; background:var(--accent)"></div></div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">${prog.file}</div>
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--success); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--success); font-size: 1.1rem;">
+                    TBD
+                </div>
+                <div style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted); line-height: 1.3;">
+                    Website Grader<br/><span style="color: var(--text);">Performance Score</span>
+                </div>
+            </div>
+            <button class="card-wf-btn" style="background: var(--bg-dark); color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: var(--transition);">Compare Wireframes</button>
         </div>
+
+        ${prog.file === 'Not provided' ? '<div style="font-size: 0.9rem; font-style: italic; color: var(--text-muted);">No audit data (prototypes only)</div>' : `
+        <details class="kpi-details" style="font-family: 'Inter', sans-serif;">
+            <summary style="font-size: 0.85rem; font-weight: 600; color: var(--text); cursor: pointer; outline: none; margin-bottom: 8px;">View Audit KPIs (Brand / Content / UX)</summary>
+            <div style="padding-top: 8px; border-top: 1px dashed var(--border); margin-top: 8px;">
+                <div style="font-size: 0.8rem; margin-bottom: 8px; color: var(--text-muted);">Brand: <span style="color:var(--text); font-weight:600;">${prog.scores.brand}%</span> | Content: <span style="color:var(--text); font-weight:600;">${prog.scores.content}%</span> | UX: <span style="color:var(--text); font-weight:600;">${prog.scores.ux}%</span></div>
+                <div class="scores" style="display: flex; gap: 4px;">
+                  <div class="score-bar" style="flex:1; height:4px; background:var(--border); border-radius:2px;"><div class="score-fill" style="height:100%; width:${prog.scores.brand}%; background:var(--success)"></div></div>
+                  <div class="score-bar" style="flex:1; height:4px; background:var(--border); border-radius:2px;"><div class="score-fill" style="height:100%; width:${prog.scores.content}%; background:var(--warning)"></div></div>
+                  <div class="score-bar" style="flex:1; height:4px; background:var(--border); border-radius:2px;"><div class="score-fill" style="height:100%; width:${prog.scores.ux}%; background:var(--accent)"></div></div>
+                </div>
+            </div>
+        </details>
         `}
       `;
-      card.addEventListener('click', () => openModal(prog));
+      
+      card.addEventListener('click', (e) => {
+          if(e.target.closest('details') || e.target.closest('.card-wf-btn')) return;
+          openModal(prog);
+      });
+      
+      const wfBtnInCard = card.querySelector('.card-wf-btn');
+      if (wfBtnInCard) {
+          wfBtnInCard.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openWfViewer(prog);
+          });
+      }
+
       grid.appendChild(card);
     });
   }
