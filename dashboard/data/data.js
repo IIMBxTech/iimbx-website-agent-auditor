@@ -1,4 +1,4 @@
-window.AUDIT_DATA = [
+﻿window.AUDIT_DATA = [
   {
     "id": "adm",
     "programmeName": "Accounting for Decision Making",
@@ -53,46 +53,46 @@ window.AUDIT_DATA = [
     "wireframes": {
       "ascii": {
         "oldSite": "[Hero] -> [Overview] -> [Modules]",
-        "marketingHtml": "Not Applicable — no staging site for ADM",
-        "v1_variant_1": "DESIGN 1 · Gemini 3.1 Pro · Stitch MCP\n[Sticky Nav: IIMBx | Apply Now]\n[Hero: Title + Brand Promise + 3 Metrics + CTA | Dark Charcoal Quote Panel]\n[Syllabus: 9-Week Card Grid with Marigold left-border]\n[Faculty: Dark Charcoal Band — Prof. M S Narasimhan]\n[Footer]",
-        "v1_variant_2": "DESIGN 2 · Gemini 3.1 Pro · Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Split — Title/Metrics/CTA left | Dark Abstract Panel right]\n[Syllabus: 3-col card grid, hover lift effect]\n[Faculty: Charcoal band with centered content]\n[Footer]",
-        "v1_variant_3": "DESIGN 3 · Gemini 3.5 Flash · Stitch MCP\n[Sticky Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Mono Meta | Charcoal Stat Panel]\n[Overview: Tinted block with programme summary]\n[Syllabus: Clean white cards with hover shadow]\n[Faculty: 2-column split on dark charcoal]\n[Audience: Card grid with hover Marigold border]\n[Footer]",
+        "marketingHtml": "Not Applicable â€” no staging site for ADM",
+        "v1_variant_1": "DESIGN 1 Â· Gemini 3.1 Pro Â· Stitch MCP\n[Sticky Nav: IIMBx | Apply Now]\n[Hero: Title + Brand Promise + 3 Metrics + CTA | Dark Charcoal Quote Panel]\n[Syllabus: 9-Week Card Grid with Marigold left-border]\n[Faculty: Dark Charcoal Band â€” Prof. M S Narasimhan]\n[Footer]",
+        "v1_variant_2": "DESIGN 2 Â· Gemini 3.1 Pro Â· Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Split â€” Title/Metrics/CTA left | Dark Abstract Panel right]\n[Syllabus: 3-col card grid, hover lift effect]\n[Faculty: Charcoal band with centered content]\n[Footer]",
+        "v1_variant_3": "DESIGN 3 Â· Gemini 3.5 Flash Â· Stitch MCP\n[Sticky Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Mono Meta | Charcoal Stat Panel]\n[Overview: Tinted block with programme summary]\n[Syllabus: Clean white cards with hover shadow]\n[Faculty: 2-column split on dark charcoal]\n[Audience: Card grid with hover Marigold border]\n[Footer]",
         "v1Staging": "",
-        "proposed": "DESIGN 4 · Gemini 3.5 Flash · Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Compact Mono Meta | Dark Quote Block]\n[Overview Section: Light tint band]\n[Syllabus: Minimalist white cards, hover shadow]\n[Faculty: Dark charcoal 2-column split]\n[Footer]",
-        "v1_variant_4": "DESIGN 4 · Gemini 3.5 Flash · Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Compact Mono Meta | Dark Quote Block]\n[Overview Section: Light tint band]\n[Syllabus: Minimalist white cards, hover shadow]\n[Faculty: Dark charcoal 2-column split]\n[Footer]",
-        "v1_variant_5": "DESIGN 5 · Gemini 3.1 Pro (Refined) · Rules-Based HTML\n[Sticky Nav: IIMBx | Apply Now — follows on scroll]\n[Hero: Large Serif Title + Italicised Brand Promise + 3 Mono Metrics | Charcoal Pull-Quote Panel + CTA]\n[Accordion Syllabus: 9 weeks, one open at a time, aria-expanded]\n[Faculty: Full-width dark charcoal 2-col split]\n[Who This Is For: 3-card audience grid, Marigold hover border]\n[Footer: Charcoal + Brand Promise]"
+        "proposed": "DESIGN 4 Â· Gemini 3.5 Flash Â· Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Compact Mono Meta | Dark Quote Block]\n[Overview Section: Light tint band]\n[Syllabus: Minimalist white cards, hover shadow]\n[Faculty: Dark charcoal 2-column split]\n[Footer]",
+        "v1_variant_4": "DESIGN 4 Â· Gemini 3.5 Flash Â· Rules-Based HTML\n[Nav: IIMBx | Apply Now]\n[Hero: Title + Italic Brand Promise + Compact Mono Meta | Dark Quote Block]\n[Overview Section: Light tint band]\n[Syllabus: Minimalist white cards, hover shadow]\n[Faculty: Dark charcoal 2-column split]\n[Footer]",
+        "v1_variant_5": "DESIGN 5 Â· Gemini 3.1 Pro (Refined) Â· Rules-Based HTML\n[Sticky Nav: IIMBx | Apply Now â€” follows on scroll]\n[Hero: Large Serif Title + Italicised Brand Promise + 3 Mono Metrics | Charcoal Pull-Quote Panel + CTA]\n[Accordion Syllabus: 9 weeks, one open at a time, aria-expanded]\n[Faculty: Full-width dark charcoal 2-col split]\n[Who This Is For: 3-card audience grid, Marigold hover border]\n[Footer: Charcoal + Brand Promise]"
       },
       "suggestions": [
         {
-          "title": "Design 1 — Gemini 3.1 Pro (Stitch MCP)",
+          "title": "Design 1 â€” Gemini 3.1 Pro (Stitch MCP)",
           "description": "Card-grid syllabus layout with charcoal quote hero panel. Generated via Stitch MCP using GEMINI_3_1_PRO model.",
           "effort": "Done",
           "impact": "High",
           "devNotes": "Stitch Project ID: 17423467441698499097"
         },
         {
-          "title": "Design 2 — Gemini 3.1 Pro (Rules-Based HTML)",
+          "title": "Design 2 â€” Gemini 3.1 Pro (Rules-Based HTML)",
           "description": "Split hero with abstract data panel. 3-col syllabus card grid. Manually authored by agent under 3.1 Pro.",
           "effort": "Done",
           "impact": "High",
           "devNotes": "File: accounting_for_decision_making_pro.html"
         },
         {
-          "title": "Design 3 — Gemini 3.5 Flash (Stitch MCP)",
+          "title": "Design 3 â€” Gemini 3.5 Flash (Stitch MCP)",
           "description": "Clean editorial layout with overview tint band and audience section. Generated via Stitch MCP using GEMINI_3_FLASH model.",
           "effort": "Done",
           "impact": "High",
-          "devNotes": "Exceptional case approved by user — one-time override."
+          "devNotes": "Exceptional case approved by user â€” one-time override."
         },
         {
-          "title": "Design 4 — Gemini 3.5 Flash (Rules-Based HTML)",
+          "title": "Design 4 â€” Gemini 3.5 Flash (Rules-Based HTML)",
           "description": "Minimalist white card syllabus, 2-col faculty split on dark charcoal. Authored under 3.5 Flash.",
           "effort": "Done",
           "impact": "High",
           "devNotes": "File: accounting_for_decision_making_flash.html"
         },
         {
-          "title": "Design 5 — Gemini 3.1 Pro (Refined HTML)",
+          "title": "Design 5 â€” Gemini 3.1 Pro (Refined HTML)",
           "description": "Editorial direction: journal meets BI dashboard. Sticky nav, accordion syllabus with aria-expanded, pull-quote hero, audience card grid with hover Marigold border. Hand-refined by Gemini 3.1 Pro.",
           "effort": "Done",
           "impact": "High",
@@ -108,6 +108,79 @@ window.AUDIT_DATA = [
         "devNotes": "Designs: Pro (Stitch), Pro (HTML), Flash (Stitch), Flash (HTML), Pro Refined (HTML)"
       }
     ]
+    ,
+    "graderScores": {
+      "Design 1 (Pro Stitch)": {
+            "performance": 57,
+            "accessibility": 87,
+            "bestPractices": 96,
+            "seo": 90,
+            "overall": 83,
+            "url": "http://localhost:8765/prototypes/adm_v1_variant_1.html",
+            "scannedAt": "2026-06-08T12:33:59.133Z",
+            "error": null
+      },
+      "Design 2 (Pro HTML)": {
+            "performance": 100,
+            "accessibility": 85,
+            "bestPractices": 96,
+            "seo": 90,
+            "overall": 93,
+            "url": "http://localhost:8765/prototypes/adm_gemini31pro.html",
+            "scannedAt": "2026-06-08T12:34:12.180Z",
+            "error": null
+      },
+      "Design 3 (Flash Stitch)": {
+            "performance": 57,
+            "accessibility": 96,
+            "bestPractices": 96,
+            "seo": 90,
+            "overall": 85,
+            "url": "http://localhost:8765/prototypes/adm_v1_variant_3.html",
+            "scannedAt": "2026-06-08T12:34:25.152Z",
+            "error": null
+      },
+      "Design 4 (Flash HTML)": {
+            "performance": 88,
+            "accessibility": 85,
+            "bestPractices": 96,
+            "seo": 90,
+            "overall": 90,
+            "url": "http://localhost:8765/prototypes/adm_gemini35flash.html",
+            "scannedAt": "2026-06-08T12:34:37.765Z",
+            "error": null
+      },
+      "Design 5 (Pro Refined)": {
+            "performance": 99,
+            "accessibility": 92,
+            "bestPractices": 96,
+            "seo": 100,
+            "overall": 97,
+            "url": "http://localhost:8765/prototypes/adm_v1_variant_5.html",
+            "scannedAt": "2026-06-08T12:34:50.634Z",
+            "error": null
+      },
+      "Stitch v4": {
+            "performance": 78,
+            "accessibility": 86,
+            "bestPractices": 88,
+            "seo": 90,
+            "overall": 86,
+            "url": "http://localhost:8765/prototypes/adm_stitch_v4.html",
+            "scannedAt": "2026-06-08T12:35:03.018Z",
+            "error": null
+      },
+      "Old Website": {
+            "performance": 52,
+            "accessibility": 74,
+            "bestPractices": 54,
+            "seo": 100,
+            "overall": 70,
+            "url": "https://iimbx.iimb.ac.in/catalog/accounting-for-decision-making/",
+            "scannedAt": "2026-06-08T12:35:24.004Z",
+            "error": null
+      }
+}
   },
   {
     "id": "pchm",
@@ -213,15 +286,15 @@ window.AUDIT_DATA = [
         "section": "Fees & Dates",
         "oldSite": {
           "present": true,
-          "detail": "₹1,25,000+18% GST"
+          "detail": "â‚¹1,25,000+18% GST"
         },
         "marketingHtml": {
           "present": true,
-          "detail": "₹1,25,000+18% GST | Instalments"
+          "detail": "â‚¹1,25,000+18% GST | Instalments"
         },
         "v1Staging": {
           "present": true,
-          "detail": "₹1,25,000+18% GST"
+          "detail": "â‚¹1,25,000+18% GST"
         },
         "verdict": "present",
         "severity": "ok"
@@ -316,12 +389,12 @@ window.AUDIT_DATA = [
     },
     "wireframes": {
       "ascii": {
-        "oldSite": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCHM Title | Next Cohort | CTA      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme                 │\n├─── CURRICULUM ──────────────────────┤\n│ 9 Modules List                      │\n├─── FACULTY ─────────────────────────┤\n│ 4 Professors                        │\n├─── FEES & DATES ────────────────────┤\n│ ₹1,25,000+18% GST | Instalments     │\n├─── TESTIMONIALS ────────────────────┤\n│ Dr. Devi Shetty | 100+ Learners     │\n├─── FAQS ────────────────────────────┤\n│ Accordion list                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "marketingHtml": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCHM Title | CTA                    │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme                 │\n├─── CURRICULUM ──────────────────────┤\n│ 9 Modules List                      │\n├─── FACULTY ─────────────────────────┤\n│ 4 Professors                        │\n│                                     │\n│  ⚠ MISSING: Fees & Dates            │\n│  (Present on Old Site + v1 Staging) │\n│                                     │\n│  ⚠ MISSING: Testimonials            │\n│  (Present on Old Site + v1 Staging) │\n│                                     │\n├─── FAQS ────────────────────────────┤\n│ Accordion list                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v1Staging": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCHM Title | Next Cohort | CTA      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme                 │\n├─── CURRICULUM ──────────────────────┤\n│ 9 Modules List                      │\n├─── FACULTY ─────────────────────────┤\n│ 4 Professors                        │\n├─── FEES & DATES ────────────────────┤\n│ ₹1,25,000+18% GST | Instalments     │\n├─── TESTIMONIALS ────────────────────┤\n│ Dr. Devi Shetty | 100+ Learners     │\n├─── FAQS ────────────────────────────┤\n│ Accordion list                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCHM Title | Next Cohort | CTA      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme                 │\n├─── CURRICULUM [TABS] ───────────────┤\n│ 9 Modules List                      │\n├─── FACULTY ─────────────────────────┤\n│ 4 Professors                        │\n├─── FEES & DATES ────────────────────┤\n│ ₹1,25,000+18% GST | Instalments     │\n├─── TESTIMONIALS [CAROUSEL] ─────────┤\n│ Dr. Devi Shetty | 100+ Learners     │\n├─── FAQS [ACCORDION] ────────────────┤\n│ Accordion list                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n├─── STICKY CTA ──────────────────────┤\n│ Apply Now | Closes soon             │\n└─────────────────────────────────────┘",
-        "proposedV2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCHM Title | Next Cohort | CTA      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme                 │\n├─── CURRICULUM [ACCORDION] ──────────┤\n│ 9 Modules List                      │\n├─── FACULTY [GRID] ──────────────────┤\n│ 4 Professors                        │\n├─── TESTIMONIALS [GRID] ─────────────┤\n│ Dr. Devi Shetty | 100+ Learners     │\n├─── FEES & DATES ────────────────────┤\n│ ₹1,25,000+18% GST | Instalments     │\n├─── FAQS [ACCORDION] ────────────────┤\n│ Accordion list                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (DARK MODE) ────────────────┤\n│ PCHM Title | Next Cohort | CTA      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme                 │\n├─── CURRICULUM [TABS] ───────────────┤\n│ 9 Modules List                      │\n├─── FEES & DATES ────────────────────┤\n│ ₹1,25,000+18% GST | Instalments     │\n├─── FACULTY ─────────────────────────┤\n│ 4 Professors                        │\n├─── TESTIMONIALS [CAROUSEL] ─────────┤\n│ Dr. Devi Shetty | 100+ Learners     │\n├─── FAQS [ACCORDION] ────────────────┤\n│ Accordion list                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
+        "oldSite": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCHM Title | Next Cohort | CTA      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme                 â”‚\nâ”œâ”€â”€â”€ CURRICULUM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 9 Modules List                      â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 4 Professors                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹1,25,000+18% GST | Instalments     â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Dr. Devi Shetty | 100+ Learners     â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Accordion list                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "marketingHtml": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCHM Title | CTA                    â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme                 â”‚\nâ”œâ”€â”€â”€ CURRICULUM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 9 Modules List                      â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 4 Professors                        â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: Fees & Dates            â”‚\nâ”‚  (Present on Old Site + v1 Staging) â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: Testimonials            â”‚\nâ”‚  (Present on Old Site + v1 Staging) â”‚\nâ”‚                                     â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Accordion list                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v1Staging": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCHM Title | Next Cohort | CTA      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme                 â”‚\nâ”œâ”€â”€â”€ CURRICULUM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 9 Modules List                      â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 4 Professors                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹1,25,000+18% GST | Instalments     â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Dr. Devi Shetty | 100+ Learners     â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Accordion list                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCHM Title | Next Cohort | CTA      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme                 â”‚\nâ”œâ”€â”€â”€ CURRICULUM [TABS] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 9 Modules List                      â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 4 Professors                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹1,25,000+18% GST | Instalments     â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Dr. Devi Shetty | 100+ Learners     â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Accordion list                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ”œâ”€â”€â”€ STICKY CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Apply Now | Closes soon             â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV2": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCHM Title | Next Cohort | CTA      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme                 â”‚\nâ”œâ”€â”€â”€ CURRICULUM [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 9 Modules List                      â”‚\nâ”œâ”€â”€â”€ FACULTY [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 4 Professors                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Dr. Devi Shetty | 100+ Learners     â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹1,25,000+18% GST | Instalments     â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Accordion list                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (DARK MODE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCHM Title | Next Cohort | CTA      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme                 â”‚\nâ”œâ”€â”€â”€ CURRICULUM [TABS] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 9 Modules List                      â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹1,25,000+18% GST | Instalments     â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 4 Professors                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Dr. Devi Shetty | 100+ Learners     â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Accordion list                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
         "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
       },
       "suggestions": [
@@ -350,13 +423,76 @@ window.AUDIT_DATA = [
       "html": {}
     },
     "actionItems": []
+    ,
+    "graderScores": {
+      "Proposed v1": {
+            "performance": 68,
+            "accessibility": 92,
+            "bestPractices": 96,
+            "seo": 100,
+            "overall": 89,
+            "url": "http://localhost:8765/prototypes/pchm_v1.html",
+            "scannedAt": "2026-06-08T12:35:38.005Z",
+            "error": null
+      },
+      "Proposed v2": {
+            "performance": 67,
+            "accessibility": 94,
+            "bestPractices": 96,
+            "seo": 100,
+            "overall": 89,
+            "url": "http://localhost:8765/prototypes/pchm_v2.html",
+            "scannedAt": "2026-06-08T12:35:51.375Z",
+            "error": null
+      },
+      "Proposed v3": {
+            "performance": 67,
+            "accessibility": 92,
+            "bestPractices": 96,
+            "seo": 100,
+            "overall": 89,
+            "url": "http://localhost:8765/prototypes/pchm_v3.html",
+            "scannedAt": "2026-06-08T12:36:09.833Z",
+            "error": null
+      },
+      "Stitch v4": {
+            "performance": 73,
+            "accessibility": 86,
+            "bestPractices": 88,
+            "seo": 90,
+            "overall": 84,
+            "url": "http://localhost:8765/prototypes/pchm_stitch_v4.html",
+            "scannedAt": "2026-06-08T12:36:25.952Z",
+            "error": null
+      },
+      "Old Website": {
+            "performance": 47,
+            "accessibility": 80,
+            "bestPractices": 54,
+            "seo": 100,
+            "overall": 70,
+            "url": "https://iimbx.iimb.ac.in/hospital-management-program/",
+            "scannedAt": "2026-06-08T12:37:05.902Z",
+            "error": null
+      },
+      "V1 Staging": {
+            "performance": 0,
+            "accessibility": 0,
+            "bestPractices": 0,
+            "seo": 0,
+            "overall": 0,
+            "url": "https://iimbx.iimb.ac.in/hospital-management-new-v1/",
+            "scannedAt": "2026-06-08T12:37:27.796Z",
+            "error": null
+      }
+}
   },
   {
     "id": "nam",
     "programmeName": "New-Age Managers Programme",
     "shortName": "NAM",
     "file": "NAM_Landing.html",
-    "oldSiteUrl": "—",
+    "oldSiteUrl": "â€”",
     "v1StagingUrl": "https://iimbx.iimb.ac.in/nam-v1/",
     "auditDate": "2026-05-27",
     "scores": {
@@ -544,12 +680,12 @@ window.AUDIT_DATA = [
     },
     "wireframes": {
       "ascii": {
-        "oldSite": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ NAM Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── THEMES ──────────────────────────┤\n│ Programme Themes                    │\n├─── FACULTY ─────────────────────────┤\n│ Faculty list                        │\n├─── FAQS ────────────────────────────┤\n│ FAQs                                │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "marketingHtml": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ NAM Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── THEMES ──────────────────────────┤\n│ Programme Themes                    │\n│                                     │\n│  ⚠ MISSING: Faculty                 │\n│  (Present on Old Site + v1 Staging) │\n│                                     │\n│  ⚠ MISSING: FAQs                    │\n│  (Present on Old Site + v1 Staging) │\n│                                     │\n│  ⚠ MISSING: Fees                    │\n│  (Present on Old Site + v1 Staging) │\n│                                     │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v1Staging": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ NAM Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── THEMES ──────────────────────────┤\n│ Programme Themes                    │\n├─── FACULTY ─────────────────────────┤\n│ Faculty list                        │\n├─── FAQS ────────────────────────────┤\n│ FAQs                                │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ NAM Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── THEMES ──────────────────────────┤\n│ Programme Themes                    │\n├─── FACULTY [GRID] ──────────────────┤\n│ Faculty list                        │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ NAM Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── THEMES [TABS] ───────────────────┤\n│ Programme Themes                    │\n├─── FACULTY [LIST] ──────────────────┤\n│ Faculty list                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (DARK MODE) ────────────────┤\n│ NAM Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── THEMES [GRID] ───────────────────┤\n│ Programme Themes                    │\n├─── FACULTY [CAROUSEL] ──────────────┤\n│ Faculty list                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
+        "oldSite": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ NAM Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ THEMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Programme Themes                    â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "marketingHtml": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ NAM Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ THEMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Programme Themes                    â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: Faculty                 â”‚\nâ”‚  (Present on Old Site + v1 Staging) â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: FAQs                    â”‚\nâ”‚  (Present on Old Site + v1 Staging) â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: Fees                    â”‚\nâ”‚  (Present on Old Site + v1 Staging) â”‚\nâ”‚                                     â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v1Staging": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ NAM Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ THEMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Programme Themes                    â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ NAM Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ THEMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Programme Themes                    â”‚\nâ”œâ”€â”€â”€ FACULTY [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV2": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ NAM Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ THEMES [TABS] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Programme Themes                    â”‚\nâ”œâ”€â”€â”€ FACULTY [LIST] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (DARK MODE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ NAM Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ THEMES [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Programme Themes                    â”‚\nâ”œâ”€â”€â”€ FACULTY [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
         "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
       },
       "suggestions": [
@@ -596,13 +732,66 @@ window.AUDIT_DATA = [
         "devNotes": ""
       }
     ]
+    ,
+    "graderScores": {
+      "Proposed v1": {
+            "performance": 65,
+            "accessibility": 86,
+            "bestPractices": 96,
+            "seo": 91,
+            "overall": 85,
+            "url": "http://localhost:8765/prototypes/nam_v1.html",
+            "scannedAt": "2026-06-08T12:37:45.020Z",
+            "error": null
+      },
+      "Proposed v2": {
+            "performance": 65,
+            "accessibility": 86,
+            "bestPractices": 96,
+            "seo": 91,
+            "overall": 85,
+            "url": "http://localhost:8765/prototypes/nam_v2.html",
+            "scannedAt": "2026-06-08T12:38:02.596Z",
+            "error": null
+      },
+      "Proposed v3": {
+            "performance": 65,
+            "accessibility": 86,
+            "bestPractices": 96,
+            "seo": 91,
+            "overall": 85,
+            "url": "http://localhost:8765/prototypes/nam_v3.html",
+            "scannedAt": "2026-06-08T12:38:20.024Z",
+            "error": null
+      },
+      "Stitch v4": {
+            "performance": 69,
+            "accessibility": 88,
+            "bestPractices": 88,
+            "seo": 90,
+            "overall": 84,
+            "url": "http://localhost:8765/prototypes/nam_stitch_v4.html",
+            "scannedAt": "2026-06-08T12:38:35.828Z",
+            "error": null
+      },
+      "V1 Staging": {
+            "performance": 62,
+            "accessibility": 71,
+            "bestPractices": 54,
+            "seo": 92,
+            "overall": 70,
+            "url": "https://iimbx.iimb.ac.in/nam-v1/",
+            "scannedAt": "2026-06-08T12:39:04.717Z",
+            "error": null
+      }
+}
   },
   {
     "id": "elp",
     "programmeName": "Emerging Leaders Programme 2.0",
     "shortName": "ELP",
     "file": "ELP_Landing.html",
-    "oldSiteUrl": "—",
+    "oldSiteUrl": "â€”",
     "v1StagingUrl": "https://iimbx.iimb.ac.in/elp-new-v2/",
     "auditDate": "2026-05-27",
     "scores": {
@@ -804,26 +993,39 @@ window.AUDIT_DATA = [
     },
     "wireframes": {
       "ascii": {
-        "oldSite": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ 7 Months                            │\n├─── THEMES ──────────────────────────┤\n│ 5 Themes                            │\n├─── FACULTY ─────────────────────────┤\n│ Faculty List                        │\n├─── TESTIMONIALS ────────────────────┤\n│ Testimonials                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS ────────────────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "marketingHtml": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | Next Cohort | CTA       │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V1) ─────────────────────┤\n│ Infinite scroll list                │\n│                                     │\n│  ⚠ MISSING: Faculty                 │\n│  ⚠ MISSING: Testimonials            │\n│  ⚠ MISSING: Fees                    │\n│                                     │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v1Staging": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ 7 Months                            │\n├─── THEMES ──────────────────────────┤\n│ 5 Themes                            │\n├─── FACULTY ─────────────────────────┤\n│ Faculty List                        │\n├─── TESTIMONIALS ────────────────────┤\n│ Testimonials                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS ────────────────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ 7 Months                            │\n├─── THEMES [TABS] ───────────────────┤\n│ 5 Themes                            │\n├─── FACULTY [GRID] ──────────────────┤\n│ Faculty List                        │\n├─── TESTIMONIALS [CAROUSEL] ─────────┤\n│ Testimonials                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ 7 Months                            │\n├─── THEMES [ACCORDION] ──────────────┤\n│ 5 Themes                            │\n├─── FACULTY [LIST] ──────────────────┤\n│ Faculty List                        │\n├─── TESTIMONIALS [GRID] ─────────────┤\n│ Testimonials                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "proposedV3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (DARK MODE) ────────────────┤\n│ ELP Title | CTA                     │\n├─── OVERVIEW ────────────────────────┤\n│ 7 Months                            │\n├─── THEMES [TABS] ───────────────────┤\n│ 5 Themes                            │\n├─── TESTIMONIALS [CAROUSEL] ─────────┤\n│ Testimonials                        │\n├─── FACULTY [GRID] ──────────────────┤\n│ Faculty List                        │\n├─── FEES ────────────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v2Staging": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (V2) ───────────────────────┤\n│ Open for Aug 2026 | 11 Modules      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V2 GRID) ────────────────┤\n│ 3x2 Grid with Red Hover             │\n├─── FACULTY ─────────────────────────┤\n│ Prof Shainesh + 8 Faculty Grid      │\n├─── WHO IT IS FOR ───────────────────┤\n│ Split Navy/Paper cards              │\n├─── FEES ────────────────────────────┤\n│ ₹2,80,000+ Table                    │\n├─── FINAL CTA ───────────────────────┤\n│ Eight months... | Apply | Brochure  │\n└─────────────────────────────────────┘",
-        "v1_variant_1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | Next Cohort | CTA       │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V1) ─────────────────────┤\n│ Infinite scroll list                │\n│                                     │\n│  ⚠ MISSING: Faculty                 │\n│  ⚠ MISSING: Testimonials            │\n│  ⚠ MISSING: Fees                    │\n│                                     │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v1_variant_2": "┌─── NAVBAR [DARK]────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO [DARK]──────────────────────┤\n│ ELP Title | Next Cohort | CTA       │\n├─── OVERVIEW [DARK]──────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V1) [DARK]───────────────┤\n│ Infinite scroll list                │\n│  ⚠ MISSING: Faculty                 │\n│  ⚠ MISSING: Testimonials            │\n│  ⚠ MISSING: Fees                    │\n├─── FOOTER [DARK]────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v1_variant_3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ ELP Title | Next Cohort | CTA       │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V1 COMPACT) ─────────────┤\n│ Compact Grid view                   │\n│  ⚠ MISSING: Faculty                 │\n│  ⚠ MISSING: Testimonials            │\n│  ⚠ MISSING: Fees                    │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
-        "v2_variant_1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (V2) ───────────────────────┤\n│ Open for Aug 2026 | 11 Modules      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V2 GRID) ────────────────┤\n│ 3x2 Grid with Red Hover             │\n├─── FACULTY ─────────────────────────┤\n│ Prof Shainesh + 8 Faculty Grid      │\n├─── WHO IT IS FOR ───────────────────┤\n│ Split Navy/Paper cards              │\n├─── FEES ────────────────────────────┤\n│ ₹2,80,000+ Table                    │\n├─── FINAL CTA ───────────────────────┤\n│ Eight months... | Apply | Brochure  │\n└─────────────────────────────────────┘",
-        "v2_variant_2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (V2 DARK) ──────────────────┤\n│ Open for Aug 2026 | 11 Modules      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V2 GRID DARK) ───────────┤\n│ 3x2 Grid with Red Hover             │\n├─── FACULTY ─────────────────────────┤\n│ Prof Shainesh + 8 Faculty Grid      │\n├─── WHO IT IS FOR ───────────────────┤\n│ Split Navy/Paper cards              │\n├─── FEES ────────────────────────────┤\n│ ₹2,80,000+ Table                    │\n├─── FINAL CTA ───────────────────────┤\n│ Eight months... | Apply | Brochure  │\n└─────────────────────────────────────┘\n ⚠ BEYOND BRAND COMPLIANCE \n EXCEEDS 70/15/15 COLOR RULE FOR DARK \n MODE IMPACT (NAVY DOMINATES PAPER)",
-        "v2_variant_3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (V2 COMPACT) ───────────────┤\n│ Open for Aug 2026 | 11 Modules      │\n├─── OVERVIEW ────────────────────────┤\n│ About the programme (8 months)      │\n├─── THEMES (V2 COMPACT) ─────────────┤\n│ 2x3 Compact Grid                    │\n├─── FACULTY (COMPACT) ───────────────┤\n│ Prof Shainesh + 2x4 Faculty Grid    │\n├─── WHO IT IS FOR ───────────────────┤\n│ Split Navy/Paper cards              │\n├─── FEES ────────────────────────────┤\n│ ₹2,80,000+ Table                    │\n├─── FINAL CTA ───────────────────────┤\n│ Eight months... | Apply | Brochure  │\n└─────────────────────────────────────┘",
+        "oldSite": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 7 Months                            â”‚\nâ”œâ”€â”€â”€ THEMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 5 Themes                            â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty List                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "marketingHtml": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | Next Cohort | CTA       â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V1) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Infinite scroll list                â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: Faculty                 â”‚\nâ”‚  âš  MISSING: Testimonials            â”‚\nâ”‚  âš  MISSING: Fees                    â”‚\nâ”‚                                     â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v1Staging": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 7 Months                            â”‚\nâ”œâ”€â”€â”€ THEMES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 5 Themes                            â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty List                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 7 Months                            â”‚\nâ”œâ”€â”€â”€ THEMES [TABS] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 5 Themes                            â”‚\nâ”œâ”€â”€â”€ FACULTY [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty List                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV2": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 7 Months                            â”‚\nâ”œâ”€â”€â”€ THEMES [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 5 Themes                            â”‚\nâ”œâ”€â”€â”€ FACULTY [LIST] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty List                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (DARK MODE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | CTA                     â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 7 Months                            â”‚\nâ”œâ”€â”€â”€ THEMES [TABS] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 5 Themes                            â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FACULTY [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty List                        â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v2Staging": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (V2) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Open for Aug 2026 | 11 Modules      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V2 GRID) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 3x2 Grid with Red Hover             â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Prof Shainesh + 8 Faculty Grid      â”‚\nâ”œâ”€â”€â”€ WHO IT IS FOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Split Navy/Paper cards              â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹2,80,000+ Table                    â”‚\nâ”œâ”€â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Eight months... | Apply | Brochure  â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v1_variant_1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | Next Cohort | CTA       â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V1) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Infinite scroll list                â”‚\nâ”‚                                     â”‚\nâ”‚  âš  MISSING: Faculty                 â”‚\nâ”‚  âš  MISSING: Testimonials            â”‚\nâ”‚  âš  MISSING: Fees                    â”‚\nâ”‚                                     â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v1_variant_2": "â”Œâ”€â”€â”€ NAVBAR [DARK]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO [DARK]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | Next Cohort | CTA       â”‚\nâ”œâ”€â”€â”€ OVERVIEW [DARK]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V1) [DARK]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Infinite scroll list                â”‚\nâ”‚  âš  MISSING: Faculty                 â”‚\nâ”‚  âš  MISSING: Testimonials            â”‚\nâ”‚  âš  MISSING: Fees                    â”‚\nâ”œâ”€â”€â”€ FOOTER [DARK]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v1_variant_3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ ELP Title | Next Cohort | CTA       â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V1 COMPACT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Compact Grid view                   â”‚\nâ”‚  âš  MISSING: Faculty                 â”‚\nâ”‚  âš  MISSING: Testimonials            â”‚\nâ”‚  âš  MISSING: Fees                    â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v2_variant_1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (V2) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Open for Aug 2026 | 11 Modules      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V2 GRID) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 3x2 Grid with Red Hover             â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Prof Shainesh + 8 Faculty Grid      â”‚\nâ”œâ”€â”€â”€ WHO IT IS FOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Split Navy/Paper cards              â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹2,80,000+ Table                    â”‚\nâ”œâ”€â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Eight months... | Apply | Brochure  â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v2_variant_2": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (V2 DARK) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Open for Aug 2026 | 11 Modules      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V2 GRID DARK) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 3x2 Grid with Red Hover             â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Prof Shainesh + 8 Faculty Grid      â”‚\nâ”œâ”€â”€â”€ WHO IT IS FOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Split Navy/Paper cards              â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹2,80,000+ Table                    â”‚\nâ”œâ”€â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Eight months... | Apply | Brochure  â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n âš  BEYOND BRAND COMPLIANCE \n EXCEEDS 70/15/15 COLOR RULE FOR DARK \n MODE IMPACT (NAVY DOMINATES PAPER)",
+        "v2_variant_3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (V2 COMPACT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Open for Aug 2026 | 11 Modules      â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About the programme (8 months)      â”‚\nâ”œâ”€â”€â”€ THEMES (V2 COMPACT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ 2x3 Compact Grid                    â”‚\nâ”œâ”€â”€â”€ FACULTY (COMPACT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Prof Shainesh + 2x4 Faculty Grid    â”‚\nâ”œâ”€â”€â”€ WHO IT IS FOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Split Navy/Paper cards              â”‚\nâ”œâ”€â”€â”€ FEES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ â‚¹2,80,000+ Table                    â”‚\nâ”œâ”€â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Eight months... | Apply | Brochure  â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
         "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
       },
       "suggestions": [],
       "html": {}
     },
     "actionItems": [],
-    "v2StagingUrl": "https://iimbx.iimb.ac.in/elp-new-v2/"
+    "v2StagingUrl": "https://iimbx.iimb.ac.in/elp-new-v2/"    ,"graderScores": {
+      "V1 Proposed v1": {"performance":64,"accessibility":86,"bestPractices":96,"seo":91,"overall":84,"error":null},
+      "V1 Proposed v2": {"performance":65,"accessibility":75,"bestPractices":96,"seo":82,"overall":80,"error":null},
+      "V1 Proposed v3": {"performance":67,"accessibility":86,"bestPractices":96,"seo":91,"overall":85,"error":null},
+      "V1 Stitch v4":   {"performance":68,"accessibility":85,"bestPractices":88,"seo":90,"overall":83,"error":null},
+      "V1 Variant 1":   {"performance":65,"accessibility":86,"bestPractices":96,"seo":91,"overall":85,"error":null},
+      "V1 Variant 2":   {"performance":64,"accessibility":86,"bestPractices":96,"seo":91,"overall":84,"error":null},
+      "V1 Variant 3":   {"performance":65,"accessibility":86,"bestPractices":96,"seo":91,"overall":85,"error":null},
+      "V2 Variant 1":   {"performance":80,"accessibility":75,"bestPractices":96,"seo":82,"overall":83,"error":null},
+      "V2 Variant 2":   {"performance":65,"accessibility":75,"bestPractices":96,"seo":82,"overall":80,"error":null},
+      "V2 Variant 3":   {"performance":65,"accessibility":75,"bestPractices":96,"seo":82,"overall":80,"error":null},
+      "V2 Stitch v4":   {"performance":68,"accessibility":85,"bestPractices":88,"seo":90,"overall":83,"error":null},
+      "V2 Staging":     {"performance":0,"accessibility":0,"bestPractices":0,"seo":0,"overall":0,"error":"Login required"}
+    }
   },
   {
     "id": "pcaim",
@@ -897,12 +1099,12 @@ window.AUDIT_DATA = [
     },
     "wireframes": {
       "ascii": {
-        "oldSite": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCAIM Title | CTA                   │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── TARGET AUDIENCE ─────────────────┤\n│ Audience                            │\n├─── 8 MODULES ───────────────────────┤\n│ Modules                             │\n├─── TOOLS & PEDAGOGY ────────────────┤\n│ Tools                               │\n├─── FACULTY ─────────────────────────┤\n│ Faculty list                        │\n├─── TESTIMONIALS ────────────────────┤\n│ Testimonials                        │\n├─── FEES & DATES ────────────────────┤\n│ Fees                                │\n├─── FAQS ────────────────────────────┤\n│ FAQs                                │\n├─── CONTACT ─────────────────────────┤\n│ Contact                             │\n├─── FOOTER ──────────────────────────┤\n│ Footer                              │\n└─────────────────────────────────────┘",
-        "marketingHtml": "\n\n\n     ⚠ NO MARKETING HTML PROVIDED\n\n\n",
-        "v1Staging": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCAIM Title | CTA                   │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── TARGET AUDIENCE ─────────────────┤\n│ Audience                            │\n├─── 8 MODULES ───────────────────────┤\n│ Modules                             │\n├─── TOOLS & PEDAGOGY ────────────────┤\n│ Tools                               │\n├─── FACULTY ─────────────────────────┤\n│ Faculty list                        │\n├─── TESTIMONIALS ────────────────────┤\n│ Testimonials                        │\n├─── FEES & DATES ────────────────────┤\n│ Fees                                │\n├─── FAQS ────────────────────────────┤\n│ FAQs                                │\n├─── CONTACT ─────────────────────────┤\n│ Contact                             │\n├─── FOOTER ──────────────────────────┤\n│ Footer                              │\n└─────────────────────────────────────┘",
-        "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCAIM Title | CTA                   │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── TARGET AUDIENCE ─────────────────┤\n│ Audience                            │\n├─── 8 MODULES [STACKED] ─────────────┤\n│ Modules                             │\n├─── TOOLS & PEDAGOGY ────────────────┤\n│ Tools                               │\n├─── FACULTY [GRID] ──────────────────┤\n│ Faculty list                        │\n├─── TESTIMONIALS [CAROUSEL] ─────────┤\n│ Testimonials                        │\n├─── FEES & DATES ────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── CONTACT ─────────────────────────┤\n│ Contact                             │\n├─── FOOTER ──────────────────────────┤\n│ Footer                              │\n└─────────────────────────────────────┘",
-        "proposedV2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ PCAIM Title | CTA                   │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── TARGET AUDIENCE ─────────────────┤\n│ Audience                            │\n├─── 8 MODULES [ACCORDION] ───────────┤\n│ Modules                             │\n├─── TOOLS & PEDAGOGY ────────────────┤\n│ Tools                               │\n├─── FACULTY [LIST] ──────────────────┤\n│ Faculty list                        │\n├─── TESTIMONIALS [GRID] ─────────────┤\n│ Testimonials                        │\n├─── FEES & DATES ────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── CONTACT ─────────────────────────┤\n│ Contact                             │\n├─── FOOTER ──────────────────────────┤\n│ Footer                              │\n└─────────────────────────────────────┘",
-        "proposedV3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (DARK MODE) ────────────────┤\n│ PCAIM Title | CTA                   │\n├─── OVERVIEW ────────────────────────┤\n│ About                               │\n├─── TARGET AUDIENCE ─────────────────┤\n│ Audience                            │\n├─── 8 MODULES [TABS] ────────────────┤\n│ Modules                             │\n├─── TOOLS & PEDAGOGY ────────────────┤\n│ Tools                               │\n├─── TESTIMONIALS [CAROUSEL] ─────────┤\n│ Testimonials                        │\n├─── FACULTY [GRID] ──────────────────┤\n│ Faculty list                        │\n├─── FEES & DATES ────────────────────┤\n│ Fees                                │\n├─── FAQS [ACCORDION] ────────────────┤\n│ FAQs                                │\n├─── CONTACT ─────────────────────────┤\n│ Contact                             │\n├─── FOOTER ──────────────────────────┤\n│ Footer                              │\n└─────────────────────────────────────┘",
+        "oldSite": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCAIM Title | CTA                   â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ TARGET AUDIENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Audience                            â”‚\nâ”œâ”€â”€â”€ 8 MODULES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Modules                             â”‚\nâ”œâ”€â”€â”€ TOOLS & PEDAGOGY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Tools                               â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact                             â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Footer                              â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "marketingHtml": "\n\n\n     âš  NO MARKETING HTML PROVIDED\n\n\n",
+        "v1Staging": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCAIM Title | CTA                   â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ TARGET AUDIENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Audience                            â”‚\nâ”œâ”€â”€â”€ 8 MODULES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Modules                             â”‚\nâ”œâ”€â”€â”€ TOOLS & PEDAGOGY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Tools                               â”‚\nâ”œâ”€â”€â”€ FACULTY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact                             â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Footer                              â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCAIM Title | CTA                   â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ TARGET AUDIENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Audience                            â”‚\nâ”œâ”€â”€â”€ 8 MODULES [STACKED] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Modules                             â”‚\nâ”œâ”€â”€â”€ TOOLS & PEDAGOGY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Tools                               â”‚\nâ”œâ”€â”€â”€ FACULTY [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact                             â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Footer                              â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV2": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCAIM Title | CTA                   â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ TARGET AUDIENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Audience                            â”‚\nâ”œâ”€â”€â”€ 8 MODULES [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Modules                             â”‚\nâ”œâ”€â”€â”€ TOOLS & PEDAGOGY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Tools                               â”‚\nâ”œâ”€â”€â”€ FACULTY [LIST] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact                             â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Footer                              â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (DARK MODE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ PCAIM Title | CTA                   â”‚\nâ”œâ”€â”€â”€ OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ About                               â”‚\nâ”œâ”€â”€â”€ TARGET AUDIENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Audience                            â”‚\nâ”œâ”€â”€â”€ 8 MODULES [TABS] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Modules                             â”‚\nâ”œâ”€â”€â”€ TOOLS & PEDAGOGY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Tools                               â”‚\nâ”œâ”€â”€â”€ TESTIMONIALS [CAROUSEL] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Testimonials                        â”‚\nâ”œâ”€â”€â”€ FACULTY [GRID] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Faculty list                        â”‚\nâ”œâ”€â”€â”€ FEES & DATES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Fees                                â”‚\nâ”œâ”€â”€â”€ FAQS [ACCORDION] â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ FAQs                                â”‚\nâ”œâ”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact                             â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Footer                              â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
         "v1_variant_4": "[Hero: Stitch MCP v4] -> [Overview] -> [Compact UI]"
       },
       "suggestions": [
@@ -923,6 +1125,47 @@ window.AUDIT_DATA = [
         "devNotes": "Reference from v1 staging"
       }
     ]
+    ,
+    "graderScores": {
+      "Proposed v1": {
+            "performance": null,
+            "accessibility": null,
+            "bestPractices": null,
+            "seo": null,
+            "overall": null,
+            "url": "http://localhost:8765/prototypes/pcaim_v1.html",
+            "error": ""
+      },
+      "Proposed v2": {
+            "performance": null,
+            "accessibility": null,
+            "bestPractices": null,
+            "seo": null,
+            "overall": null,
+            "url": "http://localhost:8765/prototypes/pcaim_v2.html",
+            "error": ""
+      },
+      "Proposed v3": {
+            "performance": null,
+            "accessibility": null,
+            "bestPractices": null,
+            "seo": null,
+            "overall": null,
+            "url": "http://localhost:8765/prototypes/pcaim_v3.html",
+            "error": ""
+      },
+      "Stitch v4": {
+            "performance": 57,
+            "accessibility": 87,
+            "bestPractices": 88,
+            "seo": 90,
+            "overall": 81,
+            "url": "http://localhost:8765/prototypes/pcaim_stitch_v4.html",
+            "scannedAt": "2026-06-08T12:50:50.872Z",
+            "error": null
+      },
+      "Old Website": {"performance":20,"accessibility":68,"bestPractices":50,"seo":100,"overall":60,"url":"https://iimbx.iimb.ac.in/ai-for-managers/","scannedAt":"2026-06-08T15:59:38.532Z","error":null}
+}
   },
   {
     "id": "contact",
@@ -930,7 +1173,7 @@ window.AUDIT_DATA = [
     "shortName": "Contact",
     "file": "Contact.html",
     "oldSiteUrl": "https://iimbx.iimb.ac.in/contact/",
-    "v1StagingUrl": "—",
+    "v1StagingUrl": "â€”",
     "auditDate": "2026-06-04",
     "scores": {
       "brand": 0,
@@ -959,17 +1202,51 @@ window.AUDIT_DATA = [
     },
     "wireframes": {
       "ascii": {
-        "oldSite": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Contact Us                          │\n├─── CONTACT INFO ────────────────────┤\n│ Email: info@iimbx.iimb.ac.in        │\n│ Phone: +91 8105228066               │\n│ Address: IIMBx, Bannerghatta Rd     │\n├─── MAP ─────────────────────────────┤\n│ VISIT US / Map                      │\n├─── FOOTER ──────────────────────────┤\n│ Contact | Links                     │\n└─────────────────────────────────────┘",
+        "oldSite": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact Us                          â”‚\nâ”œâ”€â”€â”€ CONTACT INFO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Email: info@iimbx.iimb.ac.in        â”‚\nâ”‚ Phone: +91 8105228066               â”‚\nâ”‚ Address: IIMBx, Bannerghatta Rd     â”‚\nâ”œâ”€â”€â”€ MAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ VISIT US / Map                      â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Contact | Links                     â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
         "marketingHtml": "none",
         "v1Staging": "none",
-        "proposedV1": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Get in Touch                        │\n├─── CONTENT ─────────────────────────┤\n│ Address | Phone | Email             │\n├─── MAP ─────────────────────────────┤\n│ Google Maps Embed                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
-        "proposedV2": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO ────────────────────────────┤\n│ Get in Touch                        │\n├─── SPLIT SECTION ───────────────────┤\n│ CONTENT (LEFT)  |  MAP (RIGHT)      │\n│ Address, Phone  |  Google Maps      │\n│ Email           |                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
-        "proposedV3": "┌─── NAVBAR ──────────────────────────┐\n│ IIMBx Logo | Links | Login          │\n├─── HERO (DARK MODE) ────────────────┤\n│ Get in Touch                        │\n├─── CONTENT ─────────────────────────┤\n│ Address | Phone | Email             │\n├─── MAP ─────────────────────────────┤\n│ Google Maps Embed                   │\n├─── FOOTER ──────────────────────────┤\n│ Links | Copyright                   │\n└─────────────────────────────────────┘",
-        "v2_variant_4": "┌─── NAVBAR ──────────────────────────┐\n│ Academia Logo | Links | Apply       │\n├─── SPLIT SECTION (STITCH) ──────────┤\n│ GET IN TOUCH    |                   │\n│ (Icon) Email    |  MAP (RIGHT)      │\n│ (Icon) Phone    |  IIMB Campus      │\n│ (Icon) Campus   |                   │\n├─── FOOTER ──────────────────────────┤\n│ Academia | Resources | Legal        │\n└─────────────────────────────────────┘"
+        "proposedV1": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Get in Touch                        â”‚\nâ”œâ”€â”€â”€ CONTENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Address | Phone | Email             â”‚\nâ”œâ”€â”€â”€ MAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Google Maps Embed                   â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Links | Copyright                   â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV2": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Get in Touch                        â”‚\nâ”œâ”€â”€â”€ SPLIT SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ CONTENT (LEFT)  |  MAP (RIGHT)      â”‚\nâ”‚ Address, Phone  |  Google Maps      â”‚\nâ”‚ Email           |                   â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Links | Copyright                   â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "proposedV3": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ IIMBx Logo | Links | Login          â”‚\nâ”œâ”€â”€â”€ HERO (DARK MODE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Get in Touch                        â”‚\nâ”œâ”€â”€â”€ CONTENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Address | Phone | Email             â”‚\nâ”œâ”€â”€â”€ MAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Google Maps Embed                   â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Links | Copyright                   â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜",
+        "v2_variant_4": "â”Œâ”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\nâ”‚ Academia Logo | Links | Apply       â”‚\nâ”œâ”€â”€â”€ SPLIT SECTION (STITCH) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ GET IN TOUCH    |                   â”‚\nâ”‚ (Icon) Email    |  MAP (RIGHT)      â”‚\nâ”‚ (Icon) Phone    |  IIMB Campus      â”‚\nâ”‚ (Icon) Campus   |                   â”‚\nâ”œâ”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\nâ”‚ Academia | Resources | Legal        â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜"
       },
       "suggestions": [],
       "html": {}
     },
     "actionItems": []
+    ,
+    "graderScores": {
+      "Proposed v1": {
+            "performance": 44,
+            "accessibility": 83,
+            "bestPractices": 96,
+            "seo": 91,
+            "overall": 79,
+            "url": "http://localhost:8765/prototypes/contact_v1.html",
+            "scannedAt": "2026-06-08T12:53:41.896Z",
+            "error": null
+      },
+      "Proposed v2": {"performance":44,"accessibility":83,"bestPractices":96,"seo":91,"overall":79,"url":"http://localhost:8765/prototypes/contact_v2.html","scannedAt":"2026-06-08T16:00:50.338Z","error":null},
+      "Proposed v3": {
+            "performance": 43,
+            "accessibility": 83,
+            "bestPractices": 96,
+            "seo": 91,
+            "overall": 78,
+            "url": "http://localhost:8765/prototypes/contact_v3.html",
+            "scannedAt": "2026-06-08T15:50:44.976Z",
+            "error": null
+      },
+      "Stitch v2": {
+            "performance": 56,
+            "accessibility": 80,
+            "bestPractices": 96,
+            "seo": 82,
+            "overall": 79,
+            "url": "http://localhost:8765/prototypes/contact_v2_stitch.html",
+            "scannedAt": "2026-06-08T15:50:57.838Z",
+            "error": null
+      }
+}
   }
 ];

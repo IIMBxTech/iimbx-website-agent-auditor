@@ -68,27 +68,43 @@ document.addEventListener('DOMContentLoaded', () => {
       // Card
       const card = document.createElement('div');
       card.className = 'card';
+
+      // Calculate best overall grader score for badge
+      let bestScore = null;
+      let bestScoreColor = 'var(--text-muted)';
+      let bestScoreBorder = 'var(--border)';
+      if (prog.graderScores) {
+        const validScores = Object.values(prog.graderScores)
+          .map(s => s.overall)
+          .filter(s => s !== null && s !== undefined && s > 0);
+        if (validScores.length) {
+          bestScore = Math.max(...validScores);
+          bestScoreColor = bestScore >= 90 ? '#2E7D32' : bestScore >= 70 ? '#ED6C02' : '#D32F2F';
+          bestScoreBorder = bestScoreColor;
+        }
+      }
+
       card.innerHTML = `
         <div class="title">${prog.programmeName}</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">${prog.file}</div>
         
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
             <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--success); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--success); font-size: 1.1rem;">
-                    TBD
+                <div style="width: 52px; height: 52px; border-radius: 50%; border: 3px solid ${bestScoreBorder}; display: flex; align-items: center; justify-content: center; font-weight: bold; color: ${bestScoreColor}; font-size: ${bestScore !== null ? '1.05rem' : '0.75rem'};">
+                    ${bestScore !== null ? bestScore : 'TBD'}
                 </div>
-                <div style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted); line-height: 1.3;">
-                    Website Grader<br/><span style="color: var(--text);">Performance Score</span>
+                <div style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); line-height: 1.4;">
+                    Best Score<br/><span style="color: var(--text); font-size: 0.75rem;">Lighthouse Overall</span>
                 </div>
             </div>
-            <button class="card-wf-btn" style="background: var(--bg-dark); color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: var(--transition);">Compare Wireframes</button>
+            <button class="card-grader-btn" style="background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; transition: var(--transition); white-space: nowrap;">⚡ Grader Report</button>
         </div>
 
         ${prog.file === 'Not provided' ? '<div style="font-size: 0.9rem; font-style: italic; color: var(--text-muted);">No audit data (prototypes only)</div>' : `
         <details class="kpi-details" style="font-family: 'Inter', sans-serif;">
-            <summary style="font-size: 0.85rem; font-weight: 600; color: var(--text); cursor: pointer; outline: none; margin-bottom: 8px;">View Audit KPIs (Brand / Content / UX)</summary>
+            <summary style="font-size: 0.82rem; font-weight: 600; color: var(--text); cursor: pointer; outline: none;">View Audit KPIs (Brand / Content / UX)</summary>
             <div style="padding-top: 8px; border-top: 1px dashed var(--border); margin-top: 8px;">
-                <div style="font-size: 0.8rem; margin-bottom: 8px; color: var(--text-muted);">Brand: <span style="color:var(--text); font-weight:600;">${prog.scores.brand}%</span> | Content: <span style="color:var(--text); font-weight:600;">${prog.scores.content}%</span> | UX: <span style="color:var(--text); font-weight:600;">${prog.scores.ux}%</span></div>
+                <div style="font-size: 0.78rem; margin-bottom: 8px; color: var(--text-muted);">Brand: <span style="color:var(--text); font-weight:600;">${prog.scores.brand}%</span> | Content: <span style="color:var(--text); font-weight:600;">${prog.scores.content}%</span> | UX: <span style="color:var(--text); font-weight:600;">${prog.scores.ux}%</span></div>
                 <div class="scores" style="display: flex; gap: 4px;">
                   <div class="score-bar" style="flex:1; height:4px; background:var(--border); border-radius:2px;"><div class="score-fill" style="height:100%; width:${prog.scores.brand}%; background:var(--success)"></div></div>
                   <div class="score-bar" style="flex:1; height:4px; background:var(--border); border-radius:2px;"><div class="score-fill" style="height:100%; width:${prog.scores.content}%; background:var(--warning)"></div></div>
@@ -100,15 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       
       card.addEventListener('click', (e) => {
-          if(e.target.closest('details') || e.target.closest('.card-wf-btn')) return;
+          if(e.target.closest('details') || e.target.closest('.card-grader-btn')) return;
           openModal(prog);
       });
       
-      const wfBtnInCard = card.querySelector('.card-wf-btn');
-      if (wfBtnInCard) {
-          wfBtnInCard.addEventListener('click', (e) => {
+      const graderBtn = card.querySelector('.card-grader-btn');
+      if (graderBtn) {
+          graderBtn.addEventListener('click', (e) => {
               e.stopPropagation();
-              openWfViewer(prog);
+              openGraderModal(prog);
           });
       }
 
@@ -694,7 +710,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // init
+  // ── GRADER MODAL ────────────────────────────────────────────────────────
+  const graderModal      = document.getElementById('grader-modal');
+  const graderModalClose = document.getElementById('grader-modal-close');
+  const graderModalBack  = document.getElementById('grader-modal-back');
+  const graderModalTitle = document.getElementById('grader-modal-title');
+  const graderModalBody  = document.getElementById('grader-modal-body');
+
+  function scoreChip(val) {
+    if (val === null || val === undefined || val === 0) return '<span style="color:var(--text-muted);font-weight:500;">N/A</span>';
+    const color = val >= 90 ? '#2E7D32' : val >= 70 ? '#ED6C02' : '#D32F2F';
+    const bg    = val >= 90 ? '#e8f5e9' : val >= 70 ? '#fff3e0' : '#ffebee';
+    return `<span style="display:inline-block;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.85rem;color:${color};background:${bg};">${val}</span>`;
+  }
+
+  function openGraderModal(prog) {
+    graderModal.style.display = 'flex';
+    graderModalTitle.innerHTML = `<h2 style="margin:0;font-family:'Source Serif 4',serif;">${prog.programmeName}</h2><p style="margin:4px 0 0;font-size:0.85rem;opacity:0.7;">Lighthouse Performance Report — All Variants</p>`;
+
+    const scores = prog.graderScores || {};
+    const hasData = Object.keys(scores).length > 0;
+
+    if (!hasData) {
+      graderModalBody.innerHTML = `<div style="padding:2rem;text-align:center;color:var(--text-muted);">No grader data yet for this programme. Run <code>run_grader.ps1</code> to generate scores.</div>`;
+      return;
+    }
+
+    // Sort: put old site / staging at bottom, prototypes on top
+    const entries = Object.entries(scores).sort((a, b) => {
+      const isLiveA = a[1].url && (a[1].url.includes('iimbx.iimb.ac.in') || !a[1].url.includes('localhost'));
+      const isLiveB = b[1].url && (b[1].url.includes('iimbx.iimb.ac.in') || !b[1].url.includes('localhost'));
+      if (isLiveA && !isLiveB) return 1;
+      if (!isLiveA && isLiveB) return -1;
+      return (b[1].overall || 0) - (a[1].overall || 0);
+    });
+
+    const rows = entries.map(([label, s], idx) => {
+      const isLive = s.url && s.url.includes('iimbx.iimb.ac.in');
+      const rowBg  = idx === 0 ? 'background: rgba(201,113,56,0.05);' : '';
+      const badge  = isLive ? ' <span style="font-size:0.65rem;background:#e3f2fd;color:#1565c0;padding:2px 6px;border-radius:8px;font-weight:600;">LIVE</span>' : '';
+      return `
+        <tr style="${rowBg}border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;font-weight:${idx===0?'700':'500'};font-size:0.9rem;">${label}${badge}</td>
+          <td style="padding:10px 12px;text-align:center;">${scoreChip(s.overall)}</td>
+          <td style="padding:10px 12px;text-align:center;">${scoreChip(s.performance)}</td>
+          <td style="padding:10px 12px;text-align:center;">${scoreChip(s.accessibility)}</td>
+          <td style="padding:10px 12px;text-align:center;">${scoreChip(s.bestPractices)}</td>
+          <td style="padding:10px 12px;text-align:center;">${scoreChip(s.seo)}</td>
+        </tr>`;
+    }).join('');
+
+    graderModalBody.innerHTML = `
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;">Scores are out of 100. Sorted by prototype score (best first). Live URLs marked with LIVE badge.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;">
+          <thead>
+            <tr style="background:var(--bg-dark);color:var(--text-light);">
+              <th style="padding:12px;text-align:left;font-weight:600;">Variant</th>
+              <th style="padding:12px;text-align:center;">Overall</th>
+              <th style="padding:12px;text-align:center;">⚡ Performance</th>
+              <th style="padding:12px;text-align:center;">♿ Accessibility</th>
+              <th style="padding:12px;text-align:center;">🔒 Best Practices</th>
+              <th style="padding:12px;text-align:center;">🔍 SEO</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);">N/A = Scan failed (login-protected URL or timeout). Re-run <code>run_grader.ps1</code> to retry.</p>
+    `;
+  }
+
+  graderModalClose.addEventListener('click', () => { graderModal.style.display = 'none'; });
+  graderModalBack.addEventListener('click',  () => { graderModal.style.display = 'none'; });
+  graderModal.addEventListener('click', (e) => { if (e.target === graderModal) graderModal.style.display = 'none'; });
+
+  // ── INIT ─────────────────────────────────────────────────────────────────
   renderGrid();
   
   // Sidebar toggle
