@@ -356,20 +356,30 @@ body {
 .wf-col-label {
   background: var(--bg-darker);
   color: var(--text-light);
-  padding: 0.75rem;
-  font-weight: bold;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   border-bottom: 2px solid var(--accent);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .wf-pane {
   flex: 1;
-  background: var(--card-bg);
+  background: #0d1117;
+  color: #e6edf3;
   margin: 0;
-  padding: 1rem;
+  padding: 1.25rem 1.5rem;
   overflow: auto;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
   white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+  letter-spacing: 0.02em;
 }
 
 /* Utility */
