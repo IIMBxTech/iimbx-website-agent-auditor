@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth" lang="en" style="scroll-padding-top: 80px;">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -194,7 +194,7 @@
   }
 </script>
 </head>
-<body class="bg-parchment text-charcoal font-body-md antialiased selection:bg-marigold selection:text-charcoal">
+<body class="bg-parchment text-charcoal font-body-md antialiased selection:bg-marigold selection:text-charcoal pb-16">
 
 <!-- ============================================================ -->
 <!-- Top Navigation Bar                                           -->
@@ -231,7 +231,7 @@
 <!-- ============================================================ -->
 <!-- Main Content                                                 -->
 <!-- ============================================================ -->
-<main class="pt-20">
+<main class="pt-20 pb-16">
 
   <!-- ---------------------------------------------------------- -->
   <!-- Hero Section                                               -->
@@ -270,7 +270,7 @@
   <!-- ---------------------------------------------------------- -->
   <section class="py-16 bg-parchment relative">
     <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop reveal">
-      <div class="flex flex-col md:flex-row gap-12 items-start">
+      <div class="flex flex-col md:flex-row gap-12 items-start md:items-stretch">
 
         <!-- Sticky left label -->
         <div class="md:w-1/3 md:sticky top-32">
@@ -282,7 +282,7 @@
         </div>
 
         <!-- Cards grid -->
-        <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
 
           <!-- Card 1 -->
           <div class="glass-card bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group">
@@ -293,7 +293,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="glass-card bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group md:mt-12">
+          <div class="glass-card bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group">
             <div class="glass-shimmer"></div>
             <span class="material-symbols-outlined text-marigold text-4xl mb-4 block group-hover:scale-110 transition-transform">account_balance_wallet</span>
             <h3 class="font-headline-md text-charcoal mb-3 text-2xl">Strategic Costing</h3>
@@ -348,7 +348,7 @@
   <!-- Curriculum Section                                         -->
   <!-- ---------------------------------------------------------- -->
   <section class="py-16 bg-parchment" id="curriculum">
-    <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop reveal">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop reveal">
 
       <div class="text-center mb-12">
         <h2 class="font-headline-xl text-headline-xl text-charcoal mb-4">Curriculum Framework</h2>
@@ -356,7 +356,7 @@
       </div>
 
       <!-- Module list — all siblings, flat structure -->
-      <div class="space-y-3">
+      <div class="max-w-3xl mx-auto space-y-3">
 
         <!-- Module 01 -->
         <div class="curriculum-item flex items-start gap-4 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group cursor-default">
@@ -441,7 +441,7 @@
 
       </div><!-- /space-y-3 -->
 
-      <div class="mt-10 text-center">
+      <div class="mt-10 text-center max-w-3xl mx-auto">
         <button class="bg-transparent border-2 border-charcoal text-charcoal font-cta text-cta px-8 py-4 rounded hover:bg-charcoal hover:text-parchment transition-all duration-300">
           Download Full Syllabus
         </button>
@@ -511,7 +511,7 @@
         </div>
         <div class="bg-surface border border-charcoal/5 rounded-lg p-6 shadow-sm">
           <p class="font-eyebrow-mono text-eyebrow-mono text-marigold uppercase tracking-wider mb-1">Credential</p>
-          <p class="font-headline-md text-charcoal text-2xl">IIM Bangalore</p>
+          <p class="font-headline-md text-charcoal text-xl leading-tight">IIM Bangalore</p>
         </div>
       </div>
 
@@ -536,7 +536,7 @@
 <!-- Footer                                                       -->
 <!-- ============================================================ -->
 <footer class="w-full bg-charcoal">
-  <div class="py-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-desktop w-full">
+  <div class="py-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop w-full">
 
     <div class="md:col-span-1 mb-8 md:mb-0">
       <div class="font-display-lg text-headline-md text-parchment mb-4">IIMBx</div>

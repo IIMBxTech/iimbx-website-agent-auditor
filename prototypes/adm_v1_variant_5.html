@@ -1,22 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accounting for Decision Making | IIMBx â€” IIM Bangalore</title>
+  <title>Accounting for Decision Making | IIMBx – IIM Bangalore</title>
   <meta name="description" content="A 9-week online course from IIM Bangalore. Learn to read financial statements, manage costs, and lead capital decisions with confidence.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       BRAND TOKENS â€” May 2026 Playbook
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ════════════════════════════════════════════════
+       BRAND TOKENS – May 2026 Playbook
+    ════════════════════════════════════════════════ */
     :root {
       /* Colors: 70/15/15 rule */
-      --color-canvas:   #F4EFE3;   /* Parchment  â€” 70% */
-      --color-char:     #1A1B1E;   /* Charcoal   â€” 15% */
-      --color-accent:   #C97138;   /* Marigold   â€” 15% */
+      --color-canvas:   #F4EFE3;   /* Parchment  – 70% */
+      --color-char:     #1A1B1E;   /* Charcoal   – 15% */
+      --color-accent:   #C97138;   /* Marigold   – 15% */
       --color-accent-dk:#aa5a27;
 
       /* Fonts */
@@ -24,13 +24,13 @@
       --f-sans:  'Inter', system-ui, sans-serif;
       --f-mono:  'IBM Plex Mono', monospace;
 
-      /* Type scale â€” 5 steps only, no exceptions */
-      --t-xs:   0.75rem;   /* 12px â€” eyebrows / mono labels */
-      --t-sm:   0.9rem;    /* 14px â€” captions, small body   */
-      --t-base: 1rem;      /* 16px â€” body copy              */
-      --t-lg:   1.25rem;   /* 20px â€” card titles, sub-heads */
-      --t-xl:   1.75rem;   /* 28px â€” section headings       */
-      --t-2xl:  2.5rem;    /* 40px â€” hero headline only     */
+      /* Type scale – 5 steps only, no exceptions */
+      --t-xs:   0.75rem;   /* 12px – eyebrows / mono labels */
+      --t-sm:   0.9rem;    /* 14px – captions, small body   */
+      --t-base: 1rem;      /* 16px – body copy              */
+      --t-lg:   1.25rem;   /* 20px – card titles, sub-heads */
+      --t-xl:   1.75rem;   /* 28px – section headings       */
+      --t-2xl:  2.5rem;    /* 40px – hero headline only     */
 
       /* Spacing */
       --sp-xs:  0.5rem;
@@ -45,9 +45,9 @@
       --radius: 6px;
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        RESET
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -59,9 +59,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        LAYOUT HELPERS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .wrap {
       max-width: var(--max-w);
       margin-inline: auto;
@@ -73,9 +73,9 @@
       border-top: 1px solid rgba(26,27,30,0.1);
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       TYPE HELPERS â€” use ONLY these classes
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ════════════════════════════════════════════════
+       TYPE HELPERS – use ONLY these classes
+    ════════════════════════════════════════════════ */
     .eyebrow {
       display: block;
       font-family: var(--f-mono);
@@ -125,9 +125,9 @@
       color: rgba(26,27,30,0.65);
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        BUTTON
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -150,9 +150,9 @@
       transform: translateY(-1px);
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        NAVIGATION
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .nav {
       position: sticky;
       top: 0;
@@ -161,9 +161,16 @@
       background: rgba(244,239,227,0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(26,27,30,0.08);
+    }
+
+    /* Inner wrap constrains nav content to max-width, matching all other sections */
+    .nav-inner {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--pad-x);
+      height: 100%;
       display: flex;
       align-items: center;
-      padding-inline: var(--pad-x);
       justify-content: space-between;
     }
 
@@ -176,9 +183,9 @@
       letter-spacing: -0.02em;
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        HERO
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .hero {
       padding-block: var(--sp-xl) calc(var(--sp-xl) * 0.85);
     }
@@ -194,12 +201,12 @@
       margin-bottom: var(--sp-sm);
     }
 
-    .hero-promise {
-      font-family: var(--f-serif);
-      font-style: italic;
-      font-size: var(--t-lg);
+    .hero-subtitle {
+      font-family: var(--f-sans);
+      font-size: var(--t-base);
       color: rgba(26,27,30,0.65);
       margin-bottom: var(--sp-md);
+      line-height: 1.6;
     }
 
     .hero-metrics {
@@ -257,9 +264,9 @@
       color: rgba(244,239,227,0.75);
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        OVERVIEW
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .overview {
       background: rgba(26,27,30,0.03);
       padding-block: var(--sp-xl);
@@ -272,9 +279,9 @@
       align-items: start;
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        SYLLABUS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .syllabus {
       padding-block: var(--sp-xl);
     }
@@ -348,9 +355,9 @@
     .acc-item.open .acc-body { display: block; }
     .acc-item.open .acc-icon { transform: rotate(45deg); }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        FACULTY
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .faculty {
       background: var(--color-char);
     }
@@ -405,9 +412,9 @@
       line-height: 1.8;
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        AUDIENCE
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .audience {
       padding-block: var(--sp-xl);
     }
@@ -436,9 +443,9 @@
 
     .aud-card .heading-md { margin-bottom: var(--sp-xs); }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        FOOTER
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .footer {
       background: var(--color-char);
       padding-block: var(--sp-lg);
@@ -460,9 +467,9 @@
       margin-top: var(--sp-xs);
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        RESPONSIVE
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     @media (max-width: 900px) {
       .hero-grid,
       .overview-grid,
@@ -481,21 +488,23 @@
 </head>
 <body>
 
-  <!-- â•â•â• NAV â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ NAV ══════════════════════════════════════ -->
   <nav class="nav">
-    <a class="nav-logo" href="#top" id="logo">IIMBx</a>
-    <a class="btn" href="#apply" id="nav-apply-cta" data-testid="nav-apply-cta">Apply Now</a>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top" id="logo">IIMBx</a>
+      <a class="btn" href="#apply" id="nav-apply-cta" data-testid="nav-apply-cta">Apply Now</a>
+    </div>
   </nav>
 
-  <!-- â•â•â• HERO â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ HERO ══════════════════════════════════════ -->
   <section class="hero" id="top">
     <div class="wrap">
       <div class="hero-grid">
 
         <div class="hero-left">
-          <span class="eyebrow">IIMBx Â· Online Course</span>
+          <span class="eyebrow">IIMBx · Online Course</span>
           <h1 class="heading-xl hero-h1">Accounting for Decision Making</h1>
-          <p class="hero-promise">The same faculty. Wherever you are.</p>
+          <p class="hero-subtitle">A 9-week online course from IIM Bangalore. Build the financial language every manager needs — from reading statements to leading capital decisions.</p>
 
           <div class="hero-metrics">
             <div class="metric">
@@ -503,28 +512,31 @@
               <span class="metric-lbl">Weeks</span>
             </div>
             <div class="metric">
-              <span class="metric-val">3â€“4 hrs</span>
+              <span class="metric-val">3–4 hrs</span>
               <span class="metric-lbl">Per Week</span>
             </div>
             <div class="metric">
               <span class="metric-val">Online</span>
               <span class="metric-lbl">Format</span>
             </div>
+          </div>
 
           <a class="btn" href="#apply" id="hero-cta" data-testid="hero-cta">Apply Now</a>
         </div>
 
         <div class="hero-panel">
           <p class="hero-panel-quote">Read a balance sheet. Argue a budget. Lead a capital decision.</p>
-          <p class="hero-panel-copy">This course gives you the accounting language every manager needs â€” from financial statements through to variance analysis and working capital decisions.</p>
+          <p class="hero-panel-copy">This course gives you the accounting language every manager needs — from financial statements through to variance analysis and working capital decisions.</p>
           <a class="btn" href="#apply" id="panel-cta" data-testid="panel-cta">Apply Now</a>
         </div>
+
+      </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- â•â•â• OVERVIEW â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ OVERVIEW ══════════════════════════════════ -->
   <section class="overview">
     <div class="wrap">
       <div class="overview-grid">
@@ -533,13 +545,14 @@
           <h2 class="heading-lg">Built for managers, not accountants.</h2>
         </div>
         <div>
-          <p class="body-text">Accounting information drives every business decision â€” yet most managers never received a structured grounding in it. This course changes that. Over nine weeks you build the confidence to read financial statements, challenge cost reports, and communicate with finance teams as a peer.</p>
-          <p class="body-text" style="margin-top: 1rem;">Each week adds a layer â€” from recording transactions through to capital budgeting and working capital management. No prior finance background required.</p>
+          <p class="body-text">Accounting information drives every business decision — yet most managers never received a structured grounding in it. This course changes that. Over nine weeks you build the confidence to read financial statements, challenge cost reports, and communicate with finance teams as a peer.</p>
+          <p class="body-text" style="margin-top: 1rem;">Each week adds a layer — from recording transactions through to capital budgeting and working capital management. No prior finance background required.</p>
         </div>
+      </div>
     </div>
   </section>
 
-  <!-- â•â•â• SYLLABUS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ SYLLABUS ═══════════════════════════════════ -->
   <section class="syllabus">
     <div class="wrap">
       <div class="section-intro">
@@ -556,7 +569,8 @@
             <span class="acc-title">Mechanics of Financial Accounting</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Fundamental accounting terms Â· Recording transactions Â· Reading financial statements Â· Accounting regulations Â· Annual report structure Â· Uses of financial data</div>
+          <div class="acc-body">Fundamental accounting terms · Recording transactions · Reading financial statements · Accounting regulations · Annual report structure · Uses of financial data</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-2">
@@ -564,7 +578,8 @@
             <span class="acc-title">Reading Financial Statements</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Balance sheet â€” shareholders' funds, liabilities, assets Â· Income statement â€” revenue, expenses, profit Â· Cash flow statements explained</div>
+          <div class="acc-body">Balance sheet — shareholders' funds, liabilities, assets · Income statement — revenue, expenses, profit · Cash flow statements explained</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-3">
@@ -572,7 +587,8 @@
             <span class="acc-title">Financial Statement Analysis</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Assessing financial health Â· Asset management ratios Â· Cost management Â· Leverage and risk Â· Benchmarking against industry peers</div>
+          <div class="acc-body">Assessing financial health · Asset management ratios · Cost management · Leverage and risk · Benchmarking against industry peers</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-4">
@@ -580,7 +596,8 @@
             <span class="acc-title">Product Costing</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Job costing Â· Process costing Â· Customer costing Â· Indirect cost allocation Â· Misallocation pitfalls Â· Activity-based costing for precision</div>
+          <div class="acc-body">Job costing · Process costing · Customer costing · Indirect cost allocation · Misallocation pitfalls · Activity-based costing for precision</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-5">
@@ -588,7 +605,8 @@
             <span class="acc-title">Cost Analysis for Decision Making</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Absorption vs marginal costing Â· Break-even analysis Â· Pricing decisions Â· Make-or-buy decisions Â· Optimal product mix Â· Operating leverage</div>
+          <div class="acc-body">Absorption vs marginal costing · Break-even analysis · Pricing decisions · Make-or-buy decisions · Optimal product mix · Operating leverage</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-6">
@@ -596,7 +614,8 @@
             <span class="acc-title">Budgeting and Variance Analysis</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Strategic planning and budgets Â· Master budget preparation Â· Setting standards Â· Overhead, material, and sales mix variance analysis</div>
+          <div class="acc-body">Strategic planning and budgets · Master budget preparation · Setting standards · Overhead, material, and sales mix variance analysis</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-7">
@@ -604,7 +623,8 @@
             <span class="acc-title">Financial Markets</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Financial system structure Â· Institutional and direct capital flow Â· Financial instruments Â· Role and structure of the finance function Â· Agency cost</div>
+          <div class="acc-body">Financial system structure · Institutional and direct capital flow · Financial instruments · Role and structure of the finance function · Agency cost</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-8">
@@ -612,7 +632,8 @@
             <span class="acc-title">Capital Budgeting</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Time value of money Â· Capital budgeting techniques Â· Project cash flow estimation Â· Cost of capital Â· Capital structure decisions</div>
+          <div class="acc-body">Time value of money · Capital budgeting techniques · Project cash flow estimation · Cost of capital · Capital structure decisions</div>
+        </div>
 
         <div class="acc-item" role="listitem">
           <button class="acc-btn" aria-expanded="false" data-testid="acc-week-9">
@@ -620,14 +641,16 @@
             <span class="acc-title">Working Capital Management</span>
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
-          <div class="acc-body">Short-term financial planning Â· Working capital cycle Â· Financing strategies Â· Managing inventory, receivables, payables, and cash</div>
+          <div class="acc-body">Short-term financial planning · Working capital cycle · Financing strategies · Managing inventory, receivables, payables, and cash</div>
+        </div>
 
       </div>
+    </div>
   </section>
 
   <hr class="divider">
 
-  <!-- â•â•â• FACULTY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ FACULTY ════════════════════════════════════ -->
   <section class="faculty">
     <div class="wrap">
       <div class="faculty-grid">
@@ -642,10 +665,12 @@
           <p class="faculty-role">Finance and Accounting, Indian Institute of Management Bangalore</p>
           <p class="faculty-bio">Prof. Narasimhan brings decades of classroom experience in financial accounting and corporate finance to this programme. His teaching gives managers the analytical discipline to read statements precisely, question numbers confidently, and engage the finance function as an equal.</p>
         </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- â•â•â• AUDIENCE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ AUDIENCE ═══════════════════════════════════ -->
   <section class="audience">
     <div class="wrap">
       <div class="audience-head">
@@ -667,13 +692,15 @@
           <h4 class="heading-md">Post-Graduate Students</h4>
           <p class="body-sm">Building a strong accounting foundation before entering management roles or launching a business of your own.</p>
         </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══ FOOTER ════════════════════════════════════ -->
   <footer class="footer" id="apply">
     <div class="wrap">
-      <p class="footer-copy">Â© 2026 IIMBx â€” Indian Institute of Management Bangalore</p>
+      <p class="footer-copy">© 2026 IIMBx – Indian Institute of Management Bangalore</p>
       <p class="footer-promise">The same faculty. Wherever you are.</p>
     </div>
   </footer>
@@ -697,4 +724,3 @@
 
 </body>
 </html>
-

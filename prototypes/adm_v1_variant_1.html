@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=Inter:wght@400;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;600;700&amp;display=swap" rel="stylesheet"/>
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -198,7 +197,7 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-charcoal/80 backdrop-blur-md shadow-sm border-b border-charcoal/10 dark:border-parchment/10">
 <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
-<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-navy dark:text-primary-fixed">
+<div class="font-display-lg text-display-lg-mobile md:text-headline-md font-bold text-navy dark:text-primary-fixed">
                 IIMBx
             </div>
 <ul class="hidden md:flex space-x-8">
@@ -225,12 +224,13 @@
 </div>
 </nav>
 <!-- Main Content Canvas -->
-<main class="pt-20">
+<main class="pt-20 pb-20">
 <!-- Hero Section -->
 <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0 bg-charcoal">
 <div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxF0Gogs6qWg85dAnIUlPL0TuU3FnrTmMn1QbrsiZ2nBM_Uq3Cu8uoLiRABBg88x6A6tHAjJgNieVcH2znAeHOQRI9jLFT-u2nsCmOApOud6rPinH3lcRXPUy7fRMsqQWKfEF4oQhiYylUq1QJBfEPly4uzrG9oIA9CV8zNkS-3SBLC2YmfiSRCXWRPNlThrs7BYsrlz2JYqnTpjbzveOcML_kfuLCoKia_2rjbaq9YQ4SCaYRqc4np2BrwPx_j7UwWBOcXuUIAg');"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+</div>
 <div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
 <span class="inline-block font-eyebrow-mono text-eyebrow-mono text-marigold mb-6 tracking-widest uppercase">9-Week Premium Programme</span>
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-bright mb-6 max-w-4xl mx-auto drop-shadow-lg">
@@ -247,6 +247,7 @@
                         Download Brochure
                     </button>
 </div>
+</div>
 </section>
 <!-- Overview Section (Glassmorphic Parchment Cards) -->
 <section class="py-24 bg-parchment relative">
@@ -262,28 +263,31 @@
 <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
 <!-- Card 1 -->
 <div class="bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group">
-<span class="material-symbols-outlined text-marigold text-4xl mb-4 group-hover:scale-110 transition-transform">query_stats</span>
+<span class="material-symbols-outlined text-marigold text-4xl mb-4 block group-hover:scale-110 transition-transform">query_stats</span>
 <h3 class="font-headline-md text-headline-md text-charcoal mb-3 text-2xl">Financial Statement Analysis</h3>
 <p class="font-body-md text-body-md text-tertiary">Decode complex balance sheets and income statements to understand the true health of any organization.</p>
 </div>
 <!-- Card 2 -->
 <div class="bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group md:mt-12">
-<span class="material-symbols-outlined text-marigold text-4xl mb-4 group-hover:scale-110 transition-transform">account_balance_wallet</span>
+<span class="material-symbols-outlined text-marigold text-4xl mb-4 block group-hover:scale-110 transition-transform">account_balance_wallet</span>
 <h3 class="font-headline-md text-headline-md text-charcoal mb-3 text-2xl">Strategic Costing</h3>
 <p class="font-body-md text-body-md text-tertiary">Implement Activity Based Costing to identify true profit drivers and eliminate hidden inefficiencies.</p>
 </div>
 <!-- Card 3 -->
 <div class="bg-parchment-deep/60 backdrop-blur-md border border-charcoal/5 rounded-lg p-8 hover:shadow-[0_20px_40px_rgba(26,27,30,0.08)] transition-all duration-300 group sm:col-span-2">
-<span class="material-symbols-outlined text-marigold text-4xl mb-4 group-hover:scale-110 transition-transform">pie_chart</span>
+<span class="material-symbols-outlined text-marigold text-4xl mb-4 block group-hover:scale-110 transition-transform">pie_chart</span>
 <h3 class="font-headline-md text-headline-md text-charcoal mb-3 text-2xl">Advanced Budgeting</h3>
 <p class="font-body-md text-body-md text-tertiary max-w-2xl">Master Capital Budgeting decisions and Variance Analysis to allocate resources effectively and measure performance against strategic goals.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
 <!-- Outcomes Section -->
 <section class="py-24 bg-surface-container-low">
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
-<span class="font-eyebrow-mono text-eyebrow-mono text-secondary mb-2 block uppercase tracking-wider">Key Takeaways</span>
+<!-- FIX: changed text-secondary (blue) to text-marigold (brand-compliant) -->
+<span class="font-eyebrow-mono text-eyebrow-mono text-marigold mb-2 block uppercase tracking-wider">Key Takeaways</span>
 <h2 class="font-headline-xl text-headline-xl text-charcoal mb-16">Programme Outcomes</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 <div class="p-6 border-l-2 border-surface-variant hover:border-marigold transition-colors duration-300 bg-surface">
@@ -299,6 +303,7 @@
 <p class="font-body-md text-body-md text-tertiary text-sm">Design and utilize robust budgeting systems that accurately track variances and drive operational accountability.</p>
 </div>
 </div>
+</div>
 </section>
 <!-- Curriculum Section -->
 <section class="py-24 bg-parchment" id="curriculum">
@@ -308,42 +313,72 @@
 <p class="font-body-md text-body-md text-tertiary">A rigorous 9-module journey designed for incremental mastery.</p>
 </div>
 <div class="space-y-4">
-<!-- Module Items -->
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">01</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Introduction to Financial Statements</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">02</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Balance Sheet &amp; Income Statement Analysis</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">03</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Cash Flow Statements</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">04</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Cost Concepts &amp; Classification</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">05</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Activity Based Costing</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">06</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">CVP Analysis for Decision Making</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">07</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Budgeting &amp; Variance Analysis</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">08</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Capital Budgeting Decisions</div>
-<div class="flex items-center p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
-<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 opacity-50 group-hover:opacity-100 transition-opacity">09</div>
-<div class="font-headline-md text-headline-md text-charcoal text-xl">Strategic Cost Management</div>
+<!-- FIX: All 9 module rows now have proper opening AND closing div tags -->
+<!-- Module 01 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">01</div>
+<div class="font-headline-md text-charcoal text-xl">Introduction to Financial Statements</div>
+</div>
+<!-- Module 02 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">02</div>
+<div class="font-headline-md text-charcoal text-xl">Balance Sheet &amp; Income Statement Analysis</div>
+</div>
+<!-- Module 03 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">03</div>
+<div class="font-headline-md text-charcoal text-xl">Cash Flow Statements</div>
+</div>
+<!-- Module 04 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">04</div>
+<div class="font-headline-md text-charcoal text-xl">Cost Concepts &amp; Classification</div>
+</div>
+<!-- Module 05 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">05</div>
+<div class="font-headline-md text-charcoal text-xl">Activity Based Costing</div>
+</div>
+<!-- Module 06 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">06</div>
+<div class="font-headline-md text-charcoal text-xl">CVP Analysis for Decision Making</div>
+</div>
+<!-- Module 07 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">07</div>
+<div class="font-headline-md text-charcoal text-xl">Budgeting &amp; Variance Analysis</div>
+</div>
+<!-- Module 08 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">08</div>
+<div class="font-headline-md text-charcoal text-xl">Capital Budgeting Decisions</div>
+</div>
+<!-- Module 09 -->
+<div class="flex items-center gap-6 p-6 bg-surface hover:bg-parchment-deep transition-colors border border-charcoal/5 rounded shadow-sm group">
+<div class="font-eyebrow-mono text-eyebrow-mono text-marigold text-xl w-12 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity">09</div>
+<div class="font-headline-md text-charcoal text-xl">Strategic Cost Management</div>
+</div>
 </div>
 <div class="mt-12 text-center">
 <button class="bg-transparent border-2 border-charcoal text-charcoal font-cta text-cta px-8 py-4 rounded hover:bg-charcoal hover:text-parchment transition-all duration-300">
                         Download Full Syllabus
                     </button>
 </div>
+</div>
 </section>
 </main>
+<!-- Sticky CTA Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-charcoal border-t border-parchment/10 shadow-[0_-4px_24px_rgba(26,27,30,0.18)]">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+<p class="font-body-md text-body-md text-parchment/80 text-sm text-center sm:text-left">
+        <span class="text-parchment font-semibold">Accounting for Decision Making</span> &mdash; 9-Week Programme &bull; IIMBx / IIM Bangalore
+    </p>
+<button class="w-full sm:w-auto bg-marigold text-charcoal font-cta text-cta px-8 py-3 rounded hover:bg-marigold/90 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap">
+        Enroll Now
+    </button>
+</div>
+</div>
 <!-- Footer -->
 <footer class="w-full bg-charcoal dark:bg-charcoal-muted">
 <div class="py-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-desktop w-full">
@@ -352,7 +387,8 @@
                 IIMBx
             </div>
 <p class="font-body-md text-body-md text-parchment/70 opacity-80 text-sm">
-                Â© 2024 IIMBx. All rights reserved. Accounting for Decision Making.
+                <!-- FIX: corrected garbled © entity -->
+                &copy; 2024 IIMBx. All rights reserved. Accounting for Decision Making.
             </p>
 </div>
 <div class="md:col-span-3 flex flex-col sm:flex-row gap-8 justify-end">
@@ -363,6 +399,7 @@
 <div class="flex flex-col gap-4">
 <a class="font-eyebrow-mono text-eyebrow-mono text-parchment/70 hover:text-parchment transition-opacity opacity-80 hover:opacity-100" href="#">Contact Us</a>
 <a class="font-eyebrow-mono text-eyebrow-mono text-parchment/70 hover:text-parchment transition-opacity opacity-80 hover:opacity-100" href="#">Accreditation</a>
+</div>
 </div>
 </div>
 </footer>

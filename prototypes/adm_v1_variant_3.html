@@ -76,7 +76,7 @@
     
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-parchment/90 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
-    <div class="flex justify-between items-center max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop h-20">
+    <div class="flex justify-between items-center max-w-[1280px] mx-auto px-6 md:px-16 h-20">
         <div class="font-display text-3xl font-bold text-navy tracking-tight">
             IIMBx
         </div>
@@ -104,31 +104,35 @@
             <div class="w-full h-full bg-charcoal transform origin-top-right -skew-x-12 translate-x-32 shadow-2xl">
                 <img alt="Boardroom" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida/AP1WRLstWPDbxQHBTCDl_lHMToVsZ12dlhy66x8CAovQ-2DX7L00lLhg09dN27Wt93-8Qy8u12Fa0gGpJpXzZs7yjCiW_Fdzr414BhWPjPMjX-1vweuALikn6f0LVzvXRvWOCmLVzXXnn7DkgsNRYg6idjJG8qwo-Mf5xE-ioVSSNVy83dW70x5oW7hhT2OzK4ivser0xJxWls_0Hl03L73o8b7T0SEuCmbC6OTBrZ4nnWTW7mZ4NBeGRndnkA"/>
             </div>
-        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 w-full reveal">
-            <div class="lg:w-[65%]">
+        </div><!-- /image panel -->
+
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 relative z-10 w-full reveal">
+            <div class="lg:w-[55%]">
                 <span class="inline-block font-mono text-sm font-semibold text-parchment mb-6 tracking-[0.15em] uppercase bg-charcoal px-4 py-2 shadow-sm">9-Week Premium Programme</span>
-                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-charcoal mb-8 mix-blend-multiply drop-shadow-sm">
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-charcoal mb-8 drop-shadow-sm">
                     Accounting <br/><span class="text-marigold italic pr-4">for Decision</span> <br/>Making
                 </h1>
                 <p class="text-lg md:text-xl text-charcoal/80 max-w-xl mb-12 border-l-[3px] border-marigold pl-6 py-2 bg-parchment/60 backdrop-blur-md leading-relaxed">
                     Master financial literacy with Prof. M S Narasimhan. Equip yourself with the analytical tools to drive strategic business growth.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center gap-6">
+                <div class="flex flex-col sm:flex-row items-start gap-6">
                     <button class="w-full sm:w-auto bg-charcoal text-parchment text-base font-semibold px-10 py-4 shadow-xl hover:bg-marigold hover:text-charcoal hover:-translate-y-1 transition-all duration-300">
                         Enroll Now
                     </button>
-                    <button class="w-full sm:w-auto bg-transparent border-b-2 border-charcoal/30 text-charcoal text-base font-semibold px-2 py-2 hover:border-marigold hover:text-marigold transition-all duration-300 flex items-center gap-2">
+                    <button class="w-full sm:w-auto bg-transparent border-b-2 border-charcoal/30 text-charcoal text-base font-semibold px-2 py-4 hover:border-marigold hover:text-marigold transition-all duration-300 flex items-center gap-2">
                         Download Brochure
                         <span class="material-symbols-outlined text-lg">arrow_forward</span>
                     </button>
                 </div>
-        </div>
+            </div><!-- /lg:w-[55%] -->
+        </div><!-- /container -->
     </section>
 
     <!-- Overview Section -->
     <section class="py-32 bg-charcoal relative overflow-hidden text-parchment">
-        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 relative z-10">
             <div class="flex flex-col lg:flex-row gap-20">
+                <!-- Left sticky heading -->
                 <div class="lg:w-1/3 relative reveal">
                     <div class="sticky top-32">
                         <h2 class="font-display text-5xl md:text-6xl text-parchment mb-8 leading-tight tracking-tight">
@@ -138,6 +142,9 @@
                             Designed specifically for managers and executives looking to transition from operational roles into strategic leadership by demystifying financial data.
                         </p>
                     </div>
+                </div><!-- /left col -->
+
+                <!-- Right cards column -->
                 <div class="lg:w-2/3 flex flex-col gap-8 mt-12 lg:mt-0">
                     <!-- Card 1 -->
                     <div class="glass-card p-10 lg:ml-12 reveal stagger-1 transition-all duration-500">
@@ -157,13 +164,15 @@
                         <h3 class="font-display text-3xl text-charcoal mb-4">Advanced Budgeting</h3>
                         <p class="text-charcoal/80 leading-relaxed">Master Capital Budgeting decisions and Variance Analysis to allocate resources effectively and measure performance against strategic goals.</p>
                     </div>
-            </div>
+                </div><!-- /right col -->
+            </div><!-- /flex row -->
+        </div><!-- /container -->
     </section>
 
     <!-- Outcomes Section -->
     <section class="py-24 bg-parchment relative overflow-hidden">
         <div class="absolute left-0 top-0 w-1/3 h-full bg-black/[0.02] pointer-events-none -skew-x-12 transform origin-bottom-left -translate-x-16"></div>
-        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 relative z-10">
             <div class="mb-16 reveal">
                 <span class="font-mono text-sm font-semibold text-charcoal mb-4 block uppercase tracking-[0.15em]">Key Takeaways</span>
                 <h2 class="font-display text-5xl md:text-7xl tracking-tight text-charcoal leading-tight">Programme<br/><span class="italic text-marigold pr-4">Outcomes</span></h2>
@@ -184,7 +193,8 @@
                     <h4 class="font-display text-2xl text-charcoal mb-4">Performance Measurement</h4>
                     <p class="text-base text-charcoal/70 leading-relaxed">Design and utilize robust budgeting systems that accurately track variances and drive operational accountability.</p>
                 </div>
-        </div>
+            </div><!-- /grid -->
+        </div><!-- /container -->
     </section>
 
     <!-- Curriculum Section -->
@@ -194,7 +204,7 @@
             Syllabus
         </div>
         
-        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 relative z-10">
             <div class="mb-20 reveal">
                 <span class="font-mono text-sm font-semibold text-marigold mb-4 block uppercase tracking-[0.15em]">9-Part Framework</span>
                 <h2 class="font-display text-5xl md:text-7xl text-parchment tracking-tight leading-tight">Curriculum<br/><span class="text-marigold italic pr-4">Structure</span></h2>
@@ -256,25 +266,27 @@
                     <span class="font-mono text-marigold text-sm mb-4 block tracking-wider">Module 09</span>
                     <h3 class="font-display text-2xl text-parchment">Strategic Cost Management</h3>
                 </div>
+            </div><!-- /grid -->
             
-            <div class="mt-8 text-center reveal stagger-2">
+            <div class="mt-12 text-center reveal stagger-2">
                 <button class="bg-marigold text-charcoal text-base font-semibold px-10 py-4 shadow-lg hover:bg-parchment hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-3">
                     Download Full Syllabus
                     <span class="material-symbols-outlined text-lg">download</span>
                 </button>
             </div>
+        </div><!-- /container -->
     </section>
 </main>
 
 <!-- Footer -->
 <footer class="w-full bg-charcoal border-t border-parchment/10 text-parchment/70">
-    <div class="py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="py-16 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-[1280px] mx-auto px-6 md:px-16">
         <div class="md:col-span-1 mb-8 md:mb-0">
             <div class="font-display text-3xl text-parchment font-bold mb-4 tracking-tight">
                 IIMBx
             </div>
             <p class="text-sm leading-relaxed">
-                Â© 2024 IIMBx. All rights reserved. <br/>Accounting for Decision Making.
+                &copy; 2024 IIMBx. All rights reserved. <br/>Accounting for Decision Making.
             </p>
         </div>
         <div class="md:col-span-3 flex flex-col sm:flex-row gap-12 md:justify-end">
@@ -286,7 +298,8 @@
                 <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Contact Us</a>
                 <a class="font-mono text-sm tracking-wide hover:text-marigold transition-colors" href="#">Accreditation</a>
             </div>
-    </div>
+        </div>
+    </div><!-- /footer grid -->
 </footer>
 
 <script>
