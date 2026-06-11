@@ -1,0 +1,13 @@
+{
+  "target_file": "",
+  "task": "",
+  "created_at": "",
+  "workers": {
+    "brand":   { "status": "pending", "findings": [] },
+    "content": { "status": "pending", "findings": [] },
+    "ux_tech": { "status": "pending", "findings": [] }
+  },
+  "executor_ready": false,
+  "executor_status": "pending",
+  "report_path": ""
+}
