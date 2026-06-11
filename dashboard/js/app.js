@@ -73,8 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
       let bestScore = null;
       let bestScoreColor = 'var(--text-muted)';
       let bestScoreBorder = 'var(--border)';
+      let bestPrevScore = null;
       if (prog.graderScores) {
         const validScores = Object.values(prog.graderScores)
+          .filter(s => s.url && !s.url.includes('iimbx.iimb.ac.in'))
           .map(s => s.overall)
           .filter(s => s !== null && s !== undefined && s > 0);
         if (validScores.length) {
@@ -82,6 +84,20 @@ document.addEventListener('DOMContentLoaded', () => {
           bestScoreColor = bestScore >= 90 ? '#2E7D32' : bestScore >= 70 ? '#ED6C02' : '#D32F2F';
           bestScoreBorder = bestScoreColor;
         }
+      }
+      if (prog.previousScores) {
+        const validPrev = Object.values(prog.previousScores)
+          .filter(s => s.url && !s.url.includes('iimbx.iimb.ac.in'))
+          .map(s => s.overall)
+          .filter(s => s !== null && s !== undefined && s > 0);
+        if (validPrev.length) bestPrevScore = Math.max(...validPrev);
+      }
+      let cardDelta = '';
+      if (bestScore !== null && bestPrevScore !== null) {
+        const diff = bestScore - bestPrevScore;
+        if (diff > 0) cardDelta = `<span class="score-delta up" style="font-size:0.7rem;margin-left:4px;">↑${diff}</span>`;
+        else if (diff < 0) cardDelta = `<span class="score-delta down" style="font-size:0.7rem;margin-left:4px;">↓${Math.abs(diff)}</span>`;
+        else cardDelta = `<span class="score-delta same" style="font-size:0.7rem;margin-left:4px;">—</span>`;
       }
 
       card.innerHTML = `
@@ -94,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${bestScore !== null ? bestScore : 'TBD'}
                 </div>
                 <div style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); line-height: 1.4;">
-                    Best Score<br/><span style="color: var(--text); font-size: 0.75rem;">Lighthouse Overall</span>
+                    Best Prototype${cardDelta}<br/><span style="color: var(--text); font-size: 0.75rem;">Lighthouse Overall</span>
                 </div>
             </div>
             <button class="card-grader-btn" style="background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.78rem; font-weight: 600; transition: var(--transition); white-space: nowrap;">⚡ Grader Report</button>
@@ -710,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // ── GRADER MODAL ────────────────────────────────────────────────────────
+  // ── GRADER MODAL v4 ──────────────────────────────────────────────────────
   const graderModal      = document.getElementById('grader-modal');
   const graderModalClose = document.getElementById('grader-modal-close');
   const graderModalBack  = document.getElementById('grader-modal-back');
@@ -724,11 +740,94 @@ document.addEventListener('DOMContentLoaded', () => {
     return `<span style="display:inline-block;padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.85rem;color:${color};background:${bg};">${val}</span>`;
   }
 
+  function deltaChip(current, previous) {
+    if (previous === null || previous === undefined || current === null || current === undefined) return '';
+    const diff = current - previous;
+    if (diff === 0) return '<span class="score-delta same">—</span>';
+    if (diff > 0) return `<span class="score-delta up">↑${diff}</span>`;
+    return `<span class="score-delta down">↓${Math.abs(diff)}</span>`;
+  }
+
+  function formatDate(isoStr) {
+    if (!isoStr) return '—';
+    const d = new Date(isoStr);
+    return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) +
+           ' at ' + d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function buildReportPanel(label, current, previous) {
+    const cats = [
+      { key: 'performance',    icon: '⚡', name: 'Performance' },
+      { key: 'accessibility',  icon: '♿', name: 'Accessibility' },
+      { key: 'bestPractices',  icon: '🔒', name: 'Best Practices' },
+      { key: 'seo',            icon: '🔍', name: 'SEO' },
+    ];
+
+    const diagnostics = current.diagnostics || [];
+    const hasPrev = previous && previous.overall !== null && previous.overall !== undefined;
+
+    let catCards = cats.map(cat => {
+      const cur = current[cat.key];
+      const prev = hasPrev ? previous[cat.key] : null;
+      const diff = (prev !== null && prev !== undefined && cur !== null) ? cur - prev : null;
+      const diffStr = diff !== null
+        ? (diff > 0 ? `<span class="report-cat-arrow" style="color:#2E7D32">+${diff}</span>` :
+           diff < 0 ? `<span class="report-cat-arrow" style="color:#D32F2F">${diff}</span>` :
+                      `<span class="report-cat-arrow" style="color:var(--text-muted)">=</span>`)
+        : '';
+      const arrowText = (prev !== null && prev !== undefined)
+        ? `${prev} → ${cur}`
+        : `${cur}`;
+
+      // Find diagnostics for this category
+      const catDiags = diagnostics.filter(d => d.category === cat.key);
+      let issuesList = '';
+      if (catDiags.length > 0) {
+        const items = catDiags.map(d => {
+          const severity = d.score < 50 ? 'fail' : 'warn';
+          let detail = d.title;
+          if (d.savingsMs) detail += ` (−${d.savingsMs}ms)`;
+          if (d.savingsKb) detail += ` (−${d.savingsKb}KB)`;
+          if (d.affectedElements) detail += ` · ${d.affectedElements} element${d.affectedElements > 1 ? 's' : ''}`;
+          return `<li><span class="report-issue-icon ${severity}">!</span><span>${detail}</span></li>`;
+        }).join('');
+        issuesList = `<ul class="report-issues">${items}</ul>`;
+      } else {
+        issuesList = '<div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">No issues found ✓</div>';
+      }
+
+      return `
+        <div class="report-cat">
+          <div class="report-cat-header">
+            <span>${cat.icon} ${cat.name}: ${arrowText}</span>
+            ${diffStr}
+          </div>
+          ${issuesList}
+        </div>
+      `;
+    }).join('');
+
+    const metaHtml = `
+      <div class="report-meta">
+        Scanned: ${formatDate(current.scannedAt)}
+        ${hasPrev ? `<br>Previous: ${formatDate(previous.scannedAt)}` : ''}
+      </div>
+    `;
+
+    return `
+      <div class="report-panel-inner">
+        ${catCards}
+      </div>
+      ${metaHtml}
+    `;
+  }
+
   function openGraderModal(prog) {
     graderModal.style.display = 'flex';
     graderModalTitle.innerHTML = `<h2 style="margin:0;font-family:'Source Serif 4',serif;">${prog.programmeName}</h2><p style="margin:4px 0 0;font-size:0.85rem;opacity:0.7;">Lighthouse Performance Report — All Variants</p>`;
 
     const scores = prog.graderScores || {};
+    const prevScores = prog.previousScores || {};
     const hasData = Object.keys(scores).length > 0;
 
     if (!hasData) {
@@ -736,49 +835,106 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Sort: put old site / staging at bottom, prototypes on top
+    // Sort: prototypes first (best first), old site at bottom
     const entries = Object.entries(scores).sort((a, b) => {
-      const isLiveA = a[1].url && (a[1].url.includes('iimbx.iimb.ac.in') || !a[1].url.includes('localhost'));
-      const isLiveB = b[1].url && (b[1].url.includes('iimbx.iimb.ac.in') || !b[1].url.includes('localhost'));
+      const isLiveA = a[1].url && a[1].url.includes('iimbx.iimb.ac.in');
+      const isLiveB = b[1].url && b[1].url.includes('iimbx.iimb.ac.in');
       if (isLiveA && !isLiveB) return 1;
       if (!isLiveA && isLiveB) return -1;
       return (b[1].overall || 0) - (a[1].overall || 0);
     });
 
+    // Find best prototype (non-old-website)
+    const bestProtoEntry = entries.find(([_, s]) => s.url && !s.url.includes('iimbx.iimb.ac.in') && s.overall);
+    const bestLabel = bestProtoEntry ? bestProtoEntry[0] : null;
+
+    const hasPrev = Object.keys(prevScores).length > 0;
+
     const rows = entries.map(([label, s], idx) => {
       const isLive = s.url && s.url.includes('iimbx.iimb.ac.in');
-      const rowBg  = idx === 0 ? 'background: rgba(201,113,56,0.05);' : '';
-      const badge  = isLive ? ' <span style="font-size:0.65rem;background:#e3f2fd;color:#1565c0;padding:2px 6px;border-radius:8px;font-weight:600;">LIVE</span>' : '';
+      const isBest = label === bestLabel;
+      const prev = prevScores[label] || null;
+      const badge = isLive ? ' <span style="font-size:0.65rem;background:#e3f2fd;color:#1565c0;padding:2px 6px;border-radius:8px;font-weight:600;">OLD SITE</span>' : '';
+      const bestBadge = isBest ? ' <span style="font-size:0.65rem;background:#e8f5e9;color:#2E7D32;padding:2px 6px;border-radius:8px;font-weight:600;">★ BEST</span>' : '';
+      const rowClass = isBest ? 'grader-row-best' : '';
+      const rowId = `grader-report-${prog.id}-${idx}`;
+
+      // Overall delta
+      const overallDelta = (prev && prev.overall) ? deltaChip(s.overall, prev.overall) : '';
+      // Previous overall
+      const prevOverallText = (prev && prev.overall) ? `<div class="score-prev">was ${prev.overall}</div>` : '';
+
       return `
-        <tr style="${rowBg}border-bottom:1px solid var(--border);">
-          <td style="padding:10px 12px;font-weight:${idx===0?'700':'500'};font-size:0.9rem;">${label}${badge}</td>
-          <td style="padding:10px 12px;text-align:center;">${scoreChip(s.overall)}</td>
+        <tr class="${rowClass}" style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;font-weight:${isBest?'700':'500'};font-size:0.9rem;">${label}${badge}${bestBadge}</td>
+          <td style="padding:10px 12px;text-align:center;">
+            ${scoreChip(s.overall)}${overallDelta}
+            ${prevOverallText}
+          </td>
           <td style="padding:10px 12px;text-align:center;">${scoreChip(s.performance)}</td>
           <td style="padding:10px 12px;text-align:center;">${scoreChip(s.accessibility)}</td>
           <td style="padding:10px 12px;text-align:center;">${scoreChip(s.bestPractices)}</td>
           <td style="padding:10px 12px;text-align:center;">${scoreChip(s.seo)}</td>
-        </tr>`;
+          <td style="padding:10px 12px;text-align:center;">
+            <button class="report-toggle-btn" data-report-id="${rowId}">📋 Why?</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" style="padding:0;">
+            <div class="report-panel" id="${rowId}">
+              ${buildReportPanel(label, s, prev)}
+            </div>
+          </td>
+        </tr>
+      `;
     }).join('');
 
     graderModalBody.innerHTML = `
-      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;">Scores are out of 100. Sorted by prototype score (best first). Live URLs marked with LIVE badge.</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <p style="font-size:0.82rem;color:var(--text-muted);margin:0;">Scores out of 100. Prototypes sorted best-first. ${hasPrev ? 'Δ shows change from previous scan.' : '<em>No previous scan data yet — run grader again to see deltas.</em>'}</p>
+      </div>
       <div style="overflow-x:auto;">
         <table style="width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;">
           <thead>
             <tr style="background:var(--bg-dark);color:var(--text-light);">
               <th style="padding:12px;text-align:left;font-weight:600;">Variant</th>
               <th style="padding:12px;text-align:center;">Overall</th>
-              <th style="padding:12px;text-align:center;">⚡ Performance</th>
-              <th style="padding:12px;text-align:center;">♿ Accessibility</th>
-              <th style="padding:12px;text-align:center;">🔒 Best Practices</th>
+              <th style="padding:12px;text-align:center;">⚡ Perf</th>
+              <th style="padding:12px;text-align:center;">♿ A11y</th>
+              <th style="padding:12px;text-align:center;">🔒 BP</th>
               <th style="padding:12px;text-align:center;">🔍 SEO</th>
+              <th style="padding:12px;text-align:center;">Report</th>
             </tr>
           </thead>
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);">N/A = Scan failed (login-protected URL or timeout). Re-run <code>run_grader.ps1</code> to retry.</p>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);">N/A = Scan failed (timeout or error). Run <code>run_grader.ps1</code> to refresh all scores.</p>
     `;
+
+    // Attach report panel toggle listeners
+    graderModalBody.querySelectorAll('.report-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const panelId = btn.getAttribute('data-report-id');
+        const panel = document.getElementById(panelId);
+        if (panel) {
+          const isOpen = panel.classList.contains('open');
+          // Close all other panels first
+          graderModalBody.querySelectorAll('.report-panel.open').forEach(p => p.classList.remove('open'));
+          if (!isOpen) {
+            panel.classList.add('open');
+            btn.textContent = '✕ Close';
+          } else {
+            btn.textContent = '📋 Why?';
+          }
+          // Reset all other button texts
+          graderModalBody.querySelectorAll('.report-toggle-btn').forEach(b => {
+            if (b !== btn) b.textContent = '📋 Why?';
+          });
+        }
+      });
+    });
   }
 
   graderModalClose.addEventListener('click', () => { graderModal.style.display = 'none'; });

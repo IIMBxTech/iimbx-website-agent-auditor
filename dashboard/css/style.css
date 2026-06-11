@@ -374,3 +374,156 @@ body {
 
 /* Utility */
 .hidden { display: none !important; }
+
+/* ── Grader v4 Report UI ──────────────────────────────────── */
+
+/* Delta chips */
+.score-delta {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-left: 4px;
+}
+.score-delta.up {
+  color: #2E7D32;
+  background: #e8f5e9;
+}
+.score-delta.down {
+  color: #D32F2F;
+  background: #ffebee;
+}
+.score-delta.same {
+  color: var(--text-muted);
+  background: rgba(0,0,0,0.04);
+}
+
+/* Previous score muted text */
+.score-prev {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Best prototype gold highlight */
+.grader-row-best {
+  background: rgba(201,113,56,0.06) !important;
+  border-left: 3px solid var(--accent);
+}
+
+/* Report button */
+.report-toggle-btn {
+  background: none;
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.report-toggle-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Expandable report panel */
+.report-panel {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+  background: #fafaf7;
+  border-bottom: 1px solid var(--border);
+}
+.report-panel.open {
+  max-height: 600px;
+  opacity: 1;
+  padding: 16px 20px;
+}
+.report-panel-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .report-panel-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Report category card */
+.report-cat {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.report-cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.report-cat-arrow {
+  font-size: 0.8rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+}
+
+/* Report issues list */
+.report-issues {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+}
+.report-issues li {
+  font-size: 0.78rem;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--border);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.report-issues li:last-child {
+  border-bottom: none;
+}
+.report-issue-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.report-issue-icon.fail {
+  background: #ffebee;
+  color: #D32F2F;
+}
+.report-issue-icon.warn {
+  background: #fff3e0;
+  color: #ED6C02;
+}
+
+/* Scan metadata */
+.report-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-family: 'IBM Plex Mono', monospace;
+}
