@@ -7,7 +7,7 @@
       "seo": 90,
       "overall": 83,
       "url": "http://localhost:8765/prototypes/adm_v1_variant_1.html",
-      "scannedAt": "2026-06-08T12:33:59.133Z",
+      "scannedAt": "2026-06-11T11:49:06.130Z",
       "error": null
     },
     "Design 2 (Pro HTML)": {
@@ -17,17 +17,17 @@
       "seo": 90,
       "overall": 93,
       "url": "http://localhost:8765/prototypes/adm_gemini31pro.html",
-      "scannedAt": "2026-06-08T12:34:12.180Z",
+      "scannedAt": "2026-06-11T11:49:19.326Z",
       "error": null
     },
     "Design 3 (Flash Stitch)": {
-      "performance": 57,
-      "accessibility": 96,
+      "performance": 94,
+      "accessibility": 87,
       "bestPractices": 96,
       "seo": 90,
-      "overall": 85,
+      "overall": 92,
       "url": "http://localhost:8765/prototypes/adm_v1_variant_3.html",
-      "scannedAt": "2026-06-08T12:34:25.152Z",
+      "scannedAt": "2026-06-11T11:49:32.825Z",
       "error": null
     },
     "Design 4 (Flash HTML)": {
@@ -37,7 +37,7 @@
       "seo": 90,
       "overall": 90,
       "url": "http://localhost:8765/prototypes/adm_gemini35flash.html",
-      "scannedAt": "2026-06-08T12:34:37.765Z",
+      "scannedAt": "2026-06-11T11:49:45.409Z",
       "error": null
     },
     "Design 5 (Pro Refined)": {
@@ -47,79 +47,79 @@
       "seo": 100,
       "overall": 97,
       "url": "http://localhost:8765/prototypes/adm_v1_variant_5.html",
-      "scannedAt": "2026-06-08T12:34:50.634Z",
+      "scannedAt": "2026-06-11T11:49:58.568Z",
       "error": null
     },
     "Stitch v4": {
-      "performance": 78,
+      "performance": 82,
       "accessibility": 86,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 86,
+      "overall": 87,
       "url": "http://localhost:8765/prototypes/adm_stitch_v4.html",
-      "scannedAt": "2026-06-08T12:35:03.018Z",
+      "scannedAt": "2026-06-11T11:50:11.273Z",
       "error": null
     },
     "Old Website": {
-      "performance": 52,
+      "performance": 62,
       "accessibility": 74,
       "bestPractices": 54,
       "seo": 100,
-      "overall": 70,
+      "overall": 73,
       "url": "https://iimbx.iimb.ac.in/catalog/accounting-for-decision-making/",
-      "scannedAt": "2026-06-08T12:35:24.004Z",
+      "scannedAt": "2026-06-11T11:50:37.578Z",
       "error": null
     }
   },
   "pchm": {
     "Proposed v1": {
-      "performance": 68,
+      "performance": 71,
       "accessibility": 92,
       "bestPractices": 96,
       "seo": 100,
-      "overall": 89,
+      "overall": 90,
       "url": "http://localhost:8765/prototypes/pchm_v1.html",
-      "scannedAt": "2026-06-08T12:35:38.005Z",
+      "scannedAt": "2026-06-11T11:50:50.649Z",
       "error": null
     },
     "Proposed v2": {
-      "performance": 67,
+      "performance": 66,
       "accessibility": 94,
       "bestPractices": 96,
       "seo": 100,
       "overall": 89,
       "url": "http://localhost:8765/prototypes/pchm_v2.html",
-      "scannedAt": "2026-06-08T12:35:51.375Z",
+      "scannedAt": "2026-06-11T11:51:04.653Z",
       "error": null
     },
     "Proposed v3": {
-      "performance": 67,
+      "performance": 71,
       "accessibility": 92,
       "bestPractices": 96,
       "seo": 100,
-      "overall": 89,
+      "overall": 90,
       "url": "http://localhost:8765/prototypes/pchm_v3.html",
-      "scannedAt": "2026-06-08T12:36:09.833Z",
+      "scannedAt": "2026-06-11T11:51:18.062Z",
       "error": null
     },
     "Stitch v4": {
-      "performance": 73,
+      "performance": 85,
       "accessibility": 86,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 84,
+      "overall": 87,
       "url": "http://localhost:8765/prototypes/pchm_stitch_v4.html",
-      "scannedAt": "2026-06-08T12:36:25.952Z",
+      "scannedAt": "2026-06-11T11:51:30.786Z",
       "error": null
     },
     "Old Website": {
-      "performance": 47,
+      "performance": 56,
       "accessibility": 80,
       "bestPractices": 54,
       "seo": 100,
-      "overall": 70,
+      "overall": 73,
       "url": "https://iimbx.iimb.ac.in/hospital-management-program/",
-      "scannedAt": "2026-06-08T12:37:05.902Z",
+      "scannedAt": "2026-06-11T11:51:57.532Z",
       "error": null
     },
     "V1 Staging": {
@@ -129,71 +129,71 @@
       "seo": 0,
       "overall": 0,
       "url": "https://iimbx.iimb.ac.in/hospital-management-new-v1/",
-      "scannedAt": "2026-06-08T12:37:27.796Z",
+      "scannedAt": "2026-06-11T11:52:14.155Z",
       "error": null
     }
   },
   "nam": {
     "Proposed v1": {
-      "performance": 65,
-      "accessibility": 86,
-      "bestPractices": 96,
-      "seo": 91,
-      "overall": 85,
-      "url": "http://localhost:8765/prototypes/nam_v1.html",
-      "scannedAt": "2026-06-08T12:37:45.020Z",
-      "error": null
-    },
-    "Proposed v2": {
-      "performance": 65,
-      "accessibility": 86,
-      "bestPractices": 96,
-      "seo": 91,
-      "overall": 85,
-      "url": "http://localhost:8765/prototypes/nam_v2.html",
-      "scannedAt": "2026-06-08T12:38:02.596Z",
-      "error": null
-    },
-    "Proposed v3": {
-      "performance": 65,
-      "accessibility": 86,
-      "bestPractices": 96,
-      "seo": 91,
-      "overall": 85,
-      "url": "http://localhost:8765/prototypes/nam_v3.html",
-      "scannedAt": "2026-06-08T12:38:20.024Z",
-      "error": null
-    },
-    "Stitch v4": {
-      "performance": 69,
-      "accessibility": 88,
-      "bestPractices": 88,
-      "seo": 90,
-      "overall": 84,
-      "url": "http://localhost:8765/prototypes/nam_stitch_v4.html",
-      "scannedAt": "2026-06-08T12:38:35.828Z",
-      "error": null
-    },
-    "V1 Staging": {
-      "performance": 62,
-      "accessibility": 71,
-      "bestPractices": 54,
-      "seo": 92,
-      "overall": 70,
-      "url": "https://iimbx.iimb.ac.in/nam-v1/",
-      "scannedAt": "2026-06-08T12:39:04.717Z",
-      "error": null
-    }
-  },
-  "elp": {
-    "V1 Proposed v1": {
       "performance": 64,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
       "overall": 84,
+      "url": "http://localhost:8765/prototypes/nam_v1.html",
+      "scannedAt": "2026-06-11T11:52:28.298Z",
+      "error": null
+    },
+    "Proposed v2": {
+      "performance": 64,
+      "accessibility": 86,
+      "bestPractices": 96,
+      "seo": 91,
+      "overall": 84,
+      "url": "http://localhost:8765/prototypes/nam_v2.html",
+      "scannedAt": "2026-06-11T11:52:42.479Z",
+      "error": null
+    },
+    "Proposed v3": {
+      "performance": 64,
+      "accessibility": 86,
+      "bestPractices": 96,
+      "seo": 91,
+      "overall": 84,
+      "url": "http://localhost:8765/prototypes/nam_v3.html",
+      "scannedAt": "2026-06-11T11:52:56.695Z",
+      "error": null
+    },
+    "Stitch v4": {
+      "performance": 77,
+      "accessibility": 88,
+      "bestPractices": 88,
+      "seo": 90,
+      "overall": 86,
+      "url": "http://localhost:8765/prototypes/nam_stitch_v4.html",
+      "scannedAt": "2026-06-11T11:53:09.166Z",
+      "error": null
+    },
+    "V1 Staging": {
+      "performance": 80,
+      "accessibility": 71,
+      "bestPractices": 54,
+      "seo": 92,
+      "overall": 74,
+      "url": "https://iimbx.iimb.ac.in/nam-v1/",
+      "scannedAt": "2026-06-11T11:53:30.948Z",
+      "error": null
+    }
+  },
+  "elp": {
+    "V1 Proposed v1": {
+      "performance": 68,
+      "accessibility": 86,
+      "bestPractices": 96,
+      "seo": 91,
+      "overall": 85,
       "url": "http://localhost:8765/prototypes/elp_v1.html",
-      "scannedAt": "2026-06-08T12:39:22.724Z",
+      "scannedAt": "2026-06-11T11:53:44.217Z",
       "error": null
     },
     "V1 Proposed v2": {
@@ -203,7 +203,7 @@
       "seo": 82,
       "overall": 80,
       "url": "http://localhost:8765/prototypes/elp_v2.html",
-      "scannedAt": "2026-06-08T12:40:25.746Z",
+      "scannedAt": "2026-06-11T11:54:42.531Z",
       "error": null
     },
     "V1 Proposed v3": {
@@ -213,57 +213,57 @@
       "seo": 91,
       "overall": 85,
       "url": "http://localhost:8765/prototypes/elp_v3.html",
-      "scannedAt": "2026-06-08T12:40:44.481Z",
+      "scannedAt": "2026-06-11T11:54:56.961Z",
       "error": null
     },
     "V1 Stitch v4": {
-      "performance": 68,
+      "performance": 75,
       "accessibility": 85,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 83,
+      "overall": 85,
       "url": "http://localhost:8765/prototypes/elp_v1_stitch_v4.html",
-      "scannedAt": "2026-06-08T12:41:01.064Z",
+      "scannedAt": "2026-06-11T11:55:10.093Z",
       "error": null
     },
     "V1 Variant 1": {
-      "performance": 65,
+      "performance": 69,
+      "accessibility": 86,
+      "bestPractices": 96,
+      "seo": 91,
+      "overall": 86,
+      "url": "http://localhost:8765/prototypes/elp_v1_variant_1.html",
+      "scannedAt": "2026-06-11T11:55:26.003Z",
+      "error": null
+    },
+    "V1 Variant 2": {
+      "performance": 68,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
       "overall": 85,
-      "url": "http://localhost:8765/prototypes/elp_v1_variant_1.html",
-      "scannedAt": "2026-06-08T12:41:19.209Z",
-      "error": null
-    },
-    "V1 Variant 2": {
-      "performance": 64,
-      "accessibility": 86,
-      "bestPractices": 96,
-      "seo": 91,
-      "overall": 84,
       "url": "http://localhost:8765/prototypes/elp_v1_variant_2.html",
-      "scannedAt": "2026-06-08T12:41:37.293Z",
+      "scannedAt": "2026-06-11T11:55:39.496Z",
       "error": null
     },
     "V1 Variant 3": {
-      "performance": 65,
+      "performance": 68,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
       "overall": 85,
       "url": "http://localhost:8765/prototypes/elp_v1_variant_3.html",
-      "scannedAt": "2026-06-08T12:41:55.175Z",
+      "scannedAt": "2026-06-11T11:55:53.316Z",
       "error": null
     },
     "V2 Variant 1": {
-      "performance": 80,
+      "performance": 65,
       "accessibility": 75,
       "bestPractices": 96,
       "seo": 82,
-      "overall": 83,
+      "overall": 80,
       "url": "http://localhost:8765/prototypes/elp_v2_variant_1.html",
-      "scannedAt": "2026-06-08T12:42:58.243Z",
+      "scannedAt": "2026-06-11T11:56:50.781Z",
       "error": null
     },
     "V2 Variant 2": {
@@ -273,27 +273,27 @@
       "seo": 82,
       "overall": 80,
       "url": "http://localhost:8765/prototypes/elp_v2_variant_2.html",
-      "scannedAt": "2026-06-08T12:44:01.300Z",
+      "scannedAt": "2026-06-11T11:57:48.559Z",
       "error": null
     },
     "V2 Variant 3": {
-      "performance": 65,
+      "performance": 63,
       "accessibility": 75,
       "bestPractices": 96,
       "seo": 82,
-      "overall": 80,
+      "overall": 79,
       "url": "http://localhost:8765/prototypes/elp_v2_variant_3.html",
-      "scannedAt": "2026-06-08T12:45:05.297Z",
+      "scannedAt": "2026-06-11T11:58:46.128Z",
       "error": null
     },
     "V2 Stitch v4": {
-      "performance": 68,
+      "performance": 72,
       "accessibility": 85,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 83,
+      "overall": 84,
       "url": "http://localhost:8765/prototypes/elp_v2_stitch_v4.html",
-      "scannedAt": "2026-06-08T12:45:21.608Z",
+      "scannedAt": "2026-06-11T11:58:58.338Z",
       "error": null
     },
     "V2 Staging": {
@@ -303,7 +303,7 @@
       "seo": 0,
       "overall": 0,
       "url": "https://iimbx.iimb.ac.in/elp-new-v2/",
-      "scannedAt": "2026-06-08T12:45:44.491Z",
+      "scannedAt": "2026-06-11T11:59:14.228Z",
       "error": null
     }
   },
@@ -336,53 +336,55 @@
       "error": ""
     },
     "Stitch v4": {
-      "performance": 57,
+      "performance": 66,
       "accessibility": 87,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 81,
+      "overall": 83,
       "url": "http://localhost:8765/prototypes/pcaim_stitch_v4.html",
-      "scannedAt": "2026-06-08T12:50:50.872Z",
+      "scannedAt": "2026-06-11T12:04:12.203Z",
       "error": null
     },
     "Old Website": {
-      "performance": null,
-      "accessibility": null,
-      "bestPractices": null,
-      "seo": null,
-      "overall": null,
+      "performance": 20,
+      "accessibility": 68,
+      "bestPractices": 50,
+      "seo": 100,
+      "overall": 60,
       "url": "https://iimbx.iimb.ac.in/ai-for-managers/",
-      "error": ""
+      "scannedAt": "2026-06-11T12:05:41.744Z",
+      "error": null
     }
   },
   "contact": {
     "Proposed v1": {
-      "performance": 44,
-      "accessibility": 83,
-      "bestPractices": 96,
-      "seo": 91,
-      "overall": 79,
-      "url": "http://localhost:8765/prototypes/contact_v1.html",
-      "scannedAt": "2026-06-08T12:53:41.896Z",
-      "error": null
-    },
-    "Proposed v2": {
-      "performance": null,
-      "accessibility": null,
-      "bestPractices": null,
-      "seo": null,
-      "overall": null,
-      "url": "http://localhost:8765/prototypes/contact_v2.html",
-      "error": ""
-    },
-    "Proposed v3": {
-      "performance": 43,
+      "performance": 42,
       "accessibility": 83,
       "bestPractices": 96,
       "seo": 91,
       "overall": 78,
+      "url": "http://localhost:8765/prototypes/contact_v1.html",
+      "scannedAt": "2026-06-11T12:06:45.748Z",
+      "error": null
+    },
+    "Proposed v2": {
+      "performance": 45,
+      "accessibility": 83,
+      "bestPractices": 96,
+      "seo": 91,
+      "overall": 79,
+      "url": "http://localhost:8765/prototypes/contact_v2.html",
+      "scannedAt": "2026-06-11T12:07:49.715Z",
+      "error": null
+    },
+    "Proposed v3": {
+      "performance": 48,
+      "accessibility": 83,
+      "bestPractices": 96,
+      "seo": 83,
+      "overall": 78,
       "url": "http://localhost:8765/prototypes/contact_v3.html",
-      "scannedAt": "2026-06-08T15:50:44.976Z",
+      "scannedAt": "2026-06-11T12:08:54.565Z",
       "error": null
     },
     "Stitch v2": {
@@ -392,7 +394,7 @@
       "seo": 82,
       "overall": 79,
       "url": "http://localhost:8765/prototypes/contact_v2_stitch.html",
-      "scannedAt": "2026-06-08T15:50:57.838Z",
+      "scannedAt": "2026-06-11T12:09:14.413Z",
       "error": null
     }
   }
