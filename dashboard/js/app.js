@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTabs = document.getElementById('modal-tabs');
   const modalBody = document.getElementById('modal-body');
   
+  // Folder Views
+  const homeView = document.getElementById('home-view');
+  const swayamView = document.getElementById('swayam-view');
+  const iimbxView = document.getElementById('iimbx-view');
+  const folderIimbx = document.getElementById('folder-iimbx');
+  const folderSwayam = document.getElementById('folder-swayam');
+  const breadcrumb = document.getElementById('breadcrumb');
+  const backToHome = document.getElementById('back-to-home');
+  
   const wfViewer = document.getElementById('wf-viewer');
   const wfClose = document.getElementById('wf-close');
   const wfBack = document.getElementById('wf-back');
@@ -941,8 +950,39 @@ document.addEventListener('DOMContentLoaded', () => {
   graderModalBack.addEventListener('click',  () => { graderModal.style.display = 'none'; });
   graderModal.addEventListener('click', (e) => { if (e.target === graderModal) graderModal.style.display = 'none'; });
 
+  // ── FOLDER VIEW NAVIGATION LOGIC ─────────────────────────────────────────
+  function showHomeView() {
+    homeView.style.display = 'grid';
+    iimbxView.style.display = 'none';
+    swayamView.style.display = 'none';
+    breadcrumb.style.display = 'none';
+    sidebarNav.innerHTML = ''; // clear sidebar
+  }
+
+  folderIimbx.addEventListener('click', () => {
+    homeView.style.display = 'none';
+    swayamView.style.display = 'none';
+    iimbxView.style.display = 'block';
+    breadcrumb.style.display = 'block';
+    renderGrid();
+  });
+
+  folderSwayam.addEventListener('click', () => {
+    homeView.style.display = 'none';
+    iimbxView.style.display = 'none';
+    swayamView.style.display = 'block';
+    breadcrumb.style.display = 'block';
+    sidebarNav.innerHTML = '';
+  });
+
+  backToHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    showHomeView();
+  });
+
   // ── INIT ─────────────────────────────────────────────────────────────────
-  renderGrid();
+  // We no longer render the grid immediately, we wait for folder click
+  showHomeView();
   
   // Sidebar toggle
   document.getElementById('sidebar-toggle').addEventListener('click', () => {

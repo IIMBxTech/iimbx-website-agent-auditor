@@ -29,7 +29,39 @@
       </div>
     </header>
     <div class="content-area" id="content-area">
-      <div class="card-grid" id="programme-grid"></div>
+      <!-- Breadcrumb navigation (hidden by default) -->
+      <div id="breadcrumb" style="display: none;">
+        <a href="#" id="back-to-home" class="breadcrumb-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Folders
+        </a>
+      </div>
+
+      <!-- Top-Level Home View -->
+      <div id="home-view">
+        <div class="folder-card" id="folder-iimbx">
+          <div class="folder-icon">📁</div>
+          <div class="folder-title">IIMBx</div>
+          <div class="folder-desc">Executive Education Programmes</div>
+        </div>
+        <div class="folder-card" id="folder-swayam">
+          <div class="folder-icon">📁</div>
+          <div class="folder-title">SWAYAM</div>
+          <div class="folder-desc">MOOCs & Government Portal Courses</div>
+        </div>
+      </div>
+
+      <!-- Swayam Empty State -->
+      <div id="swayam-view" style="display: none;">
+        <div class="empty-state-icon">📭</div>
+        <h2>No Programmes Found</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">There are currently no SWAYAM programmes available for audit.</p>
+      </div>
+
+      <!-- IIMBx Program Grid -->
+      <div id="iimbx-view" style="display: none;">
+        <div class="card-grid" id="programme-grid"></div>
+      </div>
     </div>
   </main>
 
