@@ -470,18 +470,27 @@
     /* ════════════════════════════════════════════════
        RESPONSIVE
     ════════════════════════════════════════════════ */
-    @media (max-width: 900px) {
+    @media (max-width: 1200px) {
+      .hero-grid { gap: var(--sp-lg); grid-template-columns: 1fr 1fr; }
+      .overview-grid, .faculty-grid { gap: var(--sp-lg); }
+      .hero-panel { padding: var(--sp-md); }
+    }
+
+    @media (max-width: 1024px) {
       .hero-grid,
       .overview-grid,
-      .faculty-grid { grid-template-columns: 1fr; }
+      .faculty-grid { grid-template-columns: 1fr; gap: var(--sp-lg); }
+      .audience-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-md); }
+    }
 
+    @media (max-width: 768px) {
       .heading-xl { font-size: var(--t-xl); }
       .hero-panel { margin-top: 0; }
       .audience-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
-      .hero-metrics { gap: var(--sp-sm); }
+      .hero-metrics { gap: var(--sp-sm); flex-wrap: wrap; }
       .heading-xl { font-size: var(--t-lg); }
     }
   </style>
