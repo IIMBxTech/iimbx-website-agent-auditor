@@ -1,124 +1,121 @@
 {
-  "target_file": "c:\\Users\\harsh\\OneDrive\\Desktop\\Compare\\prototypes\\adm_v1_variant_2.html",
-  "task": "Full v2 audit of ADM Design 2 — brand compliance, content accuracy, UX/tech checks",
-  "created_at": "2026-06-11T12:39:00Z",
+  "target_file": "prototypes/programmes_list_variant_3.html",
+  "task": "Audit the List Directory Layout for brand, content, and UX/tech compliance.",
+  "dispatch_log": {
+    "brand": { "dispatched_at": "2026-06-11T20:47:00+05:30", "confirmed": true },
+    "content": { "dispatched_at": "2026-06-11T20:47:00+05:30", "confirmed": true },
+    "ux_tech": { "dispatched_at": "2026-06-11T20:47:00+05:30", "confirmed": true }
+  },
   "workers": {
     "brand": {
       "status": "done",
-      "completed_at": "2026-06-11T12:40:30Z",
       "findings": [
         {
+          "reasoning": "The Tailwind configuration defines marigold as #EAA92A and custom CSS uses #EAA92A. However, the Brand Playbook specifies Marigold / Burnt Honey as #C97138. Confidence: high.",
           "type": "color",
-          "element": "nav a.text-primary (line 209)",
-          "current": "text-primary → #92470f (Tailwind token 'primary')",
-          "required": "text-marigold (#C97138) or text-charcoal (#1A1B1E). #92470f is not in the approved palette.",
+          "element": "tailwind.config colors.marigold, .marigold-bg, .marigold-text",
+          "current": "#EAA92A",
+          "required": "#C97138",
           "confidence": "high"
         },
         {
-          "type": "color",
-          "element": "body text paragraphs using text-tertiary (18 instances, lines 276–514)",
-          "current": "text-tertiary → #5b5c5f (Material grey)",
-          "required": "text-charcoal (#1A1B1E) or text-charcoal with opacity. #5b5c5f is not an approved brand token.",
-          "confidence": "high"
-        },
-        {
-          "type": "color",
-          "element": "nav links using text-on-surface (lines 212, 215, 218)",
-          "current": "text-on-surface → #1d1c15",
-          "required": "text-charcoal (#1A1B1E). #1d1c15 is close but not the canonical charcoal value; should use the brand token directly.",
-          "confidence": "low"
-        },
-        {
-          "type": "color",
-          "element": "nav bg-surface/80 (line 202), cards bg-surface (lines 321–508), curriculum items bg-surface (lines 358–430)",
-          "current": "bg-surface → #fef9ed",
-          "required": "bg-parchment (#F4EFE3). #fef9ed is a yellowish off-white, not the approved Parchment token.",
-          "confidence": "high"
-        },
-        {
-          "type": "color",
-          "element": "Outcomes section bg-surface-container-low (line 315)",
-          "current": "bg-surface-container-low → #f8f3e7",
-          "required": "bg-parchment (#F4EFE3) or bg-parchment-deep (#E8E2D2). The M3 surface-container-low token is not part of the brand palette.",
-          "confidence": "high"
-        },
-        {
-          "type": "color",
-          "element": "Tailwind config — extended palette (lines 102–155)",
-          "current": "Config defines 40+ Material 3 tokens including secondary (#485b9b, blue), secondary-container (#a3b6fd, blue-purple), error (#ba1a1a, red), primary-fixed (#ffdbc9, peach), etc.",
-          "required": "Tailwind config should only define: parchment (#F4EFE3), charcoal (#1A1B1E), marigold (#C97138), crimson (#AE2C2A), navy (#172D6B), plus tints/shades derived from these. Remove all Material 3 semantic tokens that are not in the approved palette.",
-          "confidence": "high"
-        },
-        {
-          "type": "color",
-          "element": "Overall page surface ratio (hero + faculty + footer = ~40% charcoal)",
-          "current": "Charcoal surfaces cover approximately 40% of total page area (hero ~25%, faculty ~10%, footer ~5%)",
-          "required": "70/15/15 rule: 70% Parchment canvas, 15% Charcoal structure, 15% Marigold accents. Charcoal exceeds its 15% budget by ~25 percentage points.",
-          "confidence": "high"
-        },
-        {
+          "reasoning": "The Tailwind configuration assigns the 'Inter' font to 'label-caps' (used for eyebrows). The Brand Playbook mandates 'IBM Plex Mono' for eyebrows and labels. Confidence: high.",
           "type": "font",
-          "element": "All font-family declarations and Tailwind config (lines 170–179)",
-          "current": "Source Serif 4 for display/headlines, Inter for body/CTA, IBM Plex Mono for eyebrows — all correctly applied",
-          "required": "Source Serif 4 / Inter / IBM Plex Mono — PASS. No banned fonts found.",
+          "element": "tailwind.config fontFamily.label-caps",
+          "current": "Inter",
+          "required": "IBM Plex Mono",
           "confidence": "high"
         },
         {
+          "reasoning": "The word 'immersive' is used in the Emerging Leaders Programme description ('immersive workshops'). 'immersive' is explicitly listed as a banned word in the Voice & Tone guidelines. Confidence: high.",
           "type": "voice",
-          "element": "All visible text content (lines 250–564)",
-          "current": "No banned phrases detected. Copy uses 'you'-addressed language, concrete verbs, clean tone.",
-          "required": "No banned phrases — PASS.",
+          "element": "article for Emerging Leaders Programme (paragraph text)",
+          "current": "immersive",
+          "required": "replace with an active verb or concrete noun",
           "confidence": "high"
         },
         {
+          "reasoning": "Row 3 (Emerging Leaders) uses a hardcoded background color of #EBE5D6. This is not in the approved palette (Parchment is #F4EFE3). Confidence: high.",
           "type": "color",
-          "element": "Brand Promise placement (line 475)",
-          "current": "Appears exactly once in faculty section as an eyebrow-mono <p> tag — not in <h1>, not in hero.",
-          "required": "Exactly once, never as headline, never in hero h1 — PASS.",
+          "element": "article.bg-[#EBE5D6]",
+          "current": "#EBE5D6",
+          "required": "#F4EFE3",
           "confidence": "high"
         }
       ]
     },
     "content": {
       "status": "done",
-      "completed_at": "2026-06-11T12:40:52Z",
       "findings": [
-        { "type": "missing_section", "detail": "FAQs section is completely absent from the page", "confidence": "high" },
-        { "type": "missing_section", "detail": "Testimonials section is completely absent from the page", "confidence": "high" },
-        { "type": "missing_section", "detail": "Trust Signals (batch stats, partner logos, inauguration details) are absent", "confidence": "high" },
-        { "type": "wrong_fact", "detail": "No fee/pricing amount is displayed anywhere on the page — the Enrollment section shows Duration, Format, and Credential but omits fee", "confidence": "high" },
-        { "type": "wrong_fact", "detail": "No contact information (email, phone, WhatsApp) is present on the page", "confidence": "high" },
-        { "type": "wrong_fact", "detail": "Faculty name 'Prof. M S Narasimhan' is NOT listed in canonical reference data (BRAND_DATA.md §6). Cannot verify — programme 'Accounting for Decision Making' is not in the reference library. Flagging as unverifiable, not necessarily wrong.", "confidence": "low" },
-        { "type": "wrong_fact", "detail": "Programme duration '9 Weeks' cannot be verified — 'Accounting for Decision Making' is not in BRAND_DATA.md §6 reference library", "confidence": "low" },
-        { "type": "wrong_fact", "detail": "All 9 module names cannot be verified — programme not in canonical reference data", "confidence": "low" },
-        { "type": "extra_content", "detail": "Brand Promise 'The same faculty. Wherever you are.' is correctly present exactly once in the Faculty section (not as a headline, not in hero). No issues.", "confidence": "high" },
-        { "type": "missing_section", "detail": "Hero H1 and CTA are present — no issue. Programme Overview, Curriculum, Faculty, Outcomes, Enrollment CTA, Footer all present. Mandatory section structure is sound.", "confidence": "high" }
+        {
+          "reasoning": "Section 4.1 specifies PCAIM duration is 10 months. HTML shows 12 WEEKS.",
+          "type": "wrong_fact",
+          "detail": "PCAIM duration should be 10 months, not 12 WEEKS.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "Section 4.2 specifies PCHM duration is 10 months. HTML shows 6 MONTHS.",
+          "type": "wrong_fact",
+          "detail": "PCHM duration should be 10 months, not 6 MONTHS.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "Section 4.3 specifies ELP duration is 7 months. HTML shows 1 YEAR.",
+          "type": "wrong_fact",
+          "detail": "ELP duration should be 7 months, not 1 YEAR.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The Directory Stats section contains fabricated metrics (14 Faculties, 250+ Alumni, 05 Campuses, 98% Placement). The playbook specifically states PCHM has no formal placement.",
+          "type": "extra_content",
+          "detail": "Fabricated stats in Directory Stats section (98% Placement Rate, 14 Faculties, 05 Campuses).",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The prompt says 'Checks: Mandatory sections present (Hero, Faculty, FAQs)'. The file lacks Faculty and FAQs. However, since this is a listing page, they might not be required. Flagging for safety.",
+          "type": "missing_section",
+          "detail": "Missing Faculty and FAQs sections. These are mandatory per general rules, though potentially not applicable for a directory page.",
+          "confidence": "low"
+        }
       ]
     },
     "ux_tech": {
       "status": "done",
-      "completed_at": "2026-06-11T12:41:02Z",
       "findings": [
-        { "type": "seo", "element": "<head>", "issue": "Missing <meta name=\"description\"> tag.", "confidence": "high" },
-        { "type": "seo", "element": "<head>", "issue": "Missing all Open Graph tags: og:title, og:description, og:image.", "confidence": "high" },
-        { "type": "a11y", "element": "section#outcomes h4", "issue": "Heading hierarchy skip: H2 → H4 in Outcomes section (H3 skipped).", "confidence": "high" },
-        { "type": "a11y", "element": "nav button.md:hidden (line 225)", "issue": "Mobile hamburger button has no aria-label, no aria-expanded.", "confidence": "high" },
-        { "type": "a11y", "element": "all CTA buttons", "issue": "Duplicate 'Enroll Now' buttons indistinguishable to assistive tech — no differentiating aria-labels.", "confidence": "high" },
-        { "type": "a11y", "element": "all interactive elements", "issue": "No :focus or :focus-visible styles defined. Keyboard navigation invisible.", "confidence": "high" },
-        { "type": "a11y", "element": "hero background div (line 241-247)", "issue": "Hero background div needs role='presentation' if decorative or role='img' + aria-label if meaningful.", "confidence": "low" },
-        { "type": "seo", "element": "<nav>", "issue": "<nav> not wrapped in <header> landmark.", "confidence": "low" },
-        { "type": "a11y", "element": "div#sticky-cta (line 561)", "issue": "Sticky CTA sits outside all ARIA landmark regions.", "confidence": "high" },
-        { "type": "mobile", "element": ".glass-shimmer (line 43-44)", "issue": "Fixed 400px width exceeds 375px mobile viewport — mitigated by position:absolute.", "confidence": "low" },
-        { "type": "seo", "element": "<script src='cdn.tailwindcss.com'> (line 95)", "issue": "Tailwind CDN loaded as render-blocking script in head.", "confidence": "high" },
-        { "type": "mobile", "element": "<meta name='viewport'> (line 5)", "issue": "Viewport meta present and correct — PASS.", "confidence": "high" },
-        { "type": "seo", "element": "<title> (line 6)", "issue": "Title tag present and descriptive — PASS.", "confidence": "high" },
-        { "type": "seo", "element": "<main>, <nav>, <section>, <footer>", "issue": "Semantic HTML5 elements used correctly — PASS.", "confidence": "high" },
-        { "type": "mobile", "element": "responsive grid classes", "issue": "Tailwind responsive prefixes well-implemented — PASS.", "confidence": "high" }
+        {
+          "reasoning": "The header element inside main acts as the above-fold section but lacks a 2-column layout (CSS Grid or Flexbox) as mandated by the VIEWPORT_SPEC. However, because it is just a text header without a right-side card, enforcing a grid directly on it might break the text flow, so confidence is low.",
+          "type": "layout",
+          "element": "main > header",
+          "issue": "Hero or above-fold section does not use CSS Grid or Flexbox with at least 2 explicit columns at desktop.",
+          "fix": "display: grid; grid-template-columns: 1fr 1fr",
+          "confidence": "low"
+        },
+        {
+          "reasoning": "The section element for directory stats uses py-stack-lg which computes to 32px padding, but the VIEWPORT_SPEC requires section vertical padding to be at least 60px at desktop.",
+          "type": "layout",
+          "element": "section.mt-stack-xl",
+          "issue": "Section vertical padding is 32px, below the 60px minimum at desktop.",
+          "fix": "padding-top: 80px; padding-bottom: 80px",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The img tag uses a 'data-alt' attribute instead of the standard 'alt' attribute, which is required for accessibility.",
+          "type": "a11y",
+          "element": "img",
+          "issue": "Missing 'alt' attribute on image.",
+          "fix": "add alt attribute",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The document head is missing a meta description and Open Graph tags.",
+          "type": "seo",
+          "element": "head",
+          "issue": "Missing meta description and Open Graph tags.",
+          "fix": "add meta description and Open Graph tags",
+          "confidence": "high"
+        }
       ]
     }
   },
-  "executor_ready": true,
-  "executor_status": "done",
-  "output_file": "output/adm_v1_variant_2_patched.html",
-  "report_path": "audit/report.md"
+  "executor_ready": false
 }

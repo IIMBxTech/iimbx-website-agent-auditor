@@ -113,3 +113,24 @@ These are low-confidence or content-unverifiable findings. Each is marked in the
 2. **Design team** should evaluate the 70/15/15 ratio violation — consider changing hero or faculty section backgrounds to reduce charcoal surface area.
 3. **Programme team** should verify faculty name, duration, and module names against the live programme page.
 4. For production, replace Tailwind CDN with a build-time approach to eliminate render-blocking.
+
+## Run Report for programmes_list_variant_1.html
+- Fixed layout padding on grid section to 80px.
+- Fixed brand colors (#C97138, #F4EFE3), font (IBM Plex Mono), and voice (removed 'immersive').
+- Fixed PCAIM duration/format facts and replaced fabricated 98% placement stat.
+- Fixed image alt attributes and added SEO meta tags.
+- Flagged missing Faculty and FAQ sections for manual review.
+
+## Run Report for programmes_list_variant_2.html
+- Fixed layout padding on grid section to 80px, added CSS grid to main header.
+- Fixed brand colors (#C97138, #F4EFE3), font (IBM Plex Mono), and voice (removed 'immersive').
+- Fixed PCAIM duration/format facts, updated H1, ELP 2.0, removed fabricated 6th card, commented out fake stats.
+- Fixed image alt attributes and added SEO meta tags.
+- Flagged missing Faculty and FAQ sections for manual review.
+
+## Run Report for programmes_list_variant_3.html
+- Fixed layout padding on grid section to 80px.
+- Fixed brand colors (#C97138, #F4EFE3), font (IBM Plex Mono), and voice (removed 'immersive').
+- Fixed PCAIM, PCHM, and ELP duration facts, commented out fabricated stats.
+- Fixed image alt attributes and added SEO meta tags.
+- Flagged missing Faculty and FAQ sections for manual review.

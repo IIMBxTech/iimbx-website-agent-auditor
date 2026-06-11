@@ -255,6 +255,22 @@ Hospital Operations · Healthcare Finance · Digital Transformation in Healthcar
 - **PCHM for Public Healthcare** — `iimbx.iimb.ac.in/pchm-for-public-healthcare/`
 - **CTM (Certificate in Technology & Management)** — `ctm-iitm.iimbx.edu.in/` (joint with IIT Madras)
 
+### 4.6 IIMBx Programmes Listing Page (Directory)
+
+| Attribute | Value |
+| :--- | :--- |
+| **Official Name** | Our Programmes: Explore Courses and Learning Paths |
+| **Old Site URL** | `https://iimbx.iimb.ac.in/programs/` |
+| **Structure** | A central directory displaying cards/tiles for all major IIMBx programmes |
+| **Primary Goal** | To act as the main portal for prospective learners to discover and navigate to specific course landing pages |
+
+**5 Core Programmes to Feature:**
+1. Professional Certificate in Artificial Intelligence for Managers
+2. Professional Certificate in Hospital Management
+3. Emerging Leaders Programme
+4. Airlines Management Programme
+5. FinTech Certificate Programme for Young Professionals
+
 ---
 
 ## §5 · How to Handle User Requests
@@ -508,6 +524,7 @@ If a user says "the fee has changed" or "we added a new module":
 - Never invent programme details — always trace to §4 or a live site fetch
 - Severity ratings are mandatory on every content gap
 - Brand Promise must appear exactly once per page: *"The same faculty. Wherever you are."*
+- **Dashboard Updates (`data.js`)**: When updating `dashboard/data/data.js`, NEVER use raw string concatenation, regex string replacement, or triple-quoted strings with literal newlines to inject JSON. You MUST use a script that parses the existing JSON via `json.loads()`, appends the new python dictionary, and writes it back safely using `json.dumps()` (or `JSON.stringify()`) to prevent JSON syntax errors and unescaped control characters breaking the UI.
 
 ---
 

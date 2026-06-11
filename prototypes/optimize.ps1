@@ -11,13 +11,11 @@ foreach ($file in $files) {
     $content = [regex]::Replace($content, 'class="([^"]+)"', {
         param($match)
         $classes = $match.Groups[1].Value -split '\s+'
+        # Filter out empty strings that might occur from multiple spaces
+        $classes = $classes | Where-Object { $_ -ne '' }
         $uniqueClasses = $classes | Select-Object -Unique
         return 'class="' + ($uniqueClasses -join ' ') + '"'
     })
-
-    # 2. Reduce overly nested HTML structures
-    $content = [regex]::Replace($content, '<div>\s*<div([^>]*)>', '<div$1>')
-    $content = [regex]::Replace($content, '</div>\s*</div>', '</div>')
 
     # Strip empty classes
     $content = $content -replace 'class=""', ''
