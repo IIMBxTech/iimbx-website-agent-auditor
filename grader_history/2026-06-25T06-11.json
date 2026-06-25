@@ -7,7 +7,7 @@
       "seo": 90,
       "overall": 83,
       "url": "http://localhost:8765/prototypes/adm_v1_variant_1.html",
-      "scannedAt": "2026-06-25T06:31:44.040Z",
+      "scannedAt": "2026-06-25T05:55:13.936Z",
       "error": null,
       "diagnostics": [
         {
@@ -73,7 +73,7 @@
       "seo": 90,
       "overall": 93,
       "url": "http://localhost:8765/prototypes/adm_gemini31pro.html",
-      "scannedAt": "2026-06-25T06:31:59.273Z",
+      "scannedAt": "2026-06-25T05:55:29.247Z",
       "error": null,
       "diagnostics": [
         {
@@ -139,7 +139,7 @@
       "seo": 90,
       "overall": 83,
       "url": "http://localhost:8765/prototypes/adm_v1_variant_3.html",
-      "scannedAt": "2026-06-25T06:32:14.682Z",
+      "scannedAt": "2026-06-25T05:55:43.337Z",
       "error": null,
       "diagnostics": [
         {
@@ -204,7 +204,7 @@
       "seo": 90,
       "overall": 90,
       "url": "http://localhost:8765/prototypes/adm_gemini35flash.html",
-      "scannedAt": "2026-06-25T06:32:28.487Z",
+      "scannedAt": "2026-06-25T05:55:57.807Z",
       "error": null,
       "diagnostics": [
         {
@@ -270,7 +270,7 @@
       "seo": 100,
       "overall": 97,
       "url": "http://localhost:8765/prototypes/adm_v1_variant_5.html",
-      "scannedAt": "2026-06-25T06:32:42.413Z",
+      "scannedAt": "2026-06-25T05:56:11.951Z",
       "error": null,
       "diagnostics": [
         {
@@ -331,13 +331,13 @@
       ]
     },
     "Stitch v4": {
-      "performance": 85,
+      "performance": 81,
       "accessibility": 86,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 87,
+      "overall": 86,
       "url": "http://localhost:8765/prototypes/adm_stitch_v4.html",
-      "scannedAt": "2026-06-25T06:32:55.999Z",
+      "scannedAt": "2026-06-25T05:56:25.564Z",
       "error": null,
       "diagnostics": [
         {
@@ -352,7 +352,7 @@
           "id": "max-potential-fid",
           "category": "performance",
           "title": "Max Potential First Input Delay",
-          "score": 40,
+          "score": 22,
           "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
         },
         {
@@ -418,15 +418,22 @@
       ]
     },
     "Old Website": {
-      "performance": 63,
+      "performance": 44,
       "accessibility": 74,
       "bestPractices": 54,
       "seo": 100,
-      "overall": 73,
+      "overall": 68,
       "url": "https://iimbx.iimb.ac.in/catalog/accounting-for-decision-making/",
-      "scannedAt": "2026-06-25T06:33:18.230Z",
+      "scannedAt": "2026-06-25T05:56:48.773Z",
       "error": null,
       "diagnostics": [
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
         {
           "id": "document-latency-insight",
           "category": "performance",
@@ -440,14 +447,6 @@
           "title": "Font display",
           "score": 0,
           "description": "Consider setting [font-display](https://developer.chrome.com/docs/performance/insights/font-display) to swap or optional to ensure text is consistently visible. swap can be further optimized to mitigate layout shifts with [font metric overrides](https://developer.chrome.com/blog/font-fallbacks).",
-          "affectedElements": 2
-        },
-        {
-          "id": "lcp-breakdown-insight",
-          "category": "performance",
-          "title": "LCP breakdown",
-          "score": 0,
-          "description": "Each [subpart has specific improvement strategies](https://developer.chrome.com/docs/performance/insights/lcp-breakdown). Ideally, most of the LCP time should be spent on loading the resources, not within delays.",
           "affectedElements": 2
         },
         {
@@ -503,13 +502,13 @@
   },
   "pchm": {
     "Proposed v1": {
-      "performance": 69,
+      "performance": 68,
       "accessibility": 92,
       "bestPractices": 96,
       "seo": 100,
       "overall": 89,
       "url": "http://localhost:8765/prototypes/pchm_v1.html",
-      "scannedAt": "2026-06-25T06:33:32.121Z",
+      "scannedAt": "2026-06-25T05:57:04.206Z",
       "error": null,
       "diagnostics": [
         {
@@ -532,7 +531,7 @@
           "id": "first-contentful-paint",
           "category": "performance",
           "title": "First Contentful Paint",
-          "score": 12,
+          "score": 11,
           "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
         },
         {
@@ -562,15 +561,23 @@
       ]
     },
     "Proposed v2": {
-      "performance": 68,
+      "performance": 61,
       "accessibility": 94,
       "bestPractices": 96,
       "seo": 100,
-      "overall": 90,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/pchm_v2.html",
-      "scannedAt": "2026-06-25T06:33:46.797Z",
+      "scannedAt": "2026-06-25T05:57:18.153Z",
       "error": null,
       "diagnostics": [
+        {
+          "id": "cls-culprits-insight",
+          "category": "performance",
+          "title": "Layout shift culprits",
+          "score": 0,
+          "description": "Layout shifts occur when elements move absent any user interaction. [Investigate the causes of layout shifts](https://developer.chrome.com/docs/performance/insights/cls-culprit), such as elements being added, removed, or their fonts changing as the page loads.",
+          "affectedElements": 1
+        },
         {
           "id": "network-dependency-tree-insight",
           "category": "performance",
@@ -586,13 +593,6 @@
           "score": 0,
           "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path.",
           "affectedElements": 1
-        },
-        {
-          "id": "first-contentful-paint",
-          "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 10,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
         },
         {
           "id": "color-contrast",
@@ -627,7 +627,7 @@
       "seo": 100,
       "overall": 89,
       "url": "http://localhost:8765/prototypes/pchm_v3.html",
-      "scannedAt": "2026-06-25T06:34:00.512Z",
+      "scannedAt": "2026-06-25T05:57:32.195Z",
       "error": null,
       "diagnostics": [
         {
@@ -680,13 +680,13 @@
       ]
     },
     "Stitch v4": {
-      "performance": 81,
+      "performance": 80,
       "accessibility": 86,
       "bestPractices": 88,
       "seo": 90,
       "overall": 86,
       "url": "http://localhost:8765/prototypes/pchm_stitch_v4.html",
-      "scannedAt": "2026-06-25T06:34:13.581Z",
+      "scannedAt": "2026-06-25T05:57:45.326Z",
       "error": null,
       "diagnostics": [
         {
@@ -701,7 +701,7 @@
           "id": "max-potential-fid",
           "category": "performance",
           "title": "Max Potential First Input Delay",
-          "score": 26,
+          "score": 16,
           "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
         },
         {
@@ -767,15 +767,22 @@
       ]
     },
     "Old Website": {
-      "performance": 52,
+      "performance": 50,
       "accessibility": 80,
       "bestPractices": 54,
       "seo": 100,
-      "overall": 72,
+      "overall": 71,
       "url": "https://iimbx.iimb.ac.in/hospital-management-program/",
-      "scannedAt": "2026-06-25T06:35:34.521Z",
+      "scannedAt": "2026-06-25T05:59:00.463Z",
       "error": null,
       "diagnostics": [
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)."
+        },
         {
           "id": "cls-culprits-insight",
           "category": "performance",
@@ -790,14 +797,6 @@
           "title": "Document request latency",
           "score": 0,
           "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
-        },
-        {
-          "id": "forced-reflow-insight",
-          "category": "performance",
-          "title": "Forced reflow",
-          "score": 0,
-          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about [forced reflows](https://developer.chrome.com/docs/performance/insights/forced-reflow) and possible mitigations.",
-          "affectedElements": 2
         },
         {
           "id": "color-contrast",
@@ -852,13 +851,13 @@
   },
   "nam": {
     "Proposed v1": {
-      "performance": 66,
+      "performance": 65,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
       "overall": 85,
       "url": "http://localhost:8765/prototypes/nam_v1.html",
-      "scannedAt": "2026-06-25T06:35:48.550Z",
+      "scannedAt": "2026-06-25T05:59:15.739Z",
       "error": null,
       "diagnostics": [
         {
@@ -926,13 +925,13 @@
       ]
     },
     "Proposed v2": {
-      "performance": 66,
+      "performance": 79,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
-      "overall": 85,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/nam_v2.html",
-      "scannedAt": "2026-06-25T06:36:02.159Z",
+      "scannedAt": "2026-06-25T05:59:30.194Z",
       "error": null,
       "diagnostics": [
         {
@@ -952,11 +951,11 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "largest-contentful-paint",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 6,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Largest Contentful Paint",
+          "score": 21,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
         },
         {
           "id": "color-contrast",
@@ -1000,13 +999,13 @@
       ]
     },
     "Proposed v3": {
-      "performance": 66,
+      "performance": 65,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
       "overall": 85,
       "url": "http://localhost:8765/prototypes/nam_v3.html",
-      "scannedAt": "2026-06-25T06:36:16.135Z",
+      "scannedAt": "2026-06-25T05:59:45.413Z",
       "error": null,
       "diagnostics": [
         {
@@ -1074,13 +1073,13 @@
       ]
     },
     "Stitch v4": {
-      "performance": 78,
+      "performance": 81,
       "accessibility": 88,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 86,
+      "overall": 87,
       "url": "http://localhost:8765/prototypes/nam_stitch_v4.html",
-      "scannedAt": "2026-06-25T06:36:28.851Z",
+      "scannedAt": "2026-06-25T05:59:58.488Z",
       "error": null,
       "diagnostics": [
         {
@@ -1095,15 +1094,15 @@
           "id": "max-potential-fid",
           "category": "performance",
           "title": "Max Potential First Input Delay",
-          "score": 35,
+          "score": 39,
           "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
         },
         {
-          "id": "total-blocking-time",
+          "id": "document-latency-insight",
           "category": "performance",
-          "title": "Total Blocking Time",
-          "score": 48,
-          "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
+          "title": "Document request latency",
+          "score": 50,
+          "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
         },
         {
           "id": "color-contrast",
@@ -1161,7 +1160,7 @@
       "seo": 0,
       "overall": 0,
       "url": "http://localhost:8765/prototypes/pcaim_v1.html",
-      "scannedAt": "2026-06-25T06:36:38.750Z",
+      "scannedAt": "2026-06-25T06:00:08.430Z",
       "error": null,
       "diagnostics": []
     },
@@ -1172,7 +1171,7 @@
       "seo": 0,
       "overall": 0,
       "url": "http://localhost:8765/prototypes/pcaim_v2.html",
-      "scannedAt": "2026-06-25T06:36:48.707Z",
+      "scannedAt": "2026-06-25T06:00:18.338Z",
       "error": null,
       "diagnostics": []
     },
@@ -1183,7 +1182,7 @@
       "seo": 0,
       "overall": 0,
       "url": "http://localhost:8765/prototypes/pcaim_v3.html",
-      "scannedAt": "2026-06-25T06:36:58.407Z",
+      "scannedAt": "2026-06-25T06:00:28.384Z",
       "error": null,
       "diagnostics": []
     },
@@ -1194,18 +1193,18 @@
       "seo": 0,
       "overall": 0,
       "url": "http://localhost:8765/prototypes/pcaim_stitch_v4.html",
-      "scannedAt": "2026-06-25T06:37:08.489Z",
+      "scannedAt": "2026-06-25T06:00:39.272Z",
       "error": null,
       "diagnostics": []
     },
     "Old Website": {
-      "performance": 25,
+      "performance": 31,
       "accessibility": 68,
       "bestPractices": 50,
       "seo": 100,
-      "overall": 61,
+      "overall": 62,
       "url": "https://iimbx.iimb.ac.in/ai-for-managers/",
-      "scannedAt": "2026-06-25T06:38:21.779Z",
+      "scannedAt": "2026-06-25T06:01:52.312Z",
       "error": null,
       "diagnostics": [
         {
@@ -1283,13 +1282,13 @@
   },
   "elp": {
     "V1 Proposed v1": {
-      "performance": 65,
+      "performance": 77,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
-      "overall": 85,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/elp_v1.html",
-      "scannedAt": "2026-06-25T06:38:36.050Z",
+      "scannedAt": "2026-06-25T06:02:09.706Z",
       "error": null,
       "diagnostics": [
         {
@@ -1309,11 +1308,12 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "mainthread-work-breakdown",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 5,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Minimize main-thread work",
+          "score": 0,
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)",
+          "affectedElements": 6
         },
         {
           "id": "color-contrast",
@@ -1357,13 +1357,13 @@
       ]
     },
     "V1 Proposed v2": {
-      "performance": 66,
+      "performance": 98,
       "accessibility": 75,
       "bestPractices": 96,
       "seo": 82,
-      "overall": 80,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/elp_v2.html",
-      "scannedAt": "2026-06-25T06:39:34.569Z",
+      "scannedAt": "2026-06-25T06:03:11.044Z",
       "error": null,
       "diagnostics": [
         {
@@ -1383,11 +1383,11 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "document-latency-insight",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 10,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Document request latency",
+          "score": 50,
+          "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
         },
         {
           "id": "color-contrast",
@@ -1445,7 +1445,7 @@
       "seo": 91,
       "overall": 85,
       "url": "http://localhost:8765/prototypes/elp_v3.html",
-      "scannedAt": "2026-06-25T06:39:50.408Z",
+      "scannedAt": "2026-06-25T06:03:27.589Z",
       "error": null,
       "diagnostics": [
         {
@@ -1468,7 +1468,7 @@
           "id": "first-contentful-paint",
           "category": "performance",
           "title": "First Contentful Paint",
-          "score": 8,
+          "score": 9,
           "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
         },
         {
@@ -1519,7 +1519,7 @@
       "seo": 90,
       "overall": 86,
       "url": "http://localhost:8765/prototypes/elp_v1_stitch_v4.html",
-      "scannedAt": "2026-06-25T06:40:03.675Z",
+      "scannedAt": "2026-06-25T06:03:43.518Z",
       "error": null,
       "diagnostics": [
         {
@@ -1534,7 +1534,7 @@
           "id": "max-potential-fid",
           "category": "performance",
           "title": "Max Potential First Input Delay",
-          "score": 37,
+          "score": 40,
           "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
         },
         {
@@ -1600,13 +1600,13 @@
       ]
     },
     "V1 Variant 1": {
-      "performance": 66,
+      "performance": 79,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
-      "overall": 85,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/elp_v1_variant_1.html",
-      "scannedAt": "2026-06-25T06:40:18.008Z",
+      "scannedAt": "2026-06-25T06:03:58.726Z",
       "error": null,
       "diagnostics": [
         {
@@ -1626,11 +1626,11 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "largest-contentful-paint",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 6,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Largest Contentful Paint",
+          "score": 19,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
         },
         {
           "id": "color-contrast",
@@ -1680,7 +1680,7 @@
       "seo": 91,
       "overall": 85,
       "url": "http://localhost:8765/prototypes/elp_v1_variant_2.html",
-      "scannedAt": "2026-06-25T06:40:33.481Z",
+      "scannedAt": "2026-06-25T06:04:14.458Z",
       "error": null,
       "diagnostics": [
         {
@@ -1703,7 +1703,7 @@
           "id": "first-contentful-paint",
           "category": "performance",
           "title": "First Contentful Paint",
-          "score": 6,
+          "score": 7,
           "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
         },
         {
@@ -1748,13 +1748,13 @@
       ]
     },
     "V1 Variant 3": {
-      "performance": 67,
+      "performance": 79,
       "accessibility": 86,
       "bestPractices": 96,
       "seo": 91,
-      "overall": 85,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/elp_v1_variant_3.html",
-      "scannedAt": "2026-06-25T06:40:47.863Z",
+      "scannedAt": "2026-06-25T06:04:31.425Z",
       "error": null,
       "diagnostics": [
         {
@@ -1774,11 +1774,11 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "largest-contentful-paint",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 7,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Largest Contentful Paint",
+          "score": 19,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
         },
         {
           "id": "color-contrast",
@@ -1822,13 +1822,13 @@
       ]
     },
     "V2 Variant 1": {
-      "performance": 67,
+      "performance": 98,
       "accessibility": 75,
       "bestPractices": 96,
       "seo": 82,
-      "overall": 80,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/elp_v2_variant_1.html",
-      "scannedAt": "2026-06-25T06:41:45.900Z",
+      "scannedAt": "2026-06-25T06:05:36.155Z",
       "error": null,
       "diagnostics": [
         {
@@ -1848,11 +1848,11 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "document-latency-insight",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 10,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Document request latency",
+          "score": 50,
+          "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
         },
         {
           "id": "color-contrast",
@@ -1904,13 +1904,13 @@
       ]
     },
     "V2 Variant 2": {
-      "performance": 67,
+      "performance": 98,
       "accessibility": 75,
       "bestPractices": 96,
       "seo": 82,
-      "overall": 80,
+      "overall": 88,
       "url": "http://localhost:8765/prototypes/elp_v2_variant_2.html",
-      "scannedAt": "2026-06-25T06:42:44.979Z",
+      "scannedAt": "2026-06-25T06:06:36.237Z",
       "error": null,
       "diagnostics": [
         {
@@ -1930,11 +1930,11 @@
           "affectedElements": 1
         },
         {
-          "id": "first-contentful-paint",
+          "id": "document-latency-insight",
           "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 11,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+          "title": "Document request latency",
+          "score": 50,
+          "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
         },
         {
           "id": "color-contrast",
@@ -1986,13 +1986,13 @@
       ]
     },
     "V2 Variant 3": {
-      "performance": 67,
+      "performance": 66,
       "accessibility": 75,
       "bestPractices": 96,
       "seo": 82,
       "overall": 80,
       "url": "http://localhost:8765/prototypes/elp_v2_variant_3.html",
-      "scannedAt": "2026-06-25T06:43:44.510Z",
+      "scannedAt": "2026-06-25T06:07:35.932Z",
       "error": null,
       "diagnostics": [
         {
@@ -2015,7 +2015,7 @@
           "id": "first-contentful-paint",
           "category": "performance",
           "title": "First Contentful Paint",
-          "score": 10,
+          "score": 11,
           "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
         },
         {
@@ -2068,13 +2068,13 @@
       ]
     },
     "V2 Stitch v4": {
-      "performance": 77,
+      "performance": 74,
       "accessibility": 85,
       "bestPractices": 88,
       "seo": 90,
-      "overall": 85,
+      "overall": 84,
       "url": "http://localhost:8765/prototypes/elp_v2_stitch_v4.html",
-      "scannedAt": "2026-06-25T06:43:57.699Z",
+      "scannedAt": "2026-06-25T06:07:50.096Z",
       "error": null,
       "diagnostics": [
         {
@@ -2089,14 +2089,14 @@
           "id": "max-potential-fid",
           "category": "performance",
           "title": "Max Potential First Input Delay",
-          "score": 25,
+          "score": 20,
           "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
         },
         {
           "id": "total-blocking-time",
           "category": "performance",
           "title": "Total Blocking Time",
-          "score": 44,
+          "score": 35,
           "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
         },
         {
@@ -2157,30 +2157,22 @@
   },
   "contact": {
     "Proposed v1": {
-      "performance": 44,
+      "performance": 53,
       "accessibility": 83,
       "bestPractices": 96,
       "seo": 91,
-      "overall": 79,
+      "overall": 81,
       "url": "http://localhost:8765/prototypes/contact_v1.html",
-      "scannedAt": "2026-06-25T06:44:56.191Z",
+      "scannedAt": "2026-06-25T06:08:53.035Z",
       "error": null,
       "diagnostics": [
-        {
-          "id": "cumulative-layout-shift",
-          "category": "performance",
-          "title": "Cumulative Layout Shift",
-          "score": 0,
-          "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/articles/cls).",
-          "affectedElements": 1
-        },
         {
           "id": "cls-culprits-insight",
           "category": "performance",
           "title": "Layout shift culprits",
           "score": 0,
           "description": "Layout shifts occur when elements move absent any user interaction. [Investigate the causes of layout shifts](https://developer.chrome.com/docs/performance/insights/cls-culprit), such as elements being added, removed, or their fonts changing as the page loads.",
-          "affectedElements": 10
+          "affectedElements": 2
         },
         {
           "id": "network-dependency-tree-insight",
@@ -2189,6 +2181,14 @@
           "score": 0,
           "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
           "affectedElements": 3
+        },
+        {
+          "id": "render-blocking-insight",
+          "category": "performance",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path.",
+          "affectedElements": 1
         },
         {
           "id": "color-contrast",
@@ -2232,30 +2232,22 @@
       ]
     },
     "Proposed v2": {
-      "performance": 45,
+      "performance": 79,
       "accessibility": 83,
       "bestPractices": 96,
       "seo": 91,
-      "overall": 79,
+      "overall": 87,
       "url": "http://localhost:8765/prototypes/contact_v2.html",
-      "scannedAt": "2026-06-25T06:45:57.586Z",
+      "scannedAt": "2026-06-25T06:09:54.158Z",
       "error": null,
       "diagnostics": [
-        {
-          "id": "cumulative-layout-shift",
-          "category": "performance",
-          "title": "Cumulative Layout Shift",
-          "score": 0,
-          "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/articles/cls).",
-          "affectedElements": 1
-        },
         {
           "id": "cls-culprits-insight",
           "category": "performance",
           "title": "Layout shift culprits",
           "score": 0,
           "description": "Layout shifts occur when elements move absent any user interaction. [Investigate the causes of layout shifts](https://developer.chrome.com/docs/performance/insights/cls-culprit), such as elements being added, removed, or their fonts changing as the page loads.",
-          "affectedElements": 10
+          "affectedElements": 2
         },
         {
           "id": "network-dependency-tree-insight",
@@ -2264,6 +2256,14 @@
           "score": 0,
           "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
           "affectedElements": 3
+        },
+        {
+          "id": "render-blocking-insight",
+          "category": "performance",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path.",
+          "affectedElements": 1
         },
         {
           "id": "color-contrast",
@@ -2307,15 +2307,31 @@
       ]
     },
     "Proposed v3": {
-      "performance": 74,
+      "performance": 75,
       "accessibility": 83,
       "bestPractices": 96,
       "seo": 91,
       "overall": 86,
       "url": "http://localhost:8765/prototypes/contact_v3.html",
-      "scannedAt": "2026-06-25T06:46:55.733Z",
+      "scannedAt": "2026-06-25T06:10:53.019Z",
       "error": null,
       "diagnostics": [
+        {
+          "id": "cumulative-layout-shift",
+          "category": "performance",
+          "title": "Cumulative Layout Shift",
+          "score": 0,
+          "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/articles/cls).",
+          "affectedElements": 1
+        },
+        {
+          "id": "cls-culprits-insight",
+          "category": "performance",
+          "title": "Layout shift culprits",
+          "score": 0,
+          "description": "Layout shifts occur when elements move absent any user interaction. [Investigate the causes of layout shifts](https://developer.chrome.com/docs/performance/insights/cls-culprit), such as elements being added, removed, or their fonts changing as the page loads.",
+          "affectedElements": 2
+        },
         {
           "id": "network-dependency-tree-insight",
           "category": "performance",
@@ -2323,21 +2339,6 @@
           "score": 0,
           "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
           "affectedElements": 3
-        },
-        {
-          "id": "render-blocking-insight",
-          "category": "performance",
-          "title": "Render-blocking requests",
-          "score": 0,
-          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path.",
-          "affectedElements": 1
-        },
-        {
-          "id": "first-contentful-paint",
-          "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 18,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
         },
         {
           "id": "color-contrast",
@@ -2381,22 +2382,15 @@
       ]
     },
     "Stitch v2": {
-      "performance": 57,
+      "performance": 73,
       "accessibility": 80,
       "bestPractices": 96,
       "seo": 82,
-      "overall": 79,
+      "overall": 83,
       "url": "http://localhost:8765/prototypes/contact_v2_stitch.html",
-      "scannedAt": "2026-06-25T06:47:12.223Z",
+      "scannedAt": "2026-06-25T06:11:08.140Z",
       "error": null,
       "diagnostics": [
-        {
-          "id": "first-contentful-paint",
-          "category": "performance",
-          "title": "First Contentful Paint",
-          "score": 0,
-          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
-        },
         {
           "id": "largest-contentful-paint",
           "category": "performance",
@@ -2410,6 +2404,14 @@
           "title": "Use efficient cache lifetimes",
           "score": 0,
           "description": "A long cache lifetime can speed up repeat visits to your page. [Learn more about caching](https://developer.chrome.com/docs/performance/insights/cache).",
+          "affectedElements": 1
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/performance/insights/image-delivery)",
           "affectedElements": 1
         },
         {

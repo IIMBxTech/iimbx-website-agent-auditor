@@ -2,9 +2,18 @@
   "target_file": "prototypes/programmes_list_variant_3.html",
   "task": "Audit the List Directory Layout for brand, content, and UX/tech compliance.",
   "dispatch_log": {
-    "brand": { "dispatched_at": "2026-06-11T20:47:00+05:30", "confirmed": true },
-    "content": { "dispatched_at": "2026-06-11T20:47:00+05:30", "confirmed": true },
-    "ux_tech": { "dispatched_at": "2026-06-11T20:47:00+05:30", "confirmed": true }
+    "brand": {
+      "dispatched_at": "2026-06-11T20:47:00+05:30",
+      "confirmed": true
+    },
+    "content": {
+      "dispatched_at": "2026-06-11T20:47:00+05:30",
+      "confirmed": true
+    },
+    "ux_tech": {
+      "dispatched_at": "2026-06-11T20:47:00+05:30",
+      "confirmed": true
+    }
   },
   "workers": {
     "brand": {
@@ -48,34 +57,40 @@
       "status": "done",
       "findings": [
         {
-          "reasoning": "Section 4.1 specifies PCAIM duration is 10 months. HTML shows 12 WEEKS.",
+          "reasoning": "According to Section 4.1, PCAIM duration is 10 months. The HTML prototype shows '12 WEEKS'.",
           "type": "wrong_fact",
-          "detail": "PCAIM duration should be 10 months, not 12 WEEKS.",
+          "detail": "PCAIM duration is incorrect (shows 12 WEEKS instead of 10 months).",
           "confidence": "high"
         },
         {
-          "reasoning": "Section 4.2 specifies PCHM duration is 10 months. HTML shows 6 MONTHS.",
+          "reasoning": "According to Section 4.2, PCHM duration is 10 months. The HTML prototype shows '6 MONTHS'.",
           "type": "wrong_fact",
-          "detail": "PCHM duration should be 10 months, not 6 MONTHS.",
+          "detail": "PCHM duration is incorrect (shows 6 MONTHS instead of 10 months).",
           "confidence": "high"
         },
         {
-          "reasoning": "Section 4.3 specifies ELP duration is 7 months. HTML shows 1 YEAR.",
+          "reasoning": "According to Section 4.3, ELP duration is 7 months. The HTML prototype shows '1 YEAR'.",
           "type": "wrong_fact",
-          "detail": "ELP duration should be 7 months, not 1 YEAR.",
+          "detail": "ELP duration is incorrect (shows 1 YEAR instead of 7 months).",
           "confidence": "high"
         },
         {
-          "reasoning": "The Directory Stats section contains fabricated metrics (14 Faculties, 250+ Alumni, 05 Campuses, 98% Placement). The playbook specifically states PCHM has no formal placement.",
+          "reasoning": "The Directory Stats section displays fabricated metrics such as '98% Placement Rate'. Section 4.2 states PCHM has no formal placement.",
           "type": "extra_content",
-          "detail": "Fabricated stats in Directory Stats section (98% Placement Rate, 14 Faculties, 05 Campuses).",
+          "detail": "Fabricated statistics in Directory Stats section including 98% placement rate.",
           "confidence": "high"
         },
         {
-          "reasoning": "The prompt says 'Checks: Mandatory sections present (Hero, Faculty, FAQs)'. The file lacks Faculty and FAQs. However, since this is a listing page, they might not be required. Flagging for safety.",
+          "reasoning": "The instructions state that mandatory sections include Hero, Faculty, and FAQs. The HTML lacks Faculty and FAQs sections. Since it's a directory page, they may not be applicable, so confidence is low.",
           "type": "missing_section",
-          "detail": "Missing Faculty and FAQs sections. These are mandatory per general rules, though potentially not applicable for a directory page.",
+          "detail": "Missing Faculty and FAQs sections on the page.",
           "confidence": "low"
+        },
+        {
+          "reasoning": "Section 4.6 specifies 5 Core Programmes to Feature. The HTML includes a 6th programme: Corporate Governance & Ethics. This is extra content.",
+          "type": "extra_content",
+          "detail": "Included 'Corporate Governance & Ethics' which is not among the 5 core programmes specified for the listing page.",
+          "confidence": "high"
         }
       ]
     },
@@ -83,39 +98,166 @@
       "status": "done",
       "findings": [
         {
-          "reasoning": "The header element inside main acts as the above-fold section but lacks a 2-column layout (CSS Grid or Flexbox) as mandated by the VIEWPORT_SPEC. However, because it is just a text header without a right-side card, enforcing a grid directly on it might break the text flow, so confidence is low.",
+          "reasoning": "VIEWPORT_SPEC.md states 'max-width: NONE on <body> or <main>'. The <main> element has the Tailwind class 'max-w-[1200px]', restricting its width.",
           "type": "layout",
-          "element": "main > header",
-          "issue": "Hero or above-fold section does not use CSS Grid or Flexbox with at least 2 explicit columns at desktop.",
-          "fix": "display: grid; grid-template-columns: 1fr 1fr",
-          "confidence": "low"
+          "element": "main",
+          "issue": "main element has max-width restricted to 1200px instead of none",
+          "fix": "max-width: none",
+          "confidence": "high"
         },
         {
-          "reasoning": "The section element for directory stats uses py-stack-lg which computes to 32px padding, but the VIEWPORT_SPEC requires section vertical padding to be at least 60px at desktop.",
+          "reasoning": "VIEWPORT_SPEC.md states 'Content container: max-width: 1200px, margin: 0 auto, padding: 0 48px'. The containers (<nav>, <main>) use 'px-margin-desktop' which is 64px.",
+          "type": "layout",
+          "element": ".px-margin-desktop",
+          "issue": "Content container has horizontal padding of 64px instead of 48px",
+          "fix": "padding: 0 48px",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "VIEWPORT_SPEC.md states 'Section padding: 80px top/bottom minimum'. The <main> tag uses 'py-stack-xl' (64px) and the <section> uses 'py-stack-lg' (32px).",
           "type": "layout",
           "element": "section.mt-stack-xl",
-          "issue": "Section vertical padding is 32px, below the 60px minimum at desktop.",
+          "issue": "Section vertical padding is 32px, below the 80px minimum",
           "fix": "padding-top: 80px; padding-bottom: 80px",
           "confidence": "high"
         },
         {
-          "reasoning": "The img tag uses a 'data-alt' attribute instead of the standard 'alt' attribute, which is required for accessibility.",
+          "reasoning": "The <img> element uses 'data-alt' instead of the standard 'alt' attribute, which is not read by screen readers.",
           "type": "a11y",
           "element": "img",
-          "issue": "Missing 'alt' attribute on image.",
+          "issue": "Missing 'alt' attribute for accessibility",
           "fix": "add alt attribute",
           "confidence": "high"
         },
         {
-          "reasoning": "The document head is missing a meta description and Open Graph tags.",
+          "reasoning": "There are multiple 'Learn More' buttons without aria-labels. Screen reader users won't know what they are learning more about.",
+          "type": "a11y",
+          "element": "button",
+          "issue": "Buttons lack descriptive accessible names",
+          "fix": "add aria-label attribute",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The HTML document is missing a <meta name=\"description\"> tag, which is essential for SEO.",
           "type": "seo",
           "element": "head",
-          "issue": "Missing meta description and Open Graph tags.",
-          "fix": "add meta description and Open Graph tags",
+          "issue": "Missing meta description",
+          "fix": "add meta description",
           "confidence": "high"
         }
       ]
     }
   },
-  "executor_ready": false
+  "executor_ready": false,
+  "pcaim": {
+    "brand": {
+      "status": "done",
+      "findings": [
+        {
+          "reasoning": "Checked colors, fonts, and voice. White background is explicitly allowed via override. Charcoal (#1A1B1E) and Marigold (#C97138) are correctly applied. No banned colors found. Fonts are strictly followed (Source Serif 4, Inter, IBM Plex Mono). Voice & tone is compliant with no banned words, and 'The same faculty. Wherever you are.' is present.",
+          "type": "pass",
+          "element": "all",
+          "current": "compliant",
+          "required": "compliant",
+          "confidence": "high"
+        }
+      ]
+    },
+    "content": {
+      "status": "done",
+      "findings": [
+        {
+          "reasoning": "The HTML prototype is missing the FAQs section which is expected per the standard page structure.",
+          "type": "missing_section",
+          "detail": "Missing FAQs section.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The HTML prototype is missing the Testimonials section.",
+          "type": "missing_section",
+          "detail": "Missing Testimonials section.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The HTML prototype is missing the Fee / dates information.",
+          "type": "missing_section",
+          "detail": "Missing Fee and Dates visibility.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The Eligibility section in the HTML only mentions '3 Years Exp.' while Section 4.1 specifies 'Min. 3 years professional experience \u00b7 Graduate degree in any discipline'.",
+          "type": "missing_fact",
+          "detail": "Missing Graduate degree requirement in Eligibility.",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The footer includes the email but is missing Phone and WhatsApp numbers, as well as Office Hours specified in Section 4.1.",
+          "type": "missing_fact",
+          "detail": "Missing phone and WhatsApp contact details.",
+          "confidence": "high"
+        }
+      ]
+    },
+    "ux_tech": {
+      "status": "done",
+      "findings": [
+        {
+          "reasoning": "VIEWPORT_SPEC.md states 'Content container: max-width: 1200px'. The layout containers in nav, header, and sections use the Tailwind class max-w-7xl, which maps to 1280px.",
+          "type": "layout",
+          "element": ".max-w-7xl",
+          "issue": "Content container max-width exceeds 1200px limit",
+          "fix": "max-width: 1200px",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "VIEWPORT_SPEC.md states 'Content container: padding: 0 48px'. The containers use px-6 md:px-8 which translates to 32px horizontal padding on desktop.",
+          "type": "layout",
+          "element": ".max-w-7xl",
+          "issue": "Content container horizontal padding is 32px instead of 48px",
+          "fix": "padding: 0 48px",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "VIEWPORT_SPEC.md states 'Hero section: CSS Grid, 2 columns, gap: 64px minimum'. The hero wrapper uses Flexbox (flex-col md:flex-row) with gap-12 (48px).",
+          "type": "layout",
+          "element": "header > div",
+          "issue": "Hero uses flex instead of grid and gap is less than 64px",
+          "fix": "display: grid; gap: 64px",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "VIEWPORT_SPEC.md states 'Hero left col: ~55% width'. The HTML uses w-full md:w-1/2 (50%).",
+          "type": "layout",
+          "element": "header > div > div:first-child",
+          "issue": "Hero left column is 50% instead of 55%",
+          "fix": "width: 55%",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "VIEWPORT_SPEC.md states 'Hero right card: ~40% width'. The HTML uses w-full md:w-1/2 (50%).",
+          "type": "layout",
+          "element": "header > div > div:last-child",
+          "issue": "Hero right column is 50% instead of 40%",
+          "fix": "width: 40%",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "The HTML document is missing a <meta name=\"description\"> tag, which is essential for SEO.",
+          "type": "seo",
+          "element": "head",
+          "issue": "Missing meta description",
+          "fix": "add meta description",
+          "confidence": "high"
+        },
+        {
+          "reasoning": "Decorative SVGs should have aria-hidden=\"true\" to prevent screen readers from announcing them unnecessarily.",
+          "type": "a11y",
+          "element": "svg",
+          "issue": "Missing aria-hidden on decorative SVG",
+          "fix": "add aria-hidden=\"true\"",
+          "confidence": "high"
+        }
+      ]
+    }
+  }
 }

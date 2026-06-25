@@ -46,6 +46,12 @@ const VARIANT_MAP = {
     'Proposed v3': 'prototypes/nam_v3.html',
     'Stitch v4':   'prototypes/nam_stitch_v4.html',
   },
+  pcaim: {
+    'proposedV1': 'prototypes/ai_for_managers_v1.html',
+    'proposedV2': 'prototypes/ai_for_managers_v2.html',
+    'proposedV3': 'prototypes/ai_for_managers_v3.html',
+    'oldSite': 'https://iimbx.iimb.ac.in/ai-for-managers/',
+  },
   elp: {
     'V1 Proposed v1': 'prototypes/elp_v1.html',
     'V1 Proposed v2': 'prototypes/elp_v2.html',

@@ -381,12 +381,16 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (currentWfRight === 'v2_variant_2') fileUrl = '../prototypes/elp_v2_variant_2.html';
             else if (currentWfRight === 'v2_variant_3') fileUrl = '../prototypes/elp_v2_variant_3.html';
             else if (currentWfRight === 'v2_variant_4') fileUrl = '../prototypes/elp_v2_stitch_v4.html';
+        } else if (prog.id === 'pcaim') {
+            if (currentWfRight === 'proposedV1') fileUrl = '../prototypes/ai_for_managers_v1.html';
+            else if (currentWfRight === 'proposedV2') fileUrl = '../prototypes/ai_for_managers_v2.html';
+            else if (currentWfRight === 'proposedV3') fileUrl = '../prototypes/ai_for_managers_v3.html';
         } else if (prog.id === 'contact') {
             if (currentWfRight === 'proposedV1') fileUrl = '../prototypes/contact_v1.html';
             else if (currentWfRight === 'proposedV2') fileUrl = '../prototypes/contact_v2.html';
             else if (currentWfRight === 'proposedV3') fileUrl = '../prototypes/contact_v3.html';
             else if (currentWfRight === 'v2_variant_4') fileUrl = '../prototypes/contact_v2_stitch.html';
-                } else if (prog.id === 'programmes_listing') {
+        } else if (prog.id === 'programmes_listing') {
             if (currentWfRight === 'v1_variant_1') fileUrl = '../output/programmes_list_variant_1_patched.html';
             else if (currentWfRight === 'v1_variant_2') fileUrl = '../output/programmes_list_variant_2_patched.html';
             else if (currentWfRight === 'v1_variant_3') fileUrl = '../output/programmes_list_variant_3_patched.html';
@@ -482,12 +486,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (paneId === 'v2_variant_3') fileUrl = `../prototypes/elp_v2_variant_3.html`;
                 else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
                 else if (paneId === 'v2_variant_4') fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+            } else if (prog.id === 'pcaim') {
+                if (paneId === 'proposedV1') fileUrl = '../prototypes/ai_for_managers_v1.html';
+                else if (paneId === 'proposedV2') fileUrl = '../prototypes/ai_for_managers_v2.html';
+                else if (paneId === 'proposedV3') fileUrl = '../prototypes/ai_for_managers_v3.html';
             } else if (prog.id === 'contact') {
                 if (paneId === 'proposedV1') fileUrl = '../prototypes/contact_v1.html';
                 else if (paneId === 'proposedV2') fileUrl = '../prototypes/contact_v2.html';
                 else if (paneId === 'proposedV3') fileUrl = '../prototypes/contact_v3.html';
                 else if (paneId === 'v2_variant_4') fileUrl = '../prototypes/contact_v2_stitch.html';
-                        } else if (prog.id === 'programmes_listing') {
+            } else if (prog.id === 'programmes_listing') {
                 if (paneId === 'v1_variant_1') fileUrl = '../output/programmes_list_variant_1_patched.html';
                 else if (paneId === 'v1_variant_2') fileUrl = '../output/programmes_list_variant_2_patched.html';
                 else if (paneId === 'v1_variant_3') fileUrl = '../output/programmes_list_variant_3_patched.html';
@@ -548,12 +556,16 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (paneId === 'v2_variant_3') fileUrl = `../prototypes/elp_v2_variant_3.html`;
         else if (paneId === 'v1_variant_4') fileUrl = `../prototypes/elp_v1_stitch_v4.html`;
         else if (paneId === 'v2_variant_4') fileUrl = `../prototypes/elp_v2_stitch_v4.html`;
+    } else if (progId === 'pcaim') {
+        if (paneId === 'proposedV1') fileUrl = '../prototypes/ai_for_managers_v1.html';
+        else if (paneId === 'proposedV2') fileUrl = '../prototypes/ai_for_managers_v2.html';
+        else if (paneId === 'proposedV3') fileUrl = '../prototypes/ai_for_managers_v3.html';
     } else if (progId === 'contact') {
         if (paneId === 'proposedV1') fileUrl = '../prototypes/contact_v1.html';
         else if (paneId === 'proposedV2') fileUrl = '../prototypes/contact_v2.html';
         else if (paneId === 'proposedV3') fileUrl = '../prototypes/contact_v3.html';
         else if (paneId === 'v2_variant_4') fileUrl = '../prototypes/contact_v2_stitch.html';
-        } else if (progId === 'programmes_listing') {
+    } else if (progId === 'programmes_listing') {
         if (paneId === 'v1_variant_1') fileUrl = '../output/programmes_list_variant_1_patched.html';
         else if (paneId === 'v1_variant_2') fileUrl = '../output/programmes_list_variant_2_patched.html';
         else if (paneId === 'v1_variant_3') fileUrl = '../output/programmes_list_variant_3_patched.html';

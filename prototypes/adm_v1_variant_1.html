@@ -20,171 +20,47 @@
 <!-- Tailwind Config -->
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
+          darkMode:"class",
           theme: {
-            extend: {
-              "colors": {
-                      "on-error": "#ffffff",
-                      "tertiary-container": "#747478",
-                      "on-secondary-container": "#324684",
-                      "on-error-container": "#93000a",
-                      "charcoal": "#1A1B1E",
-                      "surface-variant": "#e7e2d6",
-                      "secondary": "#485b9b",
-                      "on-secondary-fixed": "#00164e",
-                      "on-secondary": "#ffffff",
-                      "marigold": "#C97138",
-                      "inverse-on-surface": "#f5f0e4",
-                      "primary-container": "#b15e27",
-                      "tertiary-fixed": "#e3e2e6",
-                      "navy": "#172D6B",
-                      "on-tertiary": "#ffffff",
-                      "on-background": "#1d1c15",
-                      "inverse-surface": "#323029",
-                      "primary": "#92470f",
-                      "on-tertiary-fixed-variant": "#46474a",
-                      "on-primary-fixed-variant": "#753400",
-                      "surface": "#fef9ed",
-                      "tertiary-fixed-dim": "#c7c6ca",
-                      "tertiary": "#5b5c5f",
-                      "surface-tint": "#954912",
-                      "on-primary": "#ffffff",
-                      "primary-fixed-dim": "#ffb68c",
-                      "background": "#fef9ed",
-                      "surface-container-highest": "#e7e2d6",
-                      "error": "#ba1a1a",
-                      "on-primary-container": "#fffbff",
-                      "surface-container-low": "#f8f3e7",
-                      "parchment-deep": "#E8E2D2",
-                      "surface-container": "#f2ede2",
-                      "outline": "#877368",
-                      "surface-container-high": "#ede8dc",
-                      "outline-variant": "#dac2b5",
-                      "primary-fixed": "#ffdbc9",
-                      "on-tertiary-fixed": "#1a1b1e",
-                      "secondary-fixed-dim": "#b5c4ff",
-                      "on-secondary-fixed-variant": "#2f4382",
-                      "on-primary-fixed": "#321200",
-                      "error-container": "#ffdad6",
-                      "on-surface": "#1d1c15",
-                      "inverse-primary": "#ffb68c",
-                      "surface-container-lowest": "#ffffff",
-                      "secondary-fixed": "#dce1ff",
-                      "secondary-container": "#a3b6fd",
-                      "charcoal-muted": "#36383D",
-                      "on-surface-variant": "#54433a",
-                      "on-tertiary-container": "#fefcff",
-                      "surface-dim": "#dedace",
-                      "surface-bright": "#fef9ed",
-                      "parchment": "#F4EFE3"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "max-width": "1280px",
-                      "margin-desktop": "64px",
-                      "gutter": "24px",
-                      "unit": "8px",
-                      "margin-mobile": "20px"
-              },
-              "fontFamily": {
-                      "display-lg": [
-                              "Source Serif 4"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "label-bold": [
-                              "Inter"
-                      ],
-                      "headline-md": [
-                              "Source Serif 4"
-                      ],
-                      "display-lg-mobile": [
-                              "Source Serif 4"
-                      ],
-                      "eyebrow-mono": [
-                              "IBM Plex Mono"
-                      ],
-                      "cta": [
-                              "Inter"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-xl": [
-                              "Source Serif 4"
+            extend: {"colors": {"on-error":"#ffffff","tertiary-container":"#747478","on-secondary-container":"#324684","on-error-container":"#93000a","charcoal":"#1A1B1E","surface-variant":"#e7e2d6","secondary":"#485b9b","on-secondary-fixed":"#00164e","on-secondary":"#ffffff","marigold":"#C97138","inverse-on-surface":"#f5f0e4","primary-container":"#b15e27","tertiary-fixed":"#e3e2e6","navy":"#172D6B","on-tertiary":"#ffffff","on-background":"#1d1c15","inverse-surface":"#323029","primary":"#92470f","on-tertiary-fixed-variant":"#46474a","on-primary-fixed-variant":"#753400","surface":"#fef9ed","tertiary-fixed-dim":"#c7c6ca","tertiary":"#5b5c5f","surface-tint":"#954912","on-primary":"#ffffff","primary-fixed-dim":"#ffb68c","background":"#fef9ed","surface-container-highest":"#e7e2d6","error":"#ba1a1a","on-primary-container":"#fffbff","surface-container-low":"#f8f3e7","parchment-deep":"#E8E2D2","surface-container":"#f2ede2","outline":"#877368","surface-container-high":"#ede8dc","outline-variant":"#dac2b5","primary-fixed":"#ffdbc9","on-tertiary-fixed":"#1a1b1e","secondary-fixed-dim":"#b5c4ff","on-secondary-fixed-variant":"#2f4382","on-primary-fixed":"#321200","error-container":"#ffdad6","on-surface":"#1d1c15","inverse-primary":"#ffb68c","surface-container-lowest":"#ffffff","secondary-fixed":"#dce1ff","secondary-container":"#a3b6fd","charcoal-muted":"#36383D","on-surface-variant":"#54433a","on-tertiary-container":"#fefcff","surface-dim":"#dedace","surface-bright":"#fef9ed","parchment":"#F4EFE3"
+              },"borderRadius": {"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"
+              },"spacing": {"max-width":"1280px","margin-desktop":"64px","gutter":"24px","unit":"8px","margin-mobile":"20px"
+              },"fontFamily": {"display-lg": ["Source Serif 4"
+                      ],"body-lg": ["Inter"
+                      ],"label-bold": ["Inter"
+                      ],"headline-md": ["Source Serif 4"
+                      ],"display-lg-mobile": ["Source Serif 4"
+                      ],"eyebrow-mono": ["IBM Plex Mono"
+                      ],"cta": ["Inter"
+                      ],"body-md": ["Inter"
+                      ],"headline-xl": ["Source Serif 4"
                       ]
-              },
-              "fontSize": {
-                      "display-lg": [
-                              "64px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
+              },"fontSize": {"display-lg": ["64px",
+                              {"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"
                               }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
+                      ],"body-lg": ["18px",
+                              {"lineHeight":"1.6","fontWeight":"400"
                               }
-                      ],
-                      "label-bold": [
-                              "14px",
-                              {
-                                      "lineHeight": "1",
-                                      "fontWeight": "600"
+                      ],"label-bold": ["14px",
+                              {"lineHeight":"1","fontWeight":"600"
                               }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "600"
+                      ],"headline-md": ["32px",
+                              {"lineHeight":"1.3","fontWeight":"600"
                               }
-                      ],
-                      "display-lg-mobile": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
+                      ],"display-lg-mobile": ["40px",
+                              {"lineHeight":"1.2","fontWeight":"700"
                               }
-                      ],
-                      "eyebrow-mono": [
-                              "12px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "600"
+                      ],"eyebrow-mono": ["12px",
+                              {"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"600"
                               }
-                      ],
-                      "cta": [
-                              "16px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.01em",
-                                      "fontWeight": "600"
+                      ],"cta": ["16px",
+                              {"lineHeight":"1","letterSpacing":"0.01em","fontWeight":"600"
                               }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
+                      ],"body-md": ["16px",
+                              {"lineHeight":"1.5","fontWeight":"400"
                               }
-                      ],
-                      "headline-xl": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "600"
+                      ],"headline-xl": ["48px",
+                              {"lineHeight":"1.2","fontWeight":"600"
                               }
                       ]
               }
@@ -224,12 +100,12 @@
 </div>
 </nav>
 <!-- Main Content Canvas -->
-<main class="pt-20 pb-20">
+<main class="pt-8 pb-8">
 <!-- Hero Section -->
 <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0 bg-charcoal">
 <div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxF0Gogs6qWg85dAnIUlPL0TuU3FnrTmMn1QbrsiZ2nBM_Uq3Cu8uoLiRABBg88x6A6tHAjJgNieVcH2znAeHOQRI9jLFT-u2nsCmOApOud6rPinH3lcRXPUy7fRMsqQWKfEF4oQhiYylUq1QJBfEPly4uzrG9oIA9CV8zNkS-3SBLC2YmfiSRCXWRPNlThrs7BYsrlz2JYqnTpjbzveOcML_kfuLCoKia_2rjbaq9YQ4SCaYRqc4np2BrwPx_j7UwWBOcXuUIAg');"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+
 </div>
 <div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
 <span class="inline-block font-eyebrow-mono text-eyebrow-mono text-marigold mb-6 tracking-widest uppercase">9-Week Premium Programme</span>
@@ -254,7 +130,7 @@
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-12">
 <h2 class="font-headline-xl text-headline-xl text-charcoal mb-4">Programme Overview</h2>
-<div class="w-16 h-1 bg-marigold mx-auto mb-6"></div>
+
 <p class="font-body-md text-body-md text-tertiary max-w-2xl mx-auto">
   Designed specifically for managers and executives looking to transition from operational roles into strategic leadership by demystifying financial data.
 </p>
@@ -305,7 +181,7 @@
 <!-- Curriculum Section -->
 <section class="py-16 bg-parchment" id="curriculum">
 <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-16">
+<div class="text-center mb-8">
 <h2 class="font-headline-xl text-headline-xl text-charcoal mb-4">Curriculum Framework</h2>
 <p class="font-body-md text-body-md text-tertiary">A rigorous 9-module journey designed for incremental mastery.</p>
 </div>
@@ -378,7 +254,7 @@
 </div>
 <!-- Footer -->
 <footer class="w-full bg-charcoal dark:bg-charcoal-muted">
-<div class="py-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-max-width mx-auto px-margin-desktop w-full">
+<div class="py-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter mx-auto px-margin-desktop w-full">
 <div class="md:col-span-1 mb-8 md:mb-0">
 <div class="font-display-lg text-headline-md text-parchment mb-4">
                 IIMBx
