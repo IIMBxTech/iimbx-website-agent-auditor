@@ -175,6 +175,9 @@ MEGA_CSS = """
         .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
         .sub-panel { display: none; }
         .sub-panel.active { display: block; }
+        .mega-services-list a { transition: all 0.3s; border-bottom: 3px solid transparent; }
+        .mega-services-list a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 3px solid var(--logo-red); }
+        .mega-services-list a:hover i { transform: scale(1.1); transition: transform 0.3s; }
         @media (max-width: 900px) { .mega-menu { display: none !important; } }
 """
 

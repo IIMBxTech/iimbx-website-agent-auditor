@@ -83,286 +83,7 @@
         }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(192, 0, 0, 0.2); }
         .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
-
-        /* Mega Menu */
-        .mega-trigger { 
-            position: static; 
-            display: flex; 
-            align-items: center; 
-            gap: 5px;
-            padding: 10px 0;
-        }
-        .mega-trigger i { font-size: 10px; transition: transform 0.3s; }
-        .mega-trigger:hover i { transform: rotate(45deg); color: var(--logo-red); }
-
-        .mega-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            border-top: 3px solid var(--logo-red);
-            z-index: 999;
-        }
-        /* Hover bridge: invisible padding area so cursor can travel from trigger to menu */
-        .mega-trigger::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: transparent;
-        }
-        .mega-trigger:hover .mega-menu,
-        .mega-menu:hover { display: flex; }
-
-        .mega-col-1 {
-            width: 240px;
-            flex-shrink: 0;
-            background: var(--gray-light);
-            padding: 32px 0;
-            border-right: 1px solid var(--gray-border);
-        }
-        .mega-col-1 a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 28px;
-            font-family: 'Barlow', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            text-transform: uppercase;
-            color: var(--charcoal);
-            text-decoration: none;
-            transition: all 0.15s;
-            letter-spacing: 0.5px;
-        }
-        .mega-col-1 a:hover, .mega-col-1 a.active {
-            color: var(--logo-red);
-            background: var(--white);
-            border-left: 3px solid var(--logo-red);
-        }
-        .mega-col-1 a i { font-size: 11px; color: var(--logo-red); opacity: 0.7; }
-
-        .mega-col-2 {
-            width: 250px;
-            flex-shrink: 0;
-            padding: 32px 24px;
-            border-right: 1px solid var(--gray-border);
-        }
-        .mega-col-2 a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 11px 14px;
-            font-family: 'Barlow', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            color: var(--charcoal);
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.15s;
-            letter-spacing: 0.3px;
-        }
-        .mega-col-2 a:hover, .mega-col-2 a.active {
-            color: var(--logo-red);
-            background: rgba(192,0,0,0.05);
-        }
-
-        .mega-col-3 {
-            flex: 1;
-            padding: 32px 40px;
-        }
-        .mega-col-3 h4 {
-            font-family: 'Barlow', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--ink);
-            margin-bottom: 18px;
-            letter-spacing: 1.5px;
-        }
-        .mega-products-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4px 40px;
-        }
-        .mega-products-list a {
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            color: var(--charcoal);
-            text-decoration: none;
-            padding: 8px 0;
-            display: block;
-            line-height: 1.5;
-            transition: color 0.15s;
-        }
-        .mega-products-list a::before {
-            content: '• ';
-            color: var(--logo-red);
-            font-weight: bold;
-        }
-        .mega-products-list a:hover { color: var(--logo-red); }
-        .mega-products-list .product-sub {
-            font-size: 12px;
-            color: #999;
-            display: block;
-            margin-top: 1px;
-            padding-left: 14px;
-            font-style: italic;
-            font-weight: 400;
-        }
-
-        /* Hero Section - V4 Farmer Immersive */
-        .hero { 
-            padding: 140px 5% 180px; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../assets/indian_farm_hero_yellow_tractor.png') center/cover no-repeat;
-            text-align: center; position: relative;
-        }
-        .hero h1 { font-size: 64px; color: var(--white); margin-bottom: 24px; line-height: 1.1; letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .hero h1 span { color: var(--brand-yellow); }
-        .hero p { font-size: 22px; color: #EEE; max-width: 750px; margin: 0 auto 40px; font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-
-        /* Dashboard Overlay - V4 High Contrast */
-        .dashboard { 
-            display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
-            background: var(--ink); padding: 40px 20px; border-radius: 12px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5); max-width: 1100px; 
-            margin: -80px auto 40px; position: relative; z-index: 10; 
-            border: 2px solid var(--brand-yellow);
-            border-bottom: 8px solid var(--brand-yellow);
-        }
-        .metric { text-align: center; flex: 1; min-width: 200px; border-right: 1px solid rgba(255,255,255,0.1); padding: 0 10px; }
-        .metric:last-child { border-right: none; }
-        .metric h3 { font-size: 40px; color: var(--brand-yellow); margin-bottom: 4px; font-weight: 700; text-shadow: 0 2px 5px rgba(0,0,0,0.5); white-space: nowrap; }
-        .metric p { color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-
-        /* Machinery Carousel */
-        .products-section { padding: 80px 5% 100px; position: relative; }
-        .section-title { font-size: 36px; color: var(--ink); margin-bottom: 50px; text-align: center; font-weight: 700; }
-        
-        .carousel-wrapper { position: relative; max-width: 1400px; margin: 0 auto; }
-        
-        .carousel-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            background: var(--white); border: 1px solid var(--gray-border);
-            width: 48px; height: 48px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; color: var(--logo-red); cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 10;
-            transition: all 0.2s ease;
-        }
-        .carousel-btn:hover { background: var(--brand-yellow); color: var(--ink); border-color: var(--brand-yellow); }
-        .carousel-btn.left { left: -24px; }
-        .carousel-btn.right { right: -24px; }
-
-        .carousel { display: flex; gap: 30px; overflow-x: auto; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
-        .carousel::-webkit-scrollbar { display: none; }
-        
-        .product-card { 
-            min-width: 340px; background: var(--white); border: 1px solid var(--gray-border); 
-            border-radius: 12px; padding: 24px; transition: all 0.3s ease; 
-            scroll-snap-align: start; cursor: pointer;
-        }
-        .product-card:hover { border-color: var(--brand-yellow); box-shadow: 0 10px 30px rgba(253, 185, 19, 0.15); transform: translateY(-4px); }
-        
-        .product-image { 
-            width: 100%; height: 240px; background: var(--gray-light); margin-bottom: 24px; 
-            border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;
-        }
-        .product-image img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.5s ease; }
-        .product-card:hover .product-image img { transform: scale(1.05); }
-
-        .product-info { display: flex; justify-content: space-between; align-items: flex-end; }
-        .product-name { font-weight: 700; font-size: 20px; color: var(--ink); font-family: 'Barlow'; margin-bottom: 4px; }
-        .product-price { color: var(--logo-red); font-weight: 600; font-size: 16px; }
-        
-        .info-btn { 
-            background: var(--yellow-tint); color: var(--logo-red); width: 36px; height: 36px; 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            font-weight: bold; border: none; font-size: 18px; transition: all 0.2s ease;
-        }
-        .product-card:hover .info-btn { background: var(--logo-red); color: var(--white); }
-
-        /* FAQ */
-        .faq-section { padding: 100px 5%; background-color: var(--gray-light); }
-        .accordion { max-width: 800px; margin: 0 auto; }
-        .accordion-item { background: var(--white); margin-bottom: 16px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border: 1px solid var(--gray-border); transition: all 0.2s; }
-        .accordion-item:hover { border-color: var(--brand-yellow); }
-        .accordion-title { padding: 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; color: var(--ink); font-size: 18px; }
-
-        /* Reviews */
-        .reviews-section { padding: 100px 5%; text-align: center; }
-        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
-        .review-card { padding: 40px; background: var(--yellow-tint); text-align: left; border-radius: 12px; }
-        .review-card p { font-size: 18px; font-style: italic; color: var(--ink); margin-bottom: 20px; }
-        .reviewer-name { font-family: 'Barlow'; font-weight: 700; font-size: 16px; color: var(--logo-red); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Footer */
-        footer { background-color: var(--ink); color: var(--white); padding: 80px 5% 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 60px; }
-        .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 20px; letter-spacing: 0.5px; }
-        .footer-col p, .footer-col a { color: #A0AEC0; text-decoration: none; margin-bottom: 12px; display: block; font-size: 15px; transition: color 0.2s; }
-        .footer-col a:hover { color: var(--white); }
-
-        .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; font-family: 'Inter'; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.2s; }
-        .floating-whatsapp:hover { transform: translateY(-3px); }
-
-        /* Responsive Media Queries */
-        @media (max-width: 900px) {
-            .hero { padding: 100px 5% 120px; }
-            .hero h1 { font-size: 42px; }
-            .nav-links { display: none; /* Add hamburger JS later */ }
-            .menu-toggle { display: block; }
-            .dashboard { margin: -60px auto 40px; flex-direction: column; background: var(--ink); backdrop-filter: none; gap: 40px; }
-            .metric { min-width: 100%; border-right: none; }
-            .metric h3 { font-size: 40px; }
-        }
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 16px; }
-            .metric { min-width: 100%; }
-            .product-card { min-width: 280px; }
-            .floating-whatsapp { right: 20px; bottom: 20px; padding: 12px 20px; font-size: 14px; }
-        }
-
-        /* Premium Footer with 5 columns */
-        footer { background-color: var(--ink); color: var(--white); padding: 80px 5% 40px; margin-top: auto; border-top: 5px solid var(--brand-yellow); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px; }
-        .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
-        
-        .about-text { color: #A0AEC0; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
-        .make-in-india { display: inline-block; background: var(--white); color: var(--ink); padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; font-family: 'Barlow'; text-transform: uppercase; margin-bottom: 20px; border-left: 4px solid #28a745; }
-        
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul a, .footer-col p { color: #A0AEC0; text-decoration: none; font-size: 14px; transition: color 0.2s; display: inline-block; line-height: 1.6; }
-        .footer-col ul a:hover { color: var(--white); transform: translateX(5px); }
-
-        .footer-bottom { text-align: center; color: #555; padding-top: 30px; border-top: 1px solid #333; font-size: 14px; }
-    
-        /* Custom Lang Selector */
-        .custom-lang-selector { position: relative; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: var(--logo-red); z-index: 1000; }
-        .current-lang { display: flex; align-items: center; gap: 8px; padding: 4px 8px; }
-        .current-lang img { width: 20px; height: auto; border: 1px solid #ddd; }
-        .current-lang span { color: var(--logo-red); font-weight: 600; }
-        .custom-lang-selector:hover .lang-menu { display: block; }
-        .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; padding: 8px 0; min-width: 150px; border: 1px solid #eee; }
-        .lang-menu a { display: flex; align-items: center; gap: 10px; padding: 8px 16px; color: #333; text-decoration: none; transition: background 0.2s; font-size: 14px; }
-        .lang-menu a img { width: 20px; height: auto; border: 1px solid #ddd; }
-        .lang-menu a:hover { background: #f9f9f9; color: var(--logo-red); }
-        /* Hide default Google Translate top bar & tooltips */
-        body { top: 0 !important; }
-        .skiptranslate { display: none !important; }
-        .goog-te-banner-frame { display: none !important; }
-
-    
-        /* Mega Menu */
+/* Mega Menu */
         .mega-trigger { position: static; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
         .mega-trigger i.fa-plus { font-size: 10px; transition: transform 0.3s; }
         .mega-trigger:hover i.fa-plus { transform: rotate(45deg); color: var(--logo-red); }
@@ -384,11 +105,14 @@
         .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
         .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
         .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
-        .mega-products-list a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--logo-red); margin-right: 8px; }
+        .mega-products-list a::before { content: '105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--logo-red); margin-right: 8px; }
         .mega-products-list a:hover { color: var(--logo-red); }
         .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
         .sub-panel { display: none; }
         .sub-panel.active { display: block; }
+        .mega-services-list a { transition: all 0.3s; border-bottom: 3px solid transparent; }
+        .mega-services-list a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 3px solid var(--logo-red); }
+        .mega-services-list a:hover i { transform: scale(1.1); transition: transform 0.3s; }
         @media (max-width: 900px) { .mega-menu { display: none !important; } }
 
     </style>
@@ -543,6 +267,49 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 </div>
 <div class="menu-toggle">&#9776;</div>
 </nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+
+    // Sub-panel Hover Logic
+    const subTabs = document.querySelectorAll('.mega-col-2 .sub-tab');
+    subTabs.forEach(subTab => {
+      subTab.addEventListener('mouseenter', (e) => {
+        const parentPanel = e.target.closest('.mega-panel');
+        if (!parentPanel) return;
+        
+        // Remove active from sibling sub-tabs and sub-panels
+        const siblingTabs = parentPanel.querySelectorAll('.sub-tab');
+        const siblingPanels = parentPanel.querySelectorAll('.sub-panel');
+        
+        siblingTabs.forEach(t => t.classList.remove('active'));
+        siblingPanels.forEach(p => p.classList.remove('active'));
+        
+        // Add active to current
+        subTab.classList.add('active');
+        const targetId = subTab.getAttribute('data-sub');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
 <script>
   // Mega Menu Hover Logic
   document.addEventListener('DOMContentLoaded', () => {
