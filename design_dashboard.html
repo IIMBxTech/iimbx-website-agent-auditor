@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiTek Design Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-yellow: #FDB913;
+            --logo-red: #C00000;
+            --charcoal: #333333;
+            --white: #FFFFFF;
+            --bg-light: #F4F5F7;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--charcoal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--white);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: margin-left 0.3s ease;
+        }
+        .sidebar.collapsed {
+            margin-left: -280px;
+        }
+        
+        .toggle-sidebar-btn {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #718096;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .toggle-sidebar-btn:hover {
+            background: var(--bg-light);
+            color: var(--logo-red);
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-header h2 {
+            font-family: 'Barlow', sans-serif;
+            color: var(--logo-red);
+            font-size: 24px;
+        }
+
+        .page-list {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow-y: auto;
+        }
+
+        .page-tile {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .page-tile:hover {
+            border-color: var(--brand-yellow);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .page-tile.active {
+            border-color: var(--logo-red);
+            border-left: 4px solid var(--logo-red);
+            background: #FEF3D0;
+        }
+
+        .page-title {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .page-meta {
+            font-size: 12px;
+            color: #718096;
+        }
+
+        /* Main Viewer */
+        .viewer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .viewer-header {
+            background: var(--white);
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            z-index: 20;
+        }
+
+        .viewer-title {
+            font-family: 'Barlow', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Toggle Controls */
+        .controls {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .variant-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            background: var(--bg-light);
+            cursor: pointer;
+            outline: none;
+        }
+        .variant-select:focus {
+            border-color: var(--brand-yellow);
+        }
+
+        .toggle-group {
+            display: flex;
+            background: var(--bg-light);
+            border-radius: 6px;
+            padding: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .toggle-btn {
+            padding: 6px 16px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 13px;
+            color: #718096;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .toggle-btn.active {
+            background: var(--white);
+            color: var(--logo-red);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            position: relative;
+            background: var(--white);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .preview-frame {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .code-view {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background: #1A1A1A;
+            color: #A0AEC0;
+            padding: 24px;
+            margin: 0;
+            overflow: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            background: var(--brand-yellow);
+            color: var(--charcoal);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+            z-index: 10;
+        }
+        .copy-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Journey Controls */
+        .journey-bar {
+            background: var(--charcoal);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            font-family: 'Barlow', sans-serif;
+        }
+        .journey-btn {
+            background: var(--brand-yellow);
+            color: var(--charcoal);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .journey-btn.secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+        .step-row {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 8px;
+            gap: 12px;
+        }
+        .step-row button {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #718096;
+        }
+        .step-row button:hover {
+            background: var(--bg-light);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>KRISHITEK</h2>
+            <div style="font-size: 12px; color: #718096; margin-top: 4px;">Design Dashboard</div>
+        </div>
+        <div class="page-list" id="pageList">
+            <!-- Journey Tile -->
+            <div class="page-tile" id="tile-journey" onclick="loadJourneyBuilder()">
+                <div class="page-title">User Journey Flow</div>
+                <div class="page-meta">Build & preview site flows</div>
+            </div>
+            <!-- Tiles dynamically loaded -->
+        </div>
+    </div>
+
+    <!-- Main Viewer -->
+    <div class="viewer">
+        <div class="viewer-header">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <button class="toggle-sidebar-btn" onclick="document.getElementById('sidebar').classList.toggle('collapsed')" title="Toggle Sidebar">☰</button>
+                <div class="viewer-title" id="currentTitle">Select a page</div>
+            </div>
+            
+            <div class="controls">
+                <!-- Dropdown for variants -->
+                <select class="variant-select" id="variantSelect">
+                    <!-- Options loaded dynamically -->
+                </select>
+
+                <!-- Swappable Preview/Code Buttons -->
+                <div class="toggle-group">
+                    <button class="toggle-btn active" onclick="setViewMode('preview')" id="btnPreview">Preview HTML</button>
+                    <button class="toggle-btn" onclick="setViewMode('code')" id="btnCode">View Code</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!-- Journey Player Bar -->
+            <div id="journeyPlayerBar" class="journey-bar" style="display: none;">
+                <button class="journey-btn" onclick="prevJourneyStep()">&#8592; Previous</button>
+                <div id="journeyProgress" style="font-size: 16px; font-weight: 600;">Step 1 of 3: Homepage</div>
+                <div>
+                    <button class="journey-btn" onclick="nextJourneyStep()" style="margin-right: 12px;">Next &#8594;</button>
+                    <button class="journey-btn secondary" onclick="exitJourney()">Exit Journey</button>
+                </div>
+            </div>
+
+            <button class="copy-btn" id="copyBtn" onclick="copyCode()">Copy HTML</button>
+            <iframe class="preview-frame" id="previewFrame" src=""></iframe>
+            <pre class="code-view" id="codeView"><code></code></pre>
+
+            <!-- Journey Builder View -->
+            <div id="journeyBuilder" style="display: none; padding: 24px; background: var(--bg-light); height: 100%; overflow: auto;">
+                <h3 style="margin-bottom: 16px; font-family: 'Barlow', sans-serif;">Build Your Flow</h3>
+                <p style="margin-bottom: 24px; color: #718096; font-size: 14px;">Add steps to create a sequential flow of your website. Order them below, then click 'Play Journey'.</p>
+                
+                <div id="journeySettings"></div>
+                
+                <div style="margin-top: 16px; display: flex; gap: 12px;">
+                    <button onclick="addJourneyStep()" style="background: white; color: var(--charcoal); border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer;">+ Add Step</button>
+                    <button onclick="startJourney()" style="background: var(--logo-red); color: white; border: none; padding: 10px 24px; border-radius: 6px; font-weight: bold; cursor: pointer;">Play Journey</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Database of pages and their variants
+        const db = {
+            "homepage": {
+                title: "Homepage Layout",
+                desc: "Main landing page",
+                variants: [
+                    { name: "Stitch Variant (Farmer Immersive)", file: "variants/homepage_v4_stitch.html" }
+                ]
+            },
+            "contact": {
+                title: "Contact Us",
+                desc: "Support and Inquiries page",
+                variants: [
+                    { name: "Stitch Creative (Split Form)", file: "variants/contact_v2_stitch.html" }
+                ]
+            },
+            "blog": {
+                title: "Blog & Insights",
+                desc: "Articles and updates",
+                variants: [
+                    { name: "3-Column Grid", file: "variants/blog_v1.html" }
+                ]
+            },
+            "services": {
+                title: "Service & Support",
+                desc: "Inquiry and videos",
+                variants: [
+                    { name: "Support Hub", file: "variants/services_v1.html" }
+                ]
+            },
+            "productpage": {
+                title: "Product Layout",
+                desc: "Universal product details page",
+                variants: [
+                    { name: "Clean eCommerce Layout", file: "variants/productpage_v1.html" }
+                ]
+            },
+            "catalog": {
+                title: "Full Product Catalog",
+                desc: "Grid listing with categories",
+                variants: [
+                    { name: "Grid + Sidebar Layout", file: "variants/product_catalog_v1.html" }
+                ]
+            },
+            "parts": {
+                title: "Spare Parts Catalog",
+                desc: "Accessories and component parts",
+                variants: [
+                    { name: "Grid + Sidebar Layout", file: "variants/spare_parts_v1.html" }
+                ]
+            },
+            "chatbot": {
+                title: "AI Chatbot Dashboard",
+                desc: "Chatbot Admin and Widget Playground",
+                variants: [
+                    { name: "AI Chatbot Prototype v1", file: "variants/ai_chatbot_dashboard.html" }
+                ]
+            },
+            "media": {
+                title: "Media Page",
+                desc: "Exhibitions and Updates",
+                variants: [
+                    { name: "Grid Layout", file: "variants/media_v1_stitch.html" }
+                ]
+            },
+            "archive": {
+                title: "Archive",
+                desc: "Archived design variants",
+                variants: [
+                    { name: "Blog v2 Stitch", file: "variants/archive/blog_v2_stitch.html" },
+                    { name: "Contact v1", file: "variants/archive/contact_v1.html" },
+                    { name: "Homepage v1", file: "variants/archive/homepage_v1.html" },
+                    { name: "Homepage v2 Stitch", file: "variants/archive/homepage_v2_stitch.html" },
+                    { name: "Homepage v3 Stitch", file: "variants/archive/homepage_v3_stitch.html" },
+                    { name: "Product Catalog v2 Stitch", file: "variants/archive/product_catalog_v2_stitch.html" },
+                    { name: "Productpage v2 Stitch", file: "variants/archive/productpage_v2_stitch.html" },
+                    { name: "Services v2 Stitch", file: "variants/archive/services_v2_stitch.html" },
+                    { name: "Spare Parts v2 Stitch", file: "variants/archive/spare_parts_v2_stitch.html" }
+                ]
+            }
+        };
+
+        // Track the user's selected variant index for each page. Default to 0.
+        const variantSelections = {};
+
+        // Map expected hrefs to db keys for automatic routing
+        const hrefMap = {
+            "homepage": "homepage",
+            "contact": "contact",
+            "blog": "blog",
+            "services": "services",
+            "productpage": "productpage",
+            "catalog": "catalog",
+            "parts": "parts",
+            "media": "media"
+        };
+
+        // True Journey State
+        let journeySteps = []; // array of { pageId, variantIndex }
+        let currentStepIndex = 0;
+        let isJourneyMode = false;
+
+        let currentActiveId = null;
+        let viewMode = 'preview'; // 'preview' or 'code'
+
+        // Initialize Dashboard
+        function init() {
+            const pageList = document.getElementById('pageList');
+            
+            // Load saved variant selections
+            let savedSelections = {};
+            try {
+                const saved = localStorage.getItem('krishtekVariantSelections');
+                if (saved) savedSelections = JSON.parse(saved);
+            } catch(e) {}
+            
+            for (const [id, data] of Object.entries(db)) {
+                let savedIdx = savedSelections[id] !== undefined ? savedSelections[id] : 0;
+                if (savedIdx >= data.variants.length) {
+                    savedIdx = 0; // fallback if variants changed
+                }
+                variantSelections[id] = savedIdx;
+
+                const tile = document.createElement('div');
+                tile.className = 'page-tile';
+                tile.id = `tile-${id}`;
+                tile.onclick = () => loadPage(id);
+                tile.innerHTML = `
+                    <div class="page-title">${data.title}</div>
+                    <div class="page-meta">${data.desc} • ${data.variants.length} Variants</div>
+                `;
+                pageList.appendChild(tile);
+            }
+
+            // Load first page by default
+            if (Object.keys(db).length > 0) {
+                loadPage(Object.keys(db)[0]);
+            }
+        }
+
+        function loadPage(id, fromJourney = false) {
+            // Update Active State
+            if (currentActiveId && currentActiveId !== 'journey') {
+                document.getElementById(`tile-${currentActiveId}`).classList.remove('active');
+            }
+            if (!fromJourney) {
+                document.getElementById('tile-journey').classList.remove('active');
+                document.getElementById('journeyBuilder').style.display = 'none';
+                document.getElementById('journeyPlayerBar').style.display = 'none';
+                document.getElementById('previewFrame').style.display = 'block';
+                isJourneyMode = false;
+            }
+            if (document.getElementById(`tile-${id}`)) {
+                document.getElementById(`tile-${id}`).classList.add('active');
+            }
+            currentActiveId = id;
+
+            const data = db[id];
+            document.getElementById('currentTitle').innerText = data.title;
+
+            // Populate Variant Dropdown
+            const select = document.getElementById('variantSelect');
+            select.innerHTML = '';
+            data.variants.forEach((v, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.innerText = v.name;
+                if (index === variantSelections[id]) opt.selected = true;
+                select.appendChild(opt);
+            });
+
+            // Handle Variant Change
+            select.onchange = (e) => {
+                variantSelections[id] = parseInt(e.target.value);
+                localStorage.setItem('krishtekVariantSelections', JSON.stringify(variantSelections));
+                if (isJourneyMode) {
+                    journeySteps[currentStepIndex].variantIndex = variantSelections[id];
+                    saveJourneyFlow();
+                }
+                renderActiveVariant(data.variants[variantSelections[id]].file);
+            };
+            
+            // Render first variant
+            renderActiveVariant(data.variants[variantSelections[id]].file);
+        }
+
+        function saveJourneyFlow() {
+            localStorage.setItem('krishtekJourneyFlow', JSON.stringify(journeySteps));
+        }
+
+        function loadJourneyBuilder() {
+            if (currentActiveId && currentActiveId !== 'journey') {
+                document.getElementById(`tile-${currentActiveId}`).classList.remove('active');
+            }
+            document.getElementById('tile-journey').classList.add('active');
+            currentActiveId = 'journey';
+
+            document.getElementById('currentTitle').innerText = 'Journey Flow Builder';
+            document.getElementById('variantSelect').innerHTML = '<option>Flow Settings</option>';
+            
+            document.getElementById('previewFrame').style.display = 'none';
+            document.getElementById('codeView').style.display = 'none';
+            document.getElementById('journeyPlayerBar').style.display = 'none';
+            document.getElementById('journeyBuilder').style.display = 'block';
+            isJourneyMode = false;
+
+            // default steps if empty or load from storage
+            const saved = localStorage.getItem('krishtekJourneyFlow');
+            if (saved) {
+                try {
+                    journeySteps = JSON.parse(saved);
+                } catch(e) {}
+            }
+            
+            if (journeySteps.length === 0) {
+                journeySteps.push({ pageId: 'homepage', variantIndex: 0 });
+                journeySteps.push({ pageId: 'contact', variantIndex: 0 });
+                saveJourneyFlow();
+            }
+
+            renderJourneySteps();
+        }
+
+        function renderJourneySteps() {
+            const container = document.getElementById('journeySettings');
+            container.innerHTML = '';
+
+            journeySteps.forEach((step, index) => {
+                const row = document.createElement('div');
+                row.className = 'step-row';
+
+                const num = document.createElement('div');
+                num.style.fontWeight = 'bold';
+                num.style.width = '60px';
+                num.innerText = `Step ${index + 1}`;
+                row.appendChild(num);
+
+                // Page Dropdown
+                const pageSel = document.createElement('select');
+                pageSel.className = 'variant-select';
+                pageSel.style.flex = '1';
+                Object.entries(db).forEach(([id, data]) => {
+                    const opt = document.createElement('option');
+                    opt.value = id;
+                    opt.innerText = data.title;
+                    if (id === step.pageId) opt.selected = true;
+                    pageSel.appendChild(opt);
+                });
+
+                // Variant Dropdown
+                const varSel = document.createElement('select');
+                varSel.className = 'variant-select';
+                varSel.style.flex = '1';
+                const populateVariants = (pageId) => {
+                    varSel.innerHTML = '';
+                    db[pageId].variants.forEach((v, vIdx) => {
+                        const opt = document.createElement('option');
+                        opt.value = vIdx;
+                        opt.innerText = v.name;
+                        if (vIdx === step.variantIndex) opt.selected = true;
+                        varSel.appendChild(opt);
+                    });
+                };
+                populateVariants(step.pageId);
+
+                pageSel.onchange = (e) => {
+                    step.pageId = e.target.value;
+                    step.variantIndex = 0; // reset
+                    populateVariants(step.pageId);
+                    saveJourneyFlow();
+                };
+                varSel.onchange = (e) => {
+                    step.variantIndex = parseInt(e.target.value);
+                    saveJourneyFlow();
+                };
+
+                row.appendChild(pageSel);
+                row.appendChild(varSel);
+
+                // Controls
+                const upBtn = document.createElement('button');
+                upBtn.innerHTML = '&#8593;';
+                upBtn.title = 'Move Up';
+                upBtn.onclick = () => moveStep(index, -1);
+                upBtn.disabled = index === 0;
+
+                const downBtn = document.createElement('button');
+                downBtn.innerHTML = '&#8595;';
+                downBtn.title = 'Move Down';
+                downBtn.onclick = () => moveStep(index, 1);
+                downBtn.disabled = index === journeySteps.length - 1;
+
+                const rmBtn = document.createElement('button');
+                rmBtn.innerText = '✕';
+                rmBtn.title = 'Remove Step';
+                rmBtn.onclick = () => {
+                    journeySteps.splice(index, 1);
+                    saveJourneyFlow();
+                    renderJourneySteps();
+                };
+
+                row.appendChild(upBtn);
+                row.appendChild(downBtn);
+                row.appendChild(rmBtn);
+
+                container.appendChild(row);
+            });
+        }
+
+        function addJourneyStep() {
+            const firstPageId = Object.keys(db)[0];
+            journeySteps.push({ pageId: firstPageId, variantIndex: 0 });
+            saveJourneyFlow();
+            renderJourneySteps();
+        }
+
+        function moveStep(index, direction) {
+            const newIndex = index + direction;
+            if (newIndex >= 0 && newIndex < journeySteps.length) {
+                const temp = journeySteps[index];
+                journeySteps[index] = journeySteps[newIndex];
+                journeySteps[newIndex] = temp;
+                saveJourneyFlow();
+                renderJourneySteps();
+            }
+        }
+
+        function startJourney() {
+            if (journeySteps.length === 0) return alert('Please add at least one step.');
+            isJourneyMode = true;
+            currentStepIndex = 0;
+            
+            document.getElementById('journeyBuilder').style.display = 'none';
+            document.getElementById('previewFrame').style.display = 'block';
+            document.getElementById('journeyPlayerBar').style.display = 'flex';
+            
+            playCurrentStep();
+        }
+
+        function playCurrentStep() {
+            const step = journeySteps[currentStepIndex];
+            const data = db[step.pageId];
+            
+            document.getElementById('journeyProgress').innerText = `Step ${currentStepIndex + 1} of ${journeySteps.length}: ${data.title}`;
+            
+            // Sync variant selections
+            variantSelections[step.pageId] = step.variantIndex;
+            localStorage.setItem('krishtekVariantSelections', JSON.stringify(variantSelections));
+            loadPage(step.pageId, true); // true = keep journey mode active
+        }
+
+        function nextJourneyStep() {
+            if (currentStepIndex < journeySteps.length - 1) {
+                currentStepIndex++;
+                playCurrentStep();
+            }
+        }
+
+        function prevJourneyStep() {
+            if (currentStepIndex > 0) {
+                currentStepIndex--;
+                playCurrentStep();
+            }
+        }
+
+        function exitJourney() {
+            isJourneyMode = false;
+            document.getElementById('journeyPlayerBar').style.display = 'none';
+            loadJourneyBuilder();
+        }
+
+        async function renderActiveVariant(filePath) {
+            // 1. Update Preview iframe
+            document.getElementById('previewFrame').src = filePath;
+
+            // 2. Fetch code for the code viewer
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) throw new Error('File not found locally yet');
+                const code = await response.text();
+                // Escape HTML tags for display
+                document.getElementById('codeView').innerHTML = `<code>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code>`;
+            } catch (err) {
+                document.getElementById('codeView').innerHTML = `<code><!-- Code for ${filePath} will appear here once generated by the agent -->\n\nError: ${err.message}</code>`;
+            }
+        }
+
+        function setViewMode(mode) {
+            viewMode = mode;
+            
+            const btnPreview = document.getElementById('btnPreview');
+            const btnCode = document.getElementById('btnCode');
+            const previewFrame = document.getElementById('previewFrame');
+            const codeView = document.getElementById('codeView');
+            const copyBtn = document.getElementById('copyBtn');
+
+            if (mode === 'preview') {
+                btnPreview.classList.add('active');
+                btnCode.classList.remove('active');
+                previewFrame.style.display = 'block';
+                codeView.style.display = 'none';
+                copyBtn.style.display = 'none';
+            } else {
+                btnPreview.classList.remove('active');
+                btnCode.classList.add('active');
+                previewFrame.style.display = 'none';
+                codeView.style.display = 'block';
+                copyBtn.style.display = 'block';
+            }
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeView').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('copyBtn');
+                const originalText = btn.innerText;
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = originalText, 2000);
+            });
+        }
+
+        // Intercept iframe clicks to weave the site naturally
+        document.getElementById('previewFrame').onload = function() {
+            try {
+                const iframeDoc = this.contentDocument || this.contentWindow.document;
+                if (!iframeDoc) return;
+
+                iframeDoc.body.addEventListener('click', (e) => {
+                    const link = e.target.closest('a');
+                    if (!link) return;
+
+                    const href = link.getAttribute('href');
+                    if (!href || href.startsWith('http') || href.startsWith('#')) return;
+
+                    // Match href to a dashboard page
+                    for (const [key, id] of Object.entries(hrefMap)) {
+                        if (href.toLowerCase().includes(key)) {
+                            e.preventDefault();
+                            loadPage(id);
+                            return;
+                        }
+                    }
+                });
+            } catch (err) {
+                // Cross-origin or empty frame, ignore
+            }
+        };
+
+        // Run
+        init();
+    </script>
+</body>
+</html>

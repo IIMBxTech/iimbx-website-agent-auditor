@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Portal – Krishitek</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root { --red: #C00000; --yellow: #FDB913; --green: #28a745; --ink: #1A1A1A; --charcoal: #333; --bg: #F7F9FA; --white: #fff; --border: #E5E7EB; --sidebar-w: 240px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--charcoal); display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: #1a2a1a; display: flex; flex-direction: column; position: fixed; top: 0; left: 0; height: 100vh; z-index: 100; }
+    .sb-brand { padding: 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .sb-brand img { height: 32px; }
+    .sb-brand-text { font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 800; color: #fff; }
+    .sb-brand-role { font-size: 10px; color: #86EFAC; text-transform: uppercase; letter-spacing: 1.5px; }
+    .sb-nav { flex: 1; padding: 16px 0; }
+    .sb-section { padding: 8px 20px 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #555; font-weight: 700; }
+    .sb-link { display: flex; align-items: center; gap: 12px; padding: 11px 20px; color: #AAA; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent; cursor: pointer; }
+    .sb-link:hover, .sb-link.active { background: rgba(255,255,255,0.05); color: #fff; border-left-color: #86EFAC; }
+    .sb-link i { width: 18px; font-size: 15px; }
+    .sb-footer { padding: 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; }
+    .sb-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 13px; }
+    .sb-user-name { font-size: 13px; font-weight: 600; color: #fff; }
+    .sb-user-role { font-size: 11px; color: #888; }
+    .logout-btn { margin-left: auto; background: none; border: none; color: #888; cursor: pointer; font-size: 16px; }
+    .logout-btn:hover { color: var(--red); }
+
+    .main { margin-left: var(--sidebar-w); flex: 1; display: flex; flex-direction: column; }
+    .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; }
+    .topbar h1 { font-family: 'Barlow', sans-serif; font-size: 22px; font-weight: 800; color: var(--ink); }
+    .breadcrumb { font-size: 13px; color: #999; }
+    .content { padding: 28px 32px; flex: 1; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+    .stat-card { background: var(--white); border-radius: 10px; padding: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+    .stat-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .icon-green { background: #D1FAE5; color: #065F46; }
+    .icon-yellow { background: #FEF3D0; color: #B45309; }
+    .icon-blue { background: #DBEAFE; color: #1E40AF; }
+    .stat-val { font-family: 'Barlow', sans-serif; font-size: 26px; font-weight: 800; color: var(--ink); }
+    .stat-label { font-size: 12px; color: #999; }
+
+    .panel { background: var(--white); border-radius: 12px; border: 1px solid var(--border); margin-bottom: 24px; }
+    .panel-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .panel-title { font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 700; color: var(--ink); }
+    .panel-body { padding: 24px; }
+
+    .task-list { list-style: none; }
+    .task-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .task-item:last-child { border-bottom: none; }
+    .task-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--green); cursor: pointer; }
+    .task-item .task-label { flex: 1; }
+    .task-item .task-priority { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+    .priority-high { background: #FEE2E2; color: var(--red); }
+    .priority-med { background: #FEF3D0; color: #B45309; }
+    .priority-low { background: #D1FAE5; color: #065F46; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-family: 'Inter', sans-serif; outline: none; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--green); }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .btn { padding: 10px 20px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 13px; font-family: 'Barlow', sans-serif; }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-yellow { background: var(--yellow); color: var(--ink); }
+
+    .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .quick-link { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 18px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--charcoal); font-size: 13px; font-weight: 600; text-align: center; transition: all 0.2s; cursor: pointer; }
+    .quick-link:hover { border-color: var(--green); background: #F0FFF4; }
+    .quick-link i { font-size: 24px; color: var(--green); }
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="sb-brand">
+        <img alt="Krishitek" src="../assets/logo.png" onerror="this.style.display='none'"/>
+        <div>
+            <div class="sb-brand-text">KRISHITEK</div>
+            <div class="sb-brand-role">Employee Portal</div>
+        </div>
+    </div>
+    <nav class="sb-nav">
+        <div class="sb-section">My Work</div>
+        <a class="sb-link active" onclick="showSection('dashboard')"><i class="fas fa-home"></i> Dashboard</a>
+        <a class="sb-link" onclick="showSection('blog')"><i class="fas fa-newspaper"></i> Blog Manager</a>
+        <a class="sb-link" onclick="showSection('media')"><i class="fas fa-images"></i> Media Library</a>
+        <a class="sb-link" onclick="showSection('content')"><i class="fas fa-edit"></i> Product Content</a>
+        <div class="sb-section">Site</div>
+        <a class="sb-link" href="homepage_v4_stitch.html" target="_blank"><i class="fas fa-external-link-alt"></i> View Live Site</a>
+    </nav>
+    <div class="sb-footer">
+        <div class="sb-avatar" id="avatarInitial">E</div>
+        <div>
+            <div class="sb-user-name" id="userName">Employee</div>
+            <div class="sb-user-role">Employee</div>
+        </div>
+        <button class="logout-btn" onclick="KrishiAuth.logout()"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+</aside>
+
+<main class="main">
+    <div class="topbar">
+        <div>
+            <div class="breadcrumb">Portal / Employee</div>
+            <h1 id="sectionTitle">My Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- DASHBOARD -->
+        <div id="sec-dashboard">
+            <div class="stats-row">
+                <div class="stat-card"><div class="stat-icon icon-green"><i class="fas fa-check-circle"></i></div><div><div class="stat-val">3</div><div class="stat-label">Tasks Pending</div></div></div>
+                <div class="stat-card"><div class="stat-icon icon-yellow"><i class="fas fa-newspaper"></i></div><div><div class="stat-val">0</div><div class="stat-label">Blog Posts</div></div></div>
+                <div class="stat-card"><div class="stat-icon icon-blue"><i class="fas fa-images"></i></div><div><div class="stat-val">11</div><div class="stat-label">Products in Catalog</div></div></div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+                <div class="panel">
+                    <div class="panel-header"><span class="panel-title">Today's Tasks</span></div>
+                    <div class="panel-body">
+                        <ul class="task-list">
+                            <li class="task-item"><input type="checkbox"/><span class="task-label">Upload product photos when received</span><span class="task-priority priority-high">High</span></li>
+                            <li class="task-item"><input type="checkbox"/><span class="task-label">Write 2 blog articles for SEO</span><span class="task-priority priority-med">Medium</span></li>
+                            <li class="task-item"><input type="checkbox"/><span class="task-label">Update spare parts section images</span><span class="task-priority priority-low">Low</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header"><span class="panel-title">Quick Access</span></div>
+                    <div class="panel-body">
+                        <div class="quick-links">
+                            <a class="quick-link" onclick="showSection('blog')"><i class="fas fa-plus-circle"></i>New Blog Post</a>
+                            <a class="quick-link" onclick="showSection('media')"><i class="fas fa-cloud-upload-alt"></i>Upload Media</a>
+                            <a class="quick-link" href="product_catalog_v1.html" target="_blank"><i class="fas fa-tractor"></i>View Catalog</a>
+                            <a class="quick-link" href="blog_v1.html" target="_blank"><i class="fas fa-eye"></i>View Blog</a>
+                            <a class="quick-link" href="services_v1.html" target="_blank"><i class="fas fa-tools"></i>Services Page</a>
+                            <a class="quick-link" onclick="showSection('content')"><i class="fas fa-edit"></i>Edit Content</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOG MANAGER -->
+        <div id="sec-blog" style="display:none;">
+            <div class="panel">
+                <div class="panel-header"><span class="panel-title">Create Blog Post</span></div>
+                <div class="panel-body">
+                    <div class="form-group"><label>Title</label><input placeholder="e.g. Best Power Reaper for Paddy in India 2025" type="text" id="blogTitle"/></div>
+                    <div class="form-group"><label>Category</label>
+                        <select><option>Farming Tips</option><option>Product Guides</option><option>Government Schemes</option><option>News</option></select>
+                    </div>
+                    <div class="form-group"><label>Content (Summary)</label><textarea id="blogContent" placeholder="Write your blog content here..."></textarea></div>
+                    <div class="form-group"><label>Keywords (comma separated)</label><input placeholder="power reaper, harvesting, farming tips" type="text"/></div>
+                    <button class="btn btn-green" onclick="saveBlog()">Save Draft <i class="fas fa-save"></i></button>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header"><span class="panel-title">Published Posts</span></div>
+                <div class="panel-body" id="blogList">
+                    <div style="text-align:center;padding:32px;color:#999;"><i class="fas fa-newspaper" style="font-size:40px;color:#DDD;display:block;margin-bottom:12px;"></i>No blog posts yet. Create your first one above!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MEDIA -->
+        <div id="sec-media" style="display:none;">
+            <div class="panel">
+                <div class="panel-header"><span class="panel-title">Media Library</span></div>
+                <div class="panel-body">
+                    <div style="border:2px dashed var(--border);border-radius:10px;padding:48px;text-align:center;margin-bottom:24px;cursor:pointer;" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-cloud-upload-alt" style="font-size:40px;color:#CCC;display:block;margin-bottom:12px;"></i>
+                        <strong>Click to upload product photos</strong>
+                        <p style="font-size:13px;color:#999;margin-top:6px;">PNG, JPG up to 10MB each. Product images will be placed in assets/images/</p>
+                        <input type="file" id="fileInput" multiple accept="image/*" style="display:none;" onchange="handleUpload(this)"/>
+                    </div>
+                    <div id="uploadedFiles" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;"></div>
+                    <p style="font-size:12px;color:#999;margin-top:16px;"><i class="fas fa-info-circle"></i> Note: Until backend is connected, uploads are previewed locally. When Supabase is connected, files will be stored permanently.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT EDITOR -->
+        <div id="sec-content" style="display:none;">
+            <div class="panel">
+                <div class="panel-header"><span class="panel-title">Product Content Reference</span></div>
+                <div class="panel-body">
+                    <p style="font-size:14px;color:#666;margin-bottom:16px;">All product content is managed in <code style="background:#F3F4F6;padding:2px 8px;border-radius:4px;">assets/product_data.js</code>. Below are the live products:</p>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;" id="productList">
+                        <div style="text-align:center;padding:24px;color:#999;">Loading products...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="../assets/auth.js"></script>
+<script src="../assets/product_data.js"></script>
+<script>
+    if (!KrishiAuth.requireRole('employee')) { /* redirect */ }
+
+    const name = KrishiAuth.getName();
+    document.getElementById('userName').textContent = name;
+    document.getElementById('avatarInitial').textContent = name.charAt(0);
+
+    const sections = ['dashboard','blog','media','content'];
+    function showSection(id) {
+        sections.forEach(s => document.getElementById('sec-'+s).style.display = s===id ? 'block' : 'none');
+        document.querySelectorAll('.sb-link').forEach(l => l.classList.remove('active'));
+        const titles = { dashboard:'My Dashboard', blog:'Blog Manager', media:'Media Library', content:'Product Content' };
+        document.getElementById('sectionTitle').textContent = titles[id] || id;
+        if (id === 'content') loadProducts();
+    }
+
+    // Blog save (localStorage)
+    function saveBlog() {
+        const title = document.getElementById('blogTitle').value;
+        const content = document.getElementById('blogContent').value;
+        if (!title) { alert('Please enter a title.'); return; }
+        const posts = JSON.parse(localStorage.getItem('krishi_blog_posts') || '[]');
+        posts.unshift({ title, content, createdAt: new Date().toISOString(), status: 'draft' });
+        localStorage.setItem('krishi_blog_posts', JSON.stringify(posts));
+        document.getElementById('blogTitle').value = '';
+        document.getElementById('blogContent').value = '';
+        renderBlogList();
+        alert('Blog post saved as draft!');
+    }
+
+    function renderBlogList() {
+        const posts = JSON.parse(localStorage.getItem('krishi_blog_posts') || '[]');
+        const el = document.getElementById('blogList');
+        el.innerHTML = posts.length ? posts.map((p,i) => `
+            <div style="padding:12px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+                <div><strong style="font-size:14px;">${p.title}</strong><div style="font-size:12px;color:#999;">${new Date(p.createdAt).toLocaleDateString('en-IN')}</div></div>
+                <span style="background:#FEF3D0;color:#92400E;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">DRAFT</span>
+            </div>`).join('') :
+            '<div style="text-align:center;padding:32px;color:#999;"><i class="fas fa-newspaper" style="font-size:40px;color:#DDD;display:block;margin-bottom:12px;"></i>No posts yet.</div>';
+    }
+    renderBlogList();
+
+    // Media upload preview
+    function handleUpload(input) {
+        const container = document.getElementById('uploadedFiles');
+        Array.from(input.files).forEach(file => {
+            const reader = new FileReader();
+            reader.onload = e => {
+                const div = document.createElement('div');
+                div.style.cssText = 'border:1px solid var(--border);border-radius:8px;overflow:hidden;text-align:center;';
+                div.innerHTML = `<img src="${e.target.result}" style="width:100%;height:90px;object-fit:cover;"/><div style="padding:6px;font-size:11px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${file.name}</div>`;
+                container.appendChild(div);
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Products list
+    function loadProducts() {
+        const el = document.getElementById('productList');
+        if (typeof KRISHITEK_PRODUCTS === 'undefined') { el.innerHTML = '<p style="color:#999;">Product data not loaded.</p>'; return; }
+        el.innerHTML = Object.values(KRISHITEK_PRODUCTS).map(p => `
+            <a href="productpage_v1.html?id=${p.id}" target="_blank" style="display:block;padding:14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--charcoal);font-size:13px;font-weight:600;transition:all 0.2s;">
+                <i class="fas fa-tractor" style="color:var(--red);margin-right:6px;"></i>${p.name || p.id}
+            </a>`).join('');
+    }
+</script>
+</body>
+</html>

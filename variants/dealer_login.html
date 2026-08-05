@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Krishtech Secure Dealer Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/supabase_client.js"></script>
+    <style>
+        :root {
+            --brand-red: #C00000;
+            --brand-yellow: #FDB913;
+            --charcoal: #333333;
+            --ink: #1A1A1A;
+            --bg-color: #FFFFFF;
+            --surface-color: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 100% 100%, #fef2f2 0%, #ffffff 100%);
+        }
+
+        .login-card {
+            background: var(--surface-color);
+            width: 100%;
+            max-width: 440px;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .login-card h1 {
+            font-family: 'Barlow', sans-serif;
+            color: var(--brand-red);
+            font-size: 32px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .login-card p {
+            color: #718096;
+            margin-bottom: 32px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--ink);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+            background: #F8FAFC;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--brand-red);
+            background: var(--surface-color);
+            box-shadow: 0 0 0 3px rgba(192, 0, 0, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            background: var(--brand-red);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Barlow', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .login-btn:hover {
+            background: #a00000;
+            transform: translateY(-1px);
+        }
+
+        .login-btn:disabled {
+            background: #CBD5E1;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-message {
+            color: var(--brand-red);
+            font-size: 14px;
+            margin-top: 16px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .secure-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ECFDF5;
+            color: #059669;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="secure-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            256-bit Encrypted Portal
+        </div>
+        <h1>KRISHITEK</h1>
+        <p>Dealer & Admin Secure Passage</p>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="dealer@example.com" autocomplete="email"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="••••••••" autocomplete="current-password"/>
+            </div>
+            
+            <button type="submit" class="login-btn" id="loginBtn">Access Dashboard</button>
+            <div class="error-message" id="errorMessage">Invalid login credentials.</div>
+        </form>
+    </div>
+
+    <script>
+        async function handleLogin(e) {
+            e.preventDefault();
+            const btn = document.getElementById('loginBtn');
+            const errorEl = document.getElementById('errorMessage');
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            btn.disabled = true;
+            btn.innerText = "Authenticating...";
+            errorEl.style.display = 'none';
+
+            try {
+                // Ensure KrishtechDB exists from supabase_client.js
+                if (typeof KrishtechDB === 'undefined' || !KrishtechDB.supabase) {
+                    throw new Error("Database connection not ready. Check client config.");
+                }
+
+                // Call Supabase Auth
+                const { data, error } = await KrishtechDB.supabase.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+                if (error) throw error;
+
+                // On success, get user role to route appropriately
+                const userId = data.user.id;
+                const { data: roleData } = await KrishtechDB.supabase
+                    .from('user_roles')
+                    .select('role')
+                    .eq('user_id', userId)
+                    .single();
+                
+                const role = roleData ? roleData.role : 'dealer';
+
+                // Route Based on Role
+                if (role === 'admin' || role === 'staff') {
+                    window.location.href = 'master_dashboard.html';
+                } else {
+                    window.location.href = 'dealer_dashboard.html';
+                }
+
+            } catch (err) {
+                errorEl.innerText = err.message || "Authentication failed.";
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.innerText = "Access Dashboard";
+            }
+        }
+
+        // Auto-redirect if already logged in
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (typeof KrishtechDB !== 'undefined' && KrishtechDB.supabase) {
+                const { data: { session } } = await KrishtechDB.supabase.auth.getSession();
+                if (session) {
+                    // Quick route check
+                    const { data: roleData } = await KrishtechDB.supabase
+                        .from('user_roles')
+                        .select('role')
+                        .eq('user_id', session.user.id)
+                        .single();
+                    
+                    if (roleData && (roleData.role === 'admin' || roleData.role === 'staff')) {
+                        window.location.href = 'master_dashboard.html';
+                    } else {
+                        window.location.href = 'dealer_dashboard.html';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

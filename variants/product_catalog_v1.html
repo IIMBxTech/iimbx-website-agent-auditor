@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KrishiTek - Full Product Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --brand-yellow: #FDB913; --logo-red: #C00000; --charcoal: #333333;
+            --ink: #1A1A1A; --white: #FFFFFF; --yellow-tint: #FEF3D0;
+            --gray-light: #F7F9FA; --gray-border: #EAEAEA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--charcoal); background-color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4, h5, h6, .btn { font-family: 'Barlow', sans-serif; }
+
+        /* Utility Bar */
+        .utility-bar { position: relative; z-index: 1001;
+            background: var(--white); padding: 8px 5%; display: flex; justify-content: flex-end; align-items: center; gap: 24px;
+            font-size: 13px; border-bottom: 1px solid var(--gray-border);
+        }
+        .dealer-btn { background: #28a745; color: var(--white); padding: 6px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .dealer-btn:hover { background: #218838; }
+        .lang-dropdown { position: relative; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; color: var(--ink); }
+        .lang-dropdown:hover .lang-menu { display: block; }
+        .lang-menu {
+            display: none; position: absolute; top: 100%; right: 0; background: var(--white); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 4px; padding: 10px 0; z-index: 1001; min-width: 140px; border: 1px solid var(--gray-border);
+        }
+        .lang-menu a { display: block; padding: 8px 16px; color: var(--charcoal); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+        .lang-menu a:hover { background: var(--gray-light); color: var(--logo-red); }
+        .social-links { display: flex; gap: 4px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--white); text-decoration: none; border-radius: 2px; font-size: 13px; transition: opacity 0.2s; }
+        .social-links a:hover { opacity: 0.8; }
+        .bg-fb { background: #3b5998; } .bg-in { background: #007bb5; } .bg-ig { background: #e1306c; }
+        .bg-yt { background: #ff0000; } .bg-phone, .bg-map { background: var(--logo-red); }
+
+        /* Premium Nav */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s ease; }
+        .logo { font-weight: 700; font-size: 24px; color: var(--logo-red); text-decoration: none; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
+        .logo img { height: 40px; width: auto; object-fit: contain; }
+        .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 14px; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-red); }
+        .btn { background-color: var(--logo-red); color: var(--white); padding: 12px 28px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; text-align: center; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(192, 0, 0, 0.2); }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+        /* Catalog Layout */
+        .catalog-header { background: var(--gray-light); padding: 60px 5%; text-align: center; border-bottom: 1px solid var(--gray-border); }
+        .catalog-header h1 { font-size: 42px; color: var(--ink); margin-bottom: 10px; }
+        .catalog-header p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto; }
+
+        .catalog-container { display: flex; padding: 60px 5%; gap: 40px; max-width: 1400px; margin: 0 auto; position: relative; }
+        
+        /* Sidebar Filters */
+        .sidebar { width: 280px; flex-shrink: 0; position: sticky; top: 100px; align-self: flex-start; max-height: calc(100vh - 120px); overflow-y: auto; }
+        .sidebar::-webkit-scrollbar { width: 6px; }
+        .sidebar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+        .sidebar h3 { font-size: 20px; color: var(--ink); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--brand-yellow); }
+        .category-list { list-style: none; }
+        .category-list li { margin-bottom: 12px; }
+        .category-list a { text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 15px; display: block; padding: 8px 12px; border-radius: 6px; transition: all 0.2s; }
+        .category-list a:hover, .category-list a.active { background: var(--yellow-tint); color: var(--logo-red); font-weight: 600; }
+
+        /* Product Grid */
+        .product-grid-area { flex-grow: 1; }
+        .category-section { margin-bottom: 60px; }
+        .category-section h2 { font-size: 28px; color: var(--ink); margin-bottom: 24px; padding-left: 10px; border-left: 4px solid var(--logo-red); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        
+        .product-card { 
+            background: var(--white); border: 1px solid var(--gray-border); border-radius: 12px; 
+            padding: 20px; transition: all 0.3s ease; display: flex; flex-direction: column;
+        }
+        .product-card:hover { border-color: var(--brand-yellow); box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-4px); }
+        .product-img-wrapper { 
+            background: var(--gray-light); height: 200px; border-radius: 8px; margin-bottom: 20px; 
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .product-img-wrapper img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.4s ease; padding: 10px; }
+        .product-card:hover .product-img-wrapper img { transform: scale(1.08); }
+        
+        .product-info { flex-grow: 1; display: flex; flex-direction: column; }
+        .product-title { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: auto; font-family: 'Barlow'; }
+        .get-offer-btn { margin-top: 20px; background: transparent; border: 2px solid var(--logo-red); color: var(--logo-red); padding: 10px; border-radius: 6px; font-weight: 600; font-family: 'Barlow'; cursor: pointer; transition: all 0.2s; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; width: 100%; }
+        .get-offer-btn:hover { background: var(--logo-red); color: var(--white); }
+
+        /* Premium Footer */
+        footer { background-color: var(--ink); color: var(--white); padding: 80px 5% 40px; margin-top: auto; border-top: 5px solid var(--brand-yellow); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        
+        .about-text { color: #A0AEC0; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+        .make-in-india { display: inline-block; background: var(--white); color: var(--ink); padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; font-family: 'Barlow'; text-transform: uppercase; margin-bottom: 20px; border-left: 4px solid #28a745; }
+        
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul a { color: #A0AEC0; text-decoration: none; font-size: 15px; transition: color 0.2s; display: inline-block; }
+        .footer-col ul a:hover { color: var(--white); transform: translateX(5px); }
+
+        .footer-bottom { text-align: center; color: #555; padding-top: 30px; border-top: 1px solid #333; font-size: 14px; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .catalog-container { flex-direction: column; }
+            .sidebar { width: 100%; }
+            .category-list { display: flex; flex-wrap: wrap; gap: 10px; }
+            .category-list li { margin-bottom: 0; }
+        }
+/* Mega Menu */
+        .mega-trigger { position: static; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
+        .mega-trigger i.fa-plus { font-size: 10px; transition: transform 0.3s; }
+        .mega-trigger:hover i.fa-plus { transform: rotate(45deg); color: var(--logo-red); }
+        .mega-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-top: 3px solid var(--logo-red); z-index: 999; }
+        .mega-trigger::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .mega-trigger:hover .mega-menu, .mega-menu:hover { display: flex; }
+        .mega-col-1 { width: 240px; flex-shrink: 0; background: var(--gray-light); padding: 32px 0; border-right: 1px solid var(--gray-border); }
+        .mega-col-1 a { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; transition: all 0.15s; letter-spacing: 0.5px; }
+        .mega-col-1 a:hover, .mega-col-1 a.active { color: var(--logo-red); background: var(--white); border-left: 3px solid var(--logo-red); }
+        .mega-col-1 a i { font-size: 11px; color: var(--logo-red); opacity: 0; transition: opacity 0.2s; }
+        .mega-col-1 a.active i { opacity: 1; }
+        .mega-panels { flex: 1; display: flex; }
+        .mega-panel { display: none; width: 100%; }
+        .mega-panel.active { display: flex; }
+        .mega-col-2 { width: 250px; flex-shrink: 0; padding: 32px 24px; border-right: 1px solid var(--gray-border); }
+        .mega-col-2 a { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; border-radius: 6px; transition: all 0.15s; letter-spacing: 0.3px; }
+        .mega-col-2 a:hover, .mega-col-2 a.active { color: var(--logo-red); background: rgba(192,0,0,0.05); }
+        .mega-col-3 { flex: 1; padding: 32px 40px; }
+        .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
+        .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
+        .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
+        .mega-products-list a::before { content: '2  '; color: var(--logo-red); font-weight: bold; }
+        .mega-products-list a:hover { color: var(--logo-red); }
+        .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
+        @media (max-width: 900px) { .mega-menu { display: none !important; } }
+
+    </style>
+</head>
+<body>
+<div class="utility-bar">
+<a class="dealer-btn" href="contact_v5_premium.html">Dealer Inquiry Form</a>
+<div class="lang-dropdown">
+<img alt="EN" src="https://flagcdn.com/w20/gb.png" width="16"/> English <i class="fas fa-caret-down"></i>
+<div class="lang-menu">
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Hindi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Gujarati</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Marathi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Tamil</a>
+</div>
+</div>
+<div class="social-links">
+<a class="bg-fb" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="bg-in" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="bg-ig" href="#"><i class="fab fa-instagram"></i></a>
+<a class="bg-phone" href="#"><i class="fas fa-phone"></i></a>
+<a class="bg-map" href="#"><i class="fas fa-map-marker-alt"></i></a>
+</div>
+</div>
+<nav>
+<a class="logo" href="homepage_v4_stitch.html">
+<img alt="KrishiTek Logo" onerror="this.src='https://via.placeholder.com/150x50/FFFFFF/C00000?text=KRISHITEK'" src="https://www.krishitek.com/wp-content/uploads/2022/11/LOGO.png"/>
+KRISHITEK
+</a>
+<div class="nav-links">
+<a href="about_v1.html">ABOUT</a>
+<div class="mega-trigger">
+PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
+<div class="mega-menu">
+<div class="mega-col-1">
+<a class="active" href="product_catalog_v1.html" data-target="agri">AGRI MACHINERY <i class="fas fa-chevron-right"></i></a>
+<a href="spare_parts_v1.html" data-target="spare">SPARE PARTS <i class="fas fa-chevron-right"></i></a>
+<a href="services_v1.html" data-target="services">SERVICES &amp; SUPPORT <i class="fas fa-chevron-right"></i></a>
+</div>
+<div class="mega-panels">
+  <!-- Agri Panel -->
+  <div class="mega-panel active" id="mega-agri">
+    <div class="mega-col-2">
+    <a class="active" href="#">REAPERS &amp; HARVESTERS</a>
+    <a href="#">POWER WEEDERS</a>
+    <a href="#">MINI TILLERS</a>
+    <a href="#">TRACTOR ATTACHMENTS</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>PRODUCTS</h4>
+    <div class="mega-products-list">
+    <a href="reaptek_ki_120_product_page.html">Self Propelled Power Reaper<span class="product-sub">Reaptek Ki-120</span></a>
+    <a href="reaptek_combine_4_8wp_product_page.html">Power Reaper Cum Weeder<span class="product-sub">Reaptek Combine 4.8WP</span></a>
+    <a href="power_weeder_5_5wp_product_page.html">Power Weeder 5.5WP<span class="product-sub">Honda GX200 Engine</span></a>
+    <a href="power_weeder_7cr_product_page.html">Power Weeder 7CR<span class="product-sub">7HP Chain Drive</span></a>
+    <a href="back_rotary_power_weeder_7br_product_page.html">Back Rotary Weeder 7BR<span class="product-sub">Patented Rotor</span></a>
+    <a href="front_rotary_power_weeder_7fr_product_page.html">Front Rotary Weeder 7FR<span class="product-sub">Paddy Puddling</span></a>
+    <a href="mini_tiller_powertek_3wp_product_page.html">Mini Tiller 3WP<span class="product-sub">Compact Powertek</span></a>
+    <a href="reaptek_3_product_page.html">Reaper Attachment 3ft<span class="product-sub">For Power Weeder</span></a>
+    </div>
+    </div>
+  </div>
+  <!-- Spare Parts Panel -->
+  <div class="mega-panel" id="mega-spare">
+    <div class="mega-col-2">
+    <a class="active" href="#">REAPER COMPONENTS</a>
+    <a href="#">WEEDER COMPONENTS</a>
+    <a href="#">ENGINE PARTS</a>
+    <a href="#">ACCESSORIES</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>POPULAR SPARES</h4>
+    <div class="mega-products-list">
+    <a href="spare_clutch_lever_product_page.html">Clutch Lever<span class="product-sub">For Power Reapers</span></a>
+    <a href="spare_big_blade_product_page.html">Big Blade<span class="product-sub">Cutting Mechanism</span></a>
+    <a href="spare_chain_cover_assy_product_page.html">Chain Cover Assembly<span class="product-sub">Protection</span></a>
+    <a href="spare_harvesting_gear_box_assy_product_page.html">Harvesting Gear Box<span class="product-sub">Power Transmission</span></a>
+    <a href="spare_rotavator_blade_product_page.html">Rotavator Blade<span class="product-sub">For Weeders</span></a>
+    <a href="spare_recoil_starter_product_page.html">Recoil Starter<span class="product-sub">Engine Component</span></a>
+    </div>
+    </div>
+  </div>
+  <!-- Services Panel -->
+  <div class="mega-panel" id="mega-services">
+    <div class="mega-col-2">
+    <a class="active" href="#">WARRANTY REGISTRATION</a>
+    <a href="#">SERVICE REQUEST</a>
+    <a href="#">TUTORIALS &amp; GUIDES</a>
+    <a href="#">DEALERSHIP</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>SUPPORT LINKS</h4>
+    <div class="mega-products-list">
+    <a href="services_v1.html">Register Warranty<span class="product-sub">Protect your investment</span></a>
+    <a href="services_v1.html">Book a Service<span class="product-sub">Expert maintenance</span></a>
+    <a href="media_v1_stitch.html">Video Tutorials<span class="product-sub">Operation guides</span></a>
+    <a href="dealership_v1.html">Become a Dealer<span class="product-sub">Join our network</span></a>
+    <a href="contact_v5_premium.html">Contact Support<span class="product-sub">Get in touch</span></a>
+    <a href="blog_v1.html">Knowledge Base<span class="product-sub">Farming tips</span></a>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<a href="dealership_v1.html">FIND A DEALER</a>
+<a href="blog_v1.html">BLOG</a>
+<a href="media_v1_stitch.html">MEDIA</a>
+<a href="spare_parts_v1.html">SPARE PARTS</a>
+<a href="contact_v5_premium.html">CONTACT</a>
+</div>
+<div class="menu-toggle">&#9776;</div>
+</nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+<div class="catalog-header">
+<h1 data-i18n="explore_our_agriculture_equipm">Explore our Agriculture Equipments</h1>
+<p data-i18n="premium_durable_and_highly_eff">Premium, durable, and highly efficient machinery designed for Indian soil.</p>
+</div>
+<section class="catalog-container">
+<!-- Sidebar Filter -->
+<aside class="sidebar">
+<h3 data-i18n="categories">Categories</h3>
+<ul class="category-list">
+<li data-i18n="power_reaper"><a class="active" data-i18n="power_reaper_1" href="#cat-reaper">Power Reaper</a></li>
+<li data-i18n="hydraulic_tractor_reaper"><a data-i18n="hydraulic_tractor_reaper_1" href="#cat-tractor-reaper">Hydraulic Tractor Reaper</a></li>
+<li data-i18n="crop_reaper_attachments"><a data-i18n="crop_reaper_attachments_1" href="#cat-reaper-attach">Crop Reaper Attachments</a></li>
+<li data-i18n="power_weeder"><a data-i18n="power_weeder_1" href="#cat-weeder">Power Weeder</a></li>
+<li data-i18n="power_weeder_attachments"><a data-i18n="power_weeder_attachments_1" href="#cat-weeder-attach">Power Weeder Attachments</a></li>
+<li data-i18n="chaff_cutter"><a data-i18n="chaff_cutter_1" href="#cat-chaff">Chaff Cutter</a></li>
+</ul>
+</aside>
+<!-- Product Grid Area -->
+<div class="product-grid-area">
+<!-- Category 1 -->
+<div class="category-section" id="cat-reaper">
+<h2 data-i18n="power_reaper_1">Power Reaper</h2>
+<div class="grid">
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Reaper" src="../assets/power_reaper_1784133241697.png"/></div>
+<div class="product-info">
+<div class="product-title">Self Propelled Power Reaper</div>
+<button class="get-offer-btn" data-i18n="get_offer">Get Offer</button>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Reaper" src="../assets/power_reaper_1784133241697.png"/></div>
+<div class="product-info">
+<div class="product-title">Power Reaper Cum Weeder (Dual Function)</div>
+<button class="get-offer-btn" data-i18n="get_offer">Get Offer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="category-section" id="cat-tractor-reaper">
+<h2 data-i18n="hydraulic_tractor_reaper_1">Hydraulic Tractor Reaper</h2>
+<div class="grid">
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Tractor Reaper" src="../assets/tractor_reaper_1784133251976.png"/></div>
+<div class="product-info">
+<div class="product-title">Tractor Operated Hydraulic Reaper</div>
+<button class="get-offer-btn" data-i18n="get_offer">Get Offer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="category-section" id="cat-reaper-attach">
+<h2 data-i18n="crop_reaper_attachments_1">Crop Reaper Attachments</h2>
+<div class="grid">
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Tiller Attach" src="../assets/mini_tiller_1784133277290.png"/></div>
+<div class="product-info">
+<div class="product-title">Reaper Attachment For Power Tiller</div>
+<button class="get-offer-btn" data-i18n="get_offer">Get Offer</button>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Weeder Attach" src="../assets/power_weeder_1784133265292.png"/></div>
+<div class="product-info">
+<div class="product-title">Reaper Attachment For Power Weeder</div>
+<button class="get-offer-btn" data-i18n="get_offer">Get Offer</button>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Swaraj Attach" src="../assets/power_reaper_1784133241697.png"/></div>
+<div class="product-info">
+<div class="product-title">Reaper attachment for Swaraj code</div>
+<button class="get-offer-btn" data-i18n="get_offer">Get Offer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="category-section" id="cat-weeder">
+<h2 data-i18n="power_weeder_1">Power Weeder</h2>
+<div class="grid">
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Weeder" src="../assets/power_weeder_1784133265292.png"/></div>
+<div class="product-info"><div class="product-title">Power Weeder 7CR</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Weeder" src="../assets/power_weeder_1784133265292.png"/></div>
+<div class="product-info"><div class="product-title">Power Weeder 5.5WP</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Weeder" src="../assets/power_weeder_1784133265292.png"/></div>
+<div class="product-info"><div class="product-title">Front Rotary Power Weeder 7FR</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Weeder" src="../assets/power_weeder_1784133265292.png"/></div>
+<div class="product-info"><div class="product-title">Back Rotary Power Weeder 7BR</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Tiller" src="../assets/mini_tiller_1784133277290.png"/></div>
+<div class="product-info"><div class="product-title">Mini Power Tiller 3WP</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+</div>
+</div>
+<!-- Category 5 -->
+<div class="category-section" id="cat-weeder-attach">
+<h2 data-i18n="power_weeder_attachments_1">Power Weeder Attachments</h2>
+<div class="grid">
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Iron Wheel" src="../assets/iron_wheel.png"/></div>
+<div class="product-info"><div class="product-title">Iron Wheel</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Ridger" src="../assets/ridger.png"/></div>
+<div class="product-info"><div class="product-title">Ridger</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Sathi" src="../assets/sathi_attachment.png"/></div>
+<div class="product-info"><div class="product-title">Sathi</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+</div>
+</div>
+<!-- Category 6 -->
+<div class="category-section" id="cat-chaff">
+<h2 data-i18n="chaff_cutter_1">Chaff Cutter</h2>
+<div class="grid">
+<div class="product-card">
+<div class="product-img-wrapper"><img alt="Chaff Cutter" src="../assets/chaff_cutter.png"/></div>
+<div class="product-info"><div class="product-title">Chaff Cutter</div><button class="get-offer-btn" data-i18n="get_offer">Get Offer</button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Footer injected exactly as requested -->
+<footer>
+<div class="footer-grid">
+<!-- Col 1 -->
+<div class="footer-col" style="grid-column: span 2;">
+<h4 data-i18n="about_us">About Us</h4>
+<p class="about-text" data-i18n="we_are_a_manufacturer_of_agric">We are a manufacturer of Agriculture Equipment. We design, develop and MAKE IN INDIA. We aspire to provide products and services to Farmers that are always customer-centric and can generate maximum value for what they have invested.</p>
+<div class="make-in-india" style="background: white; padding: 10px 15px; border-radius: 6px; display: inline-block; border: none;">
+<img alt="Make In India" src="../assets/make_in_india.webp" style="max-height: 60px; width: auto; display: block;"/>
+</div>
+</div>
+<!-- Col 2 -->
+<div class="footer-col">
+<h4 data-i18n="quick_links">Quick Links</h4>
+<ul>
+<li data-i18n="product_categories_1"><a data-i18n="product_categories" href="product_catalog_v1.html">Product Categories</a></li>
+<li data-i18n="services"><a data-i18n="services_1" href="services_v2_stitch.html">Services</a></li>
+<li data-i18n="spare_parts_1"><a data-i18n="spare_parts" href="spare_parts_v1.html">Spare Parts</a></li>
+<li data-i18n="about_1"><a data-i18n="about" href="about_v1.html">About</a></li>
+<li data-i18n="our_networks"><a data-i18n="our_networks_1" href="contact_v5_premium.html">Our Networks</a></li>
+<li data-i18n="blog_2"><a data-i18n="blog" href="blog_v1.html">Blog</a></li>
+<li data-i18n="login"><a data-i18n="login_1" href="#" onclick="document.getElementById(\'krishitek-chatbot-button\').click(); return false;">Login</a></li>
+<li data-i18n="privacy_policy"><a data-i18n="privacy_policy_1" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div class="footer-col">
+<h4 data-i18n="products">Products</h4>
+<ul>
+<li data-i18n="self_propelled_power_reaper"><a data-i18n="self_propelled_power_reaper_1" href="productpage_v2_stitch.html">Self Propelled Power Reaper</a></li>
+<li data-i18n="power_reaper_cum_weeder"><a data-i18n="power_reaper_cum_weeder_1" href="productpage_v2_stitch.html">Power Reaper Cum Weeder</a></li>
+<li data-i18n="back_rotary_power_weeder_7br"><a data-i18n="back_rotary_power_weeder_7br_1" href="productpage_v2_stitch.html">Back Rotary Power Weeder 7BR</a></li>
+<li data-i18n="front_rotary_power_weeder_7fr"><a data-i18n="front_rotary_power_weeder_7fr_1" href="productpage_v2_stitch.html">Front Rotary Power Weeder 7FR</a></li>
+<li data-i18n="mini_power_tiller_3wp"><a data-i18n="mini_power_tiller_3wp_1" href="productpage_v2_stitch.html">Mini Power Tiller 3WP</a></li>
+<li data-i18n="power_weeder_attachment"><a data-i18n="power_weeder_attachment_1" href="productpage_v2_stitch.html">Power Weeder Attachment</a></li>
+<li data-i18n="power_weeder_reaper"><a data-i18n="power_weeder_reaper_1" href="productpage_v2_stitch.html">Power Weeder Reaper</a></li>
+</ul>
+</div>
+<!-- Col 4 (New) -->
+<div class="footer-col">
+<h4 data-i18n="get_in_touch">GET IN TOUCH</h4>
+<div style="display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start;">
+<i class="fas fa-envelope" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px;"></i>
+<p data-i18n="email_info_krishitek_com" style="margin: 0;">Email: info@krishitek.com</p>
+</div>
+<div style="display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start;">
+<i class="fas fa-phone-alt" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px; transform: scaleX(-1);"></i>
+<p data-i18n="phone_91_91570_62093_91_74860_" style="margin: 0;">Phone: +91 91570 62093<br/>+91 74860 29216</p>
+</div>
+<div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: flex-start;">
+<i class="fas fa-map-marker-alt" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px;"></i>
+<p data-i18n="address_krishitek_industries_p_1" style="margin: 0;">Address: Krishitek Industries Pvt. Ltd.<br/>Plot No. 22, Prime Industrial Park,<br/>Santej, Ahmedabad- 382721,<br/>Gujarat, INDIA</p>
+</div>
+<a data-i18n="contact_us" href="contact_v5_premium.html" style="background: var(--brand-yellow); color: var(--ink); padding: 8px 16px; border-radius: 4px; font-weight: bold; text-decoration: none;">Contact Us</a>
+</div>
+</div>
+<div class="footer-bottom">
+            © 2026 KrishiTek. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Smooth scrolling and dynamic active state for the sidebar
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('.category-list a');
+            const sections = document.querySelectorAll('.category-section');
+
+            // Handle Clicks
+            navLinks.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Remove active from all, add to clicked
+                    navLinks.forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Smooth scroll to target section with offset for sticky header
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offset = 90; // Height of the sticky navbar
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Handle Scroll tracking
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Trigger active state when section is 150px from top
+                    if (pageYOffset >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === current) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+<!-- AI Chatbot Widget -->
+<script src="../assets/chatbot_widget.js"></script>
+</body>
+</html>

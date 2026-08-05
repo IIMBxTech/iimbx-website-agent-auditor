@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Krishtech Director Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/supabase_client.js"></script>
+    <style>
+        :root {
+            --krishi-red: #C00000;
+            --krishi-yellow: #FDB913;
+            --krishi-charcoal: #333333;
+            --krishi-ink: #1A1A1A;
+            --krishi-bg: #FFFFFF;
+            --krishi-surface: #F9FAFB;
+            --krishi-border: #E5E7EB;
+            --krishi-white: #FFFFFF;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--krishi-bg);
+            color: var(--krishi-charcoal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 280px;
+            background: var(--krishi-surface);
+            border-right: 1px solid var(--krishi-border);
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--krishi-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar-header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--krishi-ink);
+        }
+        .sidebar-header span {
+            font-size: 11px;
+            background: var(--krishi-yellow);
+            color: var(--krishi-ink);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .nav-list {
+            list-style: none;
+            padding: 16px 0;
+            margin: 0;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .nav-item {
+            padding: 14px 24px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #4B5563;
+        }
+        .nav-item:hover {
+            background: #F3F4F6;
+            color: var(--krishi-ink);
+        }
+        .nav-item.active {
+            background: #FEF2F2;
+            color: var(--krishi-red);
+            font-weight: 600;
+            border-right: 4px solid var(--krishi-red);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            background: #FFFFFF;
+        }
+        .header {
+            background: var(--krishi-white);
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--krishi-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--krishi-ink);
+        }
+        .btn-red {
+            background: var(--krishi-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn-red:hover { opacity: 0.9; }
+        .btn-outline {
+            background: white;
+            color: var(--krishi-charcoal);
+            border: 1px solid var(--krishi-border);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 32px 40px;
+            max-width: 1100px;
+        }
+        .panel {
+            display: none;
+        }
+        .panel.active {
+            display: block;
+        }
+
+        /* Card / Box Styling */
+        .card {
+            background: var(--krishi-white);
+            border: 1px solid var(--krishi-border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: var(--krishi-ink);
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--krishi-ink);
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--krishi-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Data Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--krishi-border);
+        }
+        th {
+            background: var(--krishi-surface);
+            font-weight: 600;
+            color: #4B5563;
+        }
+        tr:hover {
+            background: #F9FAFB;
+        }
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-new { background: #E0F2FE; color: #0369A1; }
+        .badge-update { background: #FEF3C7; color: #92400E; }
+        .badge-delete { background: #FEE2E2; color: #991B1B; }
+
+        .search-bar {
+            margin-bottom: 16px;
+            padding: 10px 14px;
+            width: 100%;
+            border: 1px solid var(--krishi-border);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div>
+                <h1>Krishtech HQ</h1>
+                <span>DIRECTOR PORTAL</span>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item active" onclick="showPanel('page-builder')">📐 Page Slot Builder</li>
+            <li class="nav-item" onclick="showPanel('lang')">🌐 Multilingual Text</li>
+            <li class="nav-item" onclick="showPanel('media')">🎥 Media Assets</li>
+            <li class="nav-item" onclick="showPanel('blogs')">📝 Blog Manager</li>
+            <li class="nav-item" onclick="showPanel('employees')">👥 Employee Management</li>
+            <li class="nav-item" onclick="showPanel('leads')">🎯 Dealer Leads</li>
+            <li class="nav-item" onclick="showPanel('audit')">🛡️ Audit & Session Logs</li>
+            <li class="nav-item" onclick="showPanel('ai')">🧠 AI Engine (Groq)</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h2 id="header-title">Page Slot Builder</h2>
+            <button class="btn-red" onclick="saveActivePanel()">Save Changes</button>
+        </div>
+
+        <div class="container">
+            
+            <!-- PANEL: PAGE SLOT BUILDER -->
+            <div class="panel active" id="panel-page-builder">
+                <div class="card">
+                    <h3>Click-to-Edit Structural Slots</h3>
+                    <p style="font-size: 13px; color: #666;">Swap out images, text, and videos on predefined homepage and service slots.</p>
+                    <div class="form-group">
+                        <label>Select Page</label>
+                        <select id="page-selector" onchange="loadPageSlots()">
+                            <option value="home">Home Page</option>
+                            <option value="services">Services Page</option>
+                            <option value="about">About Page</option>
+                            <option value="contact">Contact Page</option>
+                        </select>
+                    </div>
+                    
+                    <div id="slot-editor-container">
+                        <!-- Dynamic slots will appear here -->
+                        <table id="page-slots-table">
+                            <thead>
+                                <tr>
+                                    <th>Slot Key</th>
+                                    <th>Type</th>
+                                    <th>Content Configuration</th>
+                                    <th>Sort Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>home_hero_video</code></td>
+                                    <td>YouTube</td>
+                                    <td><input type="text" value="https://youtube.com/embed/demo" /></td>
+                                    <td><input type="number" value="1" style="width: 60px;" /></td>
+                                </tr>
+                                <tr>
+                                    <td><code>home_hero_text</code></td>
+                                    <td>Text</td>
+                                    <td><input type="text" value="Empowering Indian Agriculture" /></td>
+                                    <td><input type="number" value="2" style="width: 60px;" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn-outline" style="margin-top: 16px;">+ Add New Block Slot</button>
+                </div>
+            </div>
+
+            <!-- PANEL: MULTILINGUAL TEXT -->
+            <div class="panel" id="panel-lang">
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Content Blocks (Multilingual)</h3>
+                        <button class="btn-outline">+ Add New Content Block</button>
+                    </div>
+                    <p style="font-size: 13px; color: #666;">Translating text updates the live site instantly.</p>
+                    <table id="translations-table">
+                        <thead>
+                            <tr>
+                                <th>Page Key</th>
+                                <th>Section Key</th>
+                                <th>English (EN)</th>
+                                <th>Hindi (HI)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>global</code></td>
+                                <td><code>nav_home</code></td>
+                                <td><input type="text" value="Home"/></td>
+                                <td><input type="text" value="होम"/></td>
+                                <td><button class="btn-red" style="padding:4px 8px; font-size:12px;">Save</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL: MEDIA ASSETS -->
+            <div class="panel" id="panel-media">
+                <div class="card">
+                    <h3>Media Asset Library</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Media Type</label>
+                            <select id="media-type">
+                                <option value="image">Image Upload</option>
+                                <option value="video">Direct Video Upload</option>
+                                <option value="youtube">YouTube Embed Link</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Caption</label>
+                            <input id="media-title" placeholder="Caption for media" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Storage Path / External URL</label>
+                        <input id="media-url" placeholder="https://..." type="text"/>
+                    </div>
+                    <button class="btn-red" onclick="alert('Media Asset Saved')">Upload / Save Asset</button>
+                </div>
+            </div>
+
+            <!-- PANEL: BLOG MANAGER -->
+            <div class="panel" id="panel-blogs">
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Blog & Article Manager</h3>
+                        <button class="btn-outline">+ Draft New Post</button>
+                    </div>
+                    <table id="blogs-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Slug</th>
+                                <th>Pinned</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Transforming Farming with Power Weeders</strong></td>
+                                <td><code>power-weeders-farming</code></td>
+                                <td><input type="checkbox" checked /></td>
+                                <td><span class="badge badge-new">Published</span></td>
+                                <td><button class="btn-outline" style="padding:4px 8px; font-size:12px;">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>New Subsidiary Rollouts</strong></td>
+                                <td><code>subsidiary-2026</code></td>
+                                <td><input type="checkbox" /></td>
+                                <td><span class="badge badge-update">Draft</span></td>
+                                <td><button class="btn-outline" style="padding:4px 8px; font-size:12px;">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL: EMPLOYEE MANAGEMENT -->
+            <div class="panel" id="panel-employees">
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Employee Accounts & Permissions</h3>
+                        <button class="btn-outline">+ Invite Employee</button>
+                    </div>
+                    <table id="employees-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Permissions</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td><code>employee</code></td>
+                                <td>
+                                    <label><input type="checkbox" checked/> Edit Content</label> 
+                                    <label><input type="checkbox" checked/> Upload Media</label>
+                                    <br>
+                                    <label><input type="checkbox"/> Manage Blog</label>
+                                    <label><input type="checkbox"/> View Logs</label>
+                                </td>
+                                <td><button class="btn-red" style="padding:4px 8px; font-size:12px;">Update</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL: DEALER LEADS -->
+            <div class="panel" id="panel-leads">
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Dealer Leads Manager</h3>
+                        <button class="btn-outline" onclick="exportLeadsCSV()">📥 Export to Excel / CSV</button>
+                    </div>
+                    <table id="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Assigned Dealer</th>
+                                <th>Lead Name</th>
+                                <th>Phone</th>
+                                <th>Machine Interest</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-tbody">
+                            <tr>
+                                <td><code>unassigned</code></td>
+                                <td>Ramesh Patel</td>
+                                <td>+91 98765 43210</td>
+                                <td>Power Weeder 7HP</td>
+                                <td><span class="badge badge-new">New</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL: AUDIT & SESSION LOG -->
+            <div class="panel" id="panel-audit">
+                <div class="card">
+                    <h3>Audit Log (Content Changes)</h3>
+                    <p style="font-size: 13px; color: #666;">Postgres triggers automatically record every single structural and content edit.</p>
+                    <table id="audit-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Table</th>
+                                <th>Action</th>
+                                <th>Record ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2026-07-24 10:15:10</td>
+                                <td><code>content_blocks</code></td>
+                                <td><span class="badge badge-update">UPDATE</span></td>
+                                <td><code>1234-5678-uuid</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3>Login Events (Sessions)</h3>
+                    <p style="font-size: 13px; color: #666;">Tracks user sign-ins and failed attempts via Supabase Auth Webhooks.</p>
+                    <table id="login-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>User ID</th>
+                                <th>Event</th>
+                                <th>IP Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2026-07-24 09:30:00</td>
+                                <td><code>admin-uuid</code></td>
+                                <td><span class="badge badge-new">sign_in</span></td>
+                                <td>192.168.1.1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL: AI ENGINE -->
+            <div class="panel" id="panel-ai">
+                <div class="card">
+                    <h3>Groq API & LLM Configuration</h3>
+                    <div class="form-group">
+                        <label>AI Provider Model</label>
+                        <select id="groq-model">
+                            <option>Groq - Llama-3-70b-8192 (Recommended)</option>
+                            <option>Groq - Llama-3-8b-8192 (Ultra Fast)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Groq API Key</label>
+                        <input id="groq-api-key" placeholder="gsk_..." type="password"/>
+                    </div>
+                    <div class="form-group">
+                        <label>System Prompt</label>
+                        <textarea id="system-prompt" rows="4">You are KrishiBot, an expert AI assistant for Krishitek.</textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showPanel(panelId) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById('panel-' + panelId);
+            if (target) target.classList.add('active');
+
+            const titleMap = {
+                'page-builder': 'Page Slot Builder',
+                'lang': 'Multilingual Content Blocks',
+                'media': 'Media Assets',
+                'blogs': 'Blog & Article Manager',
+                'employees': 'Employee Accounts & Permissions',
+                'leads': 'Dealer Leads Manager',
+                'audit': 'Audit Log & Session Logs',
+                'ai': 'AI Engine Configuration'
+            };
+            document.getElementById('header-title').innerText = titleMap[panelId] || 'Admin Dashboard';
+        }
+
+        function saveActivePanel() {
+            alert('Changes saved securely!');
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Require Director role
+            if (typeof KrishtechDB !== 'undefined' && KrishtechDB.requireAuth) {
+                const auth = await KrishtechDB.requireAuth(['director', 'employee']);
+                if (!auth) return; // User is redirected
+            }
+        });
+    </script>
+    <script src="../assets/chatbot_widget.js"></script>
+</body>
+</html>

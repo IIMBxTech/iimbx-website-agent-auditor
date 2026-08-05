@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Krishtech Dealer Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/supabase_client.js"></script>
+    <style>
+        :root {
+            --krishi-red: #C00000;
+            --krishi-yellow: #FDB913;
+            --krishi-charcoal: #333333;
+            --krishi-ink: #1A1A1A;
+            --krishi-bg: #FFFFFF;
+            --krishi-surface: #F9FAFB;
+            --krishi-border: #E5E7EB;
+            --krishi-white: #FFFFFF;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--krishi-bg);
+            color: var(--krishi-charcoal);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 280px;
+            background: var(--krishi-surface);
+            border-right: 1px solid var(--krishi-border);
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--krishi-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar-header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--krishi-ink);
+        }
+        .sidebar-header span {
+            font-size: 11px;
+            background: var(--krishi-yellow);
+            color: var(--krishi-ink);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .nav-list {
+            list-style: none;
+            padding: 16px 0;
+            margin: 0;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .nav-item {
+            padding: 14px 24px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #4B5563;
+        }
+        .nav-item:hover {
+            background: #F3F4F6;
+            color: var(--krishi-ink);
+        }
+        .nav-item.active {
+            background: #FEF2F2;
+            color: var(--krishi-red);
+            font-weight: 600;
+            border-right: 4px solid var(--krishi-red);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            background: #FFFFFF;
+        }
+        .header {
+            background: var(--krishi-white);
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--krishi-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--krishi-ink);
+        }
+        .btn-red {
+            background: var(--krishi-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn-red:hover { opacity: 0.9; }
+        .btn-outline {
+            background: white;
+            color: var(--krishi-charcoal);
+            border: 1px solid var(--krishi-border);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 32px 40px;
+            max-width: 1100px;
+        }
+        .panel {
+            display: none;
+        }
+        .panel.active {
+            display: block;
+        }
+
+        /* Card / Box Styling */
+        .card {
+            background: var(--krishi-white);
+            border: 1px solid var(--krishi-border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: var(--krishi-ink);
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--krishi-ink);
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--krishi-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        /* Data Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--krishi-border);
+        }
+        th {
+            background: var(--krishi-surface);
+            font-weight: 600;
+            color: #4B5563;
+        }
+        tr:hover {
+            background: #F9FAFB;
+        }
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-new { background: #E0F2FE; color: #0369A1; }
+        .badge-update { background: #FEF3C7; color: #92400E; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div>
+                <h1>Krishtech Dealer</h1>
+                <span>DEALER PORTAL</span>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item active" onclick="showPanel('leads')">🎯 My Leads</li>
+            <li class="nav-item" onclick="showPanel('media')">🎥 Add YouTube Links</li>
+        </ul>
+        <div style="padding: 24px; margin-top: auto;">
+            <button class="btn-outline" style="width:100%" onclick="logout()">Log Out</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h2 id="header-title">My Dealer Leads</h2>
+        </div>
+
+        <div class="container">
+            
+            <!-- PANEL 1: DEALER LEADS -->
+            <div class="panel active" id="panel-leads">
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Incoming Customer Leads</h3>
+                        <button class="btn-outline" onclick="exportLeadsCSV()">📥 Export to Excel</button>
+                    </div>
+                    <table id="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Machine Interest</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-tbody">
+                            <!-- Populated via JS -->
+                            <tr>
+                                <td>Ramesh Patel</td>
+                                <td>+91 98765 43210</td>
+                                <td>Power Weeder 7HP</td>
+                                <td><span class="badge badge-new">New</span></td>
+                                <td><button class="btn-red" style="padding:4px 8px; font-size:12px;">Contacted</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL 2: MEDIA & YOUTUBE LINKS -->
+            <div class="panel" id="panel-media">
+                <div class="card">
+                    <h3>Submit Field Demo Videos</h3>
+                    <p style="font-size:13px; color:#666;">Add YouTube links or field demonstration photos. These will be sent to admins for approval.</p>
+                    <div class="form-group">
+                        <label>Media Type</label>
+                        <select id="media-type">
+                            <option value="youtube">YouTube Video Embed Link</option>
+                            <option value="gallery_photo">Field Demonstration Photo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Media Title</label>
+                        <input id="media-title" placeholder="e.g. Power Weeder Demo at my dealership" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <label>URL (YouTube link or Image path)</label>
+                        <input id="media-url" placeholder="https://www.youtube.com/embed/..." type="text"/>
+                    </div>
+                    <button class="btn-red" onclick="publishMedia()">Submit for Approval</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showPanel(panelId) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById('panel-' + panelId);
+            if (target) target.classList.add('active');
+
+            const titleMap = {
+                'leads': 'My Dealer Leads',
+                'media': 'Media & YouTube CMS'
+            };
+            document.getElementById('header-title').innerText = titleMap[panelId] || 'Dealer Dashboard';
+        }
+
+        async function publishMedia() {
+            const title = document.getElementById('media-title').value;
+            const url = document.getElementById('media-url').value;
+            const type = document.getElementById('media-type').value;
+
+            if(!title || !url) {
+                alert('Please enter both title and URL.');
+                return;
+            }
+
+            // Fallback for demo
+            if (typeof KrishtechDB === 'undefined' || !KrishtechDB.supabase) {
+                alert('Successfully submitted "' + title + '" (Demo Mode)!');
+                return;
+            }
+
+            try {
+                // If the user's DB doesn't have RLS setup yet to allow dealer inserts, it will fail, 
+                // but we will attempt it here for when the new forms are ready.
+                const { error } = await KrishtechDB.supabase.from('cms_media').insert([{
+                    title: title,
+                    media_url: url,
+                    type: type,
+                    page_target: 'media'
+                }]);
+                if (error) throw error;
+                alert('Successfully submitted "' + title + '".');
+            } catch (err) {
+                alert('Error submitting media: ' + err.message);
+            }
+        }
+
+        function exportLeadsCSV() {
+            const mockLeads = [
+                { Name: "Ramesh Patel", Phone: "+91 98765 43210", Interest: "Power Weeder 7HP", Status: "New" }
+            ];
+            if (typeof KrishtechDB !== 'undefined' && KrishtechDB.exportLeadsToCSV) {
+                KrishtechDB.exportLeadsToCSV(mockLeads);
+            }
+        }
+
+        async function logout() {
+            if (typeof KrishtechDB !== 'undefined' && KrishtechDB.supabase) {
+                await KrishtechDB.supabase.auth.signOut();
+            }
+            window.location.href = 'dealer_login.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Require Dealer, Admin, or Staff role
+            if (typeof KrishtechDB !== 'undefined' && KrishtechDB.requireAuth) {
+                const auth = await KrishtechDB.requireAuth(['dealer', 'admin', 'staff']);
+                if (!auth) return; // Redirects automatically
+            }
+        });
+    </script>
+</body>
+</html>

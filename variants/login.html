@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Krishitek Portal Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root { --red: #C00000; --yellow: #FDB913; --ink: #1A1A1A; --gray: #666; --border: #E5E7EB; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; background: #fff; }
+
+    /* LEFT PANEL */
+    .left-panel {
+        background: linear-gradient(145deg, var(--ink) 0%, #2a1a1a 100%);
+        display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        padding: 80px 60px; position: relative; overflow: hidden;
+    }
+    .left-panel::before {
+        content: ''; position: absolute; bottom: -100px; right: -100px;
+        width: 400px; height: 400px;
+        background: radial-gradient(circle, rgba(253,185,19,0.1) 0%, transparent 60%);
+        border-radius: 50%;
+    }
+    .left-panel::after {
+        content: ''; position: absolute; top: -60px; left: -60px;
+        width: 250px; height: 250px;
+        background: radial-gradient(circle, rgba(192,0,0,0.15) 0%, transparent 60%);
+        border-radius: 50%;
+    }
+    .left-content { position: relative; z-index: 1; }
+    .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 60px; }
+    .brand img { height: 48px; width: auto; }
+    .brand-name { font-family: 'Barlow', sans-serif; font-size: 28px; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
+    .left-headline { font-family: 'Barlow', sans-serif; font-size: 44px; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px; }
+    .left-headline span { color: var(--yellow); }
+    .left-sub { font-size: 16px; color: #AAA; line-height: 1.7; max-width: 360px; margin-bottom: 48px; }
+    .role-pills { display: flex; flex-direction: column; gap: 12px; }
+    .role-pill { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px 18px; }
+    .role-pill .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-md { background: var(--red); }
+    .dot-dealer { background: var(--yellow); }
+    .dot-emp { background: #28a745; }
+    .role-pill .role-label { font-size: 14px; font-weight: 600; color: #fff; }
+    .role-pill .role-desc { font-size: 12px; color: #888; margin-top: 2px; }
+
+    /* RIGHT PANEL */
+    .right-panel { display: flex; align-items: center; justify-content: center; padding: 60px 40px; background: #fff; }
+    .login-box { width: 100%; max-width: 420px; }
+    .login-box h2 { font-family: 'Barlow', sans-serif; font-size: 30px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+    .login-box .sub { font-size: 14px; color: var(--gray); margin-bottom: 36px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .form-group .input-wrap { position: relative; }
+    .form-group input { width: 100%; padding: 13px 16px 13px 42px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-family: 'Inter', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s, box-shadow 0.2s; background: #fff; }
+    .form-group input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(192,0,0,0.07); }
+    .form-group .input-wrap i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #AAA; font-size: 14px; }
+    .toggle-pw { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #AAA; font-size: 14px; background: none; border: none; }
+
+    .error-msg { background: #FEF2F2; border: 1px solid #FECACA; color: #DC2626; padding: 12px 16px; border-radius: 8px; font-size: 13px; margin-bottom: 20px; display: none; }
+    .error-msg.show { display: block; }
+
+    .btn-login { width: 100%; padding: 14px; background: var(--red); color: #fff; font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.3px; }
+    .btn-login:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(192,0,0,0.25); }
+    .btn-login:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .divider { text-align: center; color: #CCC; font-size: 12px; margin: 24px 0; position: relative; }
+    .divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--border); }
+    .divider span { background: #fff; padding: 0 12px; position: relative; }
+
+    .demo-creds { background: #F9FAFB; border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+    .demo-creds h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 12px; }
+    .cred-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; border-radius: 4px; padding: 6px 8px; }
+    .cred-row:last-child { border-bottom: none; }
+    .cred-row:hover { background: #F0F0F0; }
+    .cred-role { font-size: 13px; font-weight: 600; color: var(--ink); }
+    .cred-email { font-size: 11px; color: var(--gray); }
+    .cred-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+    .badge-md { background: #FEE2E2; color: var(--red); }
+    .badge-dealer { background: #FEF3D0; color: #92400E; }
+    .badge-emp { background: #D1FAE5; color: #065F46; }
+
+    .back-link { display: block; text-align: center; margin-top: 24px; font-size: 13px; color: var(--gray); text-decoration: none; }
+    .back-link:hover { color: var(--red); }
+
+    @media (max-width: 768px) {
+        body { grid-template-columns: 1fr; }
+        .left-panel { display: none; }
+        .right-panel { padding: 40px 24px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- LEFT PANEL -->
+<div class="left-panel">
+    <div class="left-content">
+        <div class="brand">
+            <img alt="Krishitek" src="../assets/logo.png" onerror="this.style.display='none'"/>
+            <span class="brand-name">KRISHITEK</span>
+        </div>
+        <h1 class="left-headline">Your <span>Farming</span><br/>Partner Portal</h1>
+        <p class="left-sub">Access your personalized dashboard. Dealers, employees, and management all have dedicated tools built for their needs.</p>
+        <div class="role-pills">
+            <div class="role-pill">
+                <div class="dot dot-md"></div>
+                <div>
+                    <div class="role-label">Managing Director</div>
+                    <div class="role-desc">Full analytics, dealer leads, user management</div>
+                </div>
+            </div>
+            <div class="role-pill">
+                <div class="dot dot-dealer"></div>
+                <div>
+                    <div class="role-label">Dealer</div>
+                    <div class="role-desc">Orders, enquiries, products, warranty</div>
+                </div>
+            </div>
+            <div class="role-pill">
+                <div class="dot dot-emp"></div>
+                <div>
+                    <div class="role-label">Employee</div>
+                    <div class="role-desc">Blog, media, product content tools</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="right-panel">
+    <div class="login-box">
+        <h2>Welcome Back</h2>
+        <p class="sub">Sign in to your Krishitek portal</p>
+
+        <div class="error-msg" id="errorMsg">
+            <i class="fas fa-exclamation-circle"></i> <span id="errorText">Invalid credentials.</span>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label>Email Address</label>
+                <div class="input-wrap">
+                    <i class="fas fa-envelope"></i>
+                    <input autocomplete="email" id="email" placeholder="you@krishitek.com" required type="email"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <div class="input-wrap">
+                    <i class="fas fa-lock"></i>
+                    <input autocomplete="current-password" id="password" placeholder="••••••••" required type="password"/>
+                    <button class="toggle-pw" onclick="togglePw()" type="button"><i class="fas fa-eye" id="eyeIcon"></i></button>
+                </div>
+            </div>
+            <button class="btn-login" id="loginBtn" type="submit">Sign In <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+        </form>
+
+        <div class="divider"><span>Demo Credentials</span></div>
+
+        <div class="demo-creds">
+            <h4>Click to auto-fill</h4>
+            <div class="cred-row" onclick="fillCred('md@krishitek.com','Krishi@MD2025')">
+                <div>
+                    <div class="cred-role">Managing Director</div>
+                    <div class="cred-email">md@krishitek.com</div>
+                </div>
+                <span class="cred-badge badge-md">MD</span>
+            </div>
+            <div class="cred-row" onclick="fillCred('dealer@krishitek.com','Krishi@Dealer25')">
+                <div>
+                    <div class="cred-role">Dealer</div>
+                    <div class="cred-email">dealer@krishitek.com</div>
+                </div>
+                <span class="cred-badge badge-dealer">DEALER</span>
+            </div>
+            <div class="cred-row" onclick="fillCred('emp@krishitek.com','Krishi@Emp2025')">
+                <div>
+                    <div class="cred-role">Employee</div>
+                    <div class="cred-email">emp@krishitek.com</div>
+                </div>
+                <span class="cred-badge badge-emp">EMP</span>
+            </div>
+        </div>
+
+        <a class="back-link" href="homepage_v4_stitch.html">← Back to Krishitek Website</a>
+    </div>
+</div>
+
+<script src="../assets/auth.js"></script>
+<script>
+    // If already logged in, redirect
+    if (window.KrishiAuth && KrishiAuth.getSession()) {
+        const role = KrishiAuth.getRole();
+        const redirects = { md: 'md_dashboard.html', dealer: 'dealer_dashboard.html', employee: 'employee_portal.html' };
+        if (redirects[role]) window.location.href = redirects[role];
+    }
+
+    function fillCred(email, pass) {
+        document.getElementById('email').value = email;
+        document.getElementById('password').value = pass;
+        document.getElementById('email').focus();
+    }
+
+    function togglePw() {
+        const inp = document.getElementById('password');
+        const icon = document.getElementById('eyeIcon');
+        if (inp.type === 'password') { inp.type = 'text'; icon.className = 'fas fa-eye-slash'; }
+        else { inp.type = 'password'; icon.className = 'fas fa-eye'; }
+    }
+
+    function handleLogin(e) {
+        e.preventDefault();
+        const btn = document.getElementById('loginBtn');
+        const errBox = document.getElementById('errorMsg');
+        errBox.classList.remove('show');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+
+        setTimeout(() => {
+            const result = KrishiAuth.login(
+                document.getElementById('email').value,
+                document.getElementById('password').value
+            );
+            if (result.success) {
+                btn.innerHTML = '<i class="fas fa-check"></i> Redirecting...';
+                setTimeout(() => { window.location.href = result.redirect; }, 600);
+            } else {
+                document.getElementById('errorText').textContent = result.error;
+                errBox.classList.add('show');
+                btn.disabled = false;
+                btn.innerHTML = 'Sign In <i class="fas fa-arrow-right" style="margin-left:6px;"></i>';
+            }
+        }, 500);
+    }
+</script>
+</body>
+</html>

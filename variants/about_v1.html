@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - KrishiTek | Agriculture Machinery Manufacturer India</title>
+<meta name="description" content="Learn about Krishitek Industries Pvt. Ltd. — pioneering agricultural machinery manufacturer since 2012. Our vision, mission, values and commitment to Indian farmers."/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root {
+        --brand-yellow: #FDB913;
+        --logo-red: #C00000;
+        --charcoal: #333333;
+        --ink: #1A1A1A;
+        --white: #FFFFFF;
+        --yellow-tint: #FEF3D0;
+        --gray-light: #F7F9FA;
+        --gray-border: #EAEAEA;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; }
+    h1,h2,h3,h4,h5,h6,.btn { font-family: 'Barlow', sans-serif; }
+
+    /* ── Utility Bar ── */
+    .utility-bar { position: relative; z-index: 1001; background: var(--white); padding: 8px 5%; display: flex; justify-content: flex-end; align-items: center; gap: 24px; font-size: 13px; border-bottom: 1px solid var(--gray-border); }
+    .dealer-btn { background: #28a745; color: var(--white); padding: 6px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+    .dealer-btn:hover { background: #218838; }
+    .social-links { display: flex; gap: 4px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--white); text-decoration: none; border-radius: 2px; font-size: 13px; transition: opacity 0.2s; }
+    .social-links a:hover { opacity: 0.8; }
+    .bg-fb { background: #3b5998; } .bg-in { background: #007bb5; } .bg-ig { background: #e1306c; } .bg-yt { background: #ff0000; } .bg-phone,.bg-map { background: var(--logo-red); }
+
+    /* Language Selector */
+    .custom-lang-selector { position: relative; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: var(--logo-red); z-index: 1002; }
+    .current-lang { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border-radius: 4px; transition: background 0.2s; user-select: none; }
+    .current-lang:hover { background: var(--gray-light); }
+    .current-lang img { width: 20px; height: auto; border: 1px solid #ddd; border-radius: 2px; }
+    .current-lang span { color: var(--logo-red); font-weight: 600; }
+    .custom-lang-selector .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.15); border-radius: 6px; padding: 6px 0; min-width: 155px; border: 1px solid #eee; z-index: 1002; }
+    .custom-lang-selector .lang-menu.open { display: block; }
+    .custom-lang-selector .lang-menu a { display: flex; align-items: center; gap: 10px; padding: 9px 16px; color: #333; text-decoration: none; transition: background 0.15s; font-size: 14px; }
+    .custom-lang-selector .lang-menu a img { width: 20px; height: auto; border: 1px solid #ddd; border-radius: 2px; }
+    .custom-lang-selector .lang-menu a:hover { background: var(--gray-light); color: var(--logo-red); }
+
+    /* ── Nav ── */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .logo { font-weight: 700; font-size: 24px; color: var(--logo-red); text-decoration: none; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 40px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 14px; transition: color 0.2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--logo-red); }
+    .btn { background-color: var(--logo-red); color: var(--white); padding: 12px 28px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: box-shadow 0.2s; display: inline-block; }
+    .btn:hover { box-shadow: 0 6px 15px rgba(192,0,0,0.25); }
+    .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+    /* ── Hero ── */
+    .page-hero {
+        background: linear-gradient(135deg, var(--ink) 0%, #2a1a1a 100%);
+        padding: 100px 5% 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .page-hero::before {
+        content: '';
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at 70% 50%, rgba(192,0,0,0.15) 0%, transparent 60%),
+                    radial-gradient(ellipse at 20% 80%, rgba(253,185,19,0.08) 0%, transparent 50%);
+    }
+    .page-hero > * { position: relative; }
+    .hero-eyebrow { display: inline-block; background: var(--logo-red); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 6px 18px; border-radius: 30px; margin-bottom: 24px; }
+    .page-hero h1 { font-size: 60px; color: var(--white); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+    .page-hero h1 span { color: var(--brand-yellow); }
+    .page-hero p { font-size: 18px; color: #ccc; max-width: 680px; margin: 0 auto; }
+
+    /* ── Stats Bar ── */
+    .stats-bar { background: var(--ink); border-top: 4px solid var(--brand-yellow); }
+    .stats-inner { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 0; max-width: 1100px; margin: 0 auto; padding: 36px 20px; }
+    .stat-item { text-align: center; flex: 1; min-width: 180px; padding: 0 16px; border-right: 1px solid rgba(255,255,255,0.1); }
+    .stat-item:last-child { border-right: none; }
+    .stat-item h3 { font-size: 36px; color: var(--brand-yellow); font-weight: 700; white-space: nowrap; }
+    .stat-item p { color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+
+    /* ── Section commons ── */
+    .section { padding: 90px 5%; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--logo-red); margin-bottom: 12px; }
+    .section-title { font-size: 38px; color: var(--ink); font-weight: 700; margin-bottom: 20px; }
+    .section-title span { color: var(--logo-red); }
+    .section-body { font-size: 16px; color: #555; line-height: 1.9; }
+    .yellow-rule { width: 60px; height: 4px; background: var(--brand-yellow); border-radius: 2px; margin-bottom: 28px; }
+
+    /* ── Founder Section ── */
+    .founder-section { background: var(--gray-light); }
+    .founder-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .founder-card { background: var(--white); border-radius: 16px; padding: 40px; border-left: 5px solid var(--logo-red); box-shadow: 0 8px 30px rgba(0,0,0,0.06); position: sticky; top: 100px; }
+    .founder-icon { width: 72px; height: 72px; background: var(--yellow-tint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .founder-icon i { font-size: 28px; color: var(--logo-red); }
+    .founder-card h3 { font-size: 20px; color: var(--ink); margin-bottom: 6px; }
+    .founder-card p.role { font-size: 13px; color: var(--logo-red); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .founder-quote { font-size: 22px; color: var(--logo-red); font-family: 'Barlow', sans-serif; font-weight: 700; line-height: 1.4; margin: 20px 0; }
+    .founder-body p { font-size: 16px; color: #555; line-height: 1.9; margin-bottom: 18px; }
+
+    /* ── Vision / Mission ── */
+    .vm-section { background: var(--white); }
+    .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 50px auto 0; }
+    .vm-card { border-radius: 16px; padding: 44px; position: relative; overflow: hidden; }
+    .vm-card.vision { background: var(--ink); }
+    .vm-card.mission { background: var(--logo-red); }
+    .vm-card::before { content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+    .vm-icon { font-size: 36px; margin-bottom: 20px; }
+    .vm-card h3 { font-size: 26px; color: var(--brand-yellow); font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .vm-card p { color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.8; }
+
+    /* ── Values ── */
+    .values-section { background: var(--gray-light); }
+    .values-intro { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+    .value-card { background: var(--white); border-radius: 14px; padding: 36px; border: 1px solid var(--gray-border); transition: border-color 0.3s, box-shadow 0.3s; }
+    .value-card:hover { border-color: var(--brand-yellow); box-shadow: 0 8px 25px rgba(253,185,19,0.12); }
+    .value-icon { width: 54px; height: 54px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .value-card h4 { font-size: 20px; color: var(--ink); font-weight: 700; margin-bottom: 12px; }
+    .value-card p { font-size: 14px; color: #666; line-height: 1.8; }
+    .vi-1 { background: #FEF3D0; color: #C00000; }
+    .vi-2 { background: #E8F5E9; color: #2E7D32; }
+    .vi-3 { background: #E3F2FD; color: #1565C0; }
+    .vi-4 { background: #FCE4EC; color: #880E4F; }
+    .vi-5 { background: #F3E5F5; color: #6A1B9A; }
+
+    /* ── Awards ── */
+    .awards-section { background: var(--white); text-align: center; }
+    .awards-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; margin-top: 50px; }
+    .award-item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .award-img-wrap { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--brand-yellow); overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--gray-light); }
+    .award-img-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+    .award-label { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+
+    /* ── Timeline ── */
+    .timeline-section { background: var(--ink); padding: 90px 5%; }
+    .timeline-section .section-title { color: var(--white); }
+    .timeline-section .section-label { color: var(--brand-yellow); }
+    .timeline { position: relative; max-width: 800px; margin: 50px auto 0; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(253,185,19,0.3); transform: translateX(-50%); }
+    .t-item { display: flex; gap: 40px; margin-bottom: 50px; align-items: flex-start; }
+    .t-item:nth-child(odd) { flex-direction: row; }
+    .t-item:nth-child(even) { flex-direction: row-reverse; }
+    .t-content { flex: 1; background: rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.08); }
+    .t-year { flex: 0 0 80px; text-align: center; }
+    .t-year span { display: inline-block; background: var(--brand-yellow); color: var(--ink); font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 15px; padding: 8px 14px; border-radius: 30px; }
+    .t-content h4 { font-size: 18px; color: var(--brand-yellow); font-weight: 700; margin-bottom: 8px; }
+    .t-content p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+    /* ── Footer ── */
+    footer { background: var(--ink); color: var(--white); padding: 80px 5% 40px; margin-top: auto; border-top: 5px solid var(--brand-yellow); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px; }
+    .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .about-text { color: #A0AEC0; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul a, .footer-col p { color: #A0AEC0; text-decoration: none; font-size: 14px; transition: color 0.2s; display: inline-block; line-height: 1.6; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom { text-align: center; color: #555; padding-top: 30px; border-top: 1px solid #333; font-size: 14px; }
+    .make-in-india { display: inline-block; background: var(--white); padding: 10px 15px; border-radius: 6px; }
+    .make-in-india img { max-height: 60px; width: auto; display: block; }
+
+    .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 8px 20px rgba(37,211,102,0.4); z-index: 1000; transition: transform 0.2s; font-family: 'Inter'; }
+    .floating-whatsapp:hover { transform: translateY(-3px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+        .page-hero h1 { font-size: 40px; }
+        .founder-grid { grid-template-columns: 1fr; }
+        .founder-card { position: relative; top: 0; }
+        .vm-grid { grid-template-columns: 1fr; }
+        .nav-links { display: none; }
+        .menu-toggle { display: block; }
+        .timeline::before { left: 0; }
+        .t-item, .t-item:nth-child(even) { flex-direction: column; }
+        .t-year { text-align: left; }
+    }
+    @media (max-width: 600px) {
+        .page-hero h1 { font-size: 32px; }
+        .section { padding: 60px 5%; }
+        .stats-inner { gap: 24px; }
+        .stat-item { border-right: none; }
+    }
+/* Mega Menu */
+        .mega-trigger { position: static; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
+        .mega-trigger i.fa-plus { font-size: 10px; transition: transform 0.3s; }
+        .mega-trigger:hover i.fa-plus { transform: rotate(45deg); color: var(--logo-red); }
+        .mega-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-top: 3px solid var(--logo-red); z-index: 999; }
+        .mega-trigger::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .mega-trigger:hover .mega-menu, .mega-menu:hover { display: flex; }
+        .mega-col-1 { width: 240px; flex-shrink: 0; background: var(--gray-light); padding: 32px 0; border-right: 1px solid var(--gray-border); }
+        .mega-col-1 a { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; transition: all 0.15s; letter-spacing: 0.5px; }
+        .mega-col-1 a:hover, .mega-col-1 a.active { color: var(--logo-red); background: var(--white); border-left: 3px solid var(--logo-red); }
+        .mega-col-1 a i { font-size: 11px; color: var(--logo-red); opacity: 0; transition: opacity 0.2s; }
+        .mega-col-1 a.active i { opacity: 1; }
+        .mega-panels { flex: 1; display: flex; }
+        .mega-panel { display: none; width: 100%; }
+        .mega-panel.active { display: flex; }
+        .mega-col-2 { width: 250px; flex-shrink: 0; padding: 32px 24px; border-right: 1px solid var(--gray-border); }
+        .mega-col-2 a { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; border-radius: 6px; transition: all 0.15s; letter-spacing: 0.3px; }
+        .mega-col-2 a:hover, .mega-col-2 a.active { color: var(--logo-red); background: rgba(192,0,0,0.05); }
+        .mega-col-3 { flex: 1; padding: 32px 40px; }
+        .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
+        .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
+        .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
+        .mega-products-list a::before { content: '2  '; color: var(--logo-red); font-weight: bold; }
+        .mega-products-list a:hover { color: var(--logo-red); }
+        .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
+        @media (max-width: 900px) { .mega-menu { display: none !important; } }
+
+    </style>
+</head>
+<body>
+
+<!-- Utility Bar -->
+<div class="utility-bar">
+<a class="dealer-btn" href="contact_v5_premium.html">Dealer Inquiry Form</a>
+<div class="lang-dropdown">
+<img alt="EN" src="https://flagcdn.com/w20/gb.png" width="16"/> English <i class="fas fa-caret-down"></i>
+<div class="lang-menu">
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Hindi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Gujarati</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Marathi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Tamil</a>
+</div>
+</div>
+<div class="social-links">
+<a class="bg-fb" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="bg-in" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="bg-ig" href="#"><i class="fab fa-instagram"></i></a>
+<a class="bg-phone" href="#"><i class="fas fa-phone"></i></a>
+<a class="bg-map" href="#"><i class="fas fa-map-marker-alt"></i></a>
+</div>
+</div>
+<nav>
+<a class="logo" href="homepage_v4_stitch.html">
+<img alt="KrishiTek Logo" onerror="this.src='https://via.placeholder.com/150x50/FFFFFF/C00000?text=KRISHITEK'" src="https://www.krishitek.com/wp-content/uploads/2022/11/LOGO.png"/>
+KRISHITEK
+</a>
+<div class="nav-links">
+<a href="about_v1.html">ABOUT</a>
+<div class="mega-trigger">
+PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
+<div class="mega-menu">
+<div class="mega-col-1">
+<a class="active" href="product_catalog_v1.html" data-target="agri">AGRI MACHINERY <i class="fas fa-chevron-right"></i></a>
+<a href="spare_parts_v1.html" data-target="spare">SPARE PARTS <i class="fas fa-chevron-right"></i></a>
+<a href="services_v1.html" data-target="services">SERVICES &amp; SUPPORT <i class="fas fa-chevron-right"></i></a>
+</div>
+<div class="mega-panels">
+  <!-- Agri Panel -->
+  <div class="mega-panel active" id="mega-agri">
+    <div class="mega-col-2">
+    <a class="active" href="#">REAPERS &amp; HARVESTERS</a>
+    <a href="#">POWER WEEDERS</a>
+    <a href="#">MINI TILLERS</a>
+    <a href="#">TRACTOR ATTACHMENTS</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>PRODUCTS</h4>
+    <div class="mega-products-list">
+    <a href="reaptek_ki_120_product_page.html">Self Propelled Power Reaper<span class="product-sub">Reaptek Ki-120</span></a>
+    <a href="reaptek_combine_4_8wp_product_page.html">Power Reaper Cum Weeder<span class="product-sub">Reaptek Combine 4.8WP</span></a>
+    <a href="power_weeder_5_5wp_product_page.html">Power Weeder 5.5WP<span class="product-sub">Honda GX200 Engine</span></a>
+    <a href="power_weeder_7cr_product_page.html">Power Weeder 7CR<span class="product-sub">7HP Chain Drive</span></a>
+    <a href="back_rotary_power_weeder_7br_product_page.html">Back Rotary Weeder 7BR<span class="product-sub">Patented Rotor</span></a>
+    <a href="front_rotary_power_weeder_7fr_product_page.html">Front Rotary Weeder 7FR<span class="product-sub">Paddy Puddling</span></a>
+    <a href="mini_tiller_powertek_3wp_product_page.html">Mini Tiller 3WP<span class="product-sub">Compact Powertek</span></a>
+    <a href="reaptek_3_product_page.html">Reaper Attachment 3ft<span class="product-sub">For Power Weeder</span></a>
+    </div>
+    </div>
+  </div>
+  <!-- Spare Parts Panel -->
+  <div class="mega-panel" id="mega-spare">
+    <div class="mega-col-2">
+    <a class="active" href="#">REAPER COMPONENTS</a>
+    <a href="#">WEEDER COMPONENTS</a>
+    <a href="#">ENGINE PARTS</a>
+    <a href="#">ACCESSORIES</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>POPULAR SPARES</h4>
+    <div class="mega-products-list">
+    <a href="spare_clutch_lever_product_page.html">Clutch Lever<span class="product-sub">For Power Reapers</span></a>
+    <a href="spare_big_blade_product_page.html">Big Blade<span class="product-sub">Cutting Mechanism</span></a>
+    <a href="spare_chain_cover_assy_product_page.html">Chain Cover Assembly<span class="product-sub">Protection</span></a>
+    <a href="spare_harvesting_gear_box_assy_product_page.html">Harvesting Gear Box<span class="product-sub">Power Transmission</span></a>
+    <a href="spare_rotavator_blade_product_page.html">Rotavator Blade<span class="product-sub">For Weeders</span></a>
+    <a href="spare_recoil_starter_product_page.html">Recoil Starter<span class="product-sub">Engine Component</span></a>
+    </div>
+    </div>
+  </div>
+  <!-- Services Panel -->
+  <div class="mega-panel" id="mega-services">
+    <div class="mega-col-2">
+    <a class="active" href="#">WARRANTY REGISTRATION</a>
+    <a href="#">SERVICE REQUEST</a>
+    <a href="#">TUTORIALS &amp; GUIDES</a>
+    <a href="#">DEALERSHIP</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>SUPPORT LINKS</h4>
+    <div class="mega-products-list">
+    <a href="services_v1.html">Register Warranty<span class="product-sub">Protect your investment</span></a>
+    <a href="services_v1.html">Book a Service<span class="product-sub">Expert maintenance</span></a>
+    <a href="media_v1_stitch.html">Video Tutorials<span class="product-sub">Operation guides</span></a>
+    <a href="dealership_v1.html">Become a Dealer<span class="product-sub">Join our network</span></a>
+    <a href="contact_v5_premium.html">Contact Support<span class="product-sub">Get in touch</span></a>
+    <a href="blog_v1.html">Knowledge Base<span class="product-sub">Farming tips</span></a>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<a href="dealership_v1.html">FIND A DEALER</a>
+<a href="blog_v1.html">BLOG</a>
+<a href="media_v1_stitch.html">MEDIA</a>
+<a href="spare_parts_v1.html">SPARE PARTS</a>
+<a href="contact_v5_premium.html">CONTACT</a>
+</div>
+<div class="menu-toggle">&#9776;</div>
+</nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="hero-eyebrow" data-i18n="about_us">About Us</div>
+    <h1 data-i18n="about_hero_title">Built for <span>Indian Farmers.</span><br>Engineered for the Future.</h1>
+    <p data-i18n="about_hero_sub">Since 2012, Krishitek has been at the forefront of farm mechanisation — designing, manufacturing, and delivering precision agricultural machinery right here in India.</p>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <h3 data-i18n="2_50_000">2,50,000+</h3>
+            <p data-i18n="farmers_empowered">FARMERS EMPOWERED</p>
+        </div>
+        <div class="stat-item">
+            <h3 data-i18n="500">500+</h3>
+            <p data-i18n="trusted_dealer_partners">TRUSTED DEALER PARTNERS</p>
+        </div>
+        <div class="stat-item">
+            <h3 data-i18n="22">22+</h3>
+            <p data-i18n="states_served">STATES SERVED</p>
+        </div>
+        <div class="stat-item">
+            <h3 data-i18n="1_20_000">1,20,000+</h3>
+            <p data-i18n="machines_delivered">MACHINES DELIVERED</p>
+        </div>
+        <div class="stat-item">
+            <h3>2012</h3>
+            <p data-i18n="founded_year">FOUNDED</p>
+        </div>
+    </div>
+</div>
+
+<!-- Founder's Message + Who We Are -->
+<section class="section founder-section" id="about">
+    <div class="founder-grid">
+        <!-- Sticky sidebar card -->
+        <div class="founder-card">
+            <div class="founder-icon"><i class="fas fa-seedling"></i></div>
+            <div class="founder-quote" data-i18n="founder_quote">"Farming is not just a profession — it's a way of life."</div>
+            <h3 data-i18n="founders_desk">Message from the<br>Founder's Desk</h3>
+            <p class="role">Krishitek Industries Pvt. Ltd.</p>
+        </div>
+        <!-- Body text -->
+        <div class="founder-body">
+            <div class="section-label" data-i18n="who_we_are_label">WHO WE ARE</div>
+            <h2 class="section-title" data-i18n="about_who_title">A Manufacturer Driven by <span>Passion & Purpose</span></h2>
+            <div class="yellow-rule"></div>
+            <p data-i18n="about_para_1">Krishitek Industries Pvt. Ltd. is a pioneering manufacturer of farm machinery and equipment that blends the art of agriculture with cutting-edge technology, thereby helping in sustainable farming. We're a company driven by a passion for innovation and a deep-rooted respect for the farming community.</p>
+            <p data-i18n="about_para_2">Our name, <strong>Krishitek</strong>, embodies our ethos of blending the best of agriculture and technology to empower farmers to achieve better yields, higher productivity, and economic stability. With a comprehensive range of high-quality power reaper machines, power weeders, and mini tillers, we are dedicated to helping farmers achieve their full potential.</p>
+            <p data-i18n="about_para_3">Since our inception in 2012, we have been at the forefront of the farm mechanisation revolution, introducing innovative products that address the needs of farmers. We manufacture all our products in India with a focus on quality, durability, and reliability, adhering to stringent quality standards.</p>
+            <p data-i18n="about_para_4">Our farm machinery and equipment are designed to withstand the tough demands of the farming landscape, making us the go-to choice for farmers — not only in India but also in neighbouring countries and Africa. When you choose Krishitek, you're getting a partner who's committed to your success.</p>
+            <a class="btn" href="contact_v5_premium.html" style="margin-top: 16px;" data-i18n="contact_us">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="section vm-section">
+    <div style="text-align:center; max-width:700px; margin:0 auto 0;">
+        <div class="section-label" data-i18n="vision_mission_label">OUR DIRECTION</div>
+        <h2 class="section-title" data-i18n="vision_mission_title">Vision &amp; <span>Mission</span></h2>
+    </div>
+    <div class="vm-grid">
+        <div class="vm-card vision">
+            <div class="vm-icon">🎯</div>
+            <h3 data-i18n="our_vision">OUR VISION</h3>
+            <p data-i18n="vision_text">To empower modern farmers with innovative, reliable, and sustainable agricultural solutions that enhance productivity and ease farming challenges.</p>
+        </div>
+        <div class="vm-card mission">
+            <div class="vm-icon">🚀</div>
+            <h3 data-i18n="our_mission">OUR MISSION</h3>
+            <p data-i18n="mission_text">Deliver advanced, user-friendly agricultural machinery tailored to diverse farming needs, backed by exceptional customer support and continuous innovation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values -->
+<section class="section values-section">
+    <div class="values-intro">
+        <div class="section-label" data-i18n="values_label">OUR CULTURE</div>
+        <h2 class="section-title" data-i18n="values_title">The Values We <span>Live By</span></h2>
+        <p class="section-body" data-i18n="values_intro_text">At Krishitek, we don't just believe in producing top-quality machines — we believe in cultivating a culture that values integrity, innovation, and sustainability.</p>
+    </div>
+    <div class="values-grid">
+        <div class="value-card">
+            <div class="value-icon vi-1"><i class="fas fa-handshake"></i></div>
+            <h4 data-i18n="value_integrity_title">Unwavering Integrity</h4>
+            <p data-i18n="value_integrity_text">We believe in doing the right thing, always. Trust is the cornerstone of every relationship — from the equipment we source to the way we treat our employees, integrity guides everything we do.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon vi-2"><i class="fas fa-lightbulb"></i></div>
+            <h4 data-i18n="value_innovation_title">Sowing Innovation</h4>
+            <p data-i18n="value_innovation_text">Agriculture is constantly evolving, and we're proud to lead that evolution. We're always looking for new ways to help farmers improve — through cutting-edge technology and thoughtful design.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon vi-3"><i class="fas fa-leaf"></i></div>
+            <h4 data-i18n="value_sustain_title">Sustaining the Future</h4>
+            <p data-i18n="value_sustain_text">The choices we make today will shape the world for generations to come. We implement waste-reduction strategies and utilise eco-friendly materials to safeguard our planet.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon vi-4"><i class="fas fa-users"></i></div>
+            <h4 data-i18n="value_relationships_title">Nurturing Relationships</h4>
+            <p data-i18n="value_relationships_text">Agriculture is a community. By building trust and working collaboratively with customers, partners, and employees, we achieve more together than we ever could alone.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon vi-5"><i class="fas fa-trophy"></i></div>
+            <h4 data-i18n="value_excellence_title">Cultivating Excellence</h4>
+            <p data-i18n="value_excellence_text">Excellence is a journey, not a destination. We're committed to continuous improvement in everything — our machines, our processes, and our people.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Journey / Timeline -->
+<section class="timeline-section">
+    <div style="text-align:center; max-width:700px; margin:0 auto;">
+        <div class="section-label" data-i18n="journey_label">OUR JOURNEY</div>
+        <h2 class="section-title" data-i18n="journey_title">A Decade of <span style="color:var(--brand-yellow);">Growing</span> with Farmers</h2>
+    </div>
+    <div class="timeline">
+        <div class="t-item">
+            <div class="t-year"><span>2012</span></div>
+            <div class="t-content">
+                <h4 data-i18n="timeline_2012_title">Founded in Ahmedabad</h4>
+                <p data-i18n="timeline_2012_text">Krishitek Industries Pvt. Ltd. is established with a mission to bring precision machinery to Indian farms.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year"><span>2015</span></div>
+            <div class="t-content">
+                <h4 data-i18n="timeline_2015_title">First Power Reaper Launched</h4>
+                <p data-i18n="timeline_2015_text">Our flagship self-propelled power reaper enters the market, changing the way Indian farmers harvest paddy and wheat.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year"><span>2018</span></div>
+            <div class="t-content">
+                <h4 data-i18n="timeline_2018_title">500+ Dealer Network</h4>
+                <p data-i18n="timeline_2018_text">Expanded to 500+ trusted dealer partners across 22+ Indian states, bringing Krishitek closer to every farmer.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year"><span>2022</span></div>
+            <div class="t-content">
+                <h4 data-i18n="timeline_2022_title">E20 Ready Machinery</h4>
+                <p data-i18n="timeline_2022_text">Launched the full E20 ethanol-compatible product range — sustainable, low-emission, future-ready machines for Indian farmers.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year"><span>2025</span></div>
+            <div class="t-content">
+                <h4 data-i18n="timeline_2025_title">2,50,000+ Farmers Empowered</h4>
+                <p data-i18n="timeline_2025_text">Over two and a half lakh farmers across India and neighbouring countries now rely on Krishitek machinery every season.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Awards -->
+<section class="section awards-section">
+    <div class="section-label" style="text-align:center;" data-i18n="awards_label">RECOGNITION</div>
+    <h2 class="section-title" data-i18n="awards_title">Our <span>Awards</span> &amp; Certifications</h2>
+    <div class="awards-grid">
+        <div class="award-item">
+            <div class="award-img-wrap">
+                <img src="../assets/make_in_india.webp" alt="Make in India"/>
+            </div>
+            <div class="award-label" data-i18n="award_mii">Make In India</div>
+        </div>
+        <div class="award-item">
+            <div class="award-img-wrap" style="background:#fff8e1;">
+                <i class="fas fa-certificate" style="font-size:56px; color:var(--brand-yellow);"></i>
+            </div>
+            <div class="award-label" data-i18n="award_iso">ISO Certified</div>
+        </div>
+        <div class="award-item">
+            <div class="award-img-wrap" style="background:#f1f8e9;">
+                <i class="fas fa-award" style="font-size:56px; color:#558B2F;"></i>
+            </div>
+            <div class="award-label" data-i18n="award_agri">Agri Excellence Award</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+            <h4 data-i18n="about_us">About Us</h4>
+            <p class="about-text" data-i18n="we_are_a_manufacturer_of_agric">We are a manufacturer of Agriculture Equipment. We design, develop and MAKE IN INDIA. We aspire to provide products and services to Farmers that are always customer-centric and can generate maximum value for what they have invested.</p>
+            <div class="make-in-india">
+                <img alt="Make In India" src="../assets/make_in_india.webp" style="max-height:60px; width:auto; display:block;"/>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="quick_links">Quick Links</h4>
+            <ul>
+                <li><a data-i18n="product_categories" href="product_catalog_v1.html">Product Categories</a></li>
+                <li><a data-i18n="services_1" href="services_v1.html">Services</a></li>
+                <li><a data-i18n="spare_parts" href="spare_parts_v1.html">Spare Parts</a></li>
+                <li><a data-i18n="about" href="about_v1.html">About</a></li>
+                <li><a data-i18n="our_networks_1" href="contact_v5_premium.html">Our Networks</a></li>
+                <li><a data-i18n="blog" href="blog_v1.html">Blog</a></li>
+                <li><a data-i18n="login_1" href="#" onclick="document.getElementById('krishitek-chatbot-button').click(); return false;">Login</a></li>
+                <li><a data-i18n="privacy_policy_1" href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="products">Products</h4>
+            <ul>
+                <li><a data-i18n="self_propelled_power_reaper_1" href="productpage_v1.html">Self Propelled Power Reaper</a></li>
+                <li><a data-i18n="power_reaper_cum_weeder_1" href="productpage_v1.html">Power Reaper Cum Weeder</a></li>
+                <li><a data-i18n="back_rotary_power_weeder_7br_1" href="productpage_v1.html">Back Rotary Power Weeder 7BR</a></li>
+                <li><a data-i18n="front_rotary_power_weeder_7fr_1" href="productpage_v1.html">Front Rotary Power Weeder 7FR</a></li>
+                <li><a data-i18n="mini_power_tiller_3wp_1" href="productpage_v1.html">Mini Power Tiller 3WP</a></li>
+                <li><a data-i18n="power_weeder_attachment_1" href="productpage_v1.html">Power Weeder Attachment</a></li>
+                <li><a data-i18n="power_weeder_reaper_1" href="productpage_v1.html">Power Weeder Reaper</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="get_in_touch">GET IN TOUCH</h4>
+            <div style="display:flex; gap:10px; margin-bottom:12px; align-items:flex-start;">
+                <i class="fas fa-envelope" style="color:var(--brand-yellow); margin-top:4px; min-width:14px;"></i>
+                <p data-i18n="email_info_krishitek_com" style="margin:0;">Email: info@krishitek.com</p>
+            </div>
+            <div style="display:flex; gap:10px; margin-bottom:12px; align-items:flex-start;">
+                <i class="fas fa-phone-alt" style="color:var(--brand-yellow); margin-top:4px; min-width:14px;"></i>
+                <p data-i18n="phone_91_91570_62093_91_74860_" style="margin:0;">Phone: +91 91570 62093<br/>+91 74860 29216</p>
+            </div>
+            <div style="display:flex; gap:10px; margin-bottom:20px; align-items:flex-start;">
+                <i class="fas fa-map-marker-alt" style="color:var(--brand-yellow); margin-top:4px; min-width:14px;"></i>
+                <p data-i18n="address_krishitek_industries_p_1" style="margin:0;">Address: Krishitek Industries Pvt. Ltd.<br/>Plot No. 22, Prime Industrial Park,<br/>Santej, Ahmedabad- 382721,<br/>Gujarat, INDIA</p>
+            </div>
+            <a data-i18n="contact_us" href="contact_v5_premium.html" style="background:var(--brand-yellow); color:var(--ink); padding:8px 16px; border-radius:4px; font-weight:bold; text-decoration:none;">Contact Us</a>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 KrishiTek. All rights reserved.</div>
+</footer>
+
+<a class="floating-whatsapp" data-i18n="chat_on_whatsapp" href="#">💬 Chat on WhatsApp</a>
+
+<!-- AI Chatbot Widget -->
+<script src="../assets/chatbot_widget.js"></script>
+<!-- Language System -->
+<script src="../assets/i18n.js"></script>
+<!-- Lang dropdown click toggle -->
+<script>
+    (function() {
+        var selector = document.querySelector('.custom-lang-selector');
+        var menu = selector && selector.querySelector('.lang-menu');
+        if (!selector || !menu) return;
+        selector.querySelector('.current-lang').addEventListener('click', function(e) {
+            e.stopPropagation();
+            menu.classList.toggle('open');
+        });
+        document.addEventListener('click', function() { menu.classList.remove('open'); });
+        menu.addEventListener('click', function(e) { e.stopPropagation(); });
+    })();
+</script>
+</body>
+</html>

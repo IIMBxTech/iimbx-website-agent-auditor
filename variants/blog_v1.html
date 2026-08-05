@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KrishiTek - Blog</title>
+<!-- Premium Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --brand-yellow: #FDB913;
+            --logo-red: #C00000;
+            --charcoal: #333333;
+            --ink: #1A1A1A;
+            --white: #FFFFFF;
+            --yellow-tint: #FEF3D0;
+            --gray-light: #F7F9FA;
+            --gray-border: #EAEAEA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--charcoal); background-color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4, h5, h6, .btn { font-family: 'Barlow', sans-serif; }
+
+        /* Utility Bar & Nav */
+        .utility-bar { position: relative; z-index: 1001; background: var(--white); padding: 8px 5%; display: flex; justify-content: flex-end; align-items: center; gap: 24px; font-size: 13px; border-bottom: 1px solid var(--gray-border); }
+        .dealer-btn { background: #28a745; color: var(--white); padding: 6px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .dealer-btn:hover { background: #218838; }
+        .lang-dropdown { position: relative; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; color: var(--ink); }
+        .lang-dropdown:hover .lang-menu { display: block; }
+        .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: var(--white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 4px; padding: 10px 0; z-index: 1001; min-width: 140px; border: 1px solid var(--gray-border); }
+        .lang-menu a { display: block; padding: 8px 16px; color: var(--charcoal); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+        .lang-menu a:hover { background: var(--gray-light); color: var(--logo-red); }
+        .social-links { display: flex; gap: 4px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--white); text-decoration: none; border-radius: 2px; font-size: 13px; transition: opacity 0.2s; }
+        .social-links a:hover { opacity: 0.8; }
+        .bg-fb { background: #3b5998; } .bg-in { background: #007bb5; } .bg-ig { background: #e1306c; } .bg-yt { background: #ff0000; } .bg-phone, .bg-map { background: var(--logo-red); }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s ease; }
+        .logo { font-weight: 700; font-size: 24px; color: var(--logo-red); text-decoration: none; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
+        .logo img { height: 40px; width: auto; object-fit: contain; }
+        .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 14px; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-red); }
+        .btn { background-color: var(--logo-red); color: var(--white); padding: 12px 28px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; display: inline-block; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(192, 0, 0, 0.2); }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+        /* Page Header */
+        .page-header { background: var(--ink); color: var(--white); padding: 80px 5%; text-align: center; }
+        .page-title { font-size: 42px; margin-bottom: 16px; color: var(--brand-yellow); text-transform: uppercase; letter-spacing: 1px; }
+        .page-subtitle { font-size: 18px; color: #EAEAEA; max-width: 800px; margin: 0 auto; }
+
+        .section-padding { padding: 80px 5%; }
+
+        /* Blog Grid */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        
+        .blog-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; border: 1px solid var(--gray-border); }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        
+        .blog-img-container { width: 100%; height: 240px; overflow: hidden; position: relative; }
+        .blog-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .blog-card:hover .blog-img-container img { transform: scale(1.05); }
+        
+        .blog-date-badge { position: absolute; top: 15px; right: 15px; background: var(--brand-yellow); color: var(--ink); padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; font-family: 'Barlow'; }
+
+        .blog-content { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .blog-content h3 { font-size: 22px; color: var(--ink); margin-bottom: 15px; line-height: 1.4; transition: color 0.2s; }
+        .blog-card:hover .blog-content h3 { color: var(--logo-red); }
+        
+        .blog-excerpt { color: #555; font-size: 15px; margin-bottom: 25px; line-height: 1.6; flex-grow: 1; }
+        
+        .read-more { color: var(--logo-red); text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s; }
+        .read-more i { transition: transform 0.2s; }
+        .read-more:hover { color: var(--ink); }
+        .read-more:hover i { transform: translateX(5px); }
+
+        /* Pagination */
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 60px; }
+        .page-num { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gray-border); border-radius: 4px; text-decoration: none; color: var(--charcoal); font-weight: 600; transition: all 0.2s; }
+        .page-num:hover, .page-num.active { background: var(--brand-yellow); border-color: var(--brand-yellow); color: var(--ink); }
+        
+        /* Footer */
+        footer { background-color: var(--ink); color: var(--white); padding: 80px 5% 40px; margin-top: auto; border-top: 5px solid var(--brand-yellow); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px; }
+        .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        .about-text { color: #A0AEC0; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+        .make-in-india { display: inline-block; background: var(--white); color: var(--ink); padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; font-family: 'Barlow'; text-transform: uppercase; margin-bottom: 20px; border-left: 4px solid #28a745; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul a, .footer-col p { color: #A0AEC0; text-decoration: none; font-size: 14px; transition: color 0.2s; display: inline-block; line-height: 1.6; }
+        .footer-col ul a:hover { color: var(--white); transform: translateX(5px); }
+        .footer-bottom { text-align: center; color: #555; padding-top: 30px; border-top: 1px solid #333; font-size: 14px; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+        }
+/* Mega Menu */
+        .mega-trigger { position: static; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
+        .mega-trigger i.fa-plus { font-size: 10px; transition: transform 0.3s; }
+        .mega-trigger:hover i.fa-plus { transform: rotate(45deg); color: var(--logo-red); }
+        .mega-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-top: 3px solid var(--logo-red); z-index: 999; }
+        .mega-trigger::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .mega-trigger:hover .mega-menu, .mega-menu:hover { display: flex; }
+        .mega-col-1 { width: 240px; flex-shrink: 0; background: var(--gray-light); padding: 32px 0; border-right: 1px solid var(--gray-border); }
+        .mega-col-1 a { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; transition: all 0.15s; letter-spacing: 0.5px; }
+        .mega-col-1 a:hover, .mega-col-1 a.active { color: var(--logo-red); background: var(--white); border-left: 3px solid var(--logo-red); }
+        .mega-col-1 a i { font-size: 11px; color: var(--logo-red); opacity: 0; transition: opacity 0.2s; }
+        .mega-col-1 a.active i { opacity: 1; }
+        .mega-panels { flex: 1; display: flex; }
+        .mega-panel { display: none; width: 100%; }
+        .mega-panel.active { display: flex; }
+        .mega-col-2 { width: 250px; flex-shrink: 0; padding: 32px 24px; border-right: 1px solid var(--gray-border); }
+        .mega-col-2 a { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; border-radius: 6px; transition: all 0.15s; letter-spacing: 0.3px; }
+        .mega-col-2 a:hover, .mega-col-2 a.active { color: var(--logo-red); background: rgba(192,0,0,0.05); }
+        .mega-col-3 { flex: 1; padding: 32px 40px; }
+        .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
+        .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
+        .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
+        .mega-products-list a::before { content: '2  '; color: var(--logo-red); font-weight: bold; }
+        .mega-products-list a:hover { color: var(--logo-red); }
+        .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
+        @media (max-width: 900px) { .mega-menu { display: none !important; } }
+
+    </style>
+</head>
+<body>
+<!-- Utility Bar -->
+<div class="utility-bar">
+<a class="dealer-btn" href="contact_v5_premium.html">Dealer Inquiry Form</a>
+<div class="lang-dropdown">
+<img alt="EN" src="https://flagcdn.com/w20/gb.png" width="16"/> English <i class="fas fa-caret-down"></i>
+<div class="lang-menu">
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Hindi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Gujarati</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Marathi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Tamil</a>
+</div>
+</div>
+<div class="social-links">
+<a class="bg-fb" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="bg-in" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="bg-ig" href="#"><i class="fab fa-instagram"></i></a>
+<a class="bg-phone" href="#"><i class="fas fa-phone"></i></a>
+<a class="bg-map" href="#"><i class="fas fa-map-marker-alt"></i></a>
+</div>
+</div>
+<nav>
+<a class="logo" href="homepage_v4_stitch.html">
+<img alt="KrishiTek Logo" onerror="this.src='https://via.placeholder.com/150x50/FFFFFF/C00000?text=KRISHITEK'" src="https://www.krishitek.com/wp-content/uploads/2022/11/LOGO.png"/>
+KRISHITEK
+</a>
+<div class="nav-links">
+<a href="about_v1.html">ABOUT</a>
+<div class="mega-trigger">
+PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
+<div class="mega-menu">
+<div class="mega-col-1">
+<a class="active" href="product_catalog_v1.html" data-target="agri">AGRI MACHINERY <i class="fas fa-chevron-right"></i></a>
+<a href="spare_parts_v1.html" data-target="spare">SPARE PARTS <i class="fas fa-chevron-right"></i></a>
+<a href="services_v1.html" data-target="services">SERVICES &amp; SUPPORT <i class="fas fa-chevron-right"></i></a>
+</div>
+<div class="mega-panels">
+  <!-- Agri Panel -->
+  <div class="mega-panel active" id="mega-agri">
+    <div class="mega-col-2">
+    <a class="active" href="#">REAPERS &amp; HARVESTERS</a>
+    <a href="#">POWER WEEDERS</a>
+    <a href="#">MINI TILLERS</a>
+    <a href="#">TRACTOR ATTACHMENTS</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>PRODUCTS</h4>
+    <div class="mega-products-list">
+    <a href="reaptek_ki_120_product_page.html">Self Propelled Power Reaper<span class="product-sub">Reaptek Ki-120</span></a>
+    <a href="reaptek_combine_4_8wp_product_page.html">Power Reaper Cum Weeder<span class="product-sub">Reaptek Combine 4.8WP</span></a>
+    <a href="power_weeder_5_5wp_product_page.html">Power Weeder 5.5WP<span class="product-sub">Honda GX200 Engine</span></a>
+    <a href="power_weeder_7cr_product_page.html">Power Weeder 7CR<span class="product-sub">7HP Chain Drive</span></a>
+    <a href="back_rotary_power_weeder_7br_product_page.html">Back Rotary Weeder 7BR<span class="product-sub">Patented Rotor</span></a>
+    <a href="front_rotary_power_weeder_7fr_product_page.html">Front Rotary Weeder 7FR<span class="product-sub">Paddy Puddling</span></a>
+    <a href="mini_tiller_powertek_3wp_product_page.html">Mini Tiller 3WP<span class="product-sub">Compact Powertek</span></a>
+    <a href="reaptek_3_product_page.html">Reaper Attachment 3ft<span class="product-sub">For Power Weeder</span></a>
+    </div>
+    </div>
+  </div>
+  <!-- Spare Parts Panel -->
+  <div class="mega-panel" id="mega-spare">
+    <div class="mega-col-2">
+    <a class="active" href="#">REAPER COMPONENTS</a>
+    <a href="#">WEEDER COMPONENTS</a>
+    <a href="#">ENGINE PARTS</a>
+    <a href="#">ACCESSORIES</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>POPULAR SPARES</h4>
+    <div class="mega-products-list">
+    <a href="spare_clutch_lever_product_page.html">Clutch Lever<span class="product-sub">For Power Reapers</span></a>
+    <a href="spare_big_blade_product_page.html">Big Blade<span class="product-sub">Cutting Mechanism</span></a>
+    <a href="spare_chain_cover_assy_product_page.html">Chain Cover Assembly<span class="product-sub">Protection</span></a>
+    <a href="spare_harvesting_gear_box_assy_product_page.html">Harvesting Gear Box<span class="product-sub">Power Transmission</span></a>
+    <a href="spare_rotavator_blade_product_page.html">Rotavator Blade<span class="product-sub">For Weeders</span></a>
+    <a href="spare_recoil_starter_product_page.html">Recoil Starter<span class="product-sub">Engine Component</span></a>
+    </div>
+    </div>
+  </div>
+  <!-- Services Panel -->
+  <div class="mega-panel" id="mega-services">
+    <div class="mega-col-2">
+    <a class="active" href="#">WARRANTY REGISTRATION</a>
+    <a href="#">SERVICE REQUEST</a>
+    <a href="#">TUTORIALS &amp; GUIDES</a>
+    <a href="#">DEALERSHIP</a>
+    </div>
+    <div class="mega-col-3">
+    <h4>SUPPORT LINKS</h4>
+    <div class="mega-products-list">
+    <a href="services_v1.html">Register Warranty<span class="product-sub">Protect your investment</span></a>
+    <a href="services_v1.html">Book a Service<span class="product-sub">Expert maintenance</span></a>
+    <a href="media_v1_stitch.html">Video Tutorials<span class="product-sub">Operation guides</span></a>
+    <a href="dealership_v1.html">Become a Dealer<span class="product-sub">Join our network</span></a>
+    <a href="contact_v5_premium.html">Contact Support<span class="product-sub">Get in touch</span></a>
+    <a href="blog_v1.html">Knowledge Base<span class="product-sub">Farming tips</span></a>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<a href="dealership_v1.html">FIND A DEALER</a>
+<a href="blog_v1.html">BLOG</a>
+<a href="media_v1_stitch.html">MEDIA</a>
+<a href="spare_parts_v1.html">SPARE PARTS</a>
+<a href="contact_v5_premium.html">CONTACT</a>
+</div>
+<div class="menu-toggle">&#9776;</div>
+</nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+<!-- Page Header -->
+<!-- Page Header -->
+<header class="page-header" style="position: relative; padding: 0; min-height: 400px; display: flex; align-items: center; justify-content: center; background: url('/assets/images/blog_header_collage.png') center/cover no-repeat;">
+<!-- Dark Overlay for Readability -->
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%); z-index: 1;"></div>
+<div style="position: relative; z-index: 2; text-align: center; max-width: 800px; padding: 40px 20px;">
+<div style="display: inline-block; background: var(--brand-yellow); color: var(--ink); padding: 4px 12px; font-weight: 700; font-size: 14px; border-radius: 20px; margin-bottom: 16px; font-family: 'Barlow', sans-serif; text-transform: uppercase; letter-spacing: 1px;">Krishitek Insights</div>
+<h1 class="page-title" data-i18n="blog_resources" style="font-size: 56px; margin-bottom: 20px; color: var(--white); text-shadow: 0 4px 12px rgba(0,0,0,0.3);">Blog &amp; Resources</h1>
+<p class="page-subtitle" data-i18n="discover_the_latest_trends_tip" style="font-size: 20px; color: #F7F9FA; line-height: 1.6; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">Discover the latest trends, tips, and updates in agricultural machinery to help maximize your farm's productivity.</p>
+</div>
+</header>
+<!-- Blog Grid Content -->
+<section class="section-padding">
+<div class="blog-grid">
+<!-- Article 1 -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="mar_26_2026">Mar 26, 2026</span>
+<img alt="Gehu Katai Machine" src="https://www.krishitek.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-26-at-1.09.18-PM-768x418.jpeg"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="gehu_katai_machine_price_subsi">Gehu Katai Machine Price &amp; Subsidy in India: State-Wise Farmer Guide</h3>
+<p class="blog-excerpt" data-i18n="wheat_harvesting_in_india_has_">Wheat harvesting in India has become more challenging due to rising labour shortages and increasing costs. To solve this problem, many farmers are now shifting...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="feb_20_2026">Feb 20, 2026</span>
+<img alt="Reaper Machine" src="https://www.krishitek.com/wp-content/uploads/2026/02/Reaper-machine-768x418.jpeg"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="wheat_cutting_without_crop_bhu">Wheat Cutting Without Crop Bhusa Loss: How Krishitek Reaper Machines Increase Farmer Income</h3>
+<p class="blog-excerpt" data-i18n="wheat_harvesting_season_is_one">Wheat harvesting season is one of the most critical periods for Indian farmers. However, traditional harvesting methods often result in significant grain and bhusa...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="feb_16_2026">Feb 16, 2026</span>
+<img alt="Tractor Hydraulic Reaper" src="https://www.krishitek.com/wp-content/uploads/2026/02/Tractor-hydraulic-reaper-768x418.jpeg"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="tractor_hydraulic_reaper_vs_co">Tractor Hydraulic Reaper vs Combine Harvester: Why Farmers Are Switching</h3>
+<p class="blog-excerpt" data-i18n="wheat_harvesting_in_india_is_c">Wheat harvesting in India is changing fast. For years, combine harvesters dominated large farms because of their speed, but farmers are now looking for better...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 4 -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="feb_4_2026">Feb 4, 2026</span>
+<img alt="Power Weeder Attached Reaper" src="https://www.krishitek.com/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-02-at-5.53.05-PM-1-768x418.jpeg"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="power_weeder_attached_reaper_f">Power Weeder Attached Reaper for Wheat Harvesting: Benefits &amp; Cost-Effective Choice</h3>
+<p class="blog-excerpt" data-i18n="wheat_harvesting_is_one_of_the">Wheat harvesting is one of the most time-critical operations in farming. Traditionally, farmers depend on manual labour for cutting wheat, but today this method faces...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 5 -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="jan_29_2026">Jan 29, 2026</span>
+<img alt="Tractor reaper machine" src="https://www.krishitek.com/wp-content/uploads/2026/02/WhatsApp-Image-2026-01-27-at-3.07.17-PM-768x418.jpeg"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="tractor_reaper_machine_for_whe">Tractor Reaper Machine for Wheat: Benefits, Price &amp; How to Make the Right Choice</h3>
+<p class="blog-excerpt" data-i18n="wheat_harvesting_is_one_of_the_1">Wheat harvesting is one of the most time-critical operations for Indian farmers. A delay of even a few days can affect grain quality, increase shattering...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 6 -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="jan_24_2026">Jan 24, 2026</span>
+<img alt="Best Gehu Katai Machines" src="https://www.krishitek.com/wp-content/uploads/2026/02/WhatsApp-Image-2026-01-23-at-10.24.38-AM-768x418.jpeg"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="gehu_katai_machines_best_wheat">Gehu Katai Machines: Best Wheat Harvesting Solutions for Indian Farmers</h3>
+<p class="blog-excerpt" data-i18n="wheat_harvesting_in_india_has__1">Wheat harvesting in India has changed faster in the last decade than ever before. Manual harvesting once dominated every village field. However, labour shortages and...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 7 (Placeholder) -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="dec_15_2025">Dec 15, 2025</span>
+<img alt="Agriculture Blog" src="https://images.unsplash.com/photo-1592982537447-6f2334860d5b?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=768&amp;q=80"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="future_of_mechanized_farming_w">Future of Mechanized Farming: What's Next for Indian Agriculture?</h3>
+<p class="blog-excerpt" data-i18n="as_technology_rapidly_evolves_">As technology rapidly evolves, so does the landscape of farming in India. From GPS-guided tractors to automated reaping machines, discover how automation is reshaping...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 8 (Placeholder) -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="nov_02_2025">Nov 02, 2025</span>
+<img alt="Agriculture Blog" src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=768&amp;q=80"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="maintenance_tips_for_your_powe">Maintenance Tips for Your Power Weeder Before Peak Season</h3>
+<p class="blog-excerpt" data-i18n="a_well_maintained_power_weeder">A well-maintained power weeder can last for years and perform at peak efficiency. Here is our comprehensive 10-point checklist to ensure your equipment is ready for...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+<!-- Article 9 (Placeholder) -->
+<article class="blog-card">
+<div class="blog-img-container">
+<span class="blog-date-badge" data-i18n="oct_18_2025">Oct 18, 2025</span>
+<img alt="Agriculture Blog" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=768&amp;q=80"/>
+</div>
+<div class="blog-content">
+<h3 data-i18n="krishitek_expansion_reaching_m">Krishitek Expansion: Reaching More Farmers Across the Nation</h3>
+<p class="blog-excerpt" data-i18n="we_are_proud_to_announce_the_o">We are proud to announce the opening of three new regional service centers. This expansion means faster parts delivery and enhanced on-ground support for our valued...</p>
+<a class="read-more" data-i18n="read_more" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="pagination" id="blog-pagination">
+<a class="page-num active" data-page="1" href="#">1</a>
+<a class="page-num" data-page="2" href="#">2</a>
+<a class="page-num" data-page="3" href="#">3</a>
+<a class="page-num" href="#" id="next-page"><i class="fas fa-chevron-right"></i></a>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="footer-grid">
+<div class="footer-col" style="grid-column: span 2;">
+<h4 data-i18n="about_us">About Us</h4>
+<p class="about-text" data-i18n="we_are_a_manufacturer_of_agric">We are a manufacturer of Agriculture Equipment. We design, develop and MAKE IN INDIA. We aspire to provide products and services to Farmers that are always customer-centric and can generate maximum value for what they have invested.</p>
+<div class="make-in-india" style="background: white; padding: 10px 15px; border-radius: 6px; display: inline-block; border: none;">
+<img alt="Make In India" src="../assets/make_in_india.webp" style="max-height: 60px; width: auto; display: block;"/>
+</div>
+</div>
+<div class="footer-col">
+<h4 data-i18n="quick_links">Quick Links</h4>
+<ul>
+<li data-i18n="product_categories_1"><a data-i18n="product_categories" href="product_catalog_v1.html">Product Categories</a></li>
+<li data-i18n="services"><a data-i18n="services_1" href="services_v2_stitch.html">Services</a></li>
+<li data-i18n="spare_parts_1"><a data-i18n="spare_parts" href="spare_parts_v1.html">Spare Parts</a></li>
+<li data-i18n="about_1"><a data-i18n="about" href="about_v1.html">About</a></li>
+<li data-i18n="our_networks"><a data-i18n="our_networks_1" href="contact_v5_premium.html">Our Networks</a></li>
+<li data-i18n="blog_2"><a data-i18n="blog" href="blog_v1.html">Blog</a></li>
+<li data-i18n="privacy_policy"><a data-i18n="privacy_policy_1" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-i18n="products">Products</h4>
+<ul>
+<li data-i18n="self_propelled_power_reaper"><a data-i18n="self_propelled_power_reaper_1" href="productpage_v2_stitch.html">Self Propelled Power Reaper</a></li>
+<li data-i18n="power_reaper_cum_weeder"><a data-i18n="power_reaper_cum_weeder_1" href="productpage_v2_stitch.html">Power Reaper Cum Weeder</a></li>
+<li data-i18n="back_rotary_power_weeder_7br"><a data-i18n="back_rotary_power_weeder_7br_1" href="productpage_v2_stitch.html">Back Rotary Power Weeder 7BR</a></li>
+<li data-i18n="front_rotary_power_weeder_7fr"><a data-i18n="front_rotary_power_weeder_7fr_1" href="productpage_v2_stitch.html">Front Rotary Power Weeder 7FR</a></li>
+<li data-i18n="mini_power_tiller_3wp"><a data-i18n="mini_power_tiller_3wp_1" href="productpage_v2_stitch.html">Mini Power Tiller 3WP</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 data-i18n="get_in_touch">GET IN TOUCH</h4>
+<div style="display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start;">
+<i class="fas fa-envelope" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px;"></i>
+<p data-i18n="email_info_krishitek_com" style="margin: 0;">Email: info@krishitek.com</p>
+</div>
+<div style="display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start;">
+<i class="fas fa-phone-alt" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px; transform: scaleX(-1);"></i>
+<p data-i18n="phone_91_91570_62093" style="margin: 0;">Phone: +91 91570 62093</p>
+</div>
+<div style="display: flex; gap: 10px; margin-bottom: 20px; align-items: flex-start;">
+<i class="fas fa-map-marker-alt" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px;"></i>
+<p data-i18n="address_krishitek_industries_p" style="margin: 0;">Address: Krishitek Industries Pvt. Ltd.<br/>Santej, Ahmedabad</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+            © 2026 KrishiTek. All rights reserved.
+        </div>
+</footer>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const articles = document.querySelectorAll(".blog-card");
+            const pageButtons = document.querySelectorAll(".pagination .page-num[data-page]");
+            const nextBtn = document.getElementById("next-page");
+            let currentPage = 1;
+            const articlesPerPage = 3;
+
+            function renderPage(page) {
+                currentPage = page;
+                
+                // Hide/show articles
+                articles.forEach((article, index) => {
+                    const start = (page - 1) * articlesPerPage;
+                    const end = start + articlesPerPage;
+                    if (index >= start && index < end) {
+                        article.style.display = "flex";
+                        // add a tiny animation reflow
+                        article.style.animation = "none";
+                        article.offsetHeight; 
+                        article.style.animation = null;
+                    } else {
+                        article.style.display = "none";
+                    }
+                });
+
+                // Update active button state
+                pageButtons.forEach(btn => {
+                    btn.classList.toggle("active", parseInt(btn.dataset.page) === page);
+                });
+
+                // Hide next button if on last page
+                if (page * articlesPerPage >= articles.length) {
+                    nextBtn.style.display = "none";
+                } else {
+                    nextBtn.style.display = "flex";
+                }
+            }
+
+            // Click handlers
+            pageButtons.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    renderPage(parseInt(btn.dataset.page));
+                    window.scrollTo({ top: document.querySelector('.blog-grid').offsetTop - 100, behavior: 'smooth' });
+                });
+            });
+
+            nextBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (currentPage * articlesPerPage < articles.length) {
+                    renderPage(currentPage + 1);
+                    window.scrollTo({ top: document.querySelector('.blog-grid').offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+
+            // Initialize first page
+            renderPage(1);
+        });
+    </script>
+<!-- AI Chatbot Widget -->
+<script src="../assets/chatbot_widget.js"></script>
+</body>
+</html>

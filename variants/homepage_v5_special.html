@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KrishiTek - Agriculture Machinery | Special Variant</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root {
+        --brand-yellow: #FDB913;
+        --logo-red: #C00000;
+        --charcoal: #333333;
+        --ink: #1A1A1A;
+        --white: #FFFFFF;
+        --yellow-tint: #FEF3D0;
+        --gray-light: #F7F9FA;
+        --gray-border: #EAEAEA;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, .btn { font-family: 'Barlow', sans-serif; }
+    
+    /* Utility Bar */
+    .utility-bar { background: var(--white); padding: 8px 5%; display: flex; justify-content: flex-end; align-items: center; gap: 24px; font-size: 13px; border-bottom: 1px solid var(--gray-border); position: relative; z-index: 1001; }
+    .dealer-btn { background: #28a745; color: var(--white); padding: 6px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+    .dealer-btn:hover { background: #218838; }
+    .social-links { display: flex; gap: 4px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--white); text-decoration: none; border-radius: 2px; font-size: 13px; transition: opacity 0.2s; }
+    .social-links a:hover { opacity: 0.8; }
+    .bg-fb { background: #3b5998; } .bg-in { background: #007bb5; } .bg-ig { background: #e1306c; } .bg-yt { background: #ff0000; } .bg-phone, .bg-map { background: var(--logo-red); }
+
+    /* Nav */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .logo { font-weight: 800; font-size: 24px; color: var(--logo-red); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 40px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; gap: 1.8rem; justify-content: center; }
+    .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 14px; transition: all 0.3s ease; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--logo-red); transition: width 0.3s ease; }
+    .nav-links a:hover { color: var(--logo-red); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    
+    /* Hero - Special White Design */
+    .hero { padding: 160px 5% 200px; text-align: center; background: var(--white); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 0%, rgba(253,185,19,0.15) 0%, transparent 40%), radial-gradient(circle at 80% 100%, rgba(192,0,0,0.08) 0%, transparent 40%); z-index: 0; pointer-events: none; }
+    .hero h1 { font-size: 72px; color: var(--ink); margin-bottom: 24px; line-height: 1.1; font-weight: 800; position: relative; z-index: 1; letter-spacing: -1.5px; }
+    .hero h1 span { color: var(--logo-red); }
+    .hero p { font-size: 22px; color: #555; max-width: 750px; margin: 0 auto 40px; font-weight: 500; position: relative; z-index: 1; }
+    .hero-btn { background-color: var(--logo-red); color: var(--white); padding: 18px 42px; border-radius: 8px; font-size: 18px; font-weight: 700; font-family: 'Barlow'; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; display: inline-block; transition: all 0.3s; position: relative; z-index: 1; box-shadow: 0 10px 25px rgba(192,0,0,0.25); border: 2px solid var(--logo-red); }
+    .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(192,0,0,0.35); background-color: transparent; color: var(--logo-red); }
+
+    /* Dashboard / Stats */
+    .dashboard { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; background: var(--white); padding: 50px 20px; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); max-width: 1100px; margin: -100px auto 60px; position: relative; z-index: 10; border: 1px solid var(--gray-border); border-bottom: 6px solid var(--brand-yellow); }
+    .metric { text-align: center; flex: 1; min-width: 200px; padding: 0 10px; position: relative; }
+    .metric:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background: var(--gray-border); }
+    .metric h3 { font-size: 48px; color: var(--logo-red); margin-bottom: 4px; font-weight: 800; }
+    .metric p { color: var(--charcoal); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+
+    /* Products - Premium Grid */
+    .products-section { padding: 60px 5% 100px; background: var(--white); }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--logo-red); text-align: center; margin-bottom: 12px; display: block; font-family: 'Barlow'; }
+    .section-title { font-size: 46px; color: var(--ink); margin-bottom: 60px; text-align: center; font-weight: 800; }
+    .section-title span { color: var(--brand-yellow); }
+    
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .product-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 16px; padding: 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--brand-yellow); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left; }
+    .product-card:hover { border-color: transparent; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transform: translateY(-10px); }
+    .product-card:hover::before { transform: scaleX(1); }
+    
+    .product-image { width: 100%; height: 220px; background: var(--gray-light); margin-bottom: 24px; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: transform 0.4s ease; overflow: hidden; }
+    .product-card:hover .product-image img { transform: scale(1.08); }
+    .product-image img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; mix-blend-mode: multiply; padding: 20px; }
+    
+    .product-info { flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-name { font-weight: 800; font-size: 22px; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
+    .product-price { color: var(--logo-red); font-weight: 700; font-size: 18px; margin-bottom: 16px; }
+    .explore-btn { align-self: flex-start; color: var(--charcoal); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .product-card:hover .explore-btn { color: var(--logo-red); }
+    .explore-btn i { transition: transform 0.2s; }
+    .product-card:hover .explore-btn i { transform: translateX(5px); }
+
+    /* Footer */
+    footer { background-color: var(--ink); color: var(--white); padding: 80px 5% 40px; margin-top: auto; border-top: 5px solid var(--brand-yellow); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px; }
+    .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 18px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .about-text { color: #A0AEC0; font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+    .make-in-india { display: inline-block; background: var(--white); padding: 10px 15px; border-radius: 6px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul a, .footer-col p { color: #A0AEC0; text-decoration: none; font-size: 14px; transition: color 0.2s; display: inline-block; line-height: 1.6; }
+    .footer-col ul a:hover { color: var(--white); transform: translateX(5px); }
+    .footer-bottom { text-align: center; color: #555; padding-top: 30px; border-top: 1px solid #333; font-size: 14px; }
+    
+    @media (max-width: 900px) {
+        .hero h1 { font-size: 48px; }
+        .dashboard { flex-direction: column; margin-top: -30px; gap: 40px; }
+        .metric:not(:last-child)::after { display: none; }
+    }
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+    <a class="dealer-btn" href="contact_v2_stitch.html">Dealer Inquiry Form</a>
+    <div class="social-links">
+        <a class="bg-fb" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="bg-in" href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a class="bg-ig" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="bg-phone" href="#"><i class="fas fa-phone"></i></a>
+        <a class="bg-map" href="#"><i class="fas fa-map-marker-alt"></i></a>
+    </div>
+</div>
+
+<nav>
+    <a class="logo" href="#">
+        <img alt="KrishiTek Logo" src="https://www.krishitek.com/wp-content/uploads/2022/11/LOGO.png" onerror="this.src='https://via.placeholder.com/150x50/FFFFFF/C00000?text=KRISHITEK'"/>
+        KRISHITEK
+    </a>
+    <div class="nav-links">
+        <a class="active" href="homepage_v5_special.html">Home</a>
+        <a href="product_catalog_v1.html">Product Categories</a>
+        <a href="spare_parts_v1.html">Spare Parts &amp; Accessories</a>
+        <a href="about_v1.html">About</a>
+        <a href="contact_v2_stitch.html">Contact Us</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Reap More. <br><span>Work Less.</span></h1>
+    <p>Self-propelled reapers and smart agricultural machinery built for Indian farms, engineered for relentless reliability.</p>
+    <a href="product_catalog_v1.html" class="hero-btn">Explore Machinery</a>
+</section>
+
+<div class="dashboard">
+    <div class="metric">
+        <h3>2,50,000+</h3>
+        <p>FARMERS EMPOWERED</p>
+    </div>
+    <div class="metric">
+        <h3>500+</h3>
+        <p>TRUSTED DEALER PARTNERS</p>
+    </div>
+    <div class="metric">
+        <h3>22+</h3>
+        <p>STATES SERVED</p>
+    </div>
+    <div class="metric">
+        <h3>1,20,000+</h3>
+        <p>MACHINES DELIVERED</p>
+    </div>
+</div>
+
+<section class="products-section">
+    <span class="section-label">Innovation at work</span>
+    <h2 class="section-title">Our Machinery <span>Lineup</span></h2>
+    <div class="product-grid">
+        <a class="product-card" href="product_catalog_v1.html">
+            <div class="product-image"><img alt="Power Reaper" src="../assets/power_reaper_1784133241697.png"/></div>
+            <div class="product-info">
+                <div class="product-name">Power Reaper</div>
+                <div class="product-price">Explore Pricing</div>
+                <div class="explore-btn">View Details <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </a>
+        <a class="product-card" href="product_catalog_v1.html">
+            <div class="product-image"><img alt="Tractor Reaper" src="../assets/tractor_reaper_1784133251976.png"/></div>
+            <div class="product-info">
+                <div class="product-name">Tractor Reaper</div>
+                <div class="product-price">Explore Pricing</div>
+                <div class="explore-btn">View Details <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </a>
+        <a class="product-card" href="product_catalog_v1.html">
+            <div class="product-image"><img alt="Power Weeder" src="../assets/power_weeder_1784133265292.png"/></div>
+            <div class="product-info">
+                <div class="product-name">Power Weeder</div>
+                <div class="product-price">Explore Pricing</div>
+                <div class="explore-btn">View Details <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </a>
+        <a class="product-card" href="product_catalog_v1.html">
+            <div class="product-image"><img alt="Mini Tiller" src="../assets/mini_tiller_1784133277290.png"/></div>
+            <div class="product-info">
+                <div class="product-name">Mini Tiller</div>
+                <div class="product-price">Explore Pricing</div>
+                <div class="explore-btn">View Details <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+            <h4>About Us</h4>
+            <p class="about-text">We are a manufacturer of Agriculture Equipment. We design, develop and MAKE IN INDIA. We aspire to provide products and services to Farmers that are always customer-centric and can generate maximum value for what they have invested.</p>
+            <div class="make-in-india">
+                <img alt="Make In India" src="../assets/make_in_india.webp" style="max-height:60px; width:auto; display:block;"/>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="product_catalog_v1.html">Product Categories</a></li>
+                <li><a href="about_v1.html">About</a></li>
+                <li><a href="contact_v2_stitch.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>GET IN TOUCH</h4>
+            <div style="display:flex; gap:10px; margin-bottom:12px; align-items:flex-start;">
+                <i class="fas fa-envelope" style="color:var(--brand-yellow); margin-top:4px;"></i>
+                <p style="margin:0;">Email: info@krishitek.com</p>
+            </div>
+            <div style="display:flex; gap:10px; margin-bottom:12px; align-items:flex-start;">
+                <i class="fas fa-phone-alt" style="color:var(--brand-yellow); margin-top:4px;"></i>
+                <p style="margin:0;">Phone: +91 91570 62093<br/>+91 74860 29216</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+                <i class="fas fa-map-marker-alt" style="color:var(--brand-yellow); margin-top:4px;"></i>
+                <p style="margin:0;">Address: Krishitek Industries Pvt. Ltd.<br/>Santej, Ahmedabad</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 KrishiTek. All rights reserved.</div>
+</footer>
+</body>
+</html>
