@@ -84,11 +84,13 @@
         .specs-section { padding: 100px 5%; background: var(--gray-light); border-top: 1px solid var(--gray-border); }
         .specs-container { max-width: 1000px; margin: 0 auto; background: var(--white); padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid var(--gray-border); }
         .specs-title { font-size: 32px; color: var(--ink); margin-bottom: 40px; border-bottom: 3px solid var(--brand-yellow); padding-bottom: 15px; display: inline-block; }
-        .specs-grid { display: flex; flex-direction: column; border-top: 1px solid var(--gray-border); }
-        .spec-item { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--gray-border); }
+        .specs-grid { display: flex; flex-direction: column; border-radius: 12px; border: 1px solid var(--gray-border); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .spec-item { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid var(--gray-border); transition: all 0.25s ease; background: var(--white); }
         .spec-item:nth-child(even) { background: #FAFAFA; }
-        .spec-label { font-weight: 600; color: var(--charcoal); flex: 1; }
-        .spec-value { color: #555; font-weight: 500; text-align: right; flex: 1; }
+        .spec-item:last-child { border-bottom: none; }
+        .spec-item:hover { background: rgba(192,0,0,0.03); padding-left: 34px; border-left: 4px solid var(--logo-red); }
+        .spec-label { font-weight: 700; color: var(--charcoal); flex: 1; font-family: 'Barlow', sans-serif; letter-spacing: 0.5px; font-size: 16px; }
+        .spec-value { color: var(--ink); font-weight: 500; text-align: right; flex: 1; font-size: 16px; font-family: 'Inter', sans-serif; }
         footer { background-color: var(--ink); color: var(--white); padding: 80px 5% 40px; border-top: 5px solid var(--brand-yellow); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 60px; }
         .footer-col h4 { color: var(--brand-yellow); margin-bottom: 24px; font-size: 20px; text-transform: uppercase; }
