@@ -136,9 +136,11 @@
         .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
         .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
         .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
-        .mega-products-list a::before { content: '2  '; color: var(--logo-red); font-weight: bold; }
+        .mega-products-list a::before { content: '105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--logo-red); margin-right: 8px; }
         .mega-products-list a:hover { color: var(--logo-red); }
         .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
+        .sub-panel { display: none; }
+        .sub-panel.active { display: block; }
         @media (max-width: 900px) { .mega-menu { display: none !important; } }
 
     </style>
@@ -204,21 +206,52 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
   <!-- Spare Parts Panel -->
   <div class="mega-panel" id="mega-spare">
     <div class="mega-col-2">
-    <a class="active" href="#">REAPER COMPONENTS</a>
-    <a href="#">WEEDER COMPONENTS</a>
-    <a href="#">ENGINE PARTS</a>
-    <a href="#">ACCESSORIES</a>
+    <a class="active sub-tab" href="#" data-sub="spare-reaper">REAPER COMPONENTS</a>
+    <a class="sub-tab" href="#" data-sub="spare-weeder">WEEDER COMPONENTS</a>
+    <a class="sub-tab" href="#" data-sub="spare-engine">ENGINE PARTS</a>
+    <a class="sub-tab" href="#" data-sub="spare-accessories">ACCESSORIES</a>
     </div>
-    <div class="mega-col-3">
-    <h4>POPULAR SPARES</h4>
-    <div class="mega-products-list">
-    <a href="spare_clutch_lever_product_page.html">Clutch Lever<span class="product-sub">For Power Reapers</span></a>
-    <a href="spare_big_blade_product_page.html">Big Blade<span class="product-sub">Cutting Mechanism</span></a>
-    <a href="spare_chain_cover_assy_product_page.html">Chain Cover Assembly<span class="product-sub">Protection</span></a>
-    <a href="spare_harvesting_gear_box_assy_product_page.html">Harvesting Gear Box<span class="product-sub">Power Transmission</span></a>
-    <a href="spare_rotavator_blade_product_page.html">Rotavator Blade<span class="product-sub">For Weeders</span></a>
-    <a href="spare_recoil_starter_product_page.html">Recoil Starter<span class="product-sub">Engine Component</span></a>
+    <div class="mega-col-3 sub-panel active" id="spare-reaper">
+      <h4>REAPER COMPONENTS</h4>
+      <div class="mega-products-list">
+      <a href="spare_clutch_lever_product_page.html">Clutch Lever<span class="product-sub">For Power Reapers</span></a>
+      <a href="spare_big_blade_product_page.html">Big Blade<span class="product-sub">Cutting Mechanism</span></a>
+      <a href="spare_chain_cover_assy_product_page.html">Chain Cover Assembly<span class="product-sub">Protection</span></a>
+      <a href="spare_harvesting_gear_box_assy_product_page.html">Harvesting Gear Box<span class="product-sub">Power Transmission</span></a>
+      <a href="spare_cutterbar_product_page.html">Cutterbar<span class="product-sub">Component</span></a>
+      <a href="spare_small_blade_product_page.html">Small Blade<span class="product-sub">Cutting Mechanism</span></a>
+      <a href="spare_main_gear_box_assy_product_page.html">Main Gear Box Assy<span class="product-sub">Power</span></a>
+      <a href="spare_star_wheel_product_page.html">Star Wheel<span class="product-sub">Traction</span></a>
+      </div>
     </div>
+    <div class="mega-col-3 sub-panel" id="spare-weeder">
+      <h4>WEEDER COMPONENTS</h4>
+      <div class="mega-products-list">
+      <a href="spare_accelerator_throttle_lever_product_page.html">Throttle Lever<span class="product-sub">Engine Control</span></a>
+      <a href="spare_clutch_lever_weeder_product_page.html">Clutch Lever<span class="product-sub">Transmission</span></a>
+      <a href="spare_recoil_starter_product_page.html">Recoil Starter<span class="product-sub">Engine</span></a>
+      <a href="spare_reverse_gear_cable_product_page.html">Reverse Gear Cable<span class="product-sub">Control</span></a>
+      <a href="spare_rotavator_blade_product_page.html">Rotavator Blade<span class="product-sub">Tilling</span></a>
+      <a href="spare_rotavator_disc_product_page.html">Rotavator Disc<span class="product-sub">Edging</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="spare-engine">
+      <h4>ENGINE PARTS</h4>
+      <div class="mega-products-list">
+      <a href="spare_recoil_starter_product_page.html">Starter Assembly<span class="product-sub">Ignition</span></a>
+      <a href="spare_clutch_lever_weeder_product_page.html">Clutch Springs<span class="product-sub">Internal</span></a>
+      <a href="spare_safety_pin_lock_product_page.html">Safety Lock<span class="product-sub">Fastener</span></a>
+      <a href="spare_accelerator_throttle_lever_product_page.html">Throttle Cable<span class="product-sub">Speed Control</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="spare-accessories">
+      <h4>ACCESSORIES</h4>
+      <div class="mega-products-list">
+      <a href="saati_cultivator_product_page.html">Saati - The Cultivator<span class="product-sub">Rs. 11,500</span></a>
+      <a href="iron_wheel_w_product_page.html">Iron Wheel W<span class="product-sub">Rs. 7,500</span></a>
+      <a href="ridger_w_product_page.html">Ridger W<span class="product-sub">Rs. 2,500</span></a>
+      <a href="chaff_cutter_product_page.html">Chaff Cutter<span class="product-sub">Rs. 26,000</span></a>
+      </div>
     </div>
   </div>
   <!-- Services Panel -->
@@ -252,6 +285,49 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 </div>
 <div class="menu-toggle">&#9776;</div>
 </nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+
+    // Sub-panel Hover Logic
+    const subTabs = document.querySelectorAll('.mega-col-2 .sub-tab');
+    subTabs.forEach(subTab => {
+      subTab.addEventListener('mouseenter', (e) => {
+        const parentPanel = e.target.closest('.mega-panel');
+        if (!parentPanel) return;
+        
+        // Remove active from sibling sub-tabs and sub-panels
+        const siblingTabs = parentPanel.querySelectorAll('.sub-tab');
+        const siblingPanels = parentPanel.querySelectorAll('.sub-panel');
+        
+        siblingTabs.forEach(t => t.classList.remove('active'));
+        siblingPanels.forEach(p => p.classList.remove('active'));
+        
+        // Add active to current
+        subTab.classList.add('active');
+        const targetId = subTab.getAttribute('data-sub');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
 <script>
   // Mega Menu Hover Logic
   document.addEventListener('DOMContentLoaded', () => {
