@@ -31,17 +31,15 @@
     .social-links a:hover { opacity: 0.8; }
     .bg-fb { background: #3b5998; } .bg-in { background: #007bb5; } .bg-ig { background: #e1306c; } .bg-yt { background: #ff0000; } .bg-phone,.bg-map { background: var(--logo-red); }
 
-    /* Language Selector */
-    .custom-lang-selector { position: relative; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: var(--logo-red); z-index: 1002; }
-    .current-lang { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border-radius: 4px; transition: background 0.2s; user-select: none; }
-    .current-lang:hover { background: var(--gray-light); }
-    .current-lang img { width: 20px; height: auto; border: 1px solid #ddd; border-radius: 2px; }
-    .current-lang span { color: var(--logo-red); font-weight: 600; }
-    .custom-lang-selector .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.15); border-radius: 6px; padding: 6px 0; min-width: 155px; border: 1px solid #eee; z-index: 1002; }
-    .custom-lang-selector .lang-menu.open { display: block; }
-    .custom-lang-selector .lang-menu a { display: flex; align-items: center; gap: 10px; padding: 9px 16px; color: #333; text-decoration: none; transition: background 0.15s; font-size: 14px; }
-    .custom-lang-selector .lang-menu a img { width: 20px; height: auto; border: 1px solid #ddd; border-radius: 2px; }
-    .custom-lang-selector .lang-menu a:hover { background: var(--gray-light); color: var(--logo-red); }
+        /* Language Selector */
+    .lang-dropdown { position: relative; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; color: var(--ink); }
+    .lang-dropdown:hover .lang-menu { display: block; }
+    .lang-menu {
+        display: none; position: absolute; top: 100%; right: 0; background: var(--white); 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 4px; padding: 10px 0; z-index: 1001; min-width: 140px; border: 1px solid var(--gray-border);
+    }
+    .lang-menu a { padding: 8px 16px; color: var(--charcoal); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+    .lang-menu a:hover { background: var(--gray-light); color: var(--logo-red); }
 
     /* ── Nav ── */
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
@@ -191,20 +189,13 @@
 <!-- Utility Bar -->
 <div class="utility-bar">
     <a class="dealer-btn" data-i18n="dealer_inquiry_form" href="contact_v2_stitch.html">Dealer Inquiry Form</a>
-    <div class="custom-lang-selector">
-        <div class="current-lang">
-            <img src="https://flagcdn.com/w20/gb.png" alt="English"> <span>English</span> <i class="fas fa-caret-down" style="font-size:12px; margin-left:4px; color:#999;"></i>
-        </div>
+        <div class="lang-dropdown">
+        <img alt="EN" src="https://flagcdn.com/w20/gb.png" width="16"/> English <i class="fas fa-caret-down"></i>
         <div class="lang-menu">
-            <a href="#" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="English"> English</a>
-            <a href="#" data-lang="gu"><img src="https://flagcdn.com/w20/in.png" alt="Gujarati"> Gujarati</a>
-            <a href="#" data-lang="hi"><img src="https://flagcdn.com/w20/in.png" alt="Hindi"> Hindi</a>
-            <a href="#" data-lang="kn"><img src="https://flagcdn.com/w20/in.png" alt="Kannada"> Kannada</a>
-            <a href="#" data-lang="mr"><img src="https://flagcdn.com/w20/in.png" alt="Marathi"> Marathi</a>
-            <a href="#" data-lang="ne"><img src="https://flagcdn.com/w20/np.png" alt="Nepali"> Nepali</a>
-            <a href="#" data-lang="pa"><img src="https://flagcdn.com/w20/in.png" alt="Punjabi"> Punjabi</a>
-            <a href="#" data-lang="ta"><img src="https://flagcdn.com/w20/in.png" alt="Tamil"> Tamil</a>
-            <a href="#" data-lang="te"><img src="https://flagcdn.com/w20/in.png" alt="Telugu"> Telugu</a>
+            <a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Hindi</a>
+            <a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Gujarati</a>
+            <a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Marathi</a>
+            <a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Tamil</a>
         </div>
     </div>
     <div class="social-links">

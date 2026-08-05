@@ -31,14 +31,15 @@
     .social-links { display: flex; gap: 4px; }
     .social-links a { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--white); text-decoration: none; border-radius: 2px; font-size: 13px; }
     .bg-fb { background: #3b5998; } .bg-in { background: #007bb5; } .bg-ig { background: #e1306c; } .bg-yt { background: #ff0000; } .bg-phone { background: var(--logo-red); }
-    .custom-lang-selector { position: relative; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; color: var(--ink); }
-    .current-lang { display: flex; align-items: center; gap: 6px; }
-    .current-lang img { width: 18px; border-radius: 2px; }
-    .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: var(--white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 4px; padding: 10px 0; z-index: 1001; min-width: 160px; border: 1px solid var(--gray-border); }
-    .lang-menu.open { display: block; }
-    .lang-menu a { display: flex; align-items: center; gap: 8px; padding: 8px 16px; color: var(--charcoal); text-decoration: none; font-weight: 500; font-size: 13px; }
+        .lang-dropdown { position: relative; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; color: var(--ink); }
+    .lang-dropdown:hover .lang-menu { display: block; }
+    .lang-menu {
+        display: none; position: absolute; top: 100%; right: 0; background: var(--white); 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 4px; padding: 10px 0; z-index: 1001; min-width: 140px; border: 1px solid var(--gray-border);
+    }
+    .lang-menu a { display: flex; padding: 8px 16px; color: var(--charcoal); text-decoration: none; font-weight: 500; align-items: center; gap: 8px; }
     .lang-menu a:hover { background: var(--gray-light); color: var(--logo-red); }
-    .lang-menu a img { width: 18px; border-radius: 2px; }
+
 
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
     .logo { font-weight: 700; font-size: 24px; color: var(--logo-red); text-decoration: none; display: flex; align-items: center; gap: 10px; }
