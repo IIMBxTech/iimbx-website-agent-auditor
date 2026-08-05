@@ -207,6 +207,7 @@ NAV_HTML = '''<div class="utility-bar">
 KRISHITEK
 </a>
 <div class="nav-links">
+<a href="homepage_v4_stitch.html">HOME</a>
 <a href="about_v1.html">ABOUT</a>
 <div class="mega-trigger">
 PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
