@@ -361,28 +361,49 @@
         .skiptranslate { display: none !important; }
         .goog-te-banner-frame { display: none !important; }
 
+    
+        /* Mega Menu */
+        .mega-trigger { position: static; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
+        .mega-trigger i.fa-plus { font-size: 10px; transition: transform 0.3s; }
+        .mega-trigger:hover i.fa-plus { transform: rotate(45deg); color: var(--logo-red); }
+        .mega-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-top: 3px solid var(--logo-red); z-index: 999; }
+        .mega-trigger::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; background: transparent; }
+        .mega-trigger:hover .mega-menu, .mega-menu:hover { display: flex; }
+        .mega-col-1 { width: 240px; flex-shrink: 0; background: var(--gray-light); padding: 32px 0; border-right: 1px solid var(--gray-border); }
+        .mega-col-1 a { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; transition: all 0.15s; letter-spacing: 0.5px; }
+        .mega-col-1 a:hover, .mega-col-1 a.active { color: var(--logo-red); background: var(--white); border-left: 3px solid var(--logo-red); }
+        .mega-col-1 a i { font-size: 11px; color: var(--logo-red); opacity: 0; transition: opacity 0.2s; }
+        .mega-col-1 a.active i { opacity: 1; }
+        .mega-panels { flex: 1; display: flex; }
+        .mega-panel { display: none; width: 100%; }
+        .mega-panel.active { display: flex; }
+        .mega-col-2 { width: 250px; flex-shrink: 0; padding: 32px 24px; border-right: 1px solid var(--gray-border); }
+        .mega-col-2 a { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; color: var(--charcoal); text-decoration: none; border-radius: 6px; transition: all 0.15s; letter-spacing: 0.3px; }
+        .mega-col-2 a:hover, .mega-col-2 a.active { color: var(--logo-red); background: rgba(192,0,0,0.05); }
+        .mega-col-3 { flex: 1; padding: 32px 40px; }
+        .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
+        .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
+        .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
+        .mega-products-list a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--logo-red); margin-right: 8px; }
+        .mega-products-list a:hover { color: var(--logo-red); }
+        .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
+        .sub-panel { display: none; }
+        .sub-panel.active { display: block; }
+        @media (max-width: 900px) { .mega-menu { display: none !important; } }
+
     </style>
 </head>
 <body>
 <div class="utility-bar">
-<a class="dealer-btn" data-i18n="dealer_inquiry_form" href="contact_v2_stitch.html">Dealer Inquiry Form</a>
-<div class="custom-lang-selector">
-<div class="current-lang">
-<img alt="English" src="https://flagcdn.com/w20/gb.png"/> <span>English</span> <i class="fas fa-caret-down" style="font-size:12px; margin-left:4px; color:#999;"></i>
-</div>
+<a class="dealer-btn" href="contact_v5_premium.html">Dealer Inquiry Form</a>
+<div class="lang-dropdown">
+<img alt="EN" src="https://flagcdn.com/w20/gb.png" width="16"/> English <i class="fas fa-caret-down"></i>
 <div class="lang-menu">
-<a data-lang="en" href="#"><img alt="English" src="https://flagcdn.com/w20/gb.png"/> English</a>
-<a data-lang="gu" href="#"><img alt="Gujarati" src="https://flagcdn.com/w20/in.png"/> Gujarati</a>
-<a data-lang="hi" href="#"><img alt="Hindi" src="https://flagcdn.com/w20/in.png"/> Hindi</a>
-<a data-lang="kn" href="#"><img alt="Kannada" src="https://flagcdn.com/w20/in.png"/> Kannada</a>
-<a data-lang="mr" href="#"><img alt="Marathi" src="https://flagcdn.com/w20/in.png"/> Marathi</a>
-<a data-lang="ne" href="#"><img alt="Nepali" src="https://flagcdn.com/w20/np.png"/> Nepali</a>
-<a data-lang="pa" href="#"><img alt="Punjabi" src="https://flagcdn.com/w20/in.png"/> Punjabi</a>
-<a data-lang="ta" href="#"><img alt="Tamil" src="https://flagcdn.com/w20/in.png"/> Tamil</a>
-<a data-lang="te" href="#"><img alt="Telugu" src="https://flagcdn.com/w20/in.png"/> Telugu</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Hindi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Gujarati</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Marathi</a>
+<a href="#"><img alt="IN" src="https://flagcdn.com/w20/in.png" width="16"/> Tamil</a>
 </div>
-<!-- Hidden Google Translate Element -->
-<div id="google_translate_element" style="display:none;"></div>
 </div>
 <div class="social-links">
 <a class="bg-fb" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -393,54 +414,178 @@
 </div>
 </div>
 <nav>
-<a class="logo" data-i18n="krishitek_1" href="#">
-<!-- Fetching actual logo from live site -->
-<img alt="KrishiTek Logo" onerror="this.src='https://via.placeholder.com/150x50/FFFFFF/C00000?text=KRISHITEK'" src="https://www.krishitek.com/wp-content/uploads/2022/11/LOGO.png"/> 
-            KRISHITEK
-        </a>
+<a class="logo" href="homepage_v4_stitch.html">
+<img alt="KrishiTek Logo" onerror="this.src='https://via.placeholder.com/150x50/FFFFFF/C00000?text=KRISHITEK'" src="https://www.krishitek.com/wp-content/uploads/2022/11/LOGO.png"/>
+KRISHITEK
+</a>
 <div class="nav-links">
-<a data-i18n="about" href="about_v1.html">ABOUT</a>
+<a href="about_v1.html">ABOUT</a>
 <div class="mega-trigger">
 PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 <div class="mega-menu">
-<!-- Col 1: Main Categories -->
 <div class="mega-col-1">
-<a class="active" href="#" data-cat="agri">AGRI MACHINERY <i class="fas fa-chevron-right"></i></a>
-<a href="spare_parts_v1.html" data-cat="spare">SPARE PARTS</a>
-<a href="services_v1.html" data-cat="services">SERVICES & SUPPORT</a>
+<a class="active" href="product_catalog_v1.html" data-target="agri">AGRI MACHINERY <i class="fas fa-chevron-right"></i></a>
+<a href="spare_parts_v1.html" data-target="spare">SPARE PARTS <i class="fas fa-chevron-right"></i></a>
+<a href="services_v1.html" data-target="services">SERVICES &amp; SUPPORT <i class="fas fa-chevron-right"></i></a>
 </div>
-<!-- Col 2: Subcategories -->
-<div class="mega-col-2">
-<a class="active" href="#" data-subcat="reapers">REAPERS & HARVESTERS <i class="fas fa-chevron-right" style="font-size:10px; color:var(--logo-red);"></i></a>
-<a href="#" data-subcat="weeders">POWER WEEDERS</a>
-<a href="#" data-subcat="tillers">MINI TILLERS</a>
-<a href="#" data-subcat="tractor">TRACTOR ATTACHMENTS</a>
+<div class="mega-panels">
+  <!-- Agri Panel -->
+  <div class="mega-panel active" id="mega-agri">
+    <div class="mega-col-2">
+    <a class="active sub-tab" href="#" data-sub="agri-reaper">REAPERS &amp; HARVESTERS</a>
+    <a class="sub-tab" href="#" data-sub="agri-weeder">POWER WEEDERS</a>
+    <a class="sub-tab" href="#" data-sub="agri-tiller">MINI TILLERS</a>
+    <a class="sub-tab" href="#" data-sub="agri-tractor">TRACTOR ATTACHMENTS</a>
+    </div>
+    <div class="mega-col-3 sub-panel active" id="agri-reaper">
+      <h4>REAPERS &amp; HARVESTERS</h4>
+      <div class="mega-products-list">
+      <a href="reaptek_ki_120_product_page.html">Self Propelled Power Reaper<span class="product-sub">Reaptek Ki-120</span></a>
+      <a href="reaptek_combine_4_8wp_product_page.html">Power Reaper Cum Weeder<span class="product-sub">Reaptek Combine 4.8WP</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="agri-weeder">
+      <h4>POWER WEEDERS</h4>
+      <div class="mega-products-list">
+      <a href="power_weeder_5_5wp_product_page.html">Power Weeder 5.5WP<span class="product-sub">Honda GX200 Engine</span></a>
+      <a href="power_weeder_7cr_product_page.html">Power Weeder 7CR<span class="product-sub">7HP Chain Drive</span></a>
+      <a href="back_rotary_power_weeder_7br_product_page.html">Back Rotary Weeder 7BR<span class="product-sub">Patented Rotor</span></a>
+      <a href="front_rotary_power_weeder_7fr_product_page.html">Front Rotary Weeder 7FR<span class="product-sub">Paddy Puddling</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="agri-tiller">
+      <h4>MINI TILLERS</h4>
+      <div class="mega-products-list">
+      <a href="mini_tiller_powertek_3wp_product_page.html">Mini Tiller 3WP<span class="product-sub">Compact Powertek</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="agri-tractor">
+      <h4>TRACTOR ATTACHMENTS</h4>
+      <div class="mega-products-list">
+      <a href="reaptek_3_product_page.html">Reaper Attachment 3ft<span class="product-sub">For Power Weeder</span></a>
+      <a href="reaptek_t7_t6_t5_t4_product_page.html">Hydraulic Reaper<span class="product-sub">Tractor Operated</span></a>
+      <a href="reaptek_c4_c5_product_page.html">Reaper for Swaraj Code<span class="product-sub">Self Propelled</span></a>
+      <a href="reaptek_pt4_pt5_product_page.html">Reaper for Power Tiller<span class="product-sub">Heavy Duty</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- Spare Parts Panel -->
+  <div class="mega-panel" id="mega-spare">
+    <div class="mega-col-2">
+    <a class="active sub-tab" href="#" data-sub="spare-reaper">REAPER COMPONENTS</a>
+    <a class="sub-tab" href="#" data-sub="spare-weeder">WEEDER COMPONENTS</a>
+    <a class="sub-tab" href="#" data-sub="spare-engine">ENGINE PARTS</a>
+    <a class="sub-tab" href="#" data-sub="spare-accessories">ACCESSORIES</a>
+    </div>
+    <div class="mega-col-3 sub-panel active" id="spare-reaper">
+      <h4>REAPER COMPONENTS</h4>
+      <div class="mega-products-list">
+      <a href="spare_clutch_lever_product_page.html">Clutch Lever<span class="product-sub">For Power Reapers</span></a>
+      <a href="spare_big_blade_product_page.html">Big Blade<span class="product-sub">Cutting Mechanism</span></a>
+      <a href="spare_chain_cover_assy_product_page.html">Chain Cover Assembly<span class="product-sub">Protection</span></a>
+      <a href="spare_harvesting_gear_box_assy_product_page.html">Harvesting Gear Box<span class="product-sub">Power Transmission</span></a>
+      <a href="spare_cutterbar_product_page.html">Cutterbar<span class="product-sub">Component</span></a>
+      <a href="spare_small_blade_product_page.html">Small Blade<span class="product-sub">Cutting Mechanism</span></a>
+      <a href="spare_main_gear_box_assy_product_page.html">Main Gear Box Assy<span class="product-sub">Power</span></a>
+      <a href="spare_star_wheel_product_page.html">Star Wheel<span class="product-sub">Traction</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="spare-weeder">
+      <h4>WEEDER COMPONENTS</h4>
+      <div class="mega-products-list">
+      <a href="spare_accelerator_throttle_lever_product_page.html">Throttle Lever<span class="product-sub">Engine Control</span></a>
+      <a href="spare_clutch_lever_weeder_product_page.html">Clutch Lever<span class="product-sub">Transmission</span></a>
+      <a href="spare_recoil_starter_product_page.html">Recoil Starter<span class="product-sub">Engine</span></a>
+      <a href="spare_reverse_gear_cable_product_page.html">Reverse Gear Cable<span class="product-sub">Control</span></a>
+      <a href="spare_rotavator_blade_product_page.html">Rotavator Blade<span class="product-sub">Tilling</span></a>
+      <a href="spare_rotavator_disc_product_page.html">Rotavator Disc<span class="product-sub">Edging</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="spare-engine">
+      <h4>ENGINE PARTS</h4>
+      <div class="mega-products-list">
+      <a href="spare_recoil_starter_product_page.html">Starter Assembly<span class="product-sub">Ignition</span></a>
+      <a href="spare_clutch_lever_weeder_product_page.html">Clutch Springs<span class="product-sub">Internal</span></a>
+      <a href="spare_safety_pin_lock_product_page.html">Safety Lock<span class="product-sub">Fastener</span></a>
+      <a href="spare_accelerator_throttle_lever_product_page.html">Throttle Cable<span class="product-sub">Speed Control</span></a>
+      </div>
+    </div>
+    <div class="mega-col-3 sub-panel" id="spare-accessories">
+      <h4>ACCESSORIES</h4>
+      <div class="mega-products-list">
+      <a href="saati_cultivator_product_page.html">Saati - The Cultivator<span class="product-sub">Rs. 11,500</span></a>
+      <a href="iron_wheel_w_product_page.html">Iron Wheel W<span class="product-sub">Rs. 7,500</span></a>
+      <a href="ridger_w_product_page.html">Ridger W<span class="product-sub">Rs. 2,500</span></a>
+      <a href="chaff_cutter_product_page.html">Chaff Cutter<span class="product-sub">Rs. 26,000</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- Services Panel -->
+  <div class="mega-panel" id="mega-services">
+    <div class="mega-col-3" style="border-left: none; width: 100%; padding: 40px;">
+    <h4>SERVICES &amp; SUPPORT</h4>
+    <div class="mega-services-list" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+    <a href="services_v1.html" style="background: var(--gray-light); padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; color: var(--charcoal); font-weight: 600;"><i class="fas fa-shield-alt" style="font-size: 24px; color: var(--logo-red); display: block; margin-bottom: 10px;"></i>Warranty Registration</a>
+    <a href="services_v1.html" style="background: var(--gray-light); padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; color: var(--charcoal); font-weight: 600;"><i class="fas fa-tools" style="font-size: 24px; color: var(--logo-red); display: block; margin-bottom: 10px;"></i>Service Request</a>
+    <a href="media_v1_stitch.html" style="background: var(--gray-light); padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; color: var(--charcoal); font-weight: 600;"><i class="fas fa-video" style="font-size: 24px; color: var(--logo-red); display: block; margin-bottom: 10px;"></i>Tutorials &amp; Guides</a>
+    <a href="dealership_v1.html" style="background: var(--gray-light); padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; color: var(--charcoal); font-weight: 600;"><i class="fas fa-handshake" style="font-size: 24px; color: var(--logo-red); display: block; margin-bottom: 10px;"></i>Dealership Application</a>
+    </div>
+    </div>
+  </div>
 </div>
-<!-- Col 3: Products -->
-<div class="mega-col-3">
-<h4>PRODUCTS</h4>
-<div class="mega-products-list">
-<a href="reaptek_ki_120_product_page.html">Self Propelled Power Reaper<span class="product-sub">Reaptek Ki-120 (Multicrop)</span></a>
-<a href="reaptek_combine_4_8wp_product_page.html">Power Reaper Cum Weeder<span class="product-sub">Reaptek 4.8WP Multipurpose</span></a>
-<a href="power_weeder_5_5wp_product_page.html">Power Weeder 5.5WP<span class="product-sub">Heavy Duty Gearbox</span></a>
-<a href="power_weeder_7cr_product_page.html">Power Weeder 7CR<span class="product-sub">Chain Drive Rotary</span></a>
-<a href="power_weeder_7br_product_page.html">Back Rotary Weeder 7BR<span class="product-sub">Rear Tine Rotary</span></a>
-<a href="power_weeder_7fr_product_page.html">Front Rotary Weeder 7FR<span class="product-sub">Front Tine Rotary</span></a>
-<a href="mini_tiller_powertek_3wp_product_page.html">Mini Power Tiller 3WP<span class="product-sub">Compact Powertek</span></a>
-<a href="reaptek_3_product_page.html">Power Weeder Attachment<span class="product-sub">Reaptek 3</span></a>
 </div>
 </div>
+<a href="dealership_v1.html">FIND A DEALER</a>
+<a href="blog_v1.html">BLOG</a>
+<a href="media_v1_stitch.html">MEDIA</a>
+<a href="spare_parts_v1.html">SPARE PARTS</a>
+<a href="contact_v5_premium.html">CONTACT</a>
 </div>
-</div>
-<a href="contact_v2_stitch.html">FIND A DEALER</a>
-<a data-i18n="blog" href="blog_v1.html">BLOG</a>
-<a data-i18n="media" href="media_v1_stitch.html">MEDIA</a>
-<a data-i18n="spare_parts_accessories" href="spare_parts_v1.html">SPARE PARTS</a>
-<a data-i18n="contact_us" href="contact_v5_premium.html">CONTACT</a>
-</div>
-<div class="menu-toggle">☰</div>
-<a class="btn" data-i18n="enquire_now" href="#" style="display:none;">Enquire Now</a> <!-- Hidden for space, nav has contact -->
+<div class="menu-toggle">&#9776;</div>
 </nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+
+    // Sub-panel Hover Logic
+    const subTabs = document.querySelectorAll('.mega-col-2 .sub-tab');
+    subTabs.forEach(subTab => {
+      subTab.addEventListener('mouseenter', (e) => {
+        const parentPanel = e.target.closest('.mega-panel');
+        if (!parentPanel) return;
+        
+        // Remove active from sibling sub-tabs and sub-panels
+        const siblingTabs = parentPanel.querySelectorAll('.sub-tab');
+        const siblingPanels = parentPanel.querySelectorAll('.sub-panel');
+        
+        siblingTabs.forEach(t => t.classList.remove('active'));
+        siblingPanels.forEach(p => p.classList.remove('active'));
+        
+        // Add active to current
+        subTab.classList.add('active');
+        const targetId = subTab.getAttribute('data-sub');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
 <section class="hero">
 <h1 data-i18n="reap_more_work_less">Reap More. <span data-i18n="work_less">Work Less.</span></h1>
 <p data-i18n="self_propelled_reapers_and_sma">Self-propelled reapers and smart agricultural machinery built for Indian farms, engineered for relentless reliability.</p>
@@ -470,7 +615,7 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 <button class="carousel-btn right" onclick="document.getElementById('product-carousel').scrollBy({left: 350, behavior: 'smooth'})">›</button>
 <div class="carousel" id="product-carousel">
 <!-- Product 1 -->
-<a class="product-card" data-i18n="power_reaper_xxxxx" href="product_catalog_v2_stitch.html" style="text-decoration: none; color: inherit; display: block;">
+<a class="product-card" data-i18n="power_reaper_xxxxx" href="product_catalog_v1.html" style="text-decoration: none; color: inherit; display: block;">
 <div class="product-image"><img alt="Power Reaper" src="../assets/power_reaper_1784133241697.png"/></div>
 <div class="product-info">
 <div>
@@ -481,7 +626,7 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 </div>
 </a>
 <!-- Product 2 -->
-<a class="product-card" data-i18n="tractor_reaper_xxxxx" href="product_catalog_v2_stitch.html" style="text-decoration: none; color: inherit; display: block;">
+<a class="product-card" data-i18n="tractor_reaper_xxxxx" href="product_catalog_v1.html" style="text-decoration: none; color: inherit; display: block;">
 <div class="product-image"><img alt="Tractor Reaper" src="../assets/tractor_reaper_1784133251976.png"/></div>
 <div class="product-info">
 <div>
@@ -492,7 +637,7 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 </div>
 </a>
 <!-- Product 3 -->
-<a class="product-card" data-i18n="power_weeder_xxxxx" href="product_catalog_v2_stitch.html" style="text-decoration: none; color: inherit; display: block;">
+<a class="product-card" data-i18n="power_weeder_xxxxx" href="product_catalog_v1.html" style="text-decoration: none; color: inherit; display: block;">
 <div class="product-image"><img alt="Power Weeder" src="../assets/power_weeder_1784133265292.png"/></div>
 <div class="product-info">
 <div>
@@ -503,7 +648,7 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 </div>
 </a>
 <!-- Product 4 -->
-<a class="product-card" data-i18n="mini_tiller_xxxxx" href="product_catalog_v2_stitch.html" style="text-decoration: none; color: inherit; display: block;">
+<a class="product-card" data-i18n="mini_tiller_xxxxx" href="product_catalog_v1.html" style="text-decoration: none; color: inherit; display: block;">
 <div class="product-image"><img alt="Mini Tiller" src="../assets/mini_tiller_1784133277290.png"/></div>
 <div class="product-info">
 <div>
@@ -556,12 +701,12 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 <div class="footer-col">
 <h4 data-i18n="quick_links">Quick Links</h4>
 <ul>
-<li data-i18n="product_categories_1"><a data-i18n="product_categories" href="product_catalog_v2_stitch.html">Product Categories</a></li>
+<li data-i18n="product_categories_1"><a data-i18n="product_categories" href="product_catalog_v1.html">Product Categories</a></li>
 <li data-i18n="services"><a data-i18n="services_1" href="services_v2_stitch.html">Services</a></li>
-<li data-i18n="spare_parts_1"><a data-i18n="spare_parts" href="spare_parts_v2_stitch.html">Spare Parts</a></li>
+<li data-i18n="spare_parts_1"><a data-i18n="spare_parts" href="spare_parts_v1.html">Spare Parts</a></li>
 <li data-i18n="about_1"><a data-i18n="about" href="about_v1.html">About</a></li>
-<li data-i18n="our_networks"><a data-i18n="our_networks_1" href="contact_v2_stitch.html">Our Networks</a></li>
-<li data-i18n="blog_2"><a data-i18n="blog" href="blog_v2_stitch.html">Blog</a></li>
+<li data-i18n="our_networks"><a data-i18n="our_networks_1" href="contact_v5_premium.html">Our Networks</a></li>
+<li data-i18n="blog_2"><a data-i18n="blog" href="blog_v1.html">Blog</a></li>
 <li data-i18n="login"><a data-i18n="login_1" href="#" onclick="document.getElementById(\'krishitek-chatbot-button\').click(); return false;">Login</a></li>
 <li data-i18n="privacy_policy"><a data-i18n="privacy_policy_1" href="#">Privacy Policy</a></li>
 </ul>
@@ -594,7 +739,7 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 <i class="fas fa-map-marker-alt" style="color: var(--brand-yellow); margin-top: 4px; min-width: 14px;"></i>
 <p data-i18n="address_krishitek_industries_p_1" style="margin: 0;">Address: Krishitek Industries Pvt. Ltd.<br/>Plot No. 22, Prime Industrial Park,<br/>Santej, Ahmedabad- 382721,<br/>Gujarat, INDIA</p>
 </div>
-<a data-i18n="contact_us" href="contact_v2_stitch.html" style="background: var(--brand-yellow); color: var(--ink); padding: 8px 16px; border-radius: 4px; font-weight: bold; text-decoration: none;">Contact Us</a>
+<a data-i18n="contact_us" href="contact_v5_premium.html" style="background: var(--brand-yellow); color: var(--ink); padding: 8px 16px; border-radius: 4px; font-weight: bold; text-decoration: none;">Contact Us</a>
 </div>
 </div>
 <div class="footer-bottom">

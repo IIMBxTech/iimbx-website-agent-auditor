@@ -538,7 +538,6 @@ for product_name, pmap in PRODUCT_MAP.items():
 
 # ===== APPLY NAV TO NON-PRODUCT PAGES =====
 SKIP = {
-    'homepage_v4_stitch.html',
     'dealer_login.html', 'dealer_dashboard.html', 'master_dashboard.html',
     'md_dashboard.html', 'employee_portal.html', 'login.html', 'ai_chatbot_dashboard.html',
     'homepage_v5_special.html', 'productpage_v1.html',
