@@ -30,8 +30,7 @@
         .btn { background-color: var(--logo-red); color: var(--white); padding: 12px 28px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(192, 0, 0, 0.2); }
         .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
-
-        /* Mega Menu */
+/* Mega Menu */
         .mega-trigger { position: static; display: flex; align-items: center; gap: 5px; padding: 10px 0; }
         .mega-trigger i.fa-plus { font-size: 10px; transition: transform 0.3s; }
         .mega-trigger:hover i.fa-plus { transform: rotate(45deg); color: var(--logo-red); }
@@ -53,7 +52,7 @@
         .mega-col-3 h4 { font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--ink); margin-bottom: 18px; letter-spacing: 1.5px; }
         .mega-products-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
         .mega-products-list a { font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--charcoal); text-decoration: none; padding: 8px 0; display: block; line-height: 1.5; transition: color 0.15s; }
-        .mega-products-list a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--logo-red); margin-right: 8px; }
+        .mega-products-list a::before { content: '105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--logo-red); margin-right: 8px; }
         .mega-products-list a:hover { color: var(--logo-red); }
         .mega-products-list .product-sub { font-size: 12px; color: #999; display: block; margin-top: 1px; padding-left: 14px; font-style: italic; font-weight: 400; }
         .sub-panel { display: none; }
@@ -252,6 +251,92 @@ PRODUCTS <i class="fas fa-plus" style="font-size:10px;"></i>
 </div>
 <div class="menu-toggle">&#9776;</div>
 </nav>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+
+    // Sub-panel Hover Logic
+    const subTabs = document.querySelectorAll('.mega-col-2 .sub-tab');
+    subTabs.forEach(subTab => {
+      subTab.addEventListener('mouseenter', (e) => {
+        const parentPanel = e.target.closest('.mega-panel');
+        if (!parentPanel) return;
+        
+        // Remove active from sibling sub-tabs and sub-panels
+        const siblingTabs = parentPanel.querySelectorAll('.sub-tab');
+        const siblingPanels = parentPanel.querySelectorAll('.sub-panel');
+        
+        siblingTabs.forEach(t => t.classList.remove('active'));
+        siblingPanels.forEach(p => p.classList.remove('active'));
+        
+        // Add active to current
+        subTab.classList.add('active');
+        const targetId = subTab.getAttribute('data-sub');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
+<script>
+  // Mega Menu Hover Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.mega-col-1 a[data-target]');
+    const panels = document.querySelectorAll('.mega-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('mouseenter', () => {
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Add active class to current tab and panel
+        tab.classList.add('active');
+        const targetId = 'mega-' + tab.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if(targetPanel) targetPanel.classList.add('active');
+      });
+    });
+
+    // Sub-panel Hover Logic
+    const subTabs = document.querySelectorAll('.mega-col-2 .sub-tab');
+    subTabs.forEach(subTab => {
+      subTab.addEventListener('mouseenter', (e) => {
+        const parentPanel = e.target.closest('.mega-panel');
+        if (!parentPanel) return;
+        
+        // Remove active from sibling sub-tabs and sub-panels
+        const siblingTabs = parentPanel.querySelectorAll('.sub-tab');
+        const siblingPanels = parentPanel.querySelectorAll('.sub-panel');
+        
+        siblingTabs.forEach(t => t.classList.remove('active'));
+        siblingPanels.forEach(p => p.classList.remove('active'));
+        
+        // Add active to current
+        subTab.classList.add('active');
+        const targetId = subTab.getAttribute('data-sub');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
+    });
+  });
+</script>
 <script>
   // Mega Menu Hover Logic
   document.addEventListener('DOMContentLoaded', () => {
