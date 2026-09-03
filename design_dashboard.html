@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KrishiTek Design Dashboard</title>
+    <title>Sangam DLC Design Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-yellow: #FDB913;
-            --logo-red: #C00000;
-            --charcoal: #333333;
+            --brand-yellow: #F37023;
+            --logo-red: #1F3D5C;
+            --charcoal: #475569;
             --white: #FFFFFF;
             --bg-light: #F4F5F7;
             --border-color: #E2E8F0;
@@ -69,7 +69,7 @@
         .sidebar-header h2 {
             font-family: 'Barlow', sans-serif;
             color: var(--logo-red);
-            font-size: 24px;
+            font-size: 20px;
         }
 
         .page-list {
@@ -292,7 +292,7 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2>KRISHITEK</h2>
+            <h2>SANGAM DLC</h2>
             <div style="font-size: 12px; color: #718096; margin-top: 4px;">Design Dashboard</div>
         </div>
         <div class="page-list" id="pageList">
@@ -364,78 +364,42 @@
                 title: "Homepage Layout",
                 desc: "Main landing page",
                 variants: [
-                    { name: "Stitch Variant (Farmer Immersive)", file: "variants/homepage_v4_stitch.html" }
+                    { name: "Sangam Premium v1", file: "variants/sangam/sangam_homepage_v1.html" }
+                ]
+            },
+            "about": {
+                title: "About Us",
+                desc: "Mission, team & partners",
+                variants: [
+                    { name: "Sangam About v1", file: "variants/sangam/sangam_about_v1.html" }
+                ]
+            },
+            "courses": {
+                title: "Courses",
+                desc: "Digital pedagogy & AI training",
+                variants: [
+                    { name: "Filterable Grid v1", file: "variants/sangam/sangam_courses_v1.html" }
+                ]
+            },
+            "resources": {
+                title: "Resources",
+                desc: "Toolkits, guides & downloads",
+                variants: [
+                    { name: "Resource Library v1", file: "variants/sangam/sangam_resources_v1.html" }
+                ]
+            },
+            "events": {
+                title: "Events",
+                desc: "Workshops, webinars & meetups",
+                variants: [
+                    { name: "Events Calendar v1", file: "variants/sangam/sangam_events_v1.html" }
                 ]
             },
             "contact": {
                 title: "Contact Us",
-                desc: "Support and Inquiries page",
+                desc: "Get in touch with Sangam",
                 variants: [
-                    { name: "Stitch Creative (Split Form)", file: "variants/contact_v2_stitch.html" }
-                ]
-            },
-            "blog": {
-                title: "Blog & Insights",
-                desc: "Articles and updates",
-                variants: [
-                    { name: "3-Column Grid", file: "variants/blog_v1.html" }
-                ]
-            },
-            "services": {
-                title: "Service & Support",
-                desc: "Inquiry and videos",
-                variants: [
-                    { name: "Support Hub", file: "variants/services_v1.html" }
-                ]
-            },
-            "productpage": {
-                title: "Product Layout",
-                desc: "Universal product details page",
-                variants: [
-                    { name: "Clean eCommerce Layout", file: "variants/productpage_v1.html" }
-                ]
-            },
-            "catalog": {
-                title: "Full Product Catalog",
-                desc: "Grid listing with categories",
-                variants: [
-                    { name: "Grid + Sidebar Layout", file: "variants/product_catalog_v1.html" }
-                ]
-            },
-            "parts": {
-                title: "Spare Parts Catalog",
-                desc: "Accessories and component parts",
-                variants: [
-                    { name: "Grid + Sidebar Layout", file: "variants/spare_parts_v1.html" }
-                ]
-            },
-            "chatbot": {
-                title: "AI Chatbot Dashboard",
-                desc: "Chatbot Admin and Widget Playground",
-                variants: [
-                    { name: "AI Chatbot Prototype v1", file: "variants/ai_chatbot_dashboard.html" }
-                ]
-            },
-            "media": {
-                title: "Media Page",
-                desc: "Exhibitions and Updates",
-                variants: [
-                    { name: "Grid Layout", file: "variants/media_v1_stitch.html" }
-                ]
-            },
-            "archive": {
-                title: "Archive",
-                desc: "Archived design variants",
-                variants: [
-                    { name: "Blog v2 Stitch", file: "variants/archive/blog_v2_stitch.html" },
-                    { name: "Contact v1", file: "variants/archive/contact_v1.html" },
-                    { name: "Homepage v1", file: "variants/archive/homepage_v1.html" },
-                    { name: "Homepage v2 Stitch", file: "variants/archive/homepage_v2_stitch.html" },
-                    { name: "Homepage v3 Stitch", file: "variants/archive/homepage_v3_stitch.html" },
-                    { name: "Product Catalog v2 Stitch", file: "variants/archive/product_catalog_v2_stitch.html" },
-                    { name: "Productpage v2 Stitch", file: "variants/archive/productpage_v2_stitch.html" },
-                    { name: "Services v2 Stitch", file: "variants/archive/services_v2_stitch.html" },
-                    { name: "Spare Parts v2 Stitch", file: "variants/archive/spare_parts_v2_stitch.html" }
+                    { name: "Split Form + FAQ v1", file: "variants/sangam/sangam_contact_v1.html" }
                 ]
             }
         };
@@ -446,13 +410,11 @@
         // Map expected hrefs to db keys for automatic routing
         const hrefMap = {
             "homepage": "homepage",
-            "contact": "contact",
-            "blog": "blog",
-            "services": "services",
-            "productpage": "productpage",
-            "catalog": "catalog",
-            "parts": "parts",
-            "media": "media"
+            "about": "about",
+            "courses": "courses",
+            "resources": "resources",
+            "events": "events",
+            "contact": "contact"
         };
 
         // True Journey State
@@ -545,7 +507,7 @@
         }
 
         function saveJourneyFlow() {
-            localStorage.setItem('krishtekJourneyFlow', JSON.stringify(journeySteps));
+            localStorage.setItem('sangamJourneyFlow', JSON.stringify(journeySteps));
         }
 
         function loadJourneyBuilder() {
@@ -565,7 +527,7 @@
             isJourneyMode = false;
 
             // default steps if empty or load from storage
-            const saved = localStorage.getItem('krishtekJourneyFlow');
+            const saved = localStorage.getItem('sangamJourneyFlow');
             if (saved) {
                 try {
                     journeySteps = JSON.parse(saved);
