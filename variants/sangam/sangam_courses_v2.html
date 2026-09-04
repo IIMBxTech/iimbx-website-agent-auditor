@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses — Digital Pedagogy & AI Training for Faculty | Sangam DLC</title>
+    <meta name="description" content="Browse free digital pedagogy and AI-in-education courses by Sangam DLC. Self-paced and cohort-based programs for higher-education faculty across India. Enroll now.">
+    <link rel="canonical" href="https://sangamdlc.org/courses/">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--s-orange:#F37023;--s-orange-lt:#FFF0E8;--s-navy:#1F3D5C;--s-navy-lt:#EEF3F8;--s-white:#FFFFFF;--s-bg:#F6F8FA;--s-text:#1A2332;--s-muted:#64748B;--s-border:#E5EAF0;--s-green:#059669;--s-green-lt:#D1FAE5;--font-h:'Sora',sans-serif;--font-b:'DM Sans',sans-serif;--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-pill:100px;--sh-sm:0 1px 4px rgba(0,0,0,.06);--sh-md:0 4px 20px rgba(0,0,0,.08);--sh-lg:0 12px 40px rgba(0,0,0,.10);--t:0.25s ease}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-b);color:var(--s-text);background:var(--s-white);line-height:1.65;overflow-x:hidden}a{text-decoration:none;color:inherit}h1,h2,h3,h4{font-family:var(--font-h);line-height:1.15}.container{max-width:1180px;margin:0 auto;padding:0 24px}
+        .nav-wrap{position:fixed;top:0;left:0;right:0;z-index:900;padding:12px 0;transition:all var(--t)}.nav-wrap.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 1px 4px rgba(0,0,0,.06);padding:8px 0}.nav-inner{display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:10px}.logo-badge{width:38px;height:38px;background:var(--s-orange);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-weight:800;color:white;font-size:18px;position:relative}.logo-badge::after{content:'';position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--s-navy);border:2px solid white}.logo-name{font-family:var(--font-h);font-weight:700;font-size:17px;color:var(--s-text)}.logo-sub{font-size:10px;color:var(--s-muted);font-weight:500;display:block;margin-top:1px}.nav-links{display:flex;align-items:center;gap:4px}.nav-links a{padding:7px 14px;font-size:14px;font-weight:500;color:var(--s-muted);border-radius:var(--r-sm);transition:all var(--t)}.nav-links a:hover,.nav-links a.active{color:var(--s-text);background:var(--s-bg)}.nav-btn{background:var(--s-orange);color:white;padding:9px 22px;border-radius:var(--r-pill);font-size:14px;font-weight:600;font-family:var(--font-h);transition:all var(--t)}.nav-btn:hover{background:#D95A10}
+
+        .page-hero{padding:130px 0 60px;background:var(--s-white)}
+        .hero-breadcrumb{font-size:13px;color:var(--s-muted);margin-bottom:16px}.hero-breadcrumb a{color:var(--s-orange);font-weight:500}
+        .page-hero h1{font-size:48px;font-weight:800;margin-bottom:16px}.page-hero h1 em{font-style:normal;color:var(--s-orange)}
+        .page-hero p{font-size:17px;color:var(--s-muted);max-width:580px;line-height:1.75}
+        .tag{display:inline-flex;align-items:center;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:var(--r-pill)}.tag-orange{background:var(--s-orange-lt);color:var(--s-orange)}.tag-green{background:var(--s-green-lt);color:var(--s-green)}.tag-navy{background:var(--s-navy-lt);color:var(--s-navy)}
+
+        /* FILTER TABS */
+        .filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:24px 0;border-bottom:1px solid var(--s-border)}
+        .filter-tab{padding:8px 18px;border-radius:var(--r-pill);font-size:13px;font-weight:600;font-family:var(--font-h);border:1.5px solid var(--s-border);background:white;color:var(--s-muted);cursor:pointer;transition:all var(--t)}
+        .filter-tab:hover,.filter-tab.active{background:var(--s-orange);border-color:var(--s-orange);color:white}
+        .filter-search{margin-left:auto;padding:9px 18px;border-radius:var(--r-pill);border:1.5px solid var(--s-border);font-size:13px;font-family:var(--font-b);outline:none;min-width:220px;transition:border var(--t)}
+        .filter-search:focus{border-color:var(--s-orange)}
+
+        /* COURSE LIST — left sidebar layout */
+        .courses-layout{display:grid;grid-template-columns:260px 1fr;gap:32px;padding:40px 0}
+        .sidebar-filters{position:sticky;top:80px;align-self:start}
+        .sf-section{margin-bottom:28px}
+        .sf-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--s-muted);margin-bottom:12px}
+        .sf-option{display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;font-size:14px;color:var(--s-text);transition:color var(--t)}
+        .sf-option:hover{color:var(--s-orange)}
+        .sf-check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--s-border);display:flex;align-items:center;justify-content:center;transition:all var(--t)}
+        .sf-option.checked .sf-check{background:var(--s-orange);border-color:var(--s-orange);color:white;font-size:10px}
+        .course-list{display:flex;flex-direction:column;gap:20px}
+
+        /* HORIZONTAL COURSE CARDS */
+        .course-row{background:white;border-radius:var(--r-lg);box-shadow:var(--sh-sm);border:1px solid var(--s-border);display:flex;overflow:hidden;transition:all var(--t)}
+        .course-row:hover{box-shadow:var(--sh-lg);border-color:var(--s-orange);transform:translateX(4px)}
+        .course-thumb{width:220px;min-width:220px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+        .ct-1{background:linear-gradient(135deg,#FFF0E8,#FDE0CC)}.ct-2{background:linear-gradient(135deg,#EEF3F8,#C8D6E5)}.ct-3{background:linear-gradient(135deg,#D1FAE5,#A7F3D0)}.ct-4{background:linear-gradient(135deg,#E8E8FF,#C7C7FF)}.ct-5{background:linear-gradient(135deg,#FEF3C7,#FDE68A)}.ct-6{background:linear-gradient(135deg,#FCE7F3,#F9A8D4)}
+        .course-badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:var(--r-pill)}.cb-open{background:var(--s-green-lt);color:var(--s-green)}.cb-up{background:var(--s-orange-lt);color:var(--s-orange)}
+        .course-row-body{padding:24px;flex:1;display:flex;flex-direction:column}
+        .crow-tags{display:flex;gap:8px;margin-bottom:10px}
+        .course-row-body h3{font-size:19px;font-weight:700;margin-bottom:8px}
+        .course-row-body p{font-size:14px;color:var(--s-muted);line-height:1.65;flex:1;margin-bottom:16px}
+        .crow-meta{display:flex;gap:20px;font-size:13px;color:var(--s-muted);margin-bottom:16px;flex-wrap:wrap}.crow-meta span{display:flex;align-items:center;gap:5px}
+        .crow-foot{display:flex;align-items:center;gap:12px}
+        .btn-enroll{background:var(--s-orange);color:white;padding:9px 22px;border-radius:var(--r-pill);font-family:var(--font-h);font-weight:600;font-size:13px;transition:all var(--t)}.btn-enroll:hover{background:#D95A10}
+        .btn-outline{border:1.5px solid var(--s-border);color:var(--s-text);padding:9px 22px;border-radius:var(--r-pill);font-family:var(--font-h);font-weight:600;font-size:13px;transition:all var(--t)}.btn-outline:hover{border-color:var(--s-navy);color:var(--s-navy)}
+        .cert-badge{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--s-green);font-weight:600;margin-left:auto}
+
+        .footer{background:var(--s-navy);padding:40px 0;color:white;text-align:center}
+        .footer p{color:rgba(255,255,255,.6);font-size:14px}.footer a{color:var(--s-orange)}
+
+        .aos{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.aos.in{opacity:1;transform:translateY(0)}
+        @media(max-width:1024px){.courses-layout{grid-template-columns:1fr}.sidebar-filters{display:none}}
+        @media(max-width:768px){.nav-links,.nav-btn{display:none}.page-hero h1{font-size:34px}.course-row{flex-direction:column}.course-thumb{width:100%;height:160px;min-width:0}}
+    </style>
+</head>
+<body>
+    <nav class="nav-wrap" id="nav"><div class="container"><div class="nav-inner"><a href="/" class="nav-logo"><div class="logo-badge">S</div><div><div class="logo-name">Sangam DLC</div><span class="logo-sub">by IIMBx</span></div></a><div class="nav-links"><a href="/">Home</a><a href="/about-us/">About</a><a href="/courses/" class="active">Courses</a><a href="/resources/">Resources</a><a href="/events/">Events</a><a href="/contact-us/">Contact</a></div><a href="/courses/" class="nav-btn">Join Free →</a></div></div></nav>
+
+    <section class="page-hero"><div class="container">
+        <div class="hero-breadcrumb"><a href="/">Home</a> / Courses</div>
+        <div class="tag tag-orange" style="margin-bottom:16px">Free for Faculty</div>
+        <h1>Learn to Teach <em>Digitally</em></h1>
+        <p>Research-backed, IIMBx-certified programs for higher-education faculty. Self-paced or cohort-based — you choose your pace.</p>
+    </div></section>
+
+    <div class="container">
+        <div class="filter-row">
+            <button class="filter-tab active" onclick="filterCourses('all',this)">All Courses</button>
+            <button class="filter-tab" onclick="filterCourses('open',this)">🟢 Open Now</button>
+            <button class="filter-tab" onclick="filterCourses('upcoming',this)">🟠 Upcoming</button>
+            <button class="filter-tab" onclick="filterCourses('pedagogy',this)">Pedagogy</button>
+            <button class="filter-tab" onclick="filterCourses('ai',this)">AI in Education</button>
+            <input type="text" class="filter-search" placeholder="🔍  Search courses..." oninput="searchCourses(this.value)">
+        </div>
+
+        <div class="courses-layout">
+            <div class="sidebar-filters">
+                <div class="sf-section">
+                    <div class="sf-title">Duration</div>
+                    <div class="sf-option"><div class="sf-check"></div>3 Weeks</div>
+                    <div class="sf-option"><div class="sf-check"></div>4 Weeks</div>
+                    <div class="sf-option"><div class="sf-check"></div>5–6 Weeks</div>
+                </div>
+                <div class="sf-section">
+                    <div class="sf-title">Format</div>
+                    <div class="sf-option checked" onclick="toggleCheck(this)"><div class="sf-check">✓</div>Self-Paced</div>
+                    <div class="sf-option checked" onclick="toggleCheck(this)"><div class="sf-check">✓</div>Cohort-Based</div>
+                </div>
+                <div class="sf-section">
+                    <div class="sf-title">Level</div>
+                    <div class="sf-option"><div class="sf-check"></div>Beginner</div>
+                    <div class="sf-option"><div class="sf-check"></div>Intermediate</div>
+                    <div class="sf-option"><div class="sf-check"></div>Advanced</div>
+                </div>
+            </div>
+
+            <div class="course-list" id="courseList">
+                <div class="course-row aos" data-cat="pedagogy" data-status="open">
+                    <div class="course-thumb ct-1"><span>📚</span><div class="course-badge cb-open">Open</div></div>
+                    <div class="course-row-body">
+                        <div class="crow-tags"><span class="tag tag-orange">Pedagogy</span><span class="tag tag-navy">Beginner</span></div>
+                        <h3>Digital Pedagogy Essentials</h3>
+                        <p>Master the fundamentals of effective online teaching — from course design to student engagement strategies and digital assessment frameworks.</p>
+                        <div class="crow-meta"><span>📅 6 Weeks</span><span>📱 Self-Paced</span><span>👥 3,200 enrolled</span></div>
+                        <div class="crow-foot"><a href="#" class="btn-enroll">Enroll Free →</a><a href="#" class="btn-outline">Preview</a><div class="cert-badge">✓ IIMBx Certificate</div></div>
+                    </div>
+                </div>
+                <div class="course-row aos" data-cat="ai" data-status="upcoming">
+                    <div class="course-thumb ct-2"><span>🤖</span><div class="course-badge cb-up">Oct 2026</div></div>
+                    <div class="course-row-body">
+                        <div class="crow-tags"><span class="tag tag-orange">AI in Education</span><span class="tag tag-navy">Intermediate</span></div>
+                        <h3>AI Tools for Educators</h3>
+                        <p>Learn to integrate ChatGPT, AI-powered assessments, and automated feedback systems into your teaching workflow responsibly.</p>
+                        <div class="crow-meta"><span>📅 4 Weeks</span><span>👥 Cohort-Based</span><span>🔔 Pre-registered: 840</span></div>
+                        <div class="crow-foot"><a href="#" class="btn-enroll">Pre-Register →</a><div class="cert-badge">✓ IIMBx Certificate</div></div>
+                    </div>
+                </div>
+                <div class="course-row aos" data-cat="pedagogy" data-status="open">
+                    <div class="course-thumb ct-3"><span>🎬</span><div class="course-badge cb-open">Open</div></div>
+                    <div class="course-row-body">
+                        <div class="crow-tags"><span class="tag tag-orange">Content Creation</span><span class="tag tag-navy">Beginner</span></div>
+                        <h3>Creating Engaging Video Lectures</h3>
+                        <p>Production techniques, storyboarding, and tools for professional-quality educational video content — all on a budget.</p>
+                        <div class="crow-meta"><span>📅 3 Weeks</span><span>📱 Self-Paced</span><span>👥 1,850 enrolled</span></div>
+                        <div class="crow-foot"><a href="#" class="btn-enroll">Enroll Free →</a><a href="#" class="btn-outline">Preview</a><div class="cert-badge">✓ IIMBx Certificate</div></div>
+                    </div>
+                </div>
+                <div class="course-row aos" data-cat="pedagogy" data-status="open">
+                    <div class="course-thumb ct-4"><span>🔄</span><div class="course-badge cb-open">Open</div></div>
+                    <div class="course-row-body">
+                        <div class="crow-tags"><span class="tag tag-orange">Blended Learning</span><span class="tag tag-navy">Intermediate</span></div>
+                        <h3>Blended Learning Design</h3>
+                        <p>Design courses that seamlessly combine online and in-person instruction for maximum student learning outcomes.</p>
+                        <div class="crow-meta"><span>📅 5 Weeks</span><span>📱 Self-Paced</span><span>👥 2,140 enrolled</span></div>
+                        <div class="crow-foot"><a href="#" class="btn-enroll">Enroll Free →</a><a href="#" class="btn-outline">Preview</a><div class="cert-badge">✓ IIMBx Certificate</div></div>
+                    </div>
+                </div>
+                <div class="course-row aos" data-cat="ai" data-status="upcoming">
+                    <div class="course-thumb ct-5"><span>📝</span><div class="course-badge cb-up">Nov 2026</div></div>
+                    <div class="course-row-body">
+                        <div class="crow-tags"><span class="tag tag-orange">AI in Education</span><span class="tag tag-navy">Assessment</span></div>
+                        <h3>AI-Powered Assessment Design</h3>
+                        <p>Create fair, scalable, and personalised assessments using AI — from rubric generation to plagiarism detection and analytics.</p>
+                        <div class="crow-meta"><span>📅 4 Weeks</span><span>👥 Cohort-Based</span><span>🔔 Pre-registered: 620</span></div>
+                        <div class="crow-foot"><a href="#" class="btn-enroll">Pre-Register →</a><div class="cert-badge">✓ IIMBx Certificate</div></div>
+                    </div>
+                </div>
+                <div class="course-row aos" data-cat="pedagogy" data-status="open">
+                    <div class="course-thumb ct-6"><span>🧩</span><div class="course-badge cb-open">Open</div></div>
+                    <div class="course-row-body">
+                        <div class="crow-tags"><span class="tag tag-orange">Interactive Content</span><span class="tag tag-navy">Beginner</span></div>
+                        <h3>Interactive Content with H5P</h3>
+                        <p>Build quizzes, interactive videos, drag-and-drop activities, and gamified learning using the H5P open-source toolkit.</p>
+                        <div class="crow-meta"><span>📅 3 Weeks</span><span>📱 Self-Paced</span><span>👥 1,290 enrolled</span></div>
+                        <div class="crow-foot"><a href="#" class="btn-enroll">Enroll Free →</a><a href="#" class="btn-outline">Preview</a><div class="cert-badge">✓ IIMBx Certificate</div></div>
+                    </div>
+                </div>
+                <div id="emptyState" style="display:none;text-align:center;padding:60px;color:var(--s-muted)"><div style="font-size:48px;margin-bottom:16px">🔍</div><h3>No courses match your filters</h3><p>Try adjusting your search or filter criteria.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer"><div class="container"><p>© 2026 Sangam Digital Learning Community · <a href="/">An IIMBx Initiative</a></p></div></footer>
+    <script>
+        window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
+        const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.1});
+        document.querySelectorAll('.aos').forEach(el=>io.observe(el));
+        function toggleCheck(el){el.classList.toggle('checked');}
+        function filterCourses(f,btn){document.querySelectorAll('.filter-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');let v=0;document.querySelectorAll('.course-row').forEach(c=>{const show=f==='all'||c.dataset.cat===f||c.dataset.status===f;c.style.display=show?'flex':'none';if(show)v++;});document.getElementById('emptyState').style.display=v===0?'block':'none';}
+        function searchCourses(q){const lq=q.toLowerCase();let v=0;document.querySelectorAll('.course-row').forEach(c=>{const show=c.textContent.toLowerCase().includes(lq);c.style.display=show?'flex':'none';if(show)v++;});document.getElementById('emptyState').style.display=v===0?'block':'none';}
+    </script>
+</body>
+</html>

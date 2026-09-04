@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam Digital Learning Community | Empowering Faculty for Digital Pedagogy</title>
+    <meta name="description" content="Sangam Digital Learning Community by IIMBx supports higher-education faculty in India with digital pedagogy training, AI in education programs, peer learning, and open resources.">
+    <link rel="canonical" href="https://sangamdlc.org/">
+    <meta property="og:title" content="Sangam Digital Learning Community | Empowering Faculty for Digital Pedagogy">
+    <meta property="og:description" content="India's premier digital pedagogy community for higher-education faculty.">
+    <meta property="og:url" content="https://sangamdlc.org/">
+    <meta property="og:site_name" content="Sangam Digital Learning Community">
+    <meta property="og:image" content="https://sangamdlc.org/wp-content/uploads/2025/02/Sangam-Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --s-orange: #F37023; --s-orange-lt: #FFF0E8; --s-orange-mid: #FDE0CC;
+            --s-navy: #1F3D5C; --s-navy-lt: #EEF3F8;
+            --s-white: #FFFFFF; --s-off: #FAFAFA; --s-bg: #F6F8FA;
+            --s-text: #1A2332; --s-muted: #64748B; --s-border: #E5EAF0;
+            --s-green: #059669; --s-green-lt: #D1FAE5;
+            --font-h: 'Sora', sans-serif; --font-b: 'DM Sans', sans-serif;
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-pill: 100px;
+            --sh-sm: 0 1px 4px rgba(0,0,0,0.06); --sh-md: 0 4px 20px rgba(0,0,0,0.08); --sh-lg: 0 12px 40px rgba(0,0,0,0.10);
+            --t: 0.25s ease;
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-b); color: var(--s-text); background: var(--s-white); line-height:1.65; overflow-x:hidden; }
+        a { text-decoration:none; color:inherit; }
+        h1,h2,h3,h4 { font-family: var(--font-h); line-height:1.15; }
+        .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+        .tag { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; padding:5px 12px; border-radius:var(--r-pill); }
+        .tag-orange { background:var(--s-orange-lt); color:var(--s-orange); }
+        .tag-green { background:var(--s-green-lt); color:var(--s-green); }
+        .tag-navy { background:var(--s-navy-lt); color:var(--s-navy); }
+
+        /* NAV */
+        .nav-wrap { position:fixed; top:0; left:0; right:0; z-index:900; padding:12px 0; transition:all var(--t); }
+        .nav-wrap.scrolled { background:rgba(255,255,255,0.92); backdrop-filter:blur(16px); box-shadow:var(--sh-sm); padding:8px 0; }
+        .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+        .nav-logo { display:flex; align-items:center; gap:10px; }
+        .logo-badge { width:38px; height:38px; background:var(--s-orange); border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-family:var(--font-h); font-weight:800; color:white; font-size:18px; position:relative; }
+        .logo-badge::after { content:''; position:absolute; top:-3px; right:-3px; width:10px; height:10px; border-radius:50%; background:var(--s-navy); border:2px solid white; }
+        .logo-name { font-family:var(--font-h); font-weight:700; font-size:17px; color:var(--s-text); }
+        .logo-sub { font-size:10px; color:var(--s-muted); font-weight:500; display:block; margin-top:1px; }
+        .nav-links { display:flex; align-items:center; gap:4px; }
+        .nav-links a { padding:7px 14px; font-size:14px; font-weight:500; color:var(--s-muted); border-radius:var(--r-sm); transition:all var(--t); }
+        .nav-links a:hover, .nav-links a.active { color:var(--s-text); background:var(--s-bg); }
+        .nav-btn { background:var(--s-orange); color:white; padding:9px 22px; border-radius:var(--r-pill); font-size:14px; font-weight:600; font-family:var(--font-h); transition:all var(--t); box-shadow:0 2px 12px rgba(243,112,35,.25); }
+        .nav-btn:hover { background:#D95A10; transform:translateY(-1px); }
+        .nav-mob { display:none; background:none; border:none; cursor:pointer; padding:8px; }
+        .nav-mob span { display:block; width:22px; height:2px; background:var(--s-text); margin:5px 0; transition:all var(--t); }
+
+        /* HERO — split layout */
+        .hero { padding:140px 0 80px; background:var(--s-white); }
+        .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+        .hero-kicker { display:flex; align-items:center; gap:8px; margin-bottom:20px; }
+        .kicker-dot { width:8px; height:8px; border-radius:50%; background:var(--s-orange); animation:pulse 2s ease infinite; }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+        .kicker-text { font-size:13px; font-weight:600; color:var(--s-muted); letter-spacing:.5px; text-transform:uppercase; }
+        .hero h1 { font-size:52px; font-weight:800; color:var(--s-text); margin-bottom:20px; }
+        .hero h1 em { font-style:normal; color:var(--s-orange); }
+        .hero p { font-size:17px; color:var(--s-muted); max-width:480px; margin-bottom:36px; line-height:1.75; }
+        .hero-btns { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+        .btn-pri { background:var(--s-orange); color:white; padding:13px 28px; border-radius:var(--r-pill); font-family:var(--font-h); font-weight:600; font-size:15px; transition:all var(--t); box-shadow:0 4px 16px rgba(243,112,35,.3); display:inline-flex; align-items:center; gap:8px; }
+        .btn-pri:hover { background:#D95A10; transform:translateY(-2px); box-shadow:0 6px 24px rgba(243,112,35,.4); }
+        .btn-ghost { color:var(--s-text); padding:13px 28px; border-radius:var(--r-pill); font-family:var(--font-h); font-weight:600; font-size:15px; border:2px solid var(--s-border); transition:all var(--t); display:inline-flex; align-items:center; gap:8px; }
+        .btn-ghost:hover { border-color:var(--s-orange); color:var(--s-orange); background:var(--s-orange-lt); }
+        .hero-trust { margin-top:32px; display:flex; align-items:center; gap:12px; }
+        .trust-avatars { display:flex; }
+        .trust-avatars span { width:32px; height:32px; border-radius:50%; background:var(--s-navy); border:2px solid white; display:flex; align-items:center; justify-content:center; color:white; font-size:11px; font-weight:700; margin-left:-8px; }
+        .trust-avatars span:first-child { margin-left:0; }
+        .trust-avatars span:nth-child(2) { background:#2563EB; }
+        .trust-avatars span:nth-child(3) { background:var(--s-green); }
+        .trust-text { font-size:13px; color:var(--s-muted); }
+        .trust-text strong { color:var(--s-text); }
+
+        /* Hero right — floating cards */
+        .hero-right { position:relative; }
+        .hero-board { background:var(--s-bg); border-radius:var(--r-xl); padding:28px; position:relative; }
+        .hero-board-header { font-family:var(--font-h); font-size:13px; font-weight:600; color:var(--s-muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:20px; }
+        .metric-row { display:flex; gap:16px; margin-bottom:16px; }
+        .metric-box { flex:1; background:white; border-radius:var(--r-md); padding:18px; box-shadow:var(--sh-sm); }
+        .metric-box .val { font-family:var(--font-h); font-size:28px; font-weight:800; color:var(--s-orange); display:block; }
+        .metric-box .lbl { font-size:12px; color:var(--s-muted); font-weight:500; margin-top:2px; }
+        .progress-card { background:white; border-radius:var(--r-md); padding:18px; box-shadow:var(--sh-sm); }
+        .progress-card h4 { font-size:13px; font-weight:600; margin-bottom:12px; }
+        .prog-item { margin-bottom:10px; }
+        .prog-label { display:flex; justify-content:space-between; font-size:12px; color:var(--s-muted); margin-bottom:5px; }
+        .prog-bar { height:6px; background:var(--s-border); border-radius:99px; overflow:hidden; }
+        .prog-fill { height:100%; border-radius:99px; transition:width 1.5s ease; }
+        .fill-orange { background:var(--s-orange); }
+        .fill-navy { background:var(--s-navy); }
+        .fill-green { background:var(--s-green); }
+        .floating-chip { position:absolute; background:white; border-radius:var(--r-md); padding:10px 16px; box-shadow:var(--sh-md); display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; }
+        .chip-1 { top:-16px; right:20px; color:var(--s-green); }
+        .chip-2 { bottom:-14px; left:10px; color:var(--s-navy); }
+
+        /* MARQUEE STRIP */
+        .strip { padding:16px 0; background:var(--s-orange); overflow:hidden; }
+        .marquee-track { display:flex; gap:48px; white-space:nowrap; animation:marquee 20s linear infinite; }
+        .marquee-track span { color:white; font-size:13px; font-weight:600; letter-spacing:.5px; display:flex; align-items:center; gap:12px; }
+        .marquee-track span::after { content:'◆'; opacity:.5; }
+        @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+        /* FEATURES — 3-col cards */
+        .section { padding:90px 0; }
+        .sec-head { text-align:center; max-width:620px; margin:0 auto 56px; }
+        .sec-head h2 { font-size:38px; font-weight:800; margin-bottom:14px; }
+        .sec-head p { font-size:17px; color:var(--s-muted); line-height:1.75; }
+        .feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+        .feat-card { background:var(--s-bg); border-radius:var(--r-lg); padding:32px; transition:all var(--t); cursor:pointer; border:1px solid transparent; }
+        .feat-card:hover { background:white; box-shadow:var(--sh-lg); border-color:var(--s-border); transform:translateY(-4px); }
+        .feat-icon { width:52px; height:52px; border-radius:var(--r-md); display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px; }
+        .fi-orange { background:var(--s-orange-lt); }
+        .fi-navy { background:var(--s-navy-lt); }
+        .fi-green { background:var(--s-green-lt); }
+        .feat-card h3 { font-size:19px; font-weight:700; margin-bottom:8px; }
+        .feat-card p { font-size:14px; color:var(--s-muted); line-height:1.7; }
+
+        /* COURSES — horizontal scroll cards */
+        .courses-section { background:var(--s-bg); }
+        .courses-scroll { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+        .course-card { background:white; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--sh-sm); transition:all var(--t); }
+        .course-card:hover { box-shadow:var(--sh-lg); transform:translateY(-4px); }
+        .course-thumb { height:160px; display:flex; align-items:center; justify-content:center; font-size:48px; position:relative; }
+        .ct-1 { background:linear-gradient(135deg,#FFF0E8,#FDE0CC); }
+        .ct-2 { background:linear-gradient(135deg,#EEF3F8,#C8D6E5); }
+        .ct-3 { background:linear-gradient(135deg,#D1FAE5,#A7F3D0); }
+        .course-status { position:absolute; top:12px; right:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; padding:4px 10px; border-radius:var(--r-pill); }
+        .cs-open { background:var(--s-green-lt); color:var(--s-green); }
+        .cs-upcoming { background:var(--s-orange-lt); color:var(--s-orange); }
+        .course-body { padding:22px; }
+        .course-body h3 { font-size:17px; font-weight:700; margin-bottom:6px; }
+        .course-body p { font-size:13px; color:var(--s-muted); margin-bottom:14px; }
+        .course-meta { display:flex; gap:14px; font-size:12px; color:var(--s-muted); margin-bottom:16px; }
+        .link-btn { display:inline-flex; align-items:center; gap:6px; color:var(--s-orange); font-size:13px; font-weight:600; font-family:var(--font-h); transition:gap var(--t); }
+        .link-btn:hover { gap:10px; }
+
+        /* STATS — orange full bleed */
+        .stats-band { background:var(--s-orange); padding:64px 0; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+        .stat-num { font-family:var(--font-h); font-size:48px; font-weight:800; color:white; display:block; }
+        .stat-lbl { font-size:13px; color:rgba(255,255,255,.8); font-weight:500; text-transform:uppercase; letter-spacing:.5px; margin-top:4px; }
+
+        /* TESTIMONIALS — 2-col */
+        .test-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+        .test-card { background:var(--s-bg); border-radius:var(--r-lg); padding:32px; transition:all var(--t); }
+        .test-card:hover { background:white; box-shadow:var(--sh-md); }
+        .test-stars { color:var(--s-orange); font-size:14px; margin-bottom:14px; letter-spacing:2px; }
+        .test-quote { font-size:16px; line-height:1.75; color:var(--s-text); margin-bottom:20px; font-style:italic; }
+        .test-author { display:flex; align-items:center; gap:12px; }
+        .test-av { width:42px; height:42px; border-radius:50%; background:var(--s-navy); display:flex; align-items:center; justify-content:center; color:white; font-family:var(--font-h); font-weight:700; font-size:15px; }
+        .test-name { font-weight:700; font-size:14px; }
+        .test-role { font-size:12px; color:var(--s-muted); }
+
+        /* CTA — split navy */
+        .cta-split { background:var(--s-navy); border-radius:var(--r-xl); padding:64px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin:0 24px 90px; }
+        .cta-split h2 { font-size:36px; font-weight:800; color:white; margin-bottom:12px; }
+        .cta-split p { color:rgba(255,255,255,.7); font-size:16px; line-height:1.75; }
+        .cta-form { background:rgba(255,255,255,.08); border-radius:var(--r-lg); padding:28px; }
+        .cta-form h3 { color:white; font-size:18px; font-weight:700; margin-bottom:20px; }
+        .cta-input { width:100%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:var(--r-md); padding:12px 16px; color:white; font-size:14px; font-family:var(--font-b); margin-bottom:12px; outline:none; transition:border var(--t); }
+        .cta-input::placeholder { color:rgba(255,255,255,.5); }
+        .cta-input:focus { border-color:var(--s-orange); }
+        .btn-pri-full { width:100%; justify-content:center; }
+
+        /* FOOTER */
+        .footer { background:var(--s-bg); padding:60px 0 0; border-top:1px solid var(--s-border); }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; }
+        .footer-about p { font-size:14px; color:var(--s-muted); margin-top:12px; line-height:1.75; max-width:260px; }
+        .footer-socials { display:flex; gap:8px; margin-top:16px; }
+        .footer-socials a { width:34px; height:34px; border-radius:var(--r-sm); background:var(--s-border); display:flex; align-items:center; justify-content:center; font-size:14px; transition:all var(--t); }
+        .footer-socials a:hover { background:var(--s-orange); }
+        .footer h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--s-muted); margin-bottom:16px; }
+        .footer-links { list-style:none; }
+        .footer-links li { margin-bottom:9px; }
+        .footer-links a { font-size:14px; color:var(--s-text); transition:color var(--t); }
+        .footer-links a:hover { color:var(--s-orange); }
+        .footer-bottom { border-top:1px solid var(--s-border); padding:20px 0; display:flex; justify-content:space-between; align-items:center; }
+        .footer-bottom p { font-size:13px; color:var(--s-muted); }
+
+        .aos { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+        .aos.in { opacity:1; transform:translateY(0); }
+
+        @media(max-width:1024px) { .hero-grid{grid-template-columns:1fr;} .feat-grid{grid-template-columns:1fr 1fr;} .courses-scroll{grid-template-columns:1fr 1fr;} .stats-grid{grid-template-columns:repeat(2,1fr);} .test-grid{grid-template-columns:1fr;} .cta-split{grid-template-columns:1fr;} .footer-grid{grid-template-columns:repeat(2,1fr);} }
+        @media(max-width:768px) { .nav-links,.nav-btn{display:none;} .nav-mob{display:block;} .hero h1{font-size:36px;} .feat-grid{grid-template-columns:1fr;} .courses-scroll{grid-template-columns:1fr;} .cta-split{padding:32px;margin:0 0 60px;} .footer-grid{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;gap:8px;} }
+    </style>
+</head>
+<body>
+    <nav class="nav-wrap" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-logo">
+                    <div class="logo-badge">S</div>
+                    <div><div class="logo-name">Sangam DLC</div><span class="logo-sub">by IIMBx</span></div>
+                </a>
+                <div class="nav-links">
+                    <a href="/" class="active">Home</a>
+                    <a href="/about-us/">About</a>
+                    <a href="/courses/">Courses</a>
+                    <a href="/resources/">Resources</a>
+                    <a href="/events/">Events</a>
+                    <a href="/contact-us/">Contact</a>
+                </div>
+                <a href="/courses/" class="nav-btn">Join Free →</a>
+                <button class="nav-mob" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="aos">
+                    <div class="hero-kicker"><div class="kicker-dot"></div><span class="kicker-text">An IIMBx Initiative · Free for Faculty</span></div>
+                    <h1>Where India's Faculty <em>Learn to Teach</em> Digitally</h1>
+                    <p>Sangam brings together 15,000+ higher-education educators for peer learning, AI training, and digital pedagogy programs designed by IIM Bangalore.</p>
+                    <div class="hero-btns">
+                        <a href="/courses/" class="btn-pri">Start Learning Free →</a>
+                        <a href="/about-us/" class="btn-ghost">See How It Works</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-avatars">
+                            <span>DK</span><span>AR</span><span>SM</span><span>+</span>
+                        </div>
+                        <p class="trust-text">Joined by <strong>15,000+ faculty</strong> across 800 institutions</p>
+                    </div>
+                </div>
+                <div class="aos" style="animation-delay:.15s">
+                    <div class="hero-right">
+                        <div class="floating-chip chip-1">✓ &nbsp;New workshop registered</div>
+                        <div class="hero-board">
+                            <div class="hero-board-header">Community Dashboard</div>
+                            <div class="metric-row">
+                                <div class="metric-box"><span class="val">15K+</span><div class="lbl">Faculty Trained</div></div>
+                                <div class="metric-box"><span class="val">800+</span><div class="lbl">Institutions</div></div>
+                            </div>
+                            <div class="progress-card">
+                                <h4>Program Completion Rates</h4>
+                                <div class="prog-item">
+                                    <div class="prog-label"><span>Digital Pedagogy</span><span>87%</span></div>
+                                    <div class="prog-bar"><div class="prog-fill fill-orange" style="width:87%"></div></div>
+                                </div>
+                                <div class="prog-item">
+                                    <div class="prog-label"><span>AI in Education</span><span>72%</span></div>
+                                    <div class="prog-bar"><div class="prog-fill fill-navy" style="width:72%"></div></div>
+                                </div>
+                                <div class="prog-item">
+                                    <div class="prog-label"><span>Blended Learning</span><span>94%</span></div>
+                                    <div class="prog-bar"><div class="prog-fill fill-green" style="width:94%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-chip chip-2">📍 28 States Covered</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="strip">
+        <div class="marquee-track" id="marquee">
+            <span>Digital Pedagogy</span><span>AI in Education</span><span>Blended Learning</span><span>Video Lectures</span><span>H5P Interactive</span><span>Assessment Design</span><span>Faculty Community</span><span>IIM Bangalore</span>
+            <span>Digital Pedagogy</span><span>AI in Education</span><span>Blended Learning</span><span>Video Lectures</span><span>H5P Interactive</span><span>Assessment Design</span><span>Faculty Community</span><span>IIM Bangalore</span>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="sec-head aos">
+                <div class="tag tag-orange" style="margin-bottom:14px;">Why Sangam?</div>
+                <h2>Built for India's Teaching Community</h2>
+                <p>Everything you need to master digital teaching — in one free community, backed by IIM Bangalore research.</p>
+            </div>
+            <div class="feat-grid">
+                <div class="feat-card aos"><div class="feat-icon fi-orange">🎯</div><h3>Peer-Led Learning</h3><p>Learn alongside 15,000+ faculty across India. Share practices, collaborate on courses, and grow together through structured community learning.</p></div>
+                <div class="feat-card aos" style="transition-delay:.1s"><div class="feat-icon fi-navy">🤖</div><h3>AI & EdTech Tools</h3><p>Hands-on workshops on ChatGPT, AI assessment, and EdTech platforms — with real classroom applications, not just theory.</p></div>
+                <div class="feat-card aos" style="transition-delay:.2s"><div class="feat-icon fi-green">📜</div><h3>Certified Programs</h3><p>IIMBx-certified courses recognized by 800+ institutions. Add credentials to your academic profile and demonstrate digital teaching mastery.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section courses-section">
+        <div class="container">
+            <div class="sec-head aos">
+                <div class="tag tag-navy" style="margin-bottom:14px;">Featured Courses</div>
+                <h2>Start Learning Today</h2>
+                <p>Self-paced and cohort-based programs for every stage of your digital teaching journey.</p>
+            </div>
+            <div class="courses-scroll">
+                <div class="course-card aos">
+                    <div class="course-thumb ct-1"><span>📚</span><div class="course-status cs-open">Open</div></div>
+                    <div class="course-body"><h3>Digital Pedagogy Essentials</h3><p>Master online teaching fundamentals — course design, engagement strategies, and digital assessment.</p><div class="course-meta"><span>⏱ 6 Weeks</span><span>📱 Self-Paced</span><span>🎓 Certificate</span></div><a href="/courses/" class="link-btn">Enroll now →</a></div>
+                </div>
+                <div class="course-card aos" style="transition-delay:.1s">
+                    <div class="course-thumb ct-2"><span>🤖</span><div class="course-status cs-upcoming">Upcoming</div></div>
+                    <div class="course-body"><h3>AI Tools for Educators</h3><p>Integrate ChatGPT, AI feedback, and automated grading into your teaching workflow effectively.</p><div class="course-meta"><span>⏱ 4 Weeks</span><span>👥 Cohort</span><span>🎓 Certificate</span></div><a href="/courses/" class="link-btn">Pre-register →</a></div>
+                </div>
+                <div class="course-card aos" style="transition-delay:.2s">
+                    <div class="course-thumb ct-3"><span>🎬</span><div class="course-status cs-open">Open</div></div>
+                    <div class="course-body"><h3>Creating Engaging Video Lectures</h3><p>Production techniques and tools to create professional-quality educational video content at home.</p><div class="course-meta"><span>⏱ 3 Weeks</span><span>📱 Self-Paced</span><span>🎓 Certificate</span></div><a href="/courses/" class="link-btn">Enroll now →</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-band">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="aos"><span class="stat-num" data-to="15000">0</span><div class="stat-lbl">Faculty Trained</div></div>
+                <div class="aos"><span class="stat-num" data-to="800">0</span><div class="stat-lbl">Institutions</div></div>
+                <div class="aos"><span class="stat-num" data-to="28">0</span><div class="stat-lbl">States & UTs</div></div>
+                <div class="aos"><span class="stat-num" data-to="50">0</span><div class="stat-lbl">Programs Delivered</div></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="sec-head aos">
+                <div class="tag tag-orange" style="margin-bottom:14px;">Community Voices</div>
+                <h2>What Faculty Are Saying</h2>
+            </div>
+            <div class="test-grid">
+                <div class="test-card aos"><div class="test-stars">★★★★★</div><p class="test-quote">"Sangam's digital pedagogy course transformed how I approach online teaching. My engagement scores improved by 40% in one semester alone."</p><div class="test-author"><div class="test-av">RM</div><div><div class="test-name">Dr. Radhika Menon</div><div class="test-role">Professor, University of Kerala</div></div></div></div>
+                <div class="test-card aos" style="transition-delay:.1s"><div class="test-stars">★★★★★</div><p class="test-quote">"The AI workshop was a game-changer. I now use AI for grading and feedback — saving 5+ hours every week while giving better, more personalised feedback."</p><div class="test-author"><div class="test-av">AK</div><div><div class="test-name">Prof. Arun Kumar</div><div class="test-role">HOD CS, JNTU Hyderabad</div></div></div></div>
+                <div class="test-card aos"><div class="test-stars">★★★★★</div><p class="test-quote">"The peer community is unmatched. I've connected with 50+ faculty across 12 states and we regularly share teaching innovations and new methods."</p><div class="test-author"><div class="test-av">SP</div><div><div class="test-name">Dr. Sunita Patel</div><div class="test-role">Associate Professor, Delhi University</div></div></div></div>
+                <div class="test-card aos" style="transition-delay:.1s"><div class="test-stars">★★★★★</div><p class="test-quote">"From the H5P workshop to the blended learning course — every program was practical, well-structured, and immediately applicable in my classroom."</p><div class="test-author"><div class="test-av">VN</div><div><div class="test-name">Prof. Vijay Nair</div><div class="test-role">Senior Lecturer, BITS Pilani</div></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="cta-split">
+            <div class="aos">
+                <div class="tag tag-orange" style="margin-bottom:16px; background:rgba(243,112,35,.2); color:white;">Free for All Faculty</div>
+                <h2>Ready to Transform Your Teaching?</h2>
+                <p>Join 15,000+ faculty members already part of India's largest digital pedagogy community. No cost, no barriers — just better teaching.</p>
+            </div>
+            <div class="cta-form aos" style="transition-delay:.15s">
+                <h3>Get Started Today</h3>
+                <input type="email" class="cta-input" placeholder="Your institutional email">
+                <input type="text" class="cta-input" placeholder="Your institution name">
+                <a href="/courses/" class="btn-pri btn-pri-full">Join Sangam Free →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="/" class="nav-logo" style="display:inline-flex"><div class="logo-badge">S</div><div style="margin-left:10px"><div class="logo-name">Sangam DLC</div><span class="logo-sub">by IIMBx</span></div></a>
+                    <p>India's premier platform for higher-education faculty to master digital pedagogy, AI in education, and blended teaching.</p>
+                    <div class="footer-socials"><a href="#">📷</a><a href="#">▶</a><a href="#">in</a></div>
+                </div>
+                <div><h4>Site</h4><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/about-us/">About Us</a></li><li><a href="/courses/">Courses</a></li><li><a href="/resources/">Resources</a></li></ul></div>
+                <div><h4>Programs</h4><ul class="footer-links"><li><a href="#">Digital Pedagogy</a></li><li><a href="#">AI in Education</a></li><li><a href="#">Video Lectures</a></li><li><a href="#">Blended Learning</a></li></ul></div>
+                <div><h4>Connect</h4><ul class="footer-links"><li><a href="/contact-us/">Contact Us</a></li><li><a href="mailto:sangam@iimb.ac.in">sangam@iimb.ac.in</a></li><li><a href="https://iimbx.iimb.ac.in/">IIMBx</a></li><li><a href="https://www.iimb.ac.in/">IIM Bangalore</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Sangam Digital Learning Community · An IIMBx Initiative · IIM Bangalore</p>
+                <p>All programs free for higher-education faculty</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+        const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); } }), {threshold:.1});
+        document.querySelectorAll('.aos').forEach(el => io.observe(el));
+        function animCount(el) {
+            const to = +el.dataset.to, dur = 2000, start = performance.now();
+            const tick = now => {
+                const p = Math.min((now-start)/dur,1), v = Math.round(p*p*(3-2*p)*to);
+                el.textContent = to >= 1000 ? (v/1000).toFixed(v>=10000?0:1)+'K+' : v+'+';
+                if(p<1) requestAnimationFrame(tick);
+            }; requestAnimationFrame(tick);
+        }
+        const cio = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.querySelectorAll('[data-to]').forEach(animCount); cio.unobserve(e.target); }}), {threshold:.3});
+        document.querySelectorAll('.stats-band').forEach(el => cio.observe(el));
+    </script>
+</body>
+</html>

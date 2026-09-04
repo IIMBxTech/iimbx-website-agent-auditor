@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Get in Touch with Sangam DLC | IIMBx</title>
+    <meta name="description" content="Have questions about Sangam's digital pedagogy programs? Contact us — we typically respond within 24 hours. Email, phone, or visit IIM Bangalore campus.">
+    <link rel="canonical" href="https://sangamdlc.org/contact-us/">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--s-orange:#F37023;--s-orange-lt:#FFF0E8;--s-navy:#1F3D5C;--s-navy-lt:#EEF3F8;--s-white:#FFFFFF;--s-bg:#F6F8FA;--s-text:#1A2332;--s-muted:#64748B;--s-border:#E5EAF0;--s-green:#059669;--s-green-lt:#D1FAE5;--font-h:'Sora',sans-serif;--font-b:'DM Sans',sans-serif;--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-pill:100px;--sh-sm:0 1px 4px rgba(0,0,0,.06);--sh-md:0 4px 20px rgba(0,0,0,.08);--sh-lg:0 12px 40px rgba(0,0,0,.10);--t:0.25s ease}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-b);color:var(--s-text);background:var(--s-white);line-height:1.65;overflow-x:hidden}a{text-decoration:none;color:inherit}h1,h2,h3,h4{font-family:var(--font-h);line-height:1.15}.container{max-width:1180px;margin:0 auto;padding:0 24px}
+        .nav-wrap{position:fixed;top:0;left:0;right:0;z-index:900;padding:12px 0;transition:all var(--t)}.nav-wrap.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 1px 4px rgba(0,0,0,.06)}.nav-inner{display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:10px}.logo-badge{width:38px;height:38px;background:var(--s-orange);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-weight:800;color:white;font-size:18px;position:relative}.logo-badge::after{content:'';position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--s-navy);border:2px solid white}.logo-name{font-family:var(--font-h);font-weight:700;font-size:17px;color:var(--s-text)}.logo-sub{font-size:10px;color:var(--s-muted);font-weight:500;display:block}.nav-links{display:flex;align-items:center;gap:4px}.nav-links a{padding:7px 14px;font-size:14px;font-weight:500;color:var(--s-muted);border-radius:var(--r-sm);transition:all var(--t)}.nav-links a:hover,.nav-links a.active{color:var(--s-text);background:var(--s-bg)}.nav-btn{background:var(--s-orange);color:white;padding:9px 22px;border-radius:var(--r-pill);font-size:14px;font-weight:600;font-family:var(--font-h);transition:all var(--t)}.nav-btn:hover{background:#D95A10}
+
+        /* HERO — full-width orange accent */
+        .page-hero{padding:130px 0 60px;background:linear-gradient(135deg,var(--s-white) 60%,var(--s-orange-lt))}
+        .hero-breadcrumb{font-size:13px;color:var(--s-muted);margin-bottom:16px}.hero-breadcrumb a{color:var(--s-orange);font-weight:500}
+        .page-hero h1{font-size:48px;font-weight:800;margin-bottom:16px}.page-hero h1 em{font-style:normal;color:var(--s-orange)}
+        .page-hero p{font-size:17px;color:var(--s-muted);max-width:560px;line-height:1.75}
+        .tag{display:inline-flex;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:var(--r-pill)}.tag-orange{background:var(--s-orange-lt);color:var(--s-orange)}
+
+        /* CONTACT — full 3-col layout */
+        .contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;padding:60px 0}
+        
+        /* Left — info panels */
+        .info-panels{display:flex;flex-direction:column;gap:16px}
+        .info-panel{background:var(--s-bg);border-radius:var(--r-lg);padding:24px;display:flex;gap:16px;transition:all var(--t);border:1px solid transparent}
+        .info-panel:hover{background:white;box-shadow:var(--sh-md);border-color:var(--s-border)}
+        .ip-icon{width:48px;height:48px;min-width:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:22px}
+        .ici-email{background:var(--s-navy-lt);color:var(--s-navy)}.ici-phone{background:var(--s-green-lt);color:var(--s-green)}.ici-map{background:var(--s-orange-lt);color:var(--s-orange)}.ici-social{background:#EDE9FE;color:#7C3AED}
+        .ip-content h3{font-size:15px;font-weight:700;margin-bottom:4px}
+        .ip-content p{font-size:13px;color:var(--s-muted);margin-bottom:6px;line-height:1.5}
+        .ip-link{color:var(--s-orange);font-size:13px;font-weight:600}
+
+        /* Response time banner */
+        .response-banner{background:linear-gradient(135deg,var(--s-navy),#2D5580);border-radius:var(--r-lg);padding:20px 24px;display:flex;align-items:center;gap:14px;margin-bottom:16px}
+        .rb-icon{width:44px;height:44px;min-width:44px;background:rgba(243,112,35,.25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:20px}
+        .rb-text h4{font-family:var(--font-h);font-size:14px;font-weight:700;color:white;margin-bottom:2px}
+        .rb-text p{font-size:12px;color:rgba(255,255,255,.6)}
+
+        /* FORM */
+        .form-card{background:white;border-radius:var(--r-xl);box-shadow:var(--sh-lg);overflow:hidden}
+        .form-head{background:var(--s-orange);padding:28px 32px}
+        .form-head h2{font-size:24px;font-weight:800;color:white;margin-bottom:4px}
+        .form-head p{font-size:14px;color:rgba(255,255,255,.75)}
+        .form-body{padding:32px}
+        .topic-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+        .topic-chip{padding:7px 16px;border-radius:var(--r-pill);font-size:13px;font-weight:600;font-family:var(--font-h);border:1.5px solid var(--s-border);background:white;color:var(--s-muted);cursor:pointer;transition:all var(--t)}.topic-chip.selected,.topic-chip:hover{background:var(--s-orange-lt);border-color:var(--s-orange);color:var(--s-orange)}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+        .form-group{margin-bottom:16px}
+        .form-group label{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--s-muted);margin-bottom:6px}
+        .form-input{width:100%;padding:11px 16px;border:1.5px solid var(--s-border);border-radius:var(--r-md);font-size:14px;font-family:var(--font-b);outline:none;transition:border var(--t);background:var(--s-bg)}.form-input:focus{border-color:var(--s-orange);background:white}
+        textarea.form-input{height:110px;resize:vertical}
+        .btn-submit{width:100%;background:var(--s-orange);color:white;padding:13px;border-radius:var(--r-pill);font-family:var(--font-h);font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all var(--t);display:flex;align-items:center;justify-content:center;gap:8px}.btn-submit:hover{background:#D95A10;transform:translateY(-1px)}
+
+        /* FAQ — minimal accordion */
+        .faq-section{padding:0 0 60px}
+        .faq-head{text-align:center;max-width:540px;margin:0 auto 40px}
+        .faq-head h2{font-size:32px;font-weight:800;margin-bottom:8px}
+        .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+        .faq-item{background:var(--s-bg);border-radius:var(--r-lg);overflow:hidden;transition:all var(--t)}
+        .faq-item.open{background:white;box-shadow:var(--sh-md)}
+        .faq-q{padding:18px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:15px;transition:all var(--t)}
+        .faq-arrow{width:28px;height:28px;border-radius:50%;background:var(--s-border);display:flex;align-items:center;justify-content:center;font-size:12px;transition:all var(--t);flex-shrink:0}
+        .faq-item.open .faq-arrow{background:var(--s-orange);color:white;transform:rotate(180deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;font-size:14px;color:var(--s-muted);line-height:1.75;padding:0 24px}
+        .faq-item.open .faq-a{max-height:200px;padding:0 24px 18px}
+
+        .footer{background:var(--s-navy);padding:40px 0;color:white;text-align:center}
+        .footer p{color:rgba(255,255,255,.6);font-size:14px}.footer a{color:var(--s-orange)}
+
+        .aos{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.aos.in{opacity:1;transform:translateY(0)}
+        @media(max-width:1024px){.contact-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){.nav-links,.nav-btn{display:none}.page-hero h1{font-size:34px}.form-row{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <nav class="nav-wrap" id="nav"><div class="container"><div class="nav-inner"><a href="/" class="nav-logo"><div class="logo-badge">S</div><div><div class="logo-name">Sangam DLC</div><span class="logo-sub">by IIMBx</span></div></a><div class="nav-links"><a href="/">Home</a><a href="/about-us/">About</a><a href="/courses/">Courses</a><a href="/resources/">Resources</a><a href="/events/">Events</a><a href="/contact-us/" class="active">Contact</a></div><a href="/courses/" class="nav-btn">Join Free →</a></div></div></nav>
+
+    <section class="page-hero"><div class="container">
+        <div class="hero-breadcrumb"><a href="/">Home</a> / Contact Us</div>
+        <div class="tag tag-orange" style="margin-bottom:16px">Get In Touch</div>
+        <h1>We're Here to <em>Help You</em></h1>
+        <p>Questions about courses, partnerships, or technical support? Our team responds within 24 hours — often much sooner.</p>
+    </div></section>
+
+    <div class="container">
+        <div class="contact-grid">
+            <div class="info-side">
+                <div class="response-banner aos">
+                    <div class="rb-icon">⚡</div>
+                    <div class="rb-text"><h4>Quick Response Guaranteed</h4><p>Average response time under 24 hours, Monday–Friday</p></div>
+                </div>
+                <div class="info-panels">
+                    <div class="info-panel aos"><div class="ip-icon ici-email">✉️</div><div class="ip-content"><h3>Email Us</h3><p>For course enquiries and general questions</p><a href="mailto:sangam@iimb.ac.in" class="ip-link">sangam@iimb.ac.in</a></div></div>
+                    <div class="info-panel aos"><div class="ip-icon ici-phone">📞</div><div class="ip-content"><h3>Call Us</h3><p>Monday – Friday, 9:30 AM – 5:30 PM IST</p><a href="tel:+918026993000" class="ip-link">+91 80 2699 3000</a></div></div>
+                    <div class="info-panel aos"><div class="ip-icon ici-map">📍</div><div class="ip-content"><h3>Visit Us</h3><p>IIM Bangalore, Bannerghatta Road<br>Bengaluru, Karnataka 560076</p></div></div>
+                    <div class="info-panel aos"><div class="ip-icon ici-social">🌐</div><div class="ip-content"><h3>Follow Us</h3><p>Stay updated on events and resources</p><div style="display:flex;gap:12px;margin-top:8px"><a href="#" class="ip-link">Instagram</a><a href="#" class="ip-link">YouTube</a><a href="#" class="ip-link">LinkedIn</a></div></div></div>
+                </div>
+            </div>
+
+            <div class="form-card aos">
+                <div class="form-head">
+                    <h2>Send a Message</h2>
+                    <p>Select your topic below and fill in the form</p>
+                </div>
+                <div class="form-body">
+                    <div class="topic-chips">
+                        <div class="topic-chip selected" onclick="selectTopic(this)">💬 General</div>
+                        <div class="topic-chip" onclick="selectTopic(this)">📚 Courses</div>
+                        <div class="topic-chip" onclick="selectTopic(this)">🤝 Partnership</div>
+                        <div class="topic-chip" onclick="selectTopic(this)">🛠️ Technical</div>
+                        <div class="topic-chip" onclick="selectTopic(this)">📰 Media</div>
+                    </div>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group"><label for="firstName">First Name *</label><input type="text" class="form-input" id="firstName" required placeholder="Your first name"></div>
+                            <div class="form-group"><label for="lastName">Last Name *</label><input type="text" class="form-input" id="lastName" required placeholder="Your last name"></div>
+                        </div>
+                        <div class="form-group"><label for="email">Institutional Email *</label><input type="email" class="form-input" id="email" required placeholder="you@institution.ac.in"></div>
+                        <div class="form-group"><label for="institution">Institution / University</label><input type="text" class="form-input" id="institution" placeholder="Your university or organisation"></div>
+                        <div class="form-group" style="margin-bottom:24px"><label for="message">Message *</label><textarea class="form-input" id="message" required placeholder="How can we help you?"></textarea></div>
+                        <button type="submit" class="btn-submit" id="submitBtn">Send Message →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="faq-section"><div class="container">
+        <div class="faq-head">
+            <div class="tag tag-orange" style="margin-bottom:14px">FAQ</div>
+            <h2>Common Questions</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Are Sangam courses really free?<div class="faq-arrow">▼</div></div><div class="faq-a">Yes — 100% free for all higher-education faculty. Programs are funded by IIMBx and supported by IIM Bangalore with no hidden fees.</div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Who is eligible to join?<div class="faq-arrow">▼</div></div><div class="faq-a">All higher-education faculty, instructional designers, and EdTech professionals in India. Some programs are open to international educators.</div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Will I receive a certificate?<div class="faq-arrow">▼</div></div><div class="faq-a">Yes — upon successful completion you receive an IIMBx / IIM Bangalore certificate you can share on LinkedIn and your academic profile.</div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How can my institution partner with Sangam?<div class="faq-arrow">▼</div></div><div class="faq-a">We welcome institutional partnerships. Email sangam@iimb.ac.in with details about your institution and the collaboration you have in mind.</div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How much time per week do courses require?<div class="faq-arrow">▼</div></div><div class="faq-a">Self-paced courses require 3–5 hours per week. Cohort-based programs typically require 6–8 hours per week including live sessions.</div></div>
+        </div>
+    </div></section>
+
+    <footer class="footer"><div class="container"><p>© 2026 Sangam Digital Learning Community · <a href="/">An IIMBx Initiative</a></p></div></footer>
+    <script>
+        window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
+        const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.1});
+        document.querySelectorAll('.aos').forEach(el=>io.observe(el));
+        function selectTopic(el){document.querySelectorAll('.topic-chip').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');}
+        function toggleFaq(item){const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+        function handleSubmit(e){e.preventDefault();const btn=document.getElementById('submitBtn');btn.textContent='Sending...';btn.disabled=true;setTimeout(()=>{btn.textContent='✓ Message Sent — We\'ll reply shortly!';btn.style.background='#059669';setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';btn.disabled=false;e.target.reset()},3000)},1500)}
+    </script>
+</body>
+</html>
